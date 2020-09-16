@@ -1,0 +1,984 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="CHM Editor">
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="Window Styles" value="0x800027">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Inicio">
+    <param name="Local" value="Index.html">
+    <param name="ImageNumber" value="1">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Acerca de...">
+      <param name="Local" value="AcercaDe.html">
+      <param name="ImageNumber" value="10">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Historial">
+      <param name="Local" value="Historial.html">
+      <param name="ImageNumber" value="17">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Codificacion">
+    <param name="Local" value="Codificacion.html">
+    <param name="ImageNumber" value="1">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Variables">
+      <param name="Local" value="Codificacion.Variables.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Comentarios">
+      <param name="Local" value="Codificacion.Comentarios.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Constantes">
+      <param name="Local" value="Codificacion.Constantes.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Bucles">
+      <param name="Local" value="Codificacion.Bucles.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Operadores">
+      <param name="Local" value="Codificacion.Operadores.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Comandos Adicionales">
+      <param name="Local" value="Codificacion.ComandosAdicionales.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Condiciones">
+      <param name="Local" value="Codificacion.Condiciones.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Directivas">
+      <param name="Local" value="Codificacion.Directivas.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Arreglos">
+      <param name="Local" value="Codificacion.Arreglos.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Clases">
+      <param name="Local" value="Codificacion.Clases.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Palabras Claves">
+      <param name="Local" value="Codificacion.PalabrasClaves.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="HEX..END">
+      <param name="Local" value="Codificacion.HEX..END.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Tipos de Datos">
+      <param name="Local" value="Codificacion.TiposDeDatos.html">
+      <param name="ImageNumber" value="39">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Editor/IDE">
+    <param name="Local" value="EditorIDE.html">
+    <param name="ImageNumber" value="1">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Opciones">
+      <param name="Local" value="EditorIDE.Opciones.html">
+      <param name="ImageNumber" value="1">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="General">
+        <param name="Local" value="Opciones.General.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Formatos">
+        <param name="Local" value="Opciones.Formatos.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Editor">
+        <param name="Local" value="Opciones.Editor.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Resaltador">
+        <param name="Local" value="Opciones.Resaltador.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Teclas de acceso rapido">
+        <param name="Local" value="Opciones.TeclasDeAccesoRapido.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+    </UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Editar modos">
+      <param name="Local" value="EditorIDE.EditarModos.html">
+      <param name="ImageNumber" value="1">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Lista de Opcodes (INI)">
+        <param name="Local" value="DocumentacionSCM.INI.html">
+        <param name="ImageNumber" value="41">
+        </OBJECT>
+    </UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Caracteristicas">
+      <param name="Local" value="EditorIDE.Caracteristicas.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Consola">
+      <param name="Local" value="EditorIDE.Consola.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Accesos rapidos">
+      <param name="Local" value="EditorIDE.AccesosRapidos.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Buscador de Opcodes">
+      <param name="Local" value="EditorIDE.BuscadorDeOpcodes.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Documentacion SCM">
+    <param name="Local" value="DocumentacionSCM.html">
+    <param name="ImageNumber" value="1">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Limites de los GTA">
+      <param name="Local" value="DocumentacionSCM.LimitesDeLosGTA.html">
+      <param name="ImageNumber" value="41">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Caracteres ASCII">
+      <param name="Local" value="Teclado.Fisico.html">
+      <param name="ImageNumber" value="41">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="SA">
+      <param name="Local" value="DocumentacionSCM.SA.html">
+      <param name="ImageNumber" value="1">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Teclado">
+        <param name="Local" value="Teclado.Virtual.SA.html">
+        <param name="ImageNumber" value="31">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Actores">
+        <param name="Local" value="SA.Actores.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Armamento">
+          <param name="Local" value="Actores.Armamento.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Creacion">
+          <param name="Local" value="Actores.Creacion.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Eliminacion">
+          <param name="Local" value="Actores.Eliminacion.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Tipos">
+          <param name="Local" value="Actores.Tipos.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Actitudes">
+            <param name="Local" value="Juego.Actitudes.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Decisiones">
+            <param name="Local" value="Juego.Decisiones.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Especiales">
+            <param name="Local" value="Actores.Especiales.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Accesorios">
+          <param name="Local" value="Actores.Accesorios.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Collares">
+            <param name="Local" value="Accesorios.Collares.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Especiales">
+            <param name="Local" value="Accesorios.Especiales.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Gafas">
+            <param name="Local" value="Accesorios.Gafas.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Peinados">
+            <param name="Local" value="Accesorios.Peinados.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Piernas">
+            <param name="Local" value="Accesorios.Piernas.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Relojes">
+            <param name="Local" value="Accesorios.Relojes.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Sombreros">
+            <param name="Local" value="Accesorios.Sombreros.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Tatuajes">
+            <param name="Local" value="Accesorios.Tatuajes.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Torso">
+            <param name="Local" value="Accesorios.Torso.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Zapatos">
+            <param name="Local" value="Accesorios.Zapatos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Animaciones">
+          <param name="Local" value="Actores.Animaciones.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="AS">
+            <param name="Local" value="Animaciones.AS.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="SAAnims">
+            <param name="Local" value="Animaciones.SAAnims.html">
+            <param name="ImageNumber" value="1">
+            </OBJECT>
+          <UL>
+            <LI> <OBJECT type="text/sitemap">
+              <param name="Name" value="anims.img">
+              <param name="Local" value="SAAnims.anims.img.html">
+              <param name="ImageNumber" value="11">
+              </OBJECT>
+            <LI> <OBJECT type="text/sitemap">
+              <param name="Name" value="ped.ifp">
+              <param name="Local" value="SAAnims.ped.ifp.html">
+              <param name="ImageNumber" value="11">
+              </OBJECT>
+          </UL>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Huesos">
+          <param name="Local" value="Actores.Huesos.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Objetos">
+            <param name="Local" value="Huesos.Objetos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Particulas">
+            <param name="Local" value="Huesos.Particulas.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Prendas">
+            <param name="Local" value="Huesos.Prendas.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Estilos">
+          <param name="Local" value="Actores.Estilos.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Movimientos">
+            <param name="Local" value="Estilos.Movimientos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Pelea">
+            <param name="Local" value="Estilos.Pelea.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GUI">
+        <param name="Local" value="SA.GUI.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Barras de Edos.">
+          <param name="Local" value="GUI.Barras.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Parpadear Elems.">
+          <param name="Local" value="GUI.Parpadeo.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Visualizar Elems.">
+          <param name="Local" value="GUI.Visualizar.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Iconos del Radar">
+          <param name="Local" value="Marcadores.Iconos.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="IDs">
+            <param name="Local" value="Iconos.IDs.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="E. de Textos GXT">
+          <param name="Local" value="SA.GXT.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Cambiar Color">
+            <param name="Local" value="GXT.Colores.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Cuadros de Inf.">
+            <param name="Local" value="GXT.Cuadros.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="E. Dinamicas">
+            <param name="Local" value="GXT.Dinamicos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Subtitulos">
+            <param name="Local" value="GXT.Subtitulos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Titulos">
+            <param name="Local" value="GXT.Titulos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Internos">
+            <param name="Local" value="GXT.Internos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Marcadores">
+        <param name="Local" value="SA.Marcadores.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Indicadores">
+          <param name="Local" value="Marcadores.Indicadores.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Provocadores">
+          <param name="Local" value="Marcadores.Provocadores.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Resaltadores">
+          <param name="Local" value="Marcadores.Resaltadores.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Personalizar">
+            <param name="Local" value="Resaltadores.Personalizar.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Objetos">
+        <param name="Local" value="SA.Objetos.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Otros">
+        <param name="Local" value="SA.Juego.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Armas">
+          <param name="Local" value="Juego.Armas.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Estadisticas">
+          <param name="Local" value="Juego.Estadisticas.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="IDs Libres">
+          <param name="Local" value="Juego.Identificaciones.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Dirs. Memoria">
+          <param name="Local" value="Juego.Memoria.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Tiempo">
+          <param name="Local" value="Juego.Tiempo.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Variables reservadas">
+          <param name="Local" value="Juego.VariablesReservadas.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Camaras">
+          <param name="Local" value="SA.Camaras.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Modos">
+            <param name="Local" value="Camaras.Modos.html">
+            <param name="ImageNumber" value="1">
+            </OBJECT>
+          <UL>
+            <LI> <OBJECT type="text/sitemap">
+              <param name="Name" value="IDs">
+              <param name="Local" value="Modos.IDs.html">
+              <param name="ImageNumber" value="11">
+              </OBJECT>
+          </UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Vistas">
+            <param name="Local" value="Camaras.Vistas.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Misiones">
+          <param name="Local" value="Juego.Misiones.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Main.scm">
+            <param name="Local" value="Misiones.Mainscm.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Zonas">
+          <param name="Local" value="SA.Zonas.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Garajes">
+            <param name="Local" value="Zonas.Garajes.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Interiores">
+            <param name="Local" value="Zonas.Interiores.html">
+            <param name="ImageNumber" value="1">
+            </OBJECT>
+          <UL>
+            <LI> <OBJECT type="text/sitemap">
+              <param name="Name" value="IDs">
+              <param name="Local" value="Interiores.IDs.html">
+              <param name="ImageNumber" value="11">
+              </OBJECT>
+          </UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Tipos">
+            <param name="Local" value="Zonas.Tipos.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Areas">
+            <param name="Local" value="Zonas.Areas.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Particulas">
+        <param name="Local" value="SA.Particulas.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Adjuntar">
+          <param name="Local" value="Particulas.Adjuntar.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="IDs">
+          <param name="Local" value="Particulas.IDs.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Especiales">
+          <param name="Local" value="Particulas.Especiales.html">
+          <param name="ImageNumber" value="1">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Explociones">
+            <param name="Local" value="Especiales.Explociones.html">
+            <param name="ImageNumber" value="11">
+            </OBJECT>
+        </UL>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Sonidos">
+        <param name="Local" value="SA.Sonidos.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Directorio SFX">
+          <param name="Local" value="Sonidos.DirectorioSFX.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="IDs de audios">
+          <param name="Local" value="Sonidos.IDsDeAudios.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Vehiculos">
+        <param name="Local" value="SA.Vehiculos.html">
+        <param name="ImageNumber" value="1">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Acciones">
+          <param name="Local" value="Vehiculos.Acciones.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Colores">
+          <param name="Local" value="Vehiculos.Colores.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Componentes">
+          <param name="Local" value="Vehiculos.Componentes.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Emisoras">
+          <param name="Local" value="Vehiculos.ER.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Estilo">
+          <param name="Local" value="Vehiculos.Estilos.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Luces">
+          <param name="Local" value="Vehiculos.Luces.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Movibles">
+          <param name="Local" value="Vehiculos.Movibles.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Pasajeros">
+          <param name="Local" value="Vehiculos.Pasajeros.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Puertas">
+          <param name="Local" value="Vehiculos.Puertas.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Tipos de trenes">
+          <param name="Local" value="Vehiculos.TiposDeTrenes.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Prefabricados">
+          <param name="Local" value="Vehiculos.Prefabricados.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+      </UL>
+    </UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="VC">
+      <param name="Local" value="DocumentacionSCM.VC.html">
+      <param name="ImageNumber" value="1">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Emisoras">
+        <param name="Local" value="VC.Emisoras.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+    </UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Opcodes">
+      <param name="Local" value="TodosLosOpcodes.html">
+      <param name="ImageNumber" value="1">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEOPlus">
+        <param name="Local" value="Opcodes.CLEOPlus.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SA PC">
+        <param name="Local" value="TodosLosOpcodes.SA.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SA Movil">
+        <param name="Local" value="TodosLosOpcodes.SAmovil.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SA Movil [+NEW]">
+        <param name="Local" value="TodosLosOpcodes.SAmovilNEW.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SA Movil [+IOS]">
+        <param name="Local" value="TodosLosOpcodes.SAmovilIOS.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SA SCR">
+        <param name="Local" value="TodosLosOpcodes.SAscr.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SAMPFUNCS">
+        <param name="Local" value="Opcodes.SAMPFUNCS.html">
+        <param name="ImageNumber" value="35">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NewOpcodes">
+        <param name="Local" value="Opcodes.newOpcodes.html">
+        <param name="ImageNumber" value="5">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Constantes">
+          <param name="Local" value="newOpcodes.Constantes.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Opcodes">
+          <param name="Local" value="newOpcodes.Opcodes.html">
+          <param name="ImageNumber" value="11">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Ejemplos">
+          <param name="Local" value="newOpcodes.Ejemplos.html">
+          <param name="ImageNumber" value="5">
+          </OBJECT>
+        <UL>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="groovelight">
+            <param name="Local" value="Ejemplos.groovelight.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="strings">
+            <param name="Local" value="Ejemplos.strings.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="sunlight">
+            <param name="Local" value="Ejemplos.sunlight.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="textureload">
+            <param name="Local" value="Ejemplos.textureload.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="txd">
+            <param name="Local" value="Ejemplos.txd.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="vehicle_dummy">
+            <param name="Local" value="Ejemplos.vehicle_dummy.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+          <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="vehicle_materials">
+            <param name="Local" value="Ejemplos.vehicle_materials.html">
+            <param name="ImageNumber" value="35">
+            </OBJECT>
+        </UL>
+      </UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Shader API">
+        <param name="Local" value="Opcodes.ShaderAPI.html">
+        <param name="ImageNumber" value="5">
+        </OBJECT>
+      <UL>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Constantes">
+          <param name="Local" value="ShaderAPI.Constantes.html">
+          <param name="ImageNumber" value="35">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Opcodes">
+          <param name="Local" value="ShaderAPI.Opcodes.html">
+          <param name="ImageNumber" value="35">
+          </OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="Ejemplo">
+          <param name="Local" value="ShaderAPI.Ejemplo.html">
+          <param name="ImageNumber" value="35">
+          </OBJECT>
+      </UL>
+    </UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="SDK de CLEO 4">
+      <param name="Local" value="SDKcleo.html">
+      <param name="ImageNumber" value="1">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_GetFloatOpcodeParam">
+        <param name="Local" value="CLEO_GetFloatOpcodeParam.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_GetGameVersion">
+        <param name="Local" value="CLEO_GetGameVersion.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_GetIntOpcodeParam">
+        <param name="Local" value="CLEO_GetIntOpcodeParam.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_GetOperandType">
+        <param name="Local" value="CLEO_GetOperandType.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_GetVersion">
+        <param name="Local" value="CLEO_GetVersion.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_ReadStringOpcodeParam">
+        <param name="Local" value="CLEO_ReadStringOpcodeParam.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_RecordOpcodeParams">
+        <param name="Local" value="CLEO_RecordOpcodeParams.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_RegisterOpcode">
+        <param name="Local" value="CLEO_RegisterOpcode.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_RetrieveOpcodeParams">
+        <param name="Local" value="CLEO_RetrieveOpcodeParams.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_SetFloatOpcodeParam">
+        <param name="Local" value="CLEO_SetFloatOpcodeParam.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_SetIntOpcodeParam">
+        <param name="Local" value="CLEO_SetIntOpcodeParam.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_SetThreadCondResult">
+        <param name="Local" value="CLEO_SetThreadCondResult.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_SkipOpcodeParams">
+        <param name="Local" value="CLEO_SkipOpcodeParams.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_ThreadJumpAtLabelPtr">
+        <param name="Local" value="CLEO_ThreadJumpAtLabelPtr.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CLEO_WriteStringOpcodeParam">
+        <param name="Local" value="CLEO_WriteStringOpcodeParam.html">
+        <param name="ImageNumber" value="11">
+        </OBJECT>
+    </UL>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Articulos">
+    <param name="Local" value="Articulos.html">
+    <param name="ImageNumber" value="1">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Adaptacion a Android">
+      <param name="Local" value="Articulos.MigrarCLEO.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Formato de Mision">
+      <param name="Local" value="Articulos.CMS.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Grupos de animaciones">
+      <param name="Local" value="Articulos.CGA.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Leer archivos .ini">
+      <param name="Local" value="Articulos.Archivos.ini.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Sintaxis de SB3">
+      <param name="Local" value="Articulos.SintaxisDeSB3.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Tema oscuro de SB3">
+      <param name="Local" value="Articulos.ModoOscuro.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Trucos en SB3">
+      <param name="Local" value="Articulos.CrearTrucosEnSB3.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="CLEO 3: opcodes">
+      <param name="Local" value="Articulos.CLEO3opcodes.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="CLEO 3: libreria">
+      <param name="Local" value="Articulos.CLEO3libreria.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="CLEO 3: scripts">
+      <param name="Local" value="Articulos.CLEO3scripts.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Codificacion de Mision: Parte 1">
+      <param name="Local" value="CodificacionDeMision.Parte1.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Codificacion de Mision: Parte 2">
+      <param name="Local" value="CodificacionDeMision.Parte2.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Plantilla: Menu interactivo">
+      <param name="Local" value="Articulos.MenuInteractivo.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Plantilla: Punto de guardado">
+      <param name="Local" value="Articulos.CrearPuntoDeGuardado.html">
+      <param name="ImageNumber" value="11">
+      </OBJECT>
+  </UL>
+</UL>
+</BODY></HTML>
