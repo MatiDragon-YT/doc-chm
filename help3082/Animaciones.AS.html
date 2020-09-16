@@ -1,0 +1,104 @@
+<!DOCTYPE HTML><HTML lang="es"><HEAD><TITLE>AS</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<TABLE id="myTable">
+<THEAD>
+<TR class="header">
+<TH><INPUT class="w-100" id="myInput" title="Solo Escribe" onkeyup="myFunction()" type="search" placeholder="Buscar..."></TH></TR>
+</THEAD>
+<TBODY>
+<TR><TD><b>0321: AS_actor %1d% die_headshotted</b></TD></TR>
+<TR><TD><b>04EB: AS_actor %1d% crouch %2h%</b></TD></TR>
+<TR><TD><b>05B9: AS_actor %1h% stay_idle %2h% ms</b></TD></TR>
+<TR><TD><b>05BA: AS_actor %1d% move_mouth %2h% ms</b></TD></TR>
+<TR><TD><b>05BB: AS_actor %1h% fall_down %2h% time_on_ground %3d%</b></TD></TR>
+<TR><TD><b>05BC: AS_actor %1h% jump %2h%</b></TD></TR>
+<TR><TD><b>05BD: AS_actor %1d% tired %2d% ms</b></TD></TR>
+<TR><TD><b>05BE: AS_actor %1d% die</b></TD></TR>
+<TR><TD><b>05BF: AS_actor %1d% look_at_actor %2d% %3d% ms</b></TD></TR>
+<TR><TD><b>05C0: AS_actor %1d% look_at_car %2d% %3d% ms</b></TD></TR>
+<TR><TD><b>05C1: AS_actor %1h% speak_from_audio_table %2d%</b></TD></TR>
+<TR><TD><b>05C2: AS_actor %1d% show_the_finger</b></TD></TR>
+<TR><TD><b>05C3: AS_actor %1d% hands_cower</b></TD></TR>
+<TR><TD><b>05C4: AS_actor %1d% hands_up %2d% ms</b></TD></TR>
+<TR><TD><b>05C5: AS_actor %1d% cower %2h% ms</b></TD></TR>
+<TR><TD><b>05C7: AS_actor %1h% use_atm</b></TD></TR>
+<TR><TD><b>05C8: AS_actor %1h% look_around</b></TD></TR>
+<TR><TD><b>05C9: AS_actor %1h% on_guard %2d% ms</b></TD></TR>
+<TR><TD><b>05CA: AS_actor %1d% enter_car %2d% passenger_seat %4h% time %3d%</b></TD></TR>
+<TR><TD><b>05CB: AS_actor %1d% enter_car %2d% as_driver %3d% ms</b></TD></TR>
+<TR><TD><b>05CD: AS_actor %1d% exit_car %2d%</b></TD></TR>
+<TR><TD><b>05CF: AS_actor %1d% exit_car %2d% in_direction %3d% %4d% %5d%</b></TD></TR>
+<TR><TD><b>05D1: AS_actor %1d% drive_car %2d% to %3d% %4d% %5d% speed %6d% %7h% model %8o%  %9h%</b></TD></TR>
+<TR><TD><b>05D2: AS_actor %1d% run_to_and_hijack_car %2d% max_search_radius %3d% traffic_behavior %4h%</b></TD></TR>
+<TR><TD><b>05D3: AS_actor %1h% goto_point %2d% %3d% %4d% mode %5h% time %6d% ms ; versionA</b></TD></TR>
+<TR><TD><b>05D4: AS_actor %1h% rotate_angle %2d%</b></TD></TR>
+<TR><TD><b>05D8: AS_assign_scmpath to_actor %1d% flags %2h% %3h%</b></TD></TR>
+<TR><TD><b>05D9: AS_actor %1d% run_to_actor %2d% timelimit %3d% stop_within_radius %4d%</b></TD></TR>
+<TR><TD><b>05DA: AS_actor %1d% run_away_in_panic_from %2d% %3d% %4d% away_radius %5d% timelimit %6d%</b></TD></TR>
+<TR><TD><b>05DB: AS_actor %1h% flee_from_actor %2d% from_origin_radius %3d% timelimit %4h%</b></TD></TR>
+<TR><TD><b>05DC: AS_actor %1d% run_away_from_point %2d% %3d% %4d% stop_at_radius %5d% timelimit %6d%</b></TD></TR>
+<TR><TD><b>05DD: AS_actor %1d% flee_from_actor %2d% from_origin_radius %3d% timelimit %4d%</b></TD></TR>
+<TR><TD><b>05DE: AS_actor %1d% walk_around_ped_path</b></TD></TR>
+<TR><TD><b>05E2: AS_actor %1d% kill_actor %2d%</b></TD></TR>
+<TR><TD><b>05F5: AS_actor %1d% goto_point_using_paths %2d% %3d% %4d% mode %5h% time %6d%</b></TD></TR>
+<TR><TD><b>0603: AS_actor %1d% goto_point_any_means %2d% %3d% %4d% mode %5h% use_car %6d%</b></TD></TR>
+<TR><TD><b>0622: AS_actor %1d% bail_car %2d%</b></TD></TR>
+<TR><TD><b>0633: AS_actor %1d% exit_car</b></TD></TR>
+<TR><TD><b>0634: AS_actor %1d% attack_using_weapon_actor %2d% flags %3h% perform_actions_after_time %4d% chance_of_action %5h%</b></TD></TR>
+<TR><TD><b>0635: AS_actor %1h% aim_at_actor %2d% %3d% ms</b></TD></TR>
+<TR><TD><b>0637: AS_actor %1h% goto %2d% %3d% %4d% mode %5h% turn_radius %6d% stop_radius %7d% look_at_actor %8d%</b></TD></TR>
+<TR><TD><b>0638: AS_actor %1d% stay_put %2h%</b></TD></TR>
+<TR><TD><b>0639: AS_actor %1d% rotate_to_actor %2d%</b></TD></TR>
+<TR><TD><b>0647: AS_actor %1d% clear_look_task</b></TD></TR>
+<TR><TD><b>0655: AS_actor %1d% look_at_object %2d% %3d% ms</b></TD></TR>
+<TR><TD><b>0667: AS_actor %1h% aim_at %2d% %3d% %4d% %5d% ms</b></TD></TR>
+<TR><TD><b>0668: AS_actor %1d% rotate_and_shoot_at %2d% %3d% %4d% %5d% ms</b></TD></TR>
+<TR><TD><b>0672: AS_actor %1h% attack_car %2d%</b></TD></TR>
+<TR><TD><b>0673: AS_actor %1d% dive_to_offset %2d% %3d% time_on_ground %4d% ms</b></TD></TR>
+<TR><TD><b>0676: AS_actor %1h% in_car %2d% move_from_passengerseat_to_driverseat</b></TD></TR>
+<TR><TD><b>0677: AS_actor %1h% chat_with_actor %2d% lead_speaker_flag %3h% unknown_flag %4h%</b></TD></TR>
+<TR><TD><b>0688: AS_actor %1h% unknown_toggle_ped_threat_scanner %2h% %3h% %4h%</b></TD></TR>
+<TR><TD><b>06A5: AS_actor %1d% jump_forward stay_on_ground %2d% ms and_stands_back</b></TD></TR>
+<TR><TD><b>06A8: AS_actor %1d% run_to_and_look_at_actor %2d% timelimit %3h% approach_distance %4d% approach_angle %5d%</b></TD></TR>
+<TR><TD><b>06A9: AS_actor %1h% look_at_point %2d% %3d% %4d% %5d% ms</b></TD></TR>
+<TR><TD><b>06B0: AS_actor %1d% sit_down %2d% ms</b></TD></TR>
+<TR><TD><b>06BA: AS_actor %1d% turn_to_and_look_at %2d% %3d% %4d%</b></TD></TR>
+<TR><TD><b>06C2: AS_actor %1h% goto %2d% %3d% %4d% mode %5h% turn_radius %6d% stop_radius %7d% actor %8d% with_offset %9d% %10d% %11d%</b></TD></TR>
+<TR><TD><b>06C7: AS_actor %1d% driver_of_car %2d% perform_action %3h% timelimit %4d%</b></TD></TR>
+<TR><TD><b>06E1: AS_actor %1d% using_car %2d% target_car %3d% with_order %4h% max_speed %5d% traffic_flag %6h%</b></TD></TR>
+<TR><TD><b>06E2: AS_actor %1d% run_to_object %2d% timelimit %3h% stop_within_radius %4d%</b></TD></TR>
+<TR><TD><b>06E3: AS_actor %1h% roll_sideways %2h%</b></TD></TR>
+<TR><TD><b>06E4: AS_actor %1d% attempt_to_bust_actor %2d%</b></TD></TR>
+<TR><TD><b>070A: AS_actor %1d% attach_to_object %2d% offset %3d% %4d% %5d% on_bone %6h% %7h% perform_animation %8h% IFP_file %9h% time %10h%</b></TD></TR>
+<TR><TD><b>0729: AS_actor %1d% hold_cellphone %2h%</b></TD></TR>
+<TR><TD><b>074C: AS_actor %1h% goto_AS_origin %2d%</b></TD></TR>
+<TR><TD><b>074D: AS_actor %1h% turns_to_and_look_at_actor %2d% timelimit %3h%</b></TD></TR>
+<TR><TD><b>0751: AS_actor %1d% flee_from_actor %2d% run_distance %3d% time %4d% change_course %5h% unknown %6d% %7d% away_radius %8d%</b></TD></TR>
+<TR><TD><b>0762: AS_actor %1d% dies</b></TD></TR>
+<TR><TD><b>0772: AS_actor %1h% run_to_car %2d% %3d% ms stop_at_distance %4d%</b></TD></TR>
+<TR><TD><b>078F: AS_actor %1h% climb %2h%</b></TD></TR>
+<TR><TD><b>07A3: AS_actor %1d% run_to_and_follow_actor %2d% wait_radius_between %3d% and %4d%</b></TD></TR>
+<TR><TD><b>07A5: AS_actor %1h% attack_actor %2d% time %3d%</b></TD></TR>
+<TR><TD><b>07C9: AS_actor %1h% walk_to_object %2d% then_lift_and_hold_in_hands</b></TD></TR>
+<TR><TD><b>07CD: AS_actor %1d% walk_to %2d% %3d% %4d% stop_with_angle %5d% within_radius %6d%</b></TD></TR>
+<TR><TD><b>07E1: AS_actor %1d% swim_to %2d% %3d% %4d%</b></TD></TR>
+<TR><TD><b>07E7: AS_assign_scmpath_to_actor %1h% in_car %2d% speed %3d% flags %4h% %5h% %6h%</b></TD></TR>
+<TR><TD><b>0804: AS_actor %1d% walk_to %2d% %3d% %4d% angle %5d% radius %6d% animation %7h% IFP_file %8h% %9d% LA %10h% LX %11h% LY %12h% LF %13h% LT %14h%</b></TD></TR>
+<TR><TD><b>0812: AS_actor %1d% perform_animation %2h% IFP %3h% framedelta %4d% loopA %5h% lockX %6h% lockY %7h% lockF %8h% time %9h% ; versionB</b></TD></TR>
+<TR><TD><b>0823: AS_actor %1d% greet_actor %2d% %3d% %4h%</b></TD></TR>
+<TR><TD><b>0850: AS_actor %1d% follow_actor %2d%</b></TD></TR>
+<TR><TD><b>0859: AS_actor %1d% walk_alongisde_actor %2d%</b></TD></TR>
+<TR><TD><b>085B: AS_actor %1h% set_kinda_stay_in_same_place %2h%</b></TD></TR>
+<TR><TD><b>099F: AS_actor %1h% ignore_weapon_range %2h%</b></TD></TR>
+<TR><TD><b>0A1D: AS_actor %1d% rotate_to_and_look_at_actor %2d%</b></TD></TR>
+<TR><TD><b>0A2E: AS_actor %1d% go_to %2d% %3d% %4d% mode %5h% time %6h% stop_radius %7d%  following_paths</b></TD></TR>
+</TBODY></TABLE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

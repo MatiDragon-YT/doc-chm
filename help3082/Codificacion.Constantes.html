@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Constantes</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Una constante es un identificador con un valor predefinido. A diferencia de una variable, el valor de la constante no se puede cambiar en tiempo de ejecución.</P>
+<HR>
+<p>Durante la compilación, el nombre de la constante se reemplaza por el valor asociado a él.</p>    
+<h4>Sintaxis</h4>
+<P>Para definir una nueva constante, usa el constructor <code>CONST..END</code>.</P>
+<PRE class="sb3">
+CONST
+    &lt;nombre de la constante&gt; = &lt;valor de la constante&gt;
+END
+</PRE>
+<P>Un nombre constante es cualquier identificador permitido (una combinación de letras, números y <code>_</code>).
+<div class="dan">
+Hay nombres reservados que no se pueden usar, como <code>Continue</code>, <code>True</code>, <code>And</code>, etc. (consulte <code>compiler.ini</code>).
+</div>
+Los valores constantes pueden ser numéricos(también un identificador de <a href="Codificacion.TiposDeDatos.html#models">modelo</a> o una <a href="Codificacion.TiposDeDatos.html#labels">etiqueta</a>) y cadenas, e incluso contener una expresión.
+identificador   de modelo, una   etiqueta); una cuerda; una expresion   (por   
+ejemplo clase  o   variable); otra   constante.</P>
+<P>Por ejemplo: </P>
+<PRE class="sb3">const
+    MoneyRequired = 30
+    PlayerMoney = $PLAYER_CHAR.Money
+end
+
+if
+    PlayerMoney &gt; MoneyRequired
+then
+    PlayerMoney += -1
+end
+</PRE>
+<P>Durante la compilación, la constante <code>MoneyRequired</code> se sustituye por el número <code>30</code> y <code>PlayerMoney</code> por <code>$PLAYER_CHAR.Money</code>.</p>
+<p>Los <a href="EditorIDE.EditarModos.html">modos</a> de edición pueden cargar constantes desde un archivo externo mediante el parámetro <code>&lt;constants&gt;</code> del archivo <code>games.xml</code>.</p>
+<p>Se muestra una lista de las constantes definidas actualmente después de pulsar <code>Ctrl+Space</code>.</P>
+<hr>
+<h4>Limitaciones</h4>
+<p>Puede utilizar constantes en cualquier lugar excepto en el caso:</p>
+<PRE class="sb3">const
+VarName = $Var1
+IndexName = 25
+end
+
+VarName[IndexName] = 0</PRE>
+<P>Para compilar dicha expresión, debe escribir el código de operación, por ejemplo:</P>
+<PRE class="sb3">0004: VarName[IndexName] = 0<BR></PRE>
+<P>También hay algunas limitaciones con el uso de una expresión como valor constante.</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

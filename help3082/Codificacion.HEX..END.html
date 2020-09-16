@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>HEX..END</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Use esta caracteristica solo si sabe lo que esta haciendo. Cualquier
+ error corrompera el archivo de script haciendolo ilegible por el juego o un editor de scripts.</P><hr>
+<P>Sanny Builder admite escribir un contenido sin formato en un archivo de 
+ salida. Todos los valores dentro de este 
+ constructo estan escritos en un archivo 
+de salida sin ningun control.</P>
+<PRE class=sb3>Sintaxis:<BR>hex
+&lt;cualquier numero hexadecimal&gt;
+end</PRE>
+<P>Ejemplo:</P>
+<PRE class=sb3>hex
+04 00 02 08 00 04 01
+end</PRE>
+<P></P>
+<P>Esta secuencia de bytes es un codigo de operacion compilado <code>0004:<code > $2</code> = <code>1</code></code>, 
+ por lo que el juego lo leera correctamente y 
+ establecera el valor de la variable <code >$2</code> a <code>1</code>. 
+ 
+<P>Debe especificar cada byte que va a escribir 
+ con dos digitos. Todos los 
+ espacios son ignorados. El 
+compilador procesa dos digitos con un 
+ espacio entre ellos como valor de 
+ un solo byte. Un unico 
+digito (0...F) se pega con 0. 
+Entonces, por ejemplo, <code>A 
+ B C</code> se escribe 
+como un numero<code> 
+ 0xAB0C</code>.</P>
+<P>El constructo HEX..END tambien acepta literales de cadena, etiquetas, 
+ identificadores de variables globales, 
+nombres de modelos. Se compilan sin un 
+tipo de datos precedente.</P>
+<P>
+<PRE class=sb3>:get_offset
+hex
+04 00 02 $PLAYER_CHAR 01 @get_offset
+end</PRE>
+<P>Esta es una copia exacta del opcode <code>0004: 
+ <code>$PLAYER_CHAR</code> = <code>@get_offset</code></code></P>
+<P>Los literales de cadena se compilan como una secuencia de caracteres entre 
+ comillas dobles.</P>
+<P>
+<PRE class=sb3>hex
+"Esta es una cadena"
+end</PRE>
+<P></P>
+<P>Las siguientes secuencias de escape son compatibles con una cadena:</P>
+<UL>
+ <LI>\0 - nulo - 0</LI>
+ <LI>\b - retroceso - 8</LI>
+ <LI>\t - tabulacion - 9</LI>
+ <LI>\n - avance de linea - 10</LI>
+ <LI>\r - retorno de carro - 13</LI>
+ <LI>\x&lt;nn&gt; - secuencia de escape numerica- nn</LI>
+ <LI>\&lt;char&gt; - Char de escape- &lt;char&gt;</LI></UL>
+<P>Ejemplo:</P>
+<PRE class=sb3>hex
+"\0\b\t\n\r\xDD"
+end</PRE>
+<P>Produce la siguiente secuencia de bytes: <code>00 
+ 08 09 0A 0D DD</code>. <BR>Actualmente, 
+multiples espacios en un literal 
+ de cadena se convierten en uno 
+solo. Por lo tanto, una linea <code>"Esto&nbsp; &nbsp; 
+es&nbsp;&nbsp;una cadena"</code> se convierte en 
+ <code>"Esto es una 
+ cadena"</code>. Use un caracter de 
+ escape \ para crear multiples 
+espacios en una cadena literal: <code>"Esto\ \ \&nbsp;es \&nbsp;una \ \ \ 
+\&nbsp;cadena"</code>.</P>
+<P>Tambien puede usar el tipo de datos aDMA para escribir una constante 
+ numerica en un archivo de salida. El numero 
+ despues del signo &amp; puede ser positivo 
+o negativo, decimal o hexadimal.</P>
+<P>
+<PRE class=sb3>hex
+&amp;1000 &amp;-0xA33500
+end</PRE> Este ejemplo produce la 
+siguiente secuencia de bytes: <code>E8 
+ 03 00 CB 5C FF</code>.</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+ 
+<SCRIPT src="HL.js"></SCRIPT>
+ </BODY></HTML>

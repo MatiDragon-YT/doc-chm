@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Bucles</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Un bucle es una declaracion que permite que el codigo se ejecute     
+ repetidamente. Sanny Builder admite tres tipos de bucles/ciclo de  
+ control: <A href="#for">for</A>, <A href="#while">while</A> y <A href="#repeat">repeat</A>.</P>
+ <hr>
+<h4 id=for>FOR..END</h4>
+<P>El bucle <code>FOR</code> tiene un número estrictamente determinado de iteraciones (repeticiones).</P>
+<h5>Sintaxis</h5>
+<PRE class="sb3">
+FOR &lt;contadora&gt; = &lt;iniciar&gt; TO/DOWNTO &lt;finalizar&gt; STEP &lt;escalar&gt;
+END
+</PRE>
+<ul>
+<li><code>&lt;contadora&gt;</code> - se utilizada una <a href="Codificacion.Variables.html">variable</a> como contador para las iteraciones</li>
+<li><code>&lt;iniciar&gt;</code> - el valor de la variable del bucle antes de la primera iteración (cualquier valor, incluido el id de modelo)</li>
+<li><code>TO</code> ó <code>DOWNTO</code> - incrementar o disminuir el valor de la variable del bucle entre las iteraciones</li>
+<li><code>&lt;finalizar&gt;</code> - un valor de la variable del bucle después de la última iteración (cualquier valor, incluido el id de modelo)</li>
+<li><code>&lt;escalar&gt;</code> - un valor opcional con el que la variable de bucle aumentará o disminuirá entre iteraciones. Por defecto es igual a <code>1</code></li>
+</ul>
+<PRE class="sb3">
+var
+    $valor: int = 0
+    $final: int = 100
+end
+
+FOR $contador = 1 to $final step 2
+    $valor += $contador
+end
+</PRE>
+<div class=inf>
+Si el <code>contador</code> no se <a href="Codificacion.Variables.html#var">declara</a> con ningún tipo antes del bucle, obtiene el tipo <code>Integer</code>. 
+Si el valor para <code>iniciar</code>, <code>finalizar</code> o <code>escalar</code>, obtienen el mismo tipo que tiene la variable <code>contador</code>. 
+Para utilizar números de punto flotante para los valores inicial y final, declare la variable de bucle con el tipo <code>Float</code>.
+<PRE class="sb3">var
+    $counter : float
+end
+
+for $contador = 1.0 to $final step 2.0
+    wait 0
+end
+</PRE>
+Las variables <code>$contador</code> y <code>$final</code> siguen siendo del tipo <code>Float</code> en el bucle.
+</div>
+<hr>
+<h4 id="while">WHILE..END</h4>
+<h5>Sintaxis</h5>
+<PRE class="sb3">
+WHILE &lt;condicion del bucle&gt;
+    &lt;cuerpo del bucle&gt;
+END
+</PRE>
+<ul>
+<li>&lt;condicion del bucle&gt; - un solo opcode condicional</li>
+<li>&lt;cuerpo del bucle&gt; - comandos para ejecutar en cada iteración; puede omitirse</li>
+</ul>
+<p>
+El bucle <code>WHILE.END</code> funciona mientras la condición del ciclo es verdadera. La condición se evalúa antes de una iteración de bucle. Por tanto, si la condición es falsa, el cuerpo del bucle nunca se ejecuta.
+<PRE class="sb3">$var = 10
+
+while $varA > 11
+    inc($varA)
+end
+</PRE>
+como la condición del bucle es falsa, <code>inc($varA)</code> nunca se ejecuta.
+</p>
+<p>Las <a href="Codificacion.Constantes.html">constantes</a> <code>True</code> y <code>False</code> se pueden utilizar como condición de bucle.</p>
+<PRE class="sb3">while true
+    &lt;cuerpo del bucle&gt;
+end
+</PRE>
+<p>Con <code>True</code> el bucle se ejecuta infinitamente, hasta encuentrar el comando <code>Break</code> para detenerse/salir</p>
+<PRE class="sb3">while false
+    &lt;cuerpo del bucle&gt;
+end
+</PRE>
+<P>Con <code>False</code> el compilador ignora este bucle ya que la condición nunca se cumple.</P>
+
+<div class=inf>
+Actualmente, el compilador acepta solo un opcode en la condición del bucle, pero puede verificar más condiciones antes del cuerpo del bucle y usar los comandos <code>Break</code> y <code>Continue</code>.
+<pre class=sb3>
+while true
+    if and
+        $varB >= 0
+        $varB <= 100
+    then
+        Break
+    end
+    
+    &lt;cuerpo del bucle&gt;
+end
+</pre>
+El bucle se ejecuta mientras <code>$varB</code> esté en el rango [0...100]
+</div>
+<hr>
+<h4 id=break>Break &amp; Continue</h4>
+<P>Si desea omitir la iteración actual y pasar a la siguiente, utilice el comando <code>Continue</code>.</P>
+<P>El comando <code>Break</code> hace que el bucle se detenga de inmediato y proceda a la siguiente orden salida del bucle.</P>
+<div class=inf>Pueden sustituir un parámetro de código de operación (p.ej., <code>jf Continue</code>) o servir como una declaración independiente.
+<PRE class="sb3">while true
+    if
+        not $actorActual.dead
+    jf Break // salir del bucle
+
+    if
+        $actorActual.dead
+    then
+        Continue // ir a la siguiente interacción
+    end
+end
+</PRE>
+</div>
+<hr>
+<h4 id=repeat>REPEAT..UNTIL</h4>
+<h5>Sintaxis</h5>
+<PRE class="sb3">
+REPEAT
+    &lt;cuerpo del bucle&gt;
+UNTIL &lt;condicion del bucle&gt;
+</PRE>
+<ul>
+<li>&lt;cuerpo del bucle&gt; - comandos para ejecutar en cada iteración; puede omitirse.</li>
+<li>&lt;condicion del bucle&gt; - un solo opcode condicional</li>
+</ul>
+<p>El bucle <code>REPEAT..UNTIL</code> se ejecuta hasta que la condición del ciclo devuelve falso. La condición se evalúa después de la iteración, por lo que se garantiza que el ciclo se ejecutará al menos una vez.</p>
+<p>Las <a href="Codificacion.Constantes.html">constantes</a> <code>True</code> y <code>False</code> se pueden utilizar como condición de bucle.</p>
+
+<PRE class="sb3">
+repeat
+    wait 1000
+until true 
+</PRE>
+<p>Con <code>True</code> el bucle tiene una única iteración.</code>       
+<PRE class="sb3">
+repeat
+    wait 1000
+until false
+</PRE>
+<p>Con <code>False</code> el bucle se ejecuta infinitamente, hasta encuentrar el comando <code>Break</code> para detenerse/salir</p>      
+<div class=inf>
+Actualmente, el compilador acepta solo un opcode en la condición del bucle, pero puede verificar más condiciones después del cuerpo del bucle y usar los comandos <code>Break</code> y <code>Continue</code>.
+<pre class=sb3>
+repeat  
+    &lt;cuerpo del bucle&gt;
+     
+    if and
+        $varB >= 0
+        $varB <= 100
+    then
+        Break
+    end
+until false
+</pre>
+El bucle se ejecuta mientras <code>$varB</code> esté en el rango [0...100]
+</div>
+
+</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+    
+<SCRIPT src="HL.js"></SCRIPT>
+    </BODY></HTML>

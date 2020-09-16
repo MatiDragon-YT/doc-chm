@@ -1,0 +1,108 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEO 3: scripts</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>CLEO 3 permite agregar nuevos guiones innecesariamente para 
+comenzar un nuevo juego. Estrictamente hablando, el estado main.scm 
+no tiene importancia para estos scripts ya que los scripts CLEO se 
+ejecutan y funcionan por separado.</P>
+<P>¿Qué da? Puede agregar nuevas secuencias de comandos en cualquier 
+etapa del juego o eliminar una existente. Aún así, no es necesario 
+editar el archivo main.scm, por lo que la necesidad de comenzar un 
+nuevo juego, la incompatibilidad de guardado, los límites de 
+scripts, todos estos problemas desaparecen de inmediato.</P>
+<P>El script CLEO es un script ordinario escrito usando los códigos 
+de operación en Sanny Builder. Cada script debe crearse como un 
+único archivo con una extensión .cs (Custom Script). El requisito 
+dominante de escribir tales scripts es que se deben compilar como 
+scripts externos.</P>
+<P>Hay varias maneras de hacer que un script CLEO pueda funcionar 
+correctamente en el juego. Primero: agrega una nueva secuencia de 
+comandos externa en el archivo de origen, compílelo y luego extraiga 
+la secuencia de comandos del archivo script.img. El archivo extraído 
+tendrá la extensión .scm, por lo que solo tendrá que cambiarlo en 
+.cs y copiar a la carpeta 'juego\CLEO'.<BR><BR>La segunda forma es 
+más fácil. Cree un nuevo archivo en Sanny Builder, escriba la 
+directiva <b class=text-blue>$E</b> al principio y compile. El 
+archivo compilado será el mismo que el extraído del script.img. Solo 
+necesita cambiar su extensión en .cs y copiarla al 'juego\CLEO'.</P>
+<P>Finalmente, el más fácil. Cree un nuevo archivo en Sanny Builder, 
+escriba la directiva <b class=text-blue>$CLEO</b> al comienzo 
+del archivo y compile. El archivo compilado se copiará en el 
+directorio 'juego\CLEO' y tendrá una extensión de archivo 
+especificada por la directiva (.cs por defecto).</P>
+<P>Los scripts CLEO podrían usarse como misiones. El proceso de 
+compilación es el mismo, pero el archivo de salida debe tener la 
+extensión .cm (Misión personalizada). Para comenzar esta misión, use 
+el código de operación 0A94.</P>
+<P>Las reglas que debes seguir usando CLEO 3:</P>
+<OL type=1>
+<LI>Un archivo - un hilo. Cada 
+script CLEO debe realizarse como un solo hilo compilado en un solo 
+archivo. Si necesita más subprocesos para su secuencia de 
+comandos, use los códigos de operación <b 
+class=text-blue>004F</b> o <b class=text-blue>0A92</b>, 
+dependiendo de dónde esté ubicado ese subproceso adicional, en 
+main.scm o en un archivo cs independiente. 
+<LI>Nunca use el código de 
+operación 004E en CLEO-threads. Funcionan por separado de los 
+hilos comunes, por lo que el uso de este código de operación 
+provocará un error. Use el código de operación <b 
+class=text-blue>0A93</b>, si necesita detener un hilo CLEO. Por 
+el contrario, nunca use el código de operación <b 
+class=text-blue>0A93</b> en CLEO-missions, sino que use el 004E 
+para cancelar una misión. 
+<LI>Nunca use variables globales 
+personalizadas en sus CLEO-scripts (<b class=text-blue>$car, 
+$foo, $blahblah, etc</b>.), o su script funcionará 
+incorrectamente. Puede usar solo algunas variables globales (lea a 
+continuación). </LI></OL>
+<P>Para instalar el script CLEO, solo es necesario copiar el archivo 
+con una extensión .cs a la carpeta 'juego\CLEO'. El nombre del 
+archivo no importa, pero se usa en la inicialización del hilo para 
+nombrarlo. Por ejemplo, el subproceso CLEO ubicado en el archivo 
+showsavescreen.cs tiene el nombre SHOWSAV.</P>
+<P>Para eliminar la secuencia de comandos, simplemente elimine el 
+archivo correcto del directorio CLEO.</P>
+<P>El estado del hilo CLEO puede guardarse y cargarse junto con los 
+hilos comunes. No se guarda por defecto. Los propios guardados se 
+encuentran en la carpeta CLEO\cleo_saves. Es un guardado propio para 
+cada ranura guardada. El archivo guardado solo almacena los hilos 
+CLEO que tienen activada la marca de salvar (código de operación 
+0A95). El archivo guardado almacena no solo los hilos activos, sino 
+también los que se ven obligados a finalizar (código de operación 
+0A93), para evitar que se vuelvan a ejecutar al cargar. Si al cargar 
+uno de los hilos guardados no se encuentra, no hay error. Si agrega 
+una nueva secuencia de comandos que no está presente en el archivo 
+de guardar actual, se cargará junto con las otras y funcionará desde 
+el principio.</P>
+<P>El hilo CLEO es el hilo común en general. Tiene 32 variables 
+locales y 2 temporizadores incrementándose constantemente. Puede 
+pasar hasta 34 parámetros en la creación de ese hilo o una misión 
+CLEO (por analogía con el código de operación 004F).</P>
+<P>Una cosa importante se refiere a la comunicación de datos entre 
+un script CLEO y main.scm. Para usar el código SCM, sus variables, 
+hilos, debe compilar el script CLEO como uno externo (primera 
+manera). Pero este método no es recomendable, ya que una secuencia 
+de comandos se vuelve muy sensible al cambio main.scm. 
+Implícitamente, un script CLEO debería ser suficiente para sí mismo 
+y usar un mínimo de datos SCM. Sin embargo, puede usar libremente 
+nombres de variables globales de CustomVaribles.ini (por ejemplo, 
+<b class=text-blue>$PLAYER_CHAR, $PLAYER_ACTOR, $ONMISSION, 
+etc</b>.).<BR>Además, para la comunicación de datos entre 
+main.scm y CLEO, o entre los scripts CLEO, puede usar las variables 
+CLEO (consulte los códigos de operación <b class=text-blue>0AB3, 
+0AB4</b>).</P>
+<P>El conjunto completo de CLEO incluye ejemplos de scripts simples 
+con 
+fuentes.</P>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</DIV></DIV></DIV></BODY></HTML>

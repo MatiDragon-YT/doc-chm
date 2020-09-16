@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Creación</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row"> 
+<div class="col-12">
+<H4>Pedestres y Especiales</H4>
+<h5>1. Cargamos el modelo que usaremos</h5>
+<p>Si es un personaje común del mundo, usas el opcode <code>0247</code> de la siguiente forma</p>
+<PRE class="sb3">0247: request_model #FAM1</PRE>
+<p>donde <code>#FAM1</code> es el nombre del archivo <code>.dff</code>, aunque también puedes escribir su id en números enteros o en <a href="Codificacion.TiposDeDatos.html#hex">hexadecimales</a>.
+<div class=dan>El <a href="Codificacion.TiposDeDatos.html#models">modelo</a> debe estar registrado en el archivo <code>peds.ide</code> para que sea valido, de lo contrario el juego se cerrara</div>
+</p>
+<p>Y si es un personaje que aparece en misiones o cinematicas, usas el opcode <code>023C</code></p>
+<PRE class="sb3">023C: request_special_actor 'TENPEN' as 1</PRE>
+<h6>Parametros</h6>
+<UL>
+  <LI><code>'TENPEN'</code> - ID perteneciente al modelo del actor especial Tenpeny.</LI>
+  <LI><code>1</code> - un espacio del 1 al 10, representada como una casilla donde se guarda el modelo del actor cargado.</LI>
+</UL>
+<div class=dan>Los actores especiales se los llama unicamente con una <a href=Codificacion.TiposDeDatos.html#strings>cadena literaria</a></div>
+<h5>2. Comprovamos sí cargo el modelo (opcional)</h5>
+<p>Si quieres evitar la mayor cantidad de cierres del juego, dentro de una condición <code>IF</code> podras saber si el modelo ya esta cargado/disponible para su uso con el opcode <code>0248</code> en caso de que sea un objeto comun(autos, personas y estructuras), pero si es un actor especial deberas de hacer la comprobacion con <code>023D</code>.</p>
+<PRE class="sb3">
+if or
+    0248: model #FAM1 available
+    023D: special_actor 1 loaded
+then
+    wait 1000
+end
+</PRE>
+<div class=dan>si el actor es especial, escribe la casilla en la que decidiste almacenarlo</div>
+<h5>3. Creamos el actor con el modelo cargado</h5>
+<P>Hay muchos opcodes para crear un actor, aunque en este caso nos enfocaremos en el <code>009A</code> para no mesclarnos con otras cosas</P>
+<PRE class="sb3">009A: $actor01 = create_actor_pedtype 5 model #FAM1 at 517.31 123.45 17.54</PRE> 
+<PRE class="sb3">009A: $actor01 = create_actor 23 #SPECIAL01 at 517.31 123.45 17.54</PRE>
+<P>Como puedes apreciar, no son del todo iguales, aunque para el compilador SI lo son.</P>
+<h6>Parametros</h6>
+<UL>
+  <LI><code>$actor01</code> - variable de <a href="Codificacion.Variables.html">local o global</a> para guardar y manipular al actor</LI>
+  <LI><code>5</code> - ID del <a href="Actores.Tipos.html">tipo de personaje</a>. Los especiales, llevan si o si el <code>23</code></LI>
+  <LI><code>#FAM1</code> - ID o <a href="Codificacion.TiposDeDatos.html#models">nombre del modelo</a>. Los especiales se los escribe con <code>#SPECIAL</code> + <code>número de casilla</code></LI>
+  <LI><code>517.31 123.45 17.54</code> - Referencia a las coordenadas X, Y y Z, para la creación</LI>
+</UL>
+<hr>
+<H4>Aletorios</H4>
+<h5>NO requieren que cargues nada</h5>
+<P>Estos son los mismos peds que crea el juego por todo el mapa.<BR>Dependiendo de donde estes, se creara uno ú otro con el opcode <code>0376</code></P>
+<PRE class="sb3">0376: $actor01 = create_random_actor_at 517.31 123.45 17.54</PRE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

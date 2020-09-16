@@ -1,0 +1,82 @@
+<!DOCTYPE><HTML><HEAD><TITLE>Particulas</TITLE>
+<META content="IE=edge" http-equiv="X-UA-Compatible">
+<META name="viewport" content="width=device-width, initial-scale=1"><LINK rel="stylesheet" 
+type="text/css" href="bootstrap.css"></HEAD>
+<BODY> 
+<header></header>
+<DIV class="container-fluid">
+<DIV class="row">
+<DIV class="col-12">
+<STYLE>
+td:nth-child(2){
+ color: #F44336;
+ font-weight: bolder!important; 
+}
+</STYLE>
+<P>Para adjuntar o anclar una particula a un actor, usas: <PRE id=sb3>0883: attach_particle $particle00 to_actor $actor00 mode 5</PRE> 
+ Y cambias&nbsp;la    ubicacion&nbsp;a tu  gusto con esta lista de          
+identificadores: <BR>
+<P></P>
+<TABLE id="myTable" class="table">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT style="width: 100%;" id="myInput" title="Solo Escribe" onkeyup="myFunction()" 
+      type="search" placeholder="Buscar..."></TH>
+    <TH>ID</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>Cuerpo</TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Cadera</TD>
+    <TD>1</TD></TR>
+  <TR>
+    <TD>Estomago</TD>
+    <TD>2</TD></TR>
+  <TR>
+    <TD>Cofre</TD>
+    <TD>3</TD></TR>
+  <TR>
+    <TD>Cuello</TD>
+    <TD>4</TD></TR>
+  <TR>
+    <TD>Boca</TD>
+    <TD>5</TD></TR>
+  <TR>
+    <TD>Frente</TD>
+    <TD>6</TD></TR>
+  <TR>
+    <TD>Cabeza</TD>
+    <TD>7</TD></TR>
+  <TR>
+    <TD>Nuca</TD>
+    <TD>8</TD></TR>
+  <TR>
+    <TD>La particula no es visible</TD>
+    <TD>9&gt;</TD></TR></TBODY></TABLE><BR>Puede colocar    particulas en otros  
+lugares    de un esqueleto, como en un rodilla con ayuda de   un <A href="Actores.Objetos.html">objeto</A> 
+ anclado a un    hueso.</DIV></DIV></DIV>
+<SCRIPT>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</SCRIPT> 
+<SCRIPT src="HL.js"></script> 
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="Az.js"></SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Consola</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>La consola tiene la intencion de cambiar las opciones avanzadas  de Sanny  
+Builder. En su mayoria se relacionan con las  caracteristicas del descompilador  
+y puede ver los cambios al  descompilar un archivo. La ventana de la consola se  
+invoca  presionando Ctrl + ~. Puede escribir los comandos y los parametros  en  
+la linea de edicion. Despues de escribir un comando, presione  Enter para  
+procesar. La consola mostrara un resultado.</P>
+<P>Todos los comandos no distinguen entre mayusculas y  minusculas.</P>
+<P>Los comandos disponibles son:<BR>
+<H5>help</H5> muestra  la informacion de  ayuda sobre la consola 
+<P></P>
+<HR>
+
+<P>
+<H5>clear</H5>borra la consola  
+<P></P>
+<HR>
+
+<P>
+<H5>list</H5>muestra en la consola la lista de todos  los comandos  
+<P></P>
+<P>El parametro (opcional):<BR><BR>lista   
+<H5>options </H5><EM>despues de las opciones de la lista de entrada, la  consola 
+ mostrara todas las opciones posibles para alternar</EM><EM>.  </EM> 
+<P></P>
+<HR>
+
+<P>
+<H5>toggle</H5>el comando principal para habilitar o  deshabilitar las opciones  
+del programa  
+<P></P>
+<P>El parametro: <BR><BR>alternar   
+<H5>&lt;nombre de opcion&gt;  [on/off] </H5><BR><B>La lista</B> <B>de  
+ opciones</B> puede ser diferente en otra version. Para obtener  todas las  
+opciones posibles, escriba opciones de lista. <BR><BR>La  linea de comando 
+ puede  finalizar con la palabra <B>ON</B> (la opcion se habilitara) o la 
+palabra   <B>OFF</B> (la  opcion se desactivara), o nada (la opcion se cambiara 
+de  ENCENDIDO a  APAGADO o de APAGADO a ENCENDIDO)..  
+<P></P>
+<P><B>Nota: En primer lugar, el modo de depuracion deberia estar  habilitado con 
+ el comando alternar debug_mode</B></P>
+<H5>toggle CODE_OFFSETS</H5>
+<P>el decompilador imprimirá las compensaciones de cada código de operación    
+</P>         
+<HR>
+<H5>
+toggle VAR_COUNTER</H5> después de compilar, la consola contendrá la lista de  
+las variables globales utilizadas una vez en el código. Es muy útil buscar las  
+variables inútiles. 
+<HR>   
+<H5>
+toggle IGNORE_UNKNOWN</H5>  hace que el decompilador funcione de manera  
+avanzada, ignorando códigos de operación faltantes, parámetros incorrectos, 
+ etc.  Puede ayudarte. Permite descompilar casi todos los archivos para 
+descifrar  los  archivos protegidos (o los archivos que se compilaron 
+incorrectamente). 
+<HR>   
+<H5 id=constant_indexes>toggle CONSTANT_INDEXES</H5> permite descompilar las matrices con el índice de  
+número constante, si es posible. Está disponible para San Andreas (habilitado  
+por defecto), LCS, VCS. Por ejemplo,   antes despues   $10 $10[0]  $11 $10[1]   
+$12 $10[2]
+<HR>   
+<H5>
+toggle SKIP_SCM_HEADER</H5> Hace que el descompilador omita el encabezado scm  
+durante el procesamiento. Permite descompilar las scms externas del script.img  
+por separado. También hace que el compilador no compile el encabezado scm. <A 
+name="DEBUG"></A> 
+<P>El uso del parametro \debug es una forma alternativa de cambiar  las opciones 
+ avanzadas de Sanny Builder. Ejecute Sanny con el  parametro \debug=X, donde X 
+ es  una secuencia de caracteres '0' y '1'  (sin comillas). Los caracteres 
+ significan  que opcion de depuracion  esta habilitada/deshabilitada.</P>
+<P>Ejemplo: \debug=11000</P>
+<P>El primer digito 1 habilitara la opcion "code_offsets", el  segundo digito  
+habilitara el modo "ignore_unknown". Los digitos del  0 deshabilitaran todas 
+ las  opciones restantes.</P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV><B>#</B></DIV></TD>
+    <TD>
+      <DIV><B>Opcion Sanny       Builder</B> </DIV></TD>
+    <TD>
+      <DIV><B>#</B></DIV></TD>
+    <TD>
+      <DIV><B>Opcion Sanny       Builder </B></DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV>1</DIV></TD>
+    <TD>   toggle code       offsets</TD>
+    <TD>
+      <DIV>16</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>2</DIV></TD>
+    <TD>   toggle       ignore_unknown</TD>
+    <TD>
+      <DIV>17</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>3</DIV></TD>
+    <TD>   toggle       var_counter</TD>
+    <TD>
+      <DIV>18</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>4</DIV></TD>
+    <TD>   toggle       constant_indexes</TD>
+    <TD>
+      <DIV>19</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>5</DIV></TD>
+    <TD>   toggle skip_scm_header      </TD>
+    <TD>
+      <DIV>20</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>6</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>22</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>7</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>23</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>8</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>24</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>9</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>25</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>10</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>26</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>11</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>27</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>12</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>28</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>13</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>29</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>14</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>30</DIV></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>
+      <DIV>15</DIV></TD>
+    <TD></TD>
+    <TD>
+      <DIV>31</DIV></TD>
+    <TD></TD></TR></TBODY></TABLE></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+     
+<SCRIPT src="HL.js"></SCRIPT>
+  </DIV></BODY></HTML>

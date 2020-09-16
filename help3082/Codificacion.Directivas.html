@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Directivas</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Las directivas de preprocesamiento son las palabras especiales que hacen 
+ que el compilador funcione 
+de diferentes maneras. Se denotan con el 
+ simbolo $ y se ubican entre corchetes 
+ {}.</P><hr>
+<P>Lista de directivas disponibles:</P>
+<ul>
+ <LI><A href="#VERSION">$VERSION</A></LI>
+ <LI><A href="#RESTORE_VERSION">$VERSION_RESTORE</A></LI>
+ <LI><A href="#INCLUDE">$INCLUDE / 
+ $I</A></LI>
+ <LI><A href="#EXTERNAL">$EXTERNAL / 
+ $O</A></LI>
+ <LI><A href="#CLEO">$CLEO</A></LI>
+ <LI><A href="#NOSOURCE">$NOSOURCE</A></LI>
+ <LI><A href="#OPCODE">$OPCODE / 
+ $O</A></LI></ul>
+<h4><A name="VERSION"></A>$VERSION</h4>
+<P>Esta directiva esta en desuso desde 
+ v3.1.0<BR>Esta directiva establece que 
+ version de codigos de operacion se debe 
+ utilizar durante la compilacion. 
+ 
+<PRE>Sintaxis:<BR>$VERSION x.y.zzzz<BR><BR>x - editar modo ID<BR>y - orden de parametros.<BR> 0 - original, numerico<BR> 1 - orden personalizado<BR>zzzz - version de codigos de operacion </PRE>
+<P></P>
+<P>Por defecto, el compilador usa la vercion&nbsp;del modo de edicion 
+ actual.1.0000.</P>
+<h4><A name="RESTORE_VERSION"></A>$VERSION_RESTORE</h4>
+<P>Esta directiva esta en desuso desde v3.1.0<BR>Esta directiva establece la 
+ version a su valor anterior antes de usar 
+ $VERSION.</P>
+<h4><A name="INCLUDE"></A>$INCLUDE</h4>
+<P>Esta directiva permite insertar el contenido de un archivo de texto externo 
+ en el archivo actual. Si 
+el compilador encuentra esta directiva, 
+ abre el archivo por la ruta que pasa 
+como parametro de la directiva y 
+continua el proceso de compilacion desde el 
+ codigo escrito en el archivo incluido. 
+ Cuando llega al final del archivo, 
+vuelve al archivo anterior.</P>
+<PRE>Sintaxis:<BR><FONT class="blue-text accent-2">{$INCLUDE file path}</FONT>
+o
+<FONT class="blue-text accent-2">{$I file path}</FONT></PRE>
+<P>Ejemplo: <code>{$I loadwav.txt}</code> o <code>{$I C:\dev\getarrayindex.txt}</code></P>
+<P>Si la ruta del archivo es relativa, el compilador busca el archivo en el 
+ siguiente orden:</P>
+<OL>
+ <LI>1.directorio del archivo con la directiva*</LI>
+ <LI>Sanny Builder\data\&lt;juego&gt;</LI>
+ <LI>Sanny Builder&nbsp;directorio raiz</LI>
+ <LI>directorio del juego</LI></OL>
+<P>Si ninguno de estos directorios contiene un archivo necesario, el 
+ compilador arroja una excepcion. 
+Puede usar esta directiva un numero 
+ ilimitado de veces. Los archivos incluidos 
+ pueden contener esta directiva 
+tambien. <BR>* Todas 
+las rutas utilizadas en la directiva 
+ $INCLUDE son 
+ relativas al directorio de un 
+ archivo actualmente 
+ procesado. 
+<h4><A name="EXTERNAL"></A>$EXTERNAL</h4>
+<P>Esta directiva hace que el compilador procese el archivo como un script 
+ externo. Es decir, el archivo 
+ de salida no tendra encabezado y con 
+ desviaciones de etiqueta locales, por 
+lo que sera el mismo que el archivo 
+ .scm del script.img. El uso de esta 
+directiva requiere que el archivo 
+contenga solo un hilo (tambien sin misiones y 
+otros scripts).</P>
+<P>La forma alternativa de obtener dicho archivo es una opcion de depuracion 
+<code>SKIP_SCM_HEADER</code>. Esta opcion 
+ podria habilitarse en la consola o desde 
+ la lista en el panel principal.</P>
+<PRE>Sintaxis:<BR><FONT class="blue-text accent-2">{$EXTERNAL}</FONT>
+o
+<FONT class="blue-text accent-2">{$E}</FONT></PRE>
+<h4><A name="CLEO"></A>$CLEO</h4>
+<P>Esta directiva es un analogo del $E one, pero el archivo de salida se copia 
+ automaticamente en el 
+ directorio 'juego\CLEO'. Tambien obtiene la 
+ extension de archivo especificada 
+como un parametro de directiva.</P>
+<PRE>Sintaxis:
+<FONT class="blue-text accent-2">{$CLEO &lt;extension de archivo&gt;}</FONT></PRE><EM>La 
+ extension de archivo es un 
+ parametro 
+ opcional. Si no hay una extension 
+ presente, el compilador 
+ usa un valor 
+ predeterminado .cs</EM> 
+<P>Ejemplo: <code>{$CLEO}</code><BR> 
+ un archivo obtendra la 
+extension predeterminada .cs</P>
+<P>Entonces esta directiva es la solucion perfecta para compilar un CLEO 
+ script</P>
+<h4><A name="NOSOURCE"></A>$NOSOURCE</h4>
+<P>Esta directiva prohibe al compilador incluir un codigo fuente del script. 
+ De forma predeterminada, 
+cuando se habilita la opcion Agregar 
+ informacion extra a SCM, Sanny Builder 
+agrega un codigo fuente a un archivo de 
+ script (solo cuando esta presente la 
+directiva 
+<STRONG>$EXTERNAL</STRONG> o <STRONG>$CLEO</STRONG>). Esta 
+directiva cambia el comportamiento 
+ predeterminado del compilador, no 
+permitiendo incluir el codigo fuente en un 
+archivo de salida.</P>
+<PRE>Sintaxis:
+<FONT class="blue-text accent-2">{$NOSOURCE}</FONT></PRE>
+<h4><A name="OPCODE"></A>$OPCODE</h4>
+<P>Esta directiva permite registrar un codigo de operacion personalizado 
+ directamente a traves del 
+script. Comunmente, todas las definiciones 
+ de los opcodes estan contenidas en un 
+ archivo especial, uno para cada juego 
+ compatible. Pero a veces es necesario 
+agregar un codigo de operacion 
+personalizado para el guion actual. La 
+directiva $OPCODE lo hace posible sin 
+ editar un archivo INCO de codigos de 
+operacion.</P>
+<PRE>Sintaxis:
+<FONT class="blue-text accent-2">{$OPCODE &lt;definicion del opcode&gt;}</FONT>
+o
+<FONT class="blue-text accent-2">{$OPCODE &lt;nombre del archivo}</FONT>
+o
+<FONT class="blue-text accent-2">{$OPCODE}</FONT></PRE>Acepta 
+ una definicion de codigo 
+ de operacion con la misma sintaxis que el 
+ archivo INI. 
+ 
+<P></P>
+<P>Ejemplo:<code>{$OPCODE 0CCC=1,my_new_opcode %1d%}</code></P>
+<P>Esta directiva tambien acepta un nombre de archivo como su parametro. Este 
+ archivo debe contener solo 
+ las definiciones de los opcodes que se 
+ cargaran. Si no se especifica ninguna 
+ ruta global para el archivo, el 
+compilador la busca usando las mismas reglas 
+que para <code>$INCLUDE</code>.</P>
+<P>Ejemplo: <code>{$OPCODE additional_opcodes.ini}</code></P>
+<P>Cuando se utiliza sin ningun parametro, esta directiva vuelve a cargar el 
+ archivo de definiciones de 
+ los codigos de operacion originales, por 
+ lo que todos los cambios realizados 
+por el uso anterior de esta directiva 
+ han desaparecido.</P>
+<P>Ejemplo:<code>{$OPCODE}</code></P> 
+La breve variante de esta directiva es 
+ 
+ <code>$O.</code>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+ </BODY></HTML>

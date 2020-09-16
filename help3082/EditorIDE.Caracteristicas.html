@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Caracteristicas</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Sanny Builder otorga al usuario final las siguientes posibilidades</P>
+<hr><h5>Resaltado de sintaxis</h5>
+<P>Sanny Builder resalta un codigo para facilitar la comprension. El esquema de  
+ color de resaltado es modificable <A href="Opciones.Resaltador.html">mediante  
+las   opciones</A>.</P>
+<h5>Marcadores / Salto rapido</h5>
+<P>Puede marcar la linea presionando <B>Ctrl</B>+<B>Shift</B>+<B>0..9</B> y 
+ luego pasar a este presionando <B>Ctrl</B>+<B>0..9</B>. Para eliminar 
+ todos   los marcadores, use la opcion Editar -&gt; Borrar todos los marcadores. 
+ El    segundo metodo es a  traves de una opcion 'Ir a linea' invocada 
+ presionando    <B>Ctrl</B>+<B>G</B>.  Ingrese un numero de   secuencia de la 
+ linea necesaria y  el editor movera el  cursor hacia el.</P>
+<h5>Busqueda instantanea</h5>
+<P>La funcion InstaSearch permite encontrar una palabra o una etiqueta    
+directamente en el editor sin usar el cuadro de dialogo Buscar.</P>
+<P>Para encontrar otra aparicion de una palabra debajo del cursor,    
+presione <B>Ctrl</B> + <B>Num6</B> para  comenzar a buscarlo a  
+ continuacion en un codigo, o <B>Ctrl</B> + <B>Num4</B> buscar  arriba. El  
+cursor  se movera  inmediatamente a la linea donde se encuentra dicha  palabra.  
+Sigue  presionando   <B>Ctrl</B> + <B>Num4</B>/<B>Num6</B> para encontrar otras  
+ ocurrencias de esta palabra.</P>
+<P>Para saltar a la linea con una etiqueta (por ejemplo: MyLabel), coloque el    
+cursor sobre una referencia de etiqueta (@MyLabel) y presione <B>Ctrl</B> +   
+<B>Num2</B>. El editor movera el   cursor a la linea con  esta etiqueta.</P>
+<P>Si la posicion del cursor sigue siendo la misma, significa que InstaSearch no 
+ encontro la palabra necesaria en un codigo.</P>
+<P>Antes de cambiar la posicion del cursor, InstaSearch recuerda donde esta    
+ahora, por lo que si desea regresar, presione <B>Ctrl</B> +    <B>Num8</B>.</P>
+<h5>Visualizacion de diversa informacion sobre Opcode</h5>
+<P>SB muestra una serie de parametros para el codigo de operacion, un valor    
+digital del modelo debajo del cursor en la barra de estado cuando la opcion    
+Mostrar informacion del <A href="Opciones.Editor.html">codigo de operacion</A> 
+esta    habilitada.</P>
+<h5>Conversor de codigo fuente de SA Mission Builder</h5>
+<P>Sanny admite la sintaxis de SAMB 0.33. Para usar el convertidor, abra el    
+archivo fuente en Sanny Builder y seleccione el elemento del menu:   
+ 'Herramientas -&gt; Conversor de codigo -&gt; MB -&gt; SB'. Tenga en cuenta que 
+  el convertidor  utiliza el archivo 'MB.ini' del directorio SB que contiene las 
+  variables  utilizadas por SAMB y sus direcciones de memoria. Si agrego sus   
+ propias  variables en el archivo variables.ini (del SAMB 0.33), copielas en el  
+  archivo  MB.ini.</P>
+<h5>Busqueda de codigo de operacion</h5>
+<P>Use una herramienta integrada de <A href="opcode_search.htm">busqueda de   
+ codigo</A> para encontrar el codigo de operacion que necesita.</P>
+<h5>Gestion de Coordinaciones del Jugador</h5>
+<P>Presione F4 cuando se esta ejecutando SA y aparecera la ventana Administrador 
+ de Coords. Aqui puede establecer nuevos coords de jugadores y copiar los   
+ actuales. En la linea de edicion superior, puede ingresar las tres coordenadas  
+  XYZ, delimitadas por un solo espacio o ",". Ademas, puede insertar coords   
+ actuales de CJ en el texto presionando     <B>Ctrl</B>+<B>Shift</B>+<B>C</B>.  
+Para insertar el angulo del  jugador, presione    
+<B>Ctrl</B>+<B>Shift</B>+<B>E</B>.</P>
+<h5>Macros Support</h5>
+<P>Una macro es el grupo de lineas que se insertan en el editor cuando se   
+ escribe un nombre de macro (por ejemplo, cargar) y se presiona el <B>F2</B> 
+boton. El editor agregara la siguiente parte del codigo:</P>
+<PRE class="sb3">
+#.Load
+
+while not #.Available<BR>
+  wait 0<BR>
+end
+</PRE>
+<P>Todas las macros estan contenidas en el archivo 'macroes.txt'.   La sintaxis  
+de este archivo es la siguiente:<BR>Un nombre de macro se escribe   como una  
+sola linea. El signo igual (=) debe seguir el nombre del macro.  Despues  del  
+signo igual, tambien puede escribir una breve descripcion de la  macro. Las   
+lineas de codigo de macro siguen su nombre, cada linea comienza con  el signo 
+ de  igual. La posicion del cursor esta marcada con | personaje</P>
+<P>Ademas, es posible agregar una macro en el archivo macroes.txt directamente   
+ desde el editor. Para este proposito, seleccione una parte del codigo y haga   
+ clic en el menu "Servicio -&gt; Agregar macros". Escriba el nombre de una nueva 
+  macro, la descripcion (opcionalmente) en la ventana de dialogo y presione el   
+ boton OK. La macro esta lista para ser utilizada.</P>
+<P>Para llamar a la lista de macros, presione <B>Ctrl</B>+<B>J</B>.</P>
+<P>Tambien puede grabar su secuencia de presionar la tecla (macros) y   
+ reproducirla mas tarde. Considera el siguiente codigo:</P>
+<PRE class="sb3">$Actor = Actor.Create(CivMale, #MALE01, 100.0, 100.0, 10.0)
+$ActorWithGun = Actor.Create(CivMale, #MALE01, 110.0, 100.0, 20.0)
+$Gang01 = Actor.Create(CivMale, #MALE01, 120.0, 100.0, 30.0)
+$Gang02 = Actor.Create(CivMale, #MALE01, 130.0, 100.0, 40.0)
+$Killer = Actor.Create(CivMale, #MALE01, 140.0, 100.0, 50.0)
+$ActorWithoutGun = Actor.Create(CivMale, #MALE01, 150.0, 100.0, 60.0) </PRE>
+<P>Supongamos que necesita intercambiar las asas del actor en cada par (es   
+ decir, <FONT class="text-blue">$ActorWithGun</FONT> en lugar de<FONT class="text-blue"> 
+$Actor</FONT>, y viceversa).</P>
+<P>Coloque el cursor en la primera linea y presione <B>Ctrl</B>+<B>M</B>. El  
+editor comienza  inmediatamente a registrar  todas las pulsaciones de teclas,  
+asi que ten  cuidado!</P>
+<P>- presione y mantenga <B>Ctrl</B> y presione una vez <B>&#8594;  </B><BR> - Ahora  
+presiona <B>Shift</B>+<B>Home</B> y  <B>Ctrl</B>+<B>Ins</B>.<BR> - 
+ Presione  <B> &#8595;  </B>.  El  cursor debe estar en la segunda linea con 
+ la  variable global en el   portapapeles<BR> - Presione <B>Ctrl</B> + <B>&#8594;     
+</B> y  <B>Shift</B>+<B>Ins</B>.<BR> - Presione <B>Ctrl</B> +   <B>&#8592;</B>,   
+<B>Shift</B>+<B>Home</B>, <B>Ctrl</B>+<B>Ins</B> y <B>Delete</B><BR> -  
+Presione <B> &#8593;    </B><BR> - Presione  <B>Ctrl</B> + <B>Shift</B> +   
+<B>&#8594; </B> y  <B>Shift</B>+<B>Ins</B><BR> - Presione <B>Home</B> se ira a  
+ arriba.</P>
+<P>Ahora las primeras dos lineas se ven asi:</P>
+<PRE class="sb3">$ActorWithGun = Actor.Create(CivMale, 100.0, 100.0, 10.0)
+$Actor = Actor.Create(CivMale, 110.0, 100.0, 20.0)</PRE>
+<P>y el cursor esta en el comienzo de la primera linea. Ahora presiona   
+<B>Ctrl</B>+<B>M</B> dejar de grabar.</P>
+<P>Ahora puede repetir las pulsaciones de teclas grabadas presionando   
+<B>Ctrl</B>+<B>P</B>.  Coloque el cursor en la  tercera linea, presione   
+<B>Ctrl</B>+<B>P</B> y los manejadores de actores seran intercambiados.</P>
+<P>Mientras procesa, puede pausar / reanudar la grabacion presionando   
+<B>Ctrl</B>+<B>P</B>.</P>
+<h5>Mientras procesa, puede pausar / reanudar la grabacion presionando</h5>
+<P>Sanny Builder permite usar un nombre de mision en el codigo de operacion   
+ 'start_mission'. El nombre de la mision es la etiqueta definida con un comando  
+  DEFINE MISSION. Por ejemplo, tienes:</P>
+<PRE class="sb3">DEFINE MISSION 10 AT @MYMISSION</PRE>
+<P>En lugar de <B>start_mission</B> <B class="text-red">10</B> puedes usar   
+<B>start_mission</B> MYMISSION.</P>
+<P>Tambien esta la opcion <A href="O_101.htm#mission">Reemplazar numeros de   
+ misiones</A>. Cuando esta habilitado, el descompilador reemplaza   
+automaticamente  todos los numeros de mision con sus nombres.</P>
+<P>Para llamar a la lista de nombres de mision, presione   
+<B>Ctrl</B>+<B>Space</B>. El cursor debe estar  directamente despues  del  
+comando start_mission.</P>
+<P>Ademas, puede usar <A href="#jumpLabel">InstaSearch</A> para saltar a la 
+ mision desde su nombre.</P>
+<h5>Nombres de misiones personalizados</h5>
+<P>Dado que v3.2.0 Sanny admite nombres de mision personalizados para cada <A 
+href="edit_modes.htm">modo de edicion disponible</A>. Los nombres de las   
+ misiones se almacenan comunmente en un archivo missions.txt ubicado en una   
+ carpeta de data\&lt;juego&gt;. El descompilador usa este archivo para comentar  
+  cada entrada de mision con su titulo. Si un archivo main.scm contiene algunas  
+  misiones personalizadas, puede editar este archivo para tener los titulos   
+adecuados despues de la descompilacion.</P>
+<h5>Interfaz multilingüe</h5>
+<P>Sanny Builder tiene una interfaz totalmente multilingüe traducida a 15   
+ idiomas. Puede cambiar los idiomas en las opciones (<B>F10</B>). El  archivo  
+'lang\Como traducir.txt' contiene mas  informacion sobre como crear su  propia  
+traduccion.</P>
+<h5>Herramientas externas/menu de complementos</h5>
+<P>Puede agregar hasta 9 herramientas que pueden ejecutarse cuando las necesite. 
+ Cada herramienta tiene su propia tecla de acceso rapido para su conveniencia.   
+ Tambien puede pasar los parametros a su herramienta. Para pasar el nombre del   
+ archivo abierto actual use una palabra especial   $SB_FileName.</P>
+<h5>Codigo de comentarios</h5>
+<P>Los comentarios se denotan con una doble barra //, como se ve en otros   
+ lenguajes de scripting (php, etc.). Todo el texto colocado despues de //   
+(dentro  de esa misma linea) sera ignorado por el compilador.</P>
+<P>Para comentar lineas multiples o parte de la linea, use comentarios de bloque 
+ {}:</P>
+<PRE class="sb3">0001: wait  {comments here} 0 ms</PRE>
+<P>Desde la version 3.06, Sanny Builder tambien admite comentarios similares a   
+ C++.<B>/*  */</B>.</P>
+<PRE class="sb3">0001: wait  /* comments here */ 0 ms</PRE>
+<P>Tambien es posible comentar lineas multiples seleccionandolas y presionando   
+   <B>Ctrl</B>+<B>Q</B>. Para descomentar las  lineas, repitalo una vez mas.</P>
+<h5>Etiquetas personalizadas</h5>
+<P>Puede dar a las etiquetas nombres personalizados que no dependan de las   
+ opciones del descompilador. Los nombres se especifican en el archivo   
+ CustomLabels.ini (separadamente para cada juego).</P>
+<P>Sintaxis del archivo:<BR>&lt;label offset&gt; = &lt;nombre   
+ personalizado&gt;</P>
+<P>Si el decompilador encuentra una etiqueta en el desplazamiento especificado,  
+ obtendra el nombre personalizado.</P>
+<P>Para averiguar la compensacion de etiquetas, ajuste el formato de las   
+ etiquetas a "Compensacion global" en las opciones. Despues de descompilar, el   
+ numero en un nombre de etiqueta es su compensacion.</P>
+<h5>Comprobando actualizaciones</h5>
+<P>Sanny Builder puede verificar si hay una nueva version disponible. Para usar  
+ esta funcion, vaya al menu "Ayuda-&gt; Buscar actualizaciones ...". El editor   
+se  conectara a los servidores de actualizacion y propondra descargar e  
+ instalar  un  archivo de actualizacion si este existe. El editor puede  
+verificar  automaticamente si hay una actualizacion disponible al inicio si  
+habilita esta   opcion en la ventana del actualizador.</P></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+      
+<SCRIPT src="HL.js"></SCRIPT>
+   </DIV></BODY></HTML>

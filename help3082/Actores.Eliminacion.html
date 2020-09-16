@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Eliminación</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<H4>Borrado:</H5>
+<P>Cuando terminaste de usar esos actores, tienes dos formas diferentes de       
+ deshacerte de ellos:<BR>De forma          inmediata: 
+<PRE class="sb3">009B: destroy_actor $actor01</PRE>O  con  un efecto de 
+desbanecimiento:&nbsp;  
+<PRE class="sb3">034F: destroy_actor_with_fade $actor02</PRE>
+<P></P>
+<P>
+<H4>Referencias:</H4>Puede eliminar las referencias de ellos, esto los          
+convertira en&nbsp;pedestres normales (como cualquier peaton que ve en el        
+ juego). Entonces, el  actor seguira alli, pero el controlador del $actor0x ya   
+  no  contendra al actor:               
+<PRE class="sb3">01C2: remove_references_to_actor $actor03</PRE>
+<P></P>
+<P>
+<H4>Liberacion:</H4>
+<P>Para que el modelo del actor que usamos, ya no sea mas requerido como un      
+ elemento de suma importancia, usamos para:                
+<P>Modelo de Actor Pedestres:               
+<PRE class="sb3">0249: release_model #farm1</PRE>
+<P>Modelo de Actor Especiales:</P>
+<PRE class="sb3">0296: unload_special_actor 1</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+ </BODY></HTML>

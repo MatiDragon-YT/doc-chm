@@ -1,0 +1,106 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEO_GetOperandType</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<PRE><B class="text-blue">int</B> WINAPI CLEO_GetOperandType(CScriptThread* thread);</PRE>
+<P><b>Descripcion:</b><BR>La funcion obtiene un tipo de operando para  
+ un acceso mas seguro a ella.</P>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Parametro</TH>
+    <TH>Descripcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD><i>thread</i></TD>
+    <TD>Puntero de estructura de       flujo  </TD></TR></TBODY></TABLE>
+<P><b>Valor de retorno:</b></P>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Valor</TH>
+    <TH>Descripcion</TH>
+    <TH>Ejemplo</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD><i>globalVar</i></TD>
+    <TD>Variable Global</TD>
+    <TD>$PLAYER_ACTOR</TD></TR>
+  <TR>
+    <TD><i>localVar</i></TD>
+    <TD>Variable Local</TD>
+    <TD>0@</TD></TR>
+  <TR>
+    <TD><i>globalArr</i></TD>
+    <TD>Arreglo Global</TD>
+    <TD>$Girl_Weapons(0@, 12i)</TD></TR>
+  <TR>
+    <TD><i>localArr</i></TD>
+    <TD>Arreglo Local</TD>
+    <TD>1@(0@, 12i)</TD></TR>
+  <TR>
+    <TD><i>imm8</i></TD>
+    <TD>Entero en el rango&nbsp;de -0x80 a 0x7F</TD>
+    <TD>12</TD></TR>
+  <TR>
+    <TD><i>imm16</i></TD>
+    <TD>Entero en el rango&nbsp;de -0x8000 a 0x7FFF</TD>
+    <TD>260</TD></TR>
+  <TR>
+    <TD><i>imm32</i></TD>
+    <TD>Entero en el rango&nbsp;de -0x80000000 a 0x7FFFFFFF</TD>
+    <TD>0x969110</TD></TR>
+  <TR>
+    <TD><i>imm32f</i></TD>
+    <TD>Flotante, Sanny Builder compila como imm32</TD>
+    <TD>1.5</TD></TR>
+  <TR>
+    <TD><i>vstring</i></TD>
+    <TD>Cadena Larga</TD>
+    <TD>"string"</TD></TR>
+  <TR>
+    <TD><i>sstring</i></TD>
+    <TD>Cadena Corta</TD>
+    <TD>'string'</TD></TR>
+  <TR>
+    <TD><i>globarVarVString</i></TD>
+    <TD>Variable Globa de Cadena Larga</TD>
+    <TD>v$12</TD></TR>
+  <TR>
+    <TD><i>localVarVString</i></TD>
+    <TD>Variable Local de Cadena Larga</TD>
+    <TD>0@v</TD></TR>
+  <TR>
+    <TD><i>globalVarSString</i></TD>
+    <TD>Variable Global de Cadena Corta</TD>
+    <TD>s$12</TD></TR>
+  <TR>
+    <TD><i>localVarSString</i></TD>
+    <TD>Variable Local de Cadena Corta</TD>
+    <TD>0@s</TD></TR></TBODY></TABLE>
+<P><b>Ejemplo de   uso:</b></P>
+<PRE><B class="text-blue">switch</B> (CLEO_GetOperandType(thread))
+{
+  <B class="text-blue">case</B> globalVar:
+  <B class="text-blue">case</B> localVar:
+  <B class="text-blue">case</B> globalArr:
+  <B class="text-blue">case</B> localArr:
+  <B class="text-blue">case</B> imm8:
+  <B class="text-blue">case</B> imm16:
+  <B class="text-blue">case</B> imm32:
+    a = CLEO_GetIntOpcodeParam(thread)
+    <B>break</B>;
+  <B class="text-blue">default</B>:
+    CLEO_SkipOpcodeParams(thread, 1);
+}
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

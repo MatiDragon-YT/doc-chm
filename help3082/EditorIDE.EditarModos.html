@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Editar modos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12"><p>Un modo de edicion es un conjunto de opciones que determinan el  
+ comportamiento de Sanny Builder cuando se trabaja con scripts de un juego en   
+ particular. El hecho es que no hay ningun juego en la serie de GTA con el   
+ formato de script igual a los demas. Por lo tanto, cada juego requiere una   
+ configuracion especial al editar scripts. Esa es la razon por la que los modos  
+  de edicion se presentan en Sanny Builder.</P>
+<P>Un modo de edicion incluye (pero no se limita a) las siguientes   
+ opciones:</P>
+<UL>
+  <LI>Sanny Builder desarma un archivo de script de una manera       
+  especifica</LI>
+  <LI>Sanny Builder puede compilar un script para el juego dado</LI>
+  <LI>Puedes ejecutar el juego y leer/escribir las coordenadas del  
+jugador</LI></UL>
+<P>Por defecto, hay 7 modos diferentes:</P>
+
+<UL>
+  <LI>GTA III</LI>
+  <LI>GTA VC</LI>
+  <LI>GTA SA (para codigos de operacion personalizados)</LI>
+  <LI>GTA LCS</LI>
+  <LI>GTA VCS</LI>
+  <LI>SA Mobile (para las versiones de Android e iOS)</LI>
+  <LI>GTA SA SCR (para nombres R*  originales)</LI></UL>
+<P>Puede agregar un nuevo modo editando manualmente el archivo games.xml ubicado 
+ en el directorio &lt;SB&gt;\data\.</P>
+<CENTER><IMG src="img/edit_modes.png"> </CENTER>
+<P>Para cambiar el modo de edicion, haga clic en en la esquina inferior derecha  
+ de la ventana principal de Sanny Builder. Aparecera una lista de los modos   
+ disponibles. Elija uno y haga clic en el. Sanny Builder volvera a cargar todos  
+  los archivos necesarios y puede comenzar a trabajar.</P>
+<P>Antes de desmontar o compilar un script, asegurese de que el modo de edicion  
+ correcto este activo. Incluso si el script se compila sin errores, el juego se  
+ bloqueara cuando intente leer un script en un formato diferente.</P>
+<P>Un archivo de script compilado puede tener una informacion para que juego   
+esta hecho. Por lo tanto, si descompila una secuencia de comandos de ese tipo   
+en  otro modo de edicion que este activo, Sanny Builder le propondra que cambie  
+ la  modalidad a la correcta. Si se rechaza este aviso, puede producirse un   
+bloqueo  del desensamblador, ya que el formato del script es   
+ inesperado.</P></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+   
+<SCRIPT src="HL.js"></SCRIPT>
+   </DIV></BODY></HTML>

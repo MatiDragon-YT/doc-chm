@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>textureload</title>
+ <meta charset=Windows-1252"ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header></header>
+<div class="container-fluid">
+<div class="row">
+<div class="col-12">
+<pre class=sb3>
+/*
+  NewOpcodes 2.0
+  Example script: TextureLoad
+  Shows loading texture from dds file and drawing it in a loop.
+*/
+
+{$CLEO}
+{$I stdc}
+if
+    0D7C: t = load_texture_dds_from "plateback1.dds" // IF and SET
+then
+    while true
+        wait 0
+        sprite.Draw(t, 100.0, 100.0, 300.0, 300.0, 255, 255, 255, 200, 0.0)
+    end
+end
+{$I end}
+</pre>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

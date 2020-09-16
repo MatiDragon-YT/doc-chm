@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Búscador de Opcodes</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Puede llamar a esta funcion presionando <code>Ctrl+Alt+2</code> o  seleccionando la 
+opcion de menu: <code>Herramientas-&gt;Herramientas del IDE-&gt;Buscador de Opcodes.</code></P>
+<div class="center"><img src=ost.png></div>
+<P>Para encontrar un opcode, escriba algunas palabras en la línea de entrada, por ejemplo, actor car. La herramienta muestra los opcodes con estas palabras. También puede utilizar operadores de búsqueda especiales.</P>
+<P>Cuando la herramienta está abierta, comprueba si hay una palabra seleccionada en el editor. Si se encuentra la palabra seleccionada, se copiará en el campo de búsqueda.</P>
+<hr><h5>Copiar resultados</h5>
+<P>Para copiar un opcode en el portapapeles, selecciónelo en la lista y pulse <code>Enter</code>. Para añadir otro opcode al contenido del portapapeles, pulse <code>Shift+Enter</code>. Para copiar toda la lista de resultados pulse <code>F2</code>.</P>
+<hr><h5>Controles</h5>
+<TABLE>
+<thead>
+  <TR>
+    <th>Teclas</th>
+    <th>Resultado</th></TR>
+</thead>
+  <TBODY>
+  <TR>
+    <TD>Enter</TD>
+    <TD>copiar el código de operación seleccionado en el portapapeles.
+  </TD></TR>
+  <TR>
+    <TD>Shift+Enter</TD>
+    <TD>Agregar el opcode seleccionado al portapapeles. 
+  </TD></TR>
+  <TR>
+    <TD>F1</TD>
+    <TD>Mostrar información de ayuda.</TD></TR>
+  <TR>
+    <TD>F2</TD>
+    <TD>Copie todos los codigos de operacion de la lista de resultados 
+      en el portapapeles.</TD></TR>
+  <TR>
+    <TD>F3</TD>
+    <TD>Ordenar la lista por opcode.</TD></TR>
+  <TR>
+    <TD>F4</TD>
+    <TD>Ordenar la lista alfabeticamente.</TD></TR>
+  <TR>
+    <TD>F11</TD>
+    <TD>Limpiar la edicion de busqueda, mostrar todos los opcodes.</TD></TR>
+  <TR>
+    <TD>Esc</TD>
+    <TD>Cerrar la ventana del buscador.</TD></TR></TBODY></TABLE>
+<HR><h5>Operadores de busqueda</h5>
+<h6>Operador AND</h6>
+<P>Un único espacio entre palabras sirve como el operador <code>AND</code>:</P>
+<pre>@ player</pre>
+<P>Encuentra todos los opcodes tanto con el <code>@</code> y la palabra 
+<code>player</code></P>
+<h6>Operador OR</h6>
+<P>Carácter de la línea vertical <code>|</code> entre las palabras.</P>
+<pre>@ | player</pre>
+<P>Encuentra todos los opcodes con el '@' o 'player'</P>
+<P>Si lo escribes al principio de la línea, se conectara todas con el operador OR.</P>
+<pre>| actor player car</pre>
+<P>Mostrara con con <code>actor</code>, <code>player</code> o <code>car</code>.</P>
+<h6>Operador NOT</h6>
+<P>Dos guiones antes de la palabra excluyen los opcodes con esta palabra del resultado:</P>
+<pre>car --actor</pre>
+<P>Encuentra opcodes con <code>car</code> pero sin <code>actor</code>.</P>
+<P>Para palabras y símbolos como <code>$</code> y <code>@</code> es posible utilizar uno menos. Esto es para evitar mezclar la exclusión durante una búsqueda de números negativos:</P>
+<pre>-10 -@ -car -3</pre>
+<P>Encuentra opcodes con el número <code>-10</code>, sin el simbolo
+<code>@</code>, texto <code>car</code> y numero <code>3</code></P><HR>
+<CENTER><B>OTROS OPERADORES</B></CENTER><BR>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>^</TD>
+    <TD>muestra todas las condiciones en la       lista</TD></TR>
+  <TR>
+    <TD>^word</TD>
+    <TD>encuentra la palabra en los codigos de       operacion 
+  condicionales</TD></TR></TBODY></TABLE><BR>
+<DIV>Ejemplo: ^car == </DIV>
+<P>mostrara codigos de operacion condicionales que tienen una  palabra 'car' y 
+un letrero '=='</P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>-^</TD>
+    <TD>excluye todas las condiciones de la       
+lista</TD></TR></TBODY></TABLE><BR>
+<DIV>Ejemplo: player -^ </DIV>
+<P>mostrara todos los codigos de operacion no condicionales que  tienen una 
+palabra 'player'</P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>-^word</TD>
+    <TD>excluir las condiciones que       contienen la 
+palabra</TD></TR></TBODY></TABLE><BR>
+<DIV>Ejemplo: player -^actor</DIV>
+<P>mostrara todos los codigos de operacion que tienen una palabra  'player', 
+except los codigos de operacion condicional con una  palabra 'actor'.</P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>  %</TD>
+    <TD>busquedas en el orden   dado</TD></TR></TBODY></TABLE><BR>
+<DIV>Ejemplo: % @ = @</DIV>
+<P>mostrara todos los codigos de operacion donde estos simbolos van  en el orden 
+dado. </P></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+   
+<SCRIPT src="HL.js"></SCRIPT>
+</DIV></BODY></HTML>

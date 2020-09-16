@@ -1,0 +1,34 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEO_WriteStringOpcodeParam</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<PRE><B class="text-blue">void</b> WINAPI CLEO_WriteStringOpcodeParam(CScriptThread* thread, LPCSTR str);</PRE>
+<P><b>Descripcion:</b><BR>La funcion escribe en el operando de una   
+ variable de tipo String la cadena que pasa el segundo parametro.</P>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Parametro</TH>
+    <TH>Descripcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD><i>thread</i></TD>
+    <TD>Puntero de estructura de       flujo  </TD></TR>
+  <TR>
+    <TD><i>str</i></TD>
+    <TD>Puntero a la cadena que se escribirá en la variable de     
+                                script.</TD></TR></TBODY></TABLE>
+<P><b>Ejemplo de   uso:</b></P>
+<PRE>CLEO_WriteStringOpcodeParam(thread, "OK");
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+ 
+<SCRIPT src="HL.js"></SCRIPT>
+ </BODY></HTML>

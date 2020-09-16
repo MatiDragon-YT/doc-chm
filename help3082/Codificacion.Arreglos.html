@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Arreglos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Una matriz representa una colección indexada de elementos del mismo tipo (llamado tipo base). Puede trabajar con cualquier elemento directamente a través de su índice. Una numeración de índice comienza con un cero. Las matrices son compatibles con San Andreas, LCS y VCS.</P>
+<hr>
+<h4>Sintaxis general</h4>
+<h5>San Andreas</h5>
+<code>&lt;nombre&gt;(&lt;indice&gt;,&lt;tamaño&gt;&lt;tipo&gt;)</code>
+<pre class=sb3>
+$indice = 0
+$arreglo($indice,10i) = 1
+</pre>
+<ul>
+<li><code>&lt;nombre&gt;</code> - variable local o global para el nombre del arreglo</li>
+<li><code>&lt;indice&gt;</code> - cualquier variable que contenga un índice del elemento para leer o escribir</li>
+<li><code>&lt;tamaño&gt;</code> - cualquier valor mayor que 0</li>
+<li><code>&lt;tipo&gt;</code> - uno de los caracteres <code>i</code> <code>f</code> <code>s</code> <code>v</code>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Letra</th>
+<th>Tipo de artículo</th>
+<th>Tamaño del artículo (bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>integer</td>
+<td>4</td>
+</tr>
+<td>f</td>
+<td>float</td>
+<td>4</td>
+</tr>
+</tr>
+<td>s</td>
+<td>string</td>
+<td>8</td>
+</tr>
+</tr>
+<td>v</td>
+<td>string</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<h5>Liberty City Stories, Vice City Stories</h5>
+<code>&lt;nombre&gt;(&lt;indice&gt;,&lt;tamaño&gt;)</code>
+<div class=inf>En LCS, VCS, los elementos de la matriz tienen solo 4 bytes de longitud. Por lo tanto, no es necesaria una declaración de tipo.</div>
+<pre class=sb3>
+$indice = 0
+$arreglo($indice,10) = 1
+</pre>
+<hr> 
+<h4>Declaración de arreglo</h4>
+<h6>Los arreglos se pueden declarar utilizando el constructor <code>VAR..END</code></h6>
+<h5>Sintaxis</h5>
+<code>&lt;nombre&gt;: array &lt;tamaño&gt; of &lt;tipo&gt;</code>
+<pre class=sb3>
+var
+    $FloatArray: array 10 of Float
+end
+</pre>
+<h5>Acceder a los elementos del arreglo después de la declaración</h5>
+<p>Después de declarar un arreglo, puede acceder a sus elementos utilizando corchetes:</p>
+<pre class=sb3>
+var
+    $FloatArray: array 10 of Float
+end
+$index = 1
+$FloatArray[$index] += 100.0
+</pre>
+<h5>Usando índices constantes</h5>
+<p>Puede usar números enteros positivos y cero para acceder a un elemento del arreglo en particular:</p>
+<pre class=sb3>
+var
+    $FloatArray: array 10 of Float
+end
+$FloatArray[1] += 100.0
+</pre>
+<p>Se puede acceder a los elementos de un arreglo que contiene <a href="Codificacion.TiposDeDatos.html#strings">cadenas literarias</a> con <a href="Codificacion.TiposDeDatos.html#vstrings">variables de cadena</a>:</p>
+<pre class=sb3>
+// inicializando los primeros tres elementos del arreglo $ strings
+s$strings[0] = 'str1'
+s$strings[1] = 'str2'
+s$strings[2] = 'str3'
+</pre>
+<p>Un arreglo se puede declarar como una colección de <a href="Codificacion.Clases.html#instances">instancias de clase</a>:</p>
+<pre class=sb3>
+var
+  $players: array 2 of Player
+end
+$players[0].Build
+</pre>
+<div class=inf>
+De forma predeterminada, en el <a href="EditorIDE.EditarModos.html">modo de edición</a> de <code>GTA SA</code>, el desensamblador imprime elementos de matriz con los números como índices. La misma función está disponible en LCS y VCS, pero está desactivada de forma predeterminada. Puede activar y desactivar esta función mediante la <a href="EditorIDE.Consola.html#constant_indexes">opción de depuración</a> <code>CONSTANT_INDEXES</code>
+</div>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

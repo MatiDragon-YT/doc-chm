@@ -1,0 +1,999 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>Codificación de Misión: Parte 1</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<H5>Introducción:</H5>
+<P>Hola, desde hace tiempo quise hacer un tutorial para  novatos, este 
+tutorial no te dira  que hacer, te ayudara a hacer lo que  quieras hacer. 
+Tambien es un buen  tutorial  para Sanny Builder. Intente hacer  un tutorial 
+para todo el mundo incluso si no  sabes nada de programacion.  Tal vez 
+quieras saltarte directamente  a la <A href="CodificacionDeMision.Parte2.html">parte 
+ II</A>,  si crees que sabes lo suficiente sobre el  coding.</P>
+<P>Con el “mission coding”  (codificacion de misiones), tambien conocido 
+como “mision scripting”, podras hacer tus propias misiones, tus propios 
+mods o modificar  los  ya existentes (Aqui  puedes encontrar muchos: Mission 
+Mods. Y aqui:  Mission  Coding (y es donde podras  preguntar cosas sobre el 
+ coding).<BR>El mission  coding se realiza con los  archivos main.scm y  
+script.img que se encuentran en  la carpeta data\script de  San Andreas. 
+main.scm es un archivo compilado, es  decir que esta hecho en un  lenguaje que 
+ la computadora puede entender  facilmente. Si abres main.scm con un  editor 
+hexadecimal, por dentro se veria  algo como esto: </P>
+<PRE>D6 00 04 00 19 01 02 45 0E 4D 00 01 FE 3D 87 02 A6 00 02 45 0E</PRE>
+<BR>
+
+Por eso tienes que descompilarlo para que este en un formato 
+ legible para el ser humano, luego ya podremos programar en el. No  
+necesitas hacer nada en el archivo script.img, pero el archivo es  
+necesario, por eso cada main.scm necesita su propio  
+script.img.<BR><BR>Para descompilar main.scm  necesitas Sanny Builder. Hay 
+  otros descompiladores, pero si recien estas  empezando, Sanny es la 
+mejor opcion en el coding. Porque esta continuamente  actualizandose, 
+tiene un soporte adecuado, es rapido, es colorido :cyclops:  !!!!! Y 
+porque este tutorial esta hecho con y para Sanny Builder.<BR><BR>Sanny  
+ Builder se parece mucho al San Andreas Mission Builder de Barton 
+Waterduck,  pero  la sintaxis es diferente, por eso yo recomiendo 
+encarecidamente usar Sanny  Builder, aunque si me quieres desobedecer, 
+aqui esta: Barton Waterduck’s San  Andreas Mission Builder –  Craig’s 
+version, Gracias Craig.<BR><BR>Una cosa muy  importante; para conseguir  
+ informacion, el “Sanny Builder’s Help” esta lleno de  informacion  
+bastante util y siempre esta disponible (incluso offline).<BR><BR>Ahora 
+abre el ejecutable y sigue el tipico proceso de instalacion. Luego ve 
+primero a  “Herramientas\Opciones” (o presiona F10). Y en  la pestaña 
+ “general”,  verifica que esten activas estas opciones: "Mostrar 
+Progreso", "Mostrar Reporte", "Mostrar Alerta", "Cargar juego 
+rapidamente",  "Chequeo de condiciones", "Chequeo de rangos", "Escribir  
+ Opcodes", tal vez  "Reemplazar numeros de misiones", "Insertar nombre 
+original de mision" y  "Añadir  informacion extra al SCM". Explicare mas 
+  tarde por que necesitamos  tener  activadas esas 
+opciones.<BR><BR>Cierra Sanny Builder y vuelvelo a abrir.<BR><BR><SPAN 
+style="line-height: normal; font-size: 18px;">1.- Arquitectura del 
+main.scm:</SPAN><BR><BR>Bien, ahora copia  el main.scm  original y el 
+script.img a una nueva carpeta apto para el coding(o  el lugar que  
+quieras: el escritorio, la papelera de reciclaje, los documentos de tu 
+  mama <IMG width="20" height="18" src="Part20I.files/rolleyes.gif">  
+…) que has creado y abrelo  (haz copias de seguridad!!!!!! Como por 
+ejemplo  copiar  en una carpeta nueva el  main.scm original y el 
+script.img) haciendo clic  en  Abrir y seleccionando el  archivo SCM 
+(*.scm). Puedes ver como se llena  la barra del progreso(esto es porque 
+  hemos activado la opcion  “Mostrar progreso”) <BR><BR><BR><SPAN style="line-height: normal; font-size: 15px;">- 
+ Define Section</SPAN>:<BR><BR>Y ahora tendras algo como 
+esto:
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //  This file was decompiled using  sascm.ini 
+  published by Seemann (<A class="vglnk" href="http://sannybuilder.com/files/SASCM.rar" 
+  rel="nofollow">http://sannybuilder.com/files/SASCM.rar</A>) on 
+  13.10.2007<BR>DEFINE OBJECTS 389<BR>DEFINE  OBJECT SANNY BUILDER  
+  3.03 
+ <BR>DEFINE OBJECT INFO  
+ // Object number  -1<BR>DEFINE 
+  OBJECT KEYCARD 
+ // Object  number -2<BR>DEFINE  OBJECT 
+  AD_FLATDOOR //  Object  
+ number -3<BR>DEFINE OBJECT KB_BANDIT_U 
+ // Object number  -4<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Como puedes ver, esto determina los objetos que seran usados  en 
+ el main.scm, son 389 en total, como dice en la parte superior (DEFINE OBJECTS  
+ 389 )<BR><BR>Para añadir un  objeto,  simplemente ve al ultimo  y añade  
+ el tuyo.<BR><BR>Mas abajo (mucho mas  abajo)  puedes encontrar esto:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  DEFINE  MISSIONS 135<BR>DEFINE  MISSION  0 AT 
+  @INITIAL<BR>DEFINE MISSION  1 AT @INITIL2<BR>DEFINE MISSION  
+ 2 AT @INTRO<BR>DEFINE MISSION 3 AT @NONE<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Esto determina las misiones, y como dice en la parte superior, 
+ son 135 (DEFINE MISSIONS 135). Si usas Xbox, <A title="Link added by VigLink" 
+class="vglnk" href="http://i.viglink.com/?key=c4c1798756825e5b3fc1d47003f6a0f0&amp;insertId=9275966f853d0be486a825d7d1e50aba&amp;type=S&amp;exp=60%3ACI1C55A%3A2&amp;libId=jg44hjf60100icfa000DAeeamfhz4&amp;loc=http%3A%2F%2Fvcgi.foroes.org%2Ft2958-gta-san-andreas-coding-bible-en-espanol-parte-i&amp;v=1&amp;out=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fie%3DUTF8%26camp%3D1789%26creative%3D9325%26index%3Daps%26keywords%3Dplaystation%252B2%26linkCode%3Dur2&amp;ref=https%3A%2F%2Fwww.google.com.ar%2F&amp;title=GTA%20San%20Andreas%3A%20Coding%20Bible%20en%20Espa%C3%B1ol%20Parte%20I&amp;txt=%3Cspan%3EPlayStation%20%3C%2Fspan%3E%3Cspan%3E2%3C%2Fspan%3E" 
+target="_blank" rel="nofollow">PlayStation  2</A> o el mod  jarjar 2-player  
+veras que hay mas misiones que son  para 2 jugadores, pero esa es  otra  
+ historia…</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  DEFINE  EXTERNAL_SCRIPTS 78 // Use -1 in order not to 
+  compile AAA  script<BR>DEFINE SCRIPT PLAYER_PARACHUTE  AT 
+ @PLCHUTE // 0<BR>DEFINE  SCRIPT PARACHUTE AT @PARACH 
+  // 1<BR>DEFINE SCRIPT BCESAR2 AT @BCESAR2  // 2<BR>DEFINE  
+  SCRIPT BCESAR3 AT @COKEC // 3<BR>DEFINE SCRIPT SLOT_MACHINE AT 
+  @BANDIT //  4<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Esto determina scripts externos, que son scripts (programas) 
+ que  se activan cuando se necesitan; hay 78 de ellos, como dice en la parte 
+ superior. Esto es lo que se encarga del paracaidas (player -PLAYER_PARACHUTE- y 
+  non-players  -PARACHUTE-), los juegos en el Casino (ROULETTE, VIDPOK  
+-Video Poker-, BLACKJ -Black Jack-, WHEELO –Rueda de la  fortuna-, etc...),  
+  Tiendas (AMMU, TATTOO,  BARBER,  JUNKFUD,  CARMOD), y muchas  otras  
+ cosas que son mas o menos extrañas (DEBT, STRIPW,  GF_SEX,  HOME_BRAINS  
+ ...). Mas adelante veremos mas sobre esto.<BR><BR>Luego tienes estas 2 
+ lineas:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  DEFINE UNKNOWN_EMPTY_SEGMENT 0<BR><BR>DEFINE 
+  UNKNOWN_THREADS_MEMORY 574
+  <BR>
+  <BR></P>
+<BR></P>
+Que son desconocidos y no nos sirven ni a ti ni a 
+mi.<BR><BR><SPAN style="line-height: normal; font-size: 15px;">-  Main 
+ section</SPAN>: (seccion principal)<BR><BR>Ahora debes ver  algo  como  
+ esto:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  {$VERSION 
+  3.1.0027}<BR><BR>//-------------MAIN---------------<BR>03A4: name_thread  
+  'MAIN'<BR>016A: fade 0 time  0<BR>042C: 
+  set_total_missions_to 147<BR>030D: set_max_progress 187<BR>0997:  
+ set_total_respect_points_to 1339<BR>01F0: 
+  set_max_wanted_level_to 6<BR>0111: set_wasted_busted_check_to  
+  0<BR>00C0: set_current_time_hours_to 8 current_time_minutes_to 
+ 0<BR>04E4: unknown_refresh_game_renderer_at 2488.562 
+ -1666.864<BR>03CB: set_rendering_origin_at 2488.562 -1666.864  
+ 13.3757<BR>062A: change_stat 165 to 800.0 //floating-point 
+  values<BR>062A: change_stat 23 to 50.0 //floating-point  
+  values<BR>062A:  change_stat 21 to 200.0 //floating-point 
+  values<BR>062A: change_stat 160 to 0.0 
+  //floating-point values<BR>0629: change_stat 181 to 4 //integer 
+ values<BR>0629: change_stat 68 to 0 //integer 
+  values<BR>0053: $PLAYER_CHAR = create_player  #NULL at 2488.562  
+ -1666.864 12.8757<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Mucho mas adelante (usa la herramienta “buscar” del Sanny 
+Builder y busca: “mission 0”) :</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //-------------Mission  0---------------<BR>// Originally: 
+ Initial 1<BR><BR>:INITIAL<BR>03A4:  name_thread  
+  'INITIAL'<BR>06C8: enable_riot 0<BR>0004:  $1515  = 0<BR>0005:  
+ $1500 =  5.0<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+A esto se le llama la main part (parte principal) o la main 
+section (seccion principal) (y a veces imprecisamente llamado el main thread). 
+ Aqui hay muchos scripts pequeños que, por ejemplo: crean el circulo rojo al 
+ empezar las misiones, lo que se encarga de los telefonos celulares 
+ (CELLFON  y otros mas), lo que se encarga de las novias; aqui es donde todo 
+se  activa  (empieza), donde muchos mods son añadidos, y es donde vas a 
+empezar  a  codificar. La seccion principal esta compuesta de un monton de 
+threads pequeños, pero empieza con el main thread. Y  este thread es (y es 
+el unico) creado por el mismo motor, con este no  necesitas usar el opcode 
+para crear  threads (004F:  create_thread ) para  iniciarlo. No te preocupes,  
+mas adelante  hay una parte enteramente dedicada a  los threads.<BR><BR>En la  
+main part solo puedes usar variables locales  (0@ , 1@, 2@, etc...) 
+hasta  el 31@ incluido.  32@ y  33@ son temporizadores locales internos 
+(cuentan el  tiempo  que ha pasado, veremos esto  mas adelante) que tambien 
+puedes usar.  Pero en la  main part no funcionara mas  de  33@ .  Esto a 
+Sanny no le contentara y  te dira que el var.  local esta fuera de rango  
+(esto es porque  hemos activado  la opcion “Chequeo de rangos”). Puedes usar  
+cualquier global  que quieras,  pero sus numeros estan  limitados a 16383, 
+pero  deberia ser suficiente.<BR><BR><BR><SPAN style="line-height: normal; font-size: 15px;">- 
+  Mission Section</SPAN>: (la seccion de misiones)<BR><BR>A 
+ continuacion:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //-------------Mission  0---------------<BR>// Originally: 
+ Initial 1<BR><BR>:INITIAL<BR>03A4:  name_thread  
+  'INITIAL'<BR>06C8: enable_riot 0<BR>0004: $1515 = 
+  0<BR>0005: $1500 = 5.0<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Es la primera mision (que en realidad no es una mision porque  
+ ocurre durante los primeros milisegundos de un nuevo juego, antes de la primera 
+  cinematica y no te da ningun punto). Esta mision en realidad crea los carros 
+  estacionados, algunas armas para recoger y otras cosas.<BR><BR>Despues tenemos 
+ la mision 1 (busca: “mission 1”)</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //-------------Mission  1---------------<BR>// Originally: 
+ Initial 2<BR><BR>:INITIL2<BR>03A4:  name_thread  
+  'INITIL2'<BR>0004:  $3407 = 25<BR>0004: $3408  = 
+  100<BR>0004: $3409 = 250<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Como la mision 0, esta tampoco es una mision; solo establece 
+ valores numericos sobre algunas variables, crea otros carros estacionados, 
+activa algunas puertas y lifts.<BR><BR>Luego, la mision 2</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //-------------Mission  2---------------<BR>// Originally: 
+ Intro<BR><BR>:INTRO<BR>03A4:  name_thread  
+  'INTRO'<BR>0050: gosub @INTRO_47<BR>00D6: if<BR>0112: 
+ wasted_or_busted  //mission only<BR>004D:  
+  jump_if_false @INTRO_38<BR>0050: gosub @INTRO_9715<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Esto es parte de la cinematica de introduccion y la mision 
+finaliza cuando llegas al circulo rojo en la casa de CJ (Johnson House en 
+Ganton).<BR><BR>Despues estan los juegos arcade (originally: Video game: They  
+ crawled from uranus; originally: Video game: Duality; originally: Video  
+game: Go Go Space Monkey; originally: Video  game:  Let's get ready to  
+ BUMBLE; originally:  Video game: poker), luego  estan otras cosas como el 
+ billar (originally:  pool), el juego del baile  (originally:  Lowrider  
+ (apuesta y baila)) y la mision secreta/oculta de Zero (originally: Beefy 
+Baron). Despues de todas esas, sigue la mision “Big  Smoke” (Mission 11), que  
+ es la primera mision del  juego.<BR><BR>Y luego  asi hasta el final de la  
+mision  134. Si quieres agregar  una mision, agregala  despues de esta y  
+determinala  en la seccion “define  mission” (ya mas adelante 
+veremos).<BR><BR><BR><SPAN style="line-height: normal; font-size: 15px;">- 
+External script section</SPAN>: (ultima seccion)<BR><BR>Despues  de  la  
+ultima mision  veras  todos los scripts externos determinados, empezando  con  
+ el primero (PLAYER_PARACHUTE):</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //-------------External script 0 
+  (PLAYER_PARACHUTE)---------------<BR><BR>:PLCHUTE<BR>03A4:  
+  name_thread 'PLCHUTE'<BR>0247: request_model  
+  #GUN_PARA<BR><BR>:PLCHUTE_16<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Y luego</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  //-------------External script 1 
+  (PARACHUTE)---------------<BR><BR>:PARACH<BR>03A4:  name_thread 
+  'PARACH'<BR>0004:  $8275 = 0<BR>etc...
+  <BR>
+  <BR></P>
+<BR></P>
+Y asi sucesivamente hasta el script externo numero 77. En 
+ muchas  partes del script externo, al mirar el nombre del script podras deducir 
+  para que  sirve.<BR><BR>Lo mas importante ahora es el main part.<BR><BR>Pero 
+  continuando  con la arquitectura del main.scm. Debes saber que el main.scm 
+tiene  sus  limitaciones, mira aqui. Como puedes observar, el tamaño principal 
+ (la  extension  de todos los threads de la “main part”) esta limitado a 200  
+ 000 bytes. Al  compilar veras que aparece un reporte que te dice cuan extenso 
+  esta la “main  part”: "MAIN size : XXXXXX b."; y luego que mision es la mas  
+ grande:  “Largest  Mission : XXXX b."; y el script externo mas extenso:  
+ "Largest Script: XXXX  b."<BR><BR><IMG width="180" height="197" src="Part20I.files/retfyhj2.PNG"><BR><BR>Esto 
+ pasa porque hemos activado la  opcion “Mostrar  reporte”.<BR><BR><BR><SPAN 
+style="line-height: normal; font-size: 18px;">2.- Stripped scm y 
+ Opcodes:</SPAN><BR><BR><SPAN style="line-height: normal; font-size: 15px;">A. 
+ Stripped scm :</SPAN><BR><BR>Para tus primeros proyectos  necesitaras un  
+ main.scm  que sea pequeño (el original es enorme) y que no tenga  cosas 
+innecesarias para  el “scripting”. Porque asi ganas tiempo al compilar y  no 
+tendras que esperar la  primera cinematica. Y tambien por los limites del  scm,  
+ ver mas  arriba.<BR><BR>Bien, un stripped scm es un main.scm que no  contiene 
+ ninguna  mision, ningun script externo, ni los threads de la main.scm.  No 
+contiene casi  nada, solamente crea al jugador.<BR><BR>Puedes encontrar uno  en  
+ la carpeta “\data\sa” donde has instalado Sanny Builder, bajo el nombre 
+ “stripped.txt”. Se  ve raro porque esta escrito en las clases sintacticas de  
+ Sanny Builder, no te  contare mucho sobre ello, mira mas en Sanny Builder's 
+Help. No es porque no sea  bueno, sino porque creo que sera mas facil aprender 
+ por primera vez con el  “metodo opcode”.<BR><BR>Deberias tener algo como esto:  
+ </P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  {<BR> use macro (Ctrl+J) "headsa"<BR> to insert a  
+  file header <BR>}<BR>{$VERSION 
+ 3.0.0000}<BR>var<BR>$PLAYER_CHAR: Player<BR>end //  var<BR>03A4: 
+ name_thread 'MAIN'<BR>01F0:  set_max_wanted_level_to 6<BR>0111:  
+ toggle_wasted_busted_check 0<BR>00C0: 
+  set_current_time_hours_to 8  minutes_to 0<BR>04E4:  
+  unknown_refresh_game_renderer_at 2488.56  -1666.84<BR>03CB: 
+  set_rendering_origin_at 2488.56  -1666.84  13.38<BR>0053: 
+  $PLAYER_CHAR =  create_player #NULL at 2488.56 -1666.84 
+  13.38<BR>01F5: $PLAYER_ACTOR  = create_player_actor  
+  $PLAYER_CHAR<BR>07AF: $PLAYER_GROUP = player $PLAYER_CHAR group<BR>0373:  
+ set_camera_directly_behind_player<BR>01B6: set_weather 0<BR>0001: 
+ wait 0  ms<BR>087B:  set_player $PLAYER_CHAR 
+  clothes_texture "PLAYER_FACE" model "HEAD"  body_part 1<BR>087B:  
+ set_player $PLAYER_CHAR  clothes_texture "JEANSDENIM"  model  
+ "JEANS"  body_part 2<BR>087B: set_player $PLAYER_CHAR 
+  clothes_texture "SNEAKERBINCBLK" model "SNEAKER" body_part 3<BR>087B: 
+  set_player $PLAYER_CHAR clothes_texture "VEST" model "VEST" 
+  body_part  0<BR>070D: rebuild_player $PLAYER_CHAR  
+ <BR>01B4:  toggle_player $PLAYER_CHAR can_move  1<BR>016A: 
+  fade 1 time 0<BR>04BB: select_interior 0<BR>0629: 
+ change_integer_stat 181 to 4<BR>016C: restart_if_wasted_at 
+  2027.77 -1420.52 15.99 angle 137.0 town_number  
+  0<BR>016D: restart_if_busted_at 1550.68  -1675.49 14.51 angle 90.0 
+  town_number 0<BR>0180: set_on_mission_flag_to $ONMISSION // 
+  Note: your missions have to use the variable  defined here<BR>0004:  
+ $DEFAULT_WAIT_TIME = 250<BR>03E6: remove_text_box<BR><BR>// put 
+  your create_thread commands 
+  here<BR><BR><BR><BR>:MAIN_LOOP<BR>0001: wait $DEFAULT_WAIT_TIME 
+  ms<BR>00BF: $TIME_HOURS = current_time_hours, $TIME_MINS =  
+  current_time_minutes<BR>0002: jump @MAIN_LOOP<BR><BR><BR>// put your mods  
+ (threads) here<BR><BR>//-------------Mission  
+  0---------------<BR>// put your missions 
+  here<BR><BR><BR>//-------------External script 0---------------<BR>// put  
+ your  external scripts here
+  <BR>
+  <BR></P>
+<BR></P>
+Tal vez notaste que no hay una “define section” (DEFINE OBJECTS, 
+ DEFINE  MISSIONS…) No tienes de que preocuparte porque aqui no  hay nada que  
+ necesite ser determinado.  Como dice en el archivo, si necesitas  un  header  
+ (define section) presiona CTRL +  J y selecciona headsa.<BR><BR>Luego 
+ aparecera lo que te faltaba:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  DEFINE  MISSIONS 0<BR>//DEFINE MISSION {ID} 0 AT  {LABEL}  
+ @<BR>DEFINE EXTERNAL_SCRIPTS 0  // Use -1 in order not to 
+  compile  AAA script<BR>//DEFINE  SCRIPT {NAME} AT 
+  {LABEL} @<BR>DEFINE UNKNOWN_EMPTY_SEGMENT 0<BR>DEFINE  
+  UNKNOWN_THREADS_MEMORY 0
+  <BR>
+  <BR></P>
+<BR></P>
+Ahora podras determinar tus misiones y scripts 
+externos.<BR><BR>Para colocar mods en tu stripped scm necesitas escribir el 
+comando para crear threads (como 004F: create_thread @MYTHREAD) en donde  dice:  
+@// put your  create_thread commands  here. Y los scripts los pones  despues  
+ del @MAIN_LOOP, en  donde dice: // put your  mods (threads) 
+ here.<BR><BR><BR><SPAN style="line-height: normal; font-size: 15px;">B. 
+ Opcodes:</SPAN><BR><BR>En Sanny Builder, muchas lineas empiezan  con  un  
+ numero de cuatro digitos seguido de dos puntos; como por ejemplo 0001:, 087B:,  
+ 016A:,  o 004E:, o como  0605: en Sanny  Builder. Estos son los 
+ Opcodes!!!!!!! Y podemos verlos porque hemos activado la  opcion: “Escribir 
+ Opcodes”.<BR><BR>El Opcode es el numero del comando (accion u  operacion) que 
+  el  motor del juego ejecutara con los parametros dados. Todos los  opcodes 
+ (exceptuando unos cuantos) poseen una cantidad de parametros  fija.<BR><BR>Los  
+  parametros (tambien llamados params, P1, P2, o %p) son la  entrada (numeros, 
+  actores, vehiculos, cadenas de texto, y cualquier otro tipo de  variable) del  
+ comando. En la esquina inferior izquierda, Sanny builder te  muestra cuantos  
+ parametros necesita un opcode.<BR><BR><IMG width="206" height="82" src="Part20I.files/yrrgrg.png"><BR><BR>Aqui 
+ hay dos  ejemplos:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  000A: 3@ += 1 // integer values 
+ 
+  <BR>
+ </P>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  000A: Es el opcode que hace que la  operacion 
+ sume los enteros.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  3@ y 1: Son los  parametros, este opcode tiene 2  
+ parametros.<BR>Entonces, esto agarra el local variable 3@ 
+  (ya  veremos mas  sobre esto) y le añade  un uno. Si 3@ era 
+  igual a 1  entonces ahora sera igual  a  2!!!!<BR><BR>uno mas  
+  complejo:</LI></UL>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  0605:  actor $PLAYER_ACTOR 
+  perform_animation_sequence  "ATM" from_file "PED" 4.0 loop 
+ 0 0 0 0 6000 ms 
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  0605: El opcode del comando.<BR></LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  $PLAYER_ACTOR, "ATM", "PED", 4.0 , 0 , 
+ 0 , 0 , 0 , 6000 : son los  parametros, este 
+  opcode tiene 9 parametros.</LI></UL>
+<BR></P>
+<BR>Este comando hace que el actor existente (un personaje) 
+ $PLAYER_ACTOR efectue la animacion "ATM"”,  que esta en el archivo de  
+ animacion "PED". 4.0 es el ratio de  reproduccion de la  animacion, 
+“loop  0” significa que una vez finalizada la animacion, no se volvera a  
+repetir;  si se coloca 1 el actor lo hara la animacion una y otra vez 
+ (loop)  hasta que  algo le diga otra cosa (o que se destruya, o se “libere” 
+–cambiandolo con  otros ped que veas en el juego, opcode 01C2). Luego hay otros  
+  parametros de  los que te hablare mas adelante. El ultimo es el tiempo que 
+durara  la  animacion ejecutada por el motor. Actuara como una espera y hara 
+ que el motor pare de ejecutar el codigo hasta que acabe ese 
+ tiempo.<BR><BR>Ahora encuentra  el  opcode que necesitas, hay muchas 
+ opciones:</P>
+<BR></P>
+<UL>
+  <BR></P>
+  <BR></P>
+  <BR></P>
+  <LI>
+  <BR>
+  El brillante “Buscador de Opcode” de Sanny Builder. En el  
+ menu  de herramientas, herramientas IDE, buscar Opcode. 
+  Simplemente escribe  lo que  estas buscando y tendras la 
+  oportunidad de encontrarlo. Hay una  seccion especial  en el 
+  Sanny Builder’s Help en Opcode Search Tool (en  ingles). Te 
+  dice las teclas  para copiar opcodes (seleccionas al opcode y 
+  aprientas Intro), para ordenar  opcodes, etc… Esto utiliza el 
+  opcodes.txt  que es creado por Sanny y que tienes  que volver a 
+  crearlo si has cambiado el sacm.ini.<BR></LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  El main.scm original descompilado (el mas confiable la  
+ mayoria  de veces - una muy buena explicacion y si lo usas 
+  FUNCIONA  -)  Gracias R* por  hacer el juego!!!!!!! 
+  Gracias Barton Waterduck,  autores de Sanny Builder y  muchos 
+  otros que ayudaron a descompilar el scm, deberian 
+  reconocerse ellos  mismos (si es que tienen tiempo de leer 
+  esto).<BR></LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  GTA: SA Opcodes @GTAforums es  el  lugar para 
+  opcodes y es muy bueno porque tiene buena descripcion,  
+  explicacion, y  que hace el valor de un parametro.</LI></UL>
+<BR></P>
+<BR>Pero lo ideal es husmear en todos ellos!!!!<BR><BR>Las 
+descripciones de los opcodes vienen en un archivo llamado sascm.ini que esta 
+ localizado en data\sa de la carpeta de instalacion de Sanny Builder. 
+ Modificando  este archivo hara nuevas descripciones y/o cambiara los parametros 
+  de los  opcode.<BR><BR></P>
+<BR></P>
+<UL>
+  <BR></P>
+  <BR></P>
+  <BR></P>
+  <LI>
+  <BR>
+  El original sascm.ini es muy bueno. Aviso que es mejor no  
+ tocarlo si recien empiezas.<BR></LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Hay bases de datos de opcodes unificados en PLPynton aqui  
+ . Si  no quieres usar el archivo puedes seguir buscando en el 
+  tema. Archivo : aqui<BR>Esta “base de datos“ de opcode tiene  
+ dos grandes  ventajas, porque que es  muy completo y mantiene  
+ los parametros  originales en orden; y una desventaja,  que es 
+  que usa una sintaxis  completamente distinta en las  
+  descripciones. Gracias  a PLPynton por  crearla. NOTA del traductor:  
+ El enlace  no  funciona.<BR></LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Spaceeinstein's sascm.ini aqui. Usa la sintaxis de 
+  siempre.  Las gracias para el. NOTA: tampoco funciona 
+ este.</LI></UL>
+<BR></P>
+¡¡¡¡¡¡¡ IMPORTANTE !!!!!!!
+<BR></P>
+<BR>Sobre el sascm.ini, no te lies mucho con eso. Elige uno  
+ y  quedatelo por un tiempo. Cada vez que lo cambies, tendras que convertir 
+todos  tus archivos, o compilar y descompilar, pero tienes que tener cuidado  
+ con  los  parametros de los opcode, a veces se estropearan al cambiar el  
+ sascm.ini y tendras crashes y bugs (y seran muy dificiles de  
+ encontrar).<BR><BR>Tambien tendras que volver a crear tus archivos opcode.txt 
+  , de lo contrario el autocompletado con F1 o el buscador de Opcodes no  
+funcionaran. Para hacer esto ve a herramientas y “Make opcode.txt”. Mi  
+consejo  es elegir uno de ellos o quedarse con el que te da Sanny Builder, y 
+ no  cambiarlo hasta que tengas una buena razon para hacerlo. El tutorial 
+ esta basado en el sascm.ini que te da Sanny Builder.<BR><BR><SPAN style="line-height: normal; font-size: 18px;">3.- 
+ Parametros y  variables:</SPAN><BR><BR>Aca estan los  diferentes 
+tipos  de  parametros:<BR>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Integer (numero entero) o int. Es representado  
+  por los numeros 1,  -2 o 321 o cualquier 
+  otro.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Los Floats o floating point  values.  Cualquier 
+ numero decimal como 1.2 o -2372.3845.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <BR></P>
+  <BR></P>
+  <LI>
+  <BR>
+  Un actor como CJ (Tu) esta  almacenado  en la 
+  global variable (variable global) $PLAYER_ACTOR, o Ryder que esta en 
+ $SA_RYDER, o el soldado que vigila la  puerta  de 
+  la base del ejercito en la mision de Ryder que esta almacenado en  
+ la local  variable (variable local) @102. La variable es 
+  almacenada en la memoria  y sirve para nombrar un actor, un 
+  auto, un objeto, etc.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Un "car” (carro) (en el coding cualquier  
+  vehiculo - aereos, marinos, o terrestres - es considerado un  
+  carro),  siempre el automovil que nosotros estamos manejando es 
+  $PLAYER_CAR, como los  actores son guardados en las variables 
+ locales o globales, los cars o  carros tambien son almacenados en 
+ una variable.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  El identificador de modelo, como  por  ejemplo  
+ #CHEETAH, -#ARMY,  #PARACHUTE, es  el modelo 3D de un automovil, 
+ actor, u objeto. Estos hacen referencia a los  archivos dff 
+  que  estan almacenados  en gta3.img. Es necesario cargar los  
+  modelos  (poniendolos en la memoria) para  crear automoviles, actores 
+  u  objetos.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Las cadenas de texto cortas (8  bytes  de  
+  longitud) como 'STRAP_4' o 'MTIME3' " son las  palabras que el motor 
+ "lee" busca al pasar por el archivo - o la linea de un  archivo -  
+ nombrado.  Son siempre de 7 caracteres como maximo. Las 
+  mismas hacen referencia a los  nombres de los archivos tales 
+  como gxt, archivos de animacion,  archivos IPL (interiores 
+  de los garajes etc...) o nombres de threads, entradas  de texto  
+ (del archivo gxt), las animaciones (la animacion que se 
+  encuentra en el  archivo animation), y muchas otras cosas. 
+  No te lies mucho, es solo un formato  para el  
+  parametro.</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Cadena de texto larga (16 bytes o  mas)  como 
+  'ATM' o 'JEANSDENIM'. Esto  es exactamente igual que lo  de 
+  arriba,  es solo un formato para el parametro. Pero este 
+  puede manejar palabras mas largas (el ReadMe de Sanny  dice 
+  hasta 255 caracteres) e incluso se  usa si la palabra es mas corta 
+  que 7 caracteres.  Puedes encontrar mas  informacion sobre 
+  las cadenas(ambas, cortas y largas, en el mensaje de 
+  Seemann).</LI></UL>
+<BR></P>
+<UL>
+  <BR></P>
+  <LI>
+  <BR>
+  Labels, ejemplo: MAIN_4059. Son  usadas  solo en jumps  
+  (y gosubs) porque esos opcodes (0002:  jump @ ;  004D: 
+ jump_if_false @ ;0050: gosub @; or  
+  004F:  create_thread @) hacen que el motor salte hasta la 
+  label  que se indique. La label es representada al principio por un  
+ “:”.</LI></UL>
+<BR></P>
+<BR>Ejemplo:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  :label<BR>0001: wait 0 ms <BR>0002: jump  
+  @label
+  <BR>
+  <BR></P>
+<BR></P>
+Las variables son una pequeña pieza de la memoria donde vos 
+podes almacenar cosas. Una vez que hayas definido en el motor que es lo que hay  
+ que recordar, esto permanecera asi salvo que sea cambiado o eliminado. 
+ Inclusive  despues de salvar la variable seguira presente (salvadas las 
+variables y  recargadas cuando el juego esta cargando). Como cuando creas un 
+actor y le  asignas una variable, esta pasa a ser el nombre del actor. En ellos  
+ puedes poner  cualquier integer, floats, actors, vehiculos, cadenas de texto  
+ (formato  especial).<BR><BR><BR>Existen 2 grandes familias de 
+ variables:<BR><BR>Then there  is two big family of variables :<BR><BR><BR>• 
+ Global variables: estan  representadas en el comienzo con un $.  Las 
+Globals pueden ser usadas en cualquier parte del main.scm. Si quieres  
+usarlas para algo  en la main part en misiones, tambien es accesible y  
+equivalente a lo anterior.  Ejemplos $ONMISSION, $PLAYER_ACTOR.<BR><BR>• 
+Local variables :  representadas por  un @ al final. Ej: 1@,  2@. Cada 
+thread (creado por 004F)  tiene su propio conjunto de locals, como 0@ en 
+:thread_A pero no es igual 0@ en :thread_B. En la main part no puedes usar 
+valores  que  superen los 33@ (los demas son los  cronometros  locales, 
+despues daremos mas detalles). Pero en una mision se puede  usar hasta 
+1024@.<BR><BR>Local timers  (cronometros locales): 32@ y 33@, son los  
+cronometros locales  internos.  Estos cuentan  los milisegundos que van  
+pasando.  Si  lo pones en 0  , esperas  10 segundos y veras que 32@ o 33@ 
+cambian a 10  000. Si  pones  1  000 y  esperas 5 segundos  veras que sera  
+equivalente  a 6 000 ms.  <BR>Cortas  y  largas  cadenas de  texto:  las  
+cadenas de texto son almacenadas  en las variables de  formato  especial.  Las 
+ cadenas de texto estan escritas  en color rojo en sanny. Existe  4 
+variables de texto, 2 para  cortos (8  bytes,  'STRING'), 2 para  cadenas 
+ largas  de texto (16 bytes,  "LONGSTRING")  : <BR>Para las cadenas cortas de 
+texto: <BR><BR>- Cadena de  texto global  como: s$1169 o 
+s$ACTOR_SPEECH_GXT_REFERENCE son siempre  accesibles  como otras  
+globals<BR><BR>- Cadena de texto local como: 170@s o  5@s son solo  accesibles 
+  en el thread.<BR>Para cadenas largas:  <BR><BR>-Cadena de texto  global:  
+v$1225  o v$MYLONGSTRING, lo mismo  para  las cadenas largas como en las  
+cortas<BR>.<BR>- Cadena de texto largo  local:  28@v, lo mismo en las  
+cortas…<BR><BR>Pero  miremos  afuera, por ejemplo 0@s  remplaza a 0@ sigue  
+existiendo y viceversa, es la misma variable solo que se  encuentra en 
+diferente formato.<BR><BR>Pero tienes que recordar que el integer y float son  
+  diferentes para el motor del juego (1 no es igual  que  1.0!!!!). Si  el  
+opcode necesita un float y  vos  le das un integer (y  viceversa) el juego no  
+va  arrancar. Vos podes  convertir un  integer en un  float con el opcode  
+008D.  Y convertir  un float en un integer con el opcode 008C.<BR><BR><SPAN 
+style="line-height: normal; font-size: 18px;">4.-  Threads y  Labels:</SPAN> 
+<BR><BR>Un thread es una pieza "autonoma" (algo que no  necesita nada para 
+ funcionar mas que el mismo) del codigo. Se parece a un  programa (como 
+una  ventana abierta en un sistema operativo -como  Microsoft  Windows-). 
+Para  usarlo (hacerlo funcionar en el juego) con tus  futuros mods 
+(programas de  Windows) necesitas crear uno nuevo.  Eso se realiza con 
+ 004F.</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE <BR>004F:  create_thread  @MYTHREAD
+  <BR>
+  <BR></P>
+<BR></P>
+<BR>Los threads son como el fuego en un mundo de cerillas (o 
+ encendedor, fosforo…).No puedes “hacer” fuego, necesitas prenderlo de otro 
+ fuego  – como con la llama olimpica que nunca se apaga entre 2 juegos  
+ olimpicos)<BR>Debes crear uno nuevo de otro ya existente. Como dije antes, el 
+  main thread es creado por el mismo motor. El “MAIN” thread entonces sera la  
+  cerilla que encendera tu siguiente fuego. Entonces, si es el unico thread 
+existente (como en un stripped main.scm) necesitaras crear tu thread en el main  
+ thread ANTES de que esta ultima se apague por (antes de esta linea) :</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>004E: end_thread 
+  <BR>
+  <BR></P>
+<BR></P>
+<BR>Si estas usando un archivo grande (como el main.scm 
+original) tienes que crear los thread en donde esten los  
+otros.<BR>create_thread  (004F), de esta forma:<BR><IMG width="240" height="244" 
+src="Part20I.files/THRTH.png"><BR><BR>No  te preocupes por "00D7:  
+ create_thread_with_wasted_busted_check ", porque se desconoce su verdadero  
+uso. Usa 004F, es la mejor opcion para verificar si el jugador esta muerto  
+o  ha sido atrapado por la policia (como el  opcode condicional 0112). Seeman  
+dijo en el topic los  004F threads creados con 0 a 32 parametros extras 
+y los 00D7 threads creados con 0  parametros extras.  Pero no te preocupes  
+por  00D9 porque 004F es igual y tiene  mas funciones.  MENSAJE DE SEEMAN (<A 
+class="vglnk" href="http://www.gtaforums.com/index.php?showtopic=261006&amp;st=0&amp;#entry3937655" 
+rel="nofollow">http://www.gtaforums.com/index.php?showtopic=261006&amp;st=0&amp;#entry3937655</A>)<BR><BR>Como 
+ dije antes, cada thread que crees tendra un conjunto de local variables 
+(variable local) desde 0@ a 33@ (teniendo en cuenta que 32@ y 33@ son los 
+ cronometros locales). Son muy utiles  porque no ocupan memoria.  
+<BR><BR><BR><BR>Las labels son pequeñas piezas de los  threads, como:MAIN_4059.  
+ Ahora imagina un thread como si fuera un libro (no mas  fuego D:); las labels 
+ serian las paginas que lo integran. De esta forma se puede  entender que un 
+ JUMP (o jump_if_false o gosub) a una  label especifica seria como saltar a  
+ una pagina especifica.<BR><BR>Aca dejo un ejemplo animado para que puedas ver 
+  como el motor del juego viaja a traves de  las labels:<BR><BR><IMG alt="" src="gif1.gif"><BR><BR>La 
+ linea roja representa  el codigo (a veces al motor del juego se le llama 
+simplemente codigo, en el  sentido de “el lector del codigo”) pasando a traves 
+ las labels. <BR><BR>Como  puedes ver el thread “label”es creado por otro 
+thread.  Puede ver el codigo  "separando" en dos, uno va a crear el thread  
+ label  y el  otro sigue haciendo el  thread que usamos, y luego se acaba (pero  
+  se  podrian  seguir haciendo mas cosas  sin acabarlo).<BR><BR><BR>Pasa a  
+traves de  :label a  :label_100 en  :label_100 podras ver que hay un “if” que  
+es una  condicion,  seguida de jump_if_false,  esto significa que 
+$PLAYER_ACTOR  esta cerca de la  posicion 2498.0  -1711.0 1015.0 el codigo pasa  
+por  esto y  realiza  un jump a :label_200.<BR><BR>El codigo realiza  un loop,  
+que se  repite  infinitamente hasta que se cumpla la condicion 
+ especificada.<BR><BR>Luego salta  a :label_200 sin pasar por :label_150. Lo  
+que tienes que hacer  en:label_200 es poner las cordenadas 3D de  
+$PLAYER_ACTOR  en las variables $X_COORD  $Y_COORD $Z_COORD. Luego salta a  
+:label_150,  espera  1 minuto y vuelve a saltar a :label_100 y chequea devuelta  
+si  el jugador esta  en la  posicion especificada. Y eso se repetira una y  
+otra vez.  No tienes que  terminar  un thread si no es necesario, puede 
+ llevar  un control a  algo antes de  empezar.  Recuerda que siempre tienes 
+que  hacer  algo con un hilo, terminarlo o  dejar que  siga funcionando. 
+Pero  nunca  dejarlo libre. <BR>Acuerdate  de tener  en cuenta el  tiempo 
+de  espera  (0001: wait 0  ms), porque es  obligatorio. Cuando a un loop le 
+ agregues un  tiempo y el  motor no  lo  reconozca  bien, el juego no se 
+ cerrara si no que  se congelara. <BR><BR>La  unica manera de  resolver esto 
+es cambiando la  resolucion, aunque aveces en<BR><BR>Si no estas  seguro de  
+  agregar  una  espera o no solo tienes  que  poner  "wait 0 ms" porque no  se 
+ nota la diferencia. Son 500  ms.<BR><BR><BR><SPAN style="line-height: normal; font-size: 18px;">5.- 
+  “If” y  opcodes condicionales:</SPAN><BR><BR>Se llama  “if” a  una  
+estructura  del  codigo que comprueba si hay algo que se esta 
+cumpliendo.<BR><BR>En sanny  se ve algo asi:<BR><BR><IMG width="277" height="70" 
+src="Part20I.files/fxcvj.gif"><BR><BR>El  motor se desplazara solamente si se  
+ comprueba una cierta  condicion, y saltara  a  otra label. En caso de que no se 
+  compruebe se usa (004D:  jump_if_false @).  La cosa,  que podia o no  hacerse, 
+  lleva una  condicion que utiliza codigos de operacion  condicionales. Y  se  
+ pueden poner hasta 7 condiciones.  Ya se que  estas diciendo “soy feliz,  
+ esto cambia mi vida”, pero… <BR><BR>Existen  2 tipos multiples de condiciones 
+ “if”:<BR><BR>Cuando tienes varias condiciones es posible que quieras que  
+ todas sean verdaderas (quizas) o que solo 1 sea verdadera.<BR><BR>-If and:  
+  Se usa cuando se  quiere que todas las condiciones sean verdaderas, 
+ ejemplo:<BR><IMG width="410" height="107" 
+src="Part20I.files/ytreurfio.png"><BR><BR>Ahi  se puede ver que  todos esos 
+ external scripts son  cargados, pero si llegara a pasar que alguno  de ellos  
+ no  se cargo entra en  accion el jump_if_  false y salta  a la label  
+ @INTMAN_1088.  Puedes utilizar esto para  comprobar que todo  sea verdadero y 
+  si algo es  falso se efectua el jump a la  label determinada. <BR><BR>-If 
+or:  se utiliza  cuando se necesita que  solo 1 condicion sea  verdadera para  
+  continuar con el viaje:<BR><IMG width="343" height="121" src="Part20I.files/sdxfcghj.gif"><BR><BR>Si 
+ ahi hay solo 1 que no cumple, la puerta estara  abierta para  continuar el  
+ viaje. En el caso contrario entra en accion el jump_if_false y saltara a la  
+ label @MAIN_4336.<BR><BR>Dando un  ejemplo, es como pensar si  esto, o esto,  
+o  esto es verdadero. Si no hay al  menos 1 verdadero salto.<BR><BR>And y  or 
+ se  denominan operadores logicos.<BR>Una observacion es que no se debe 
+poner  AND  y OR en una condicion IF singular.  Solo puedes usar 1 de los 
+elementos.  Si intentas usar  los 2 sanny te avisara que no hagas  
+eso.<BR><BR>Por  otro  lado  no te olvides de poner un AND o un OR en tus  
+condiciones if. Sanny no va  avisar nada y el  juego  va arrancar igual, 
+pero estoy seguro que no  funcionara correctamente.  Siempre  recuerda poner 
+un and o un or en tus  condiciones if.<BR><BR>Tambien  se pueden negar todos 
+los opcodes condicionales. Negar es agregar un NOT en  cada  una de las 
+condiciones. Como  por ejemplo If actor not dead, o if actor not 
+driving. De esta  forma  el  motor pasara a traves de estas y si  alguna no 
+cumple efectuara el  salto. En  este  caso solo se efectuara si  alguna  de 
+ellos no cumple con el  NOT, un  ejemplo  seria  que pongas esto If  actor not 
+ dead,  si el  actor  esta  muerto se  efectuara el  jump.  De  esta  forma  
+puedes negar  multiples condiciones IF. Para  negar todos los  opcodes  
+condicionales  tienes  que  poner un 8 en  el primer  digito en lugar  del  0, 
+ ejemplo:<BR><IMG width="339" height="59" src="Part20I.files/ertyhu.gif"><BR>Ahi 
+  no esta negado y usa 0.<BR><IMG width="367" height="59" src="Part20I.files/trytugf.gif"><BR>Ahi 
+  esta  negado y usa  8.<BR><BR>No es necesario escribir el “not”, sanny no lo 
+ mirara y  escribira al  re-descompilar.  Pero puedes escribir el “not” si 
+ quieres, lo  hace mas facil para trabajar. Pero SI TIENES que escribir el 8 
+ en el  opcode.<BR><BR>Si  vos negas todas las condiciones  en un “'multiple 
+ conditions  if”, tendras que  cambiar el operador  logico:</P>
+<BR></P>
+<IMG width="489" height="208" 
+src="Part20I.files/rettdtyj.gif"><BR><BR><IMG alt="" 
+src="gif2.gif"><BR><BR>Estos  dos hacen lo  mismo:<BR><BR>• El primero verifica  
+ es el jugador es agresivo or(o) si el obejtivo del actor 14@ or(o) el 
+ objetivo del actor  15@ or(o) el obejtivo del actor 16@ or(o) el objetivo  
+ del actor 17@, si alguno de estos son verdaderos el codigo pasa a traves  
+de ellos y realiza el jump a  labelz.<BR><BR>•  El segundo veifica que el  
+ jugador no sea agresivo and(y) que no se cumpla el obejtivo del actor 14@  
+ and(y)  que no se cumpla  el  objetivo del actor 15@ and(y) que no se cumpla  
+ el objetivo del actor 16@ and(y) que no se cumpla en  objetivo del actor 17@, 
+  si cualquiera de estos es  falso (si el jugador  cumple el objetivo) el  
+ codigo realiza un jump_if_false a labelz.<BR><BR>Algunas veces cuando mires los 
+  mods  encontraras algo como esto:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE <BR>00D6: if 0
+  <BR>
+  
+  <BR>
+  o</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>00D6: if 5<BR>
+  <BR>
+  
+  <BR>
+  o</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>00D6: if 21
+  <BR>
+  
+  <BR>
+  o</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>00D6: if 25<BR>
+<BR></P>
+<BR>No te preocupes porque es la misma compilacion, tienes que 
+ decopilar y obtendras el operador logico escrito. Y es por eso que se permite 
+  usar el “chequeo de condiciones” asi que podras usar AND y OR y sanny lo  
+ escribe cuando se decopila.<BR><BR>if 0 = if<BR><BR>if x = if  
+ and<BR><BR>if 2x = if or<BR><BR><BR>Lee las  condiciones de la Ayuda de 
+  Sanny Builder or/and<BR>aqui (Es de Vice City, pero es lo mismo) para mas  
+ explicaciones.<BR><BR>Es posible que quieras hacer condiciones de alto nivel, y 
+  en las condiciones de ayuda de sanny builder se encuentra explicado muy bien.  
+  Realizar condiciones de bajo nivel esta bastante bien por ahora, de todas 
+ formas  tambien se pueden realizar condiciones de alto nivel usando condiciones 
+  de bajo  nivel.<BR><BR>Pero recuerda muy bien que cuando se usa “if”  y  
+ sabes que el codigo va a realizar un loop, en donde  se puede repetir 
+ infinitamente, tienes que agregar un WAIT. Es  decir  un tiempo de espera.  
+ Agregando un 0 de  espera esta bien, porque no se  nota la  diferencia. Y en  
+ esos 0ms el motor hara  otras cosas. Vuelve a mirar el  ejemplo  animado de  
+ las labels para entender en  que momento hay que usar el  wait.  
+<BR><BR><SPAN style="line-height: normal; font-size: 18px;">6.  Solicitar los  
+modelos,  cargarlos  antes de crearlos, liberarlos para no ocupar  
+ memoria:</SPAN><BR><BR>Cuando se crea un actor (con el opcode 009A), un  
+ vehiculo (con el opcode 00A5), un objeto (con opcode 0107), o le das armas a un 
+  actor, tendras primero que solicitar el modelo dff, cargarlo, y verificar  
+si  este se cargo realmente. <BR><BR>Ejemplo:</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>0001: wait 0 ms  <BR>0247:  
+ request_model #HFYBE<BR>0247:  request_model #POLICE_BARRIER  
+ <BR>0247:  request_model #BMYBOUN <BR>0247: request_model 
+ #WMYBOUN <BR>0247: request_model #DESERT_EAGLE  
+  <BR>0247: request_model #MP5LNG <BR>0247: request_model 
+  #CHEETAH<BR>0247:  request_model #TURISMO <BR>038B:  
+  load_requested_models  <BR>00D6: if and<BR> 0248: 
+  model  #HFYBE available<BR> 0248: model #BMYBOUN  
+  available<BR> 0248: model #WMYBOUN available<BR> 0248: 
+  model #DESERT_EAGLE available<BR> 0248: model  #MP5LNG  
+  available<BR>004D: jump_if_false @GSHAUTO_564 
+  <BR>00D6: if and<BR> 0248: model #POLICE_BARRIER  
+  available<BR> 0248: model #CHEETAH available<BR> 0248: model 
+  #TURISMO  available<BR>004D: jump_if_false @GSHAUTO_564  
+ <BR>009A: 11@ = create_actor 4 #WMYBOUN at 561.0 
+  -1252.0 17.0 <BR>009A: 14@ = create_actor 4 
+  #BMYBOUN at  552.0 -1257.0 17.0 <BR>009A:  15@ = 
+  create_actor 5  #HFYBE at  567.0 -1290.0 17.5  <BR>009A: 
+ 16@ = create_actor 4 #WMYBOUN at  561.0 -1255.0 17.0  
+ <BR>009A:  17@ = create_actor 4 #BMYBOUN at  553.5 
+  -1260.0 17.0  <BR>009A: 18@ = create_actor 4 
+  #WMYBOUN at  569.0 -1292.0 17.5  <BR>009A:  19@ = 
+  create_actor 4 #BMYBOUN at  569.0 -1288.0 17.5  <BR>0107: 
+ 9@ = create_object #POLICE_BARRIER at 560.0 -1254.0 
+  17.0 <BR>00A5: 0@ = create_car #TURISMO at 1793.4956 
+  -1907.4233  12.3992 <BR>00A5: 1@  = create_car  
+  #CHEETAH at  1793.4956 -1907.4233  12.3992  <BR>01B2: 
+  give_actor  11@ weapon  29 ammo 900 // Load  the 
+  weapon  model before using this <BR>01B2: give_actor 14@ weapon 
+  29 ammo  900 // Load  the weapon model before using this  
+ <BR>01B2: give_actor 15@ weapon 24 ammo 300 // Load the 
+  weapon model before using this  <BR>01B2:  give_actor 16@ 
+  weapon 29 ammo 900 // Load the weapon model before using this 
+  <BR>01B2: give_actor 17@ weapon  29 ammo 900 // Load 
+  the  weapon  model before using this  <BR>01B2: give_actor 18@  
+ weapon 29 ammo 900 // Load  the weapon model before using 
+  this  <BR>01B2: give_actor 19@ weapon 29  ammo  
+  900 // Load the weapon model before using this <BR>
+  <BR>
+  <BR>Ahi puedes observar, como primero solicite los modelos 
+ (usando 0247: request_model), los cargue (con 
+  038B: load_requested_models) y cheque que estuviera  
+  disponibles (con 0248). Si cualquiera  de estos no es  cargado, 
+  se efectua un jump y se vuelven a cargar. Si  todos son 
+  cargados normalmente, se crea el actor, se le da el arma y se 
+  crea el  objeto.  <BR><BR>Vos podras ver en el comentario 
+  anterior que el 01B2 necesita el modelo del arma  para cargarlo 
+  y luego usarlo. Para saber el numero de las armas puedes 
+  buscar en la ayuda de sanny  builder, en la seccion de SCM 
+  documentation o si no en Generic SA SCM  Documentaion (<A class="vglnk" 
+  href="http://www.gtaforums.com/index.php?showtopic=205020&amp;st=0&amp;#entry3013775" 
+  rel="nofollow">http://www.gtaforums.com/index.php?showtopic=205020&amp;st=0&amp;#entry3013775</A>).<BR><BR>Una 
+ vez que hayas terminado de hacer lo que tiene que ver con 
+  esto  (todos  estan muertos, el jugador esta demasiado lejos, 
+  no los  queremos aqui, etc ..) podrpas  transformar estos en 
+  peatones (peds) y autos usuales (como todos los peds ya  autos 
+  que se ven en el juego) o destruirlos (el objeto tendra que 
+  ser destruido).</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>0108: destroy_object 9@ <BR>01C3: 
+ remove_references_to_car 1@ // Like turning a car 
+  into any random car <BR>01C3:  remove_references_to_car 0@  // 
+  Like turning a car  into any random car  <BR>01C2:  
+  remove_references_to_actor 11@ // Like turning an actor into a 
+ random pedestrian  <BR>01C2: remove_references_to_actor  14@ // 
+  Like turning an actor into a random pedestrian  <BR>01C2: 
+ remove_references_to_actor  15@ //  Like  turning an actor 
+  into a random pedestrian  <BR>01C2: 
+  remove_references_to_actor 16@ // Like  turning  an actor into 
+  a random pedestrian <BR>01C2: remove_references_to_actor  17@ 
+  // Like turning an actor into a  random  pedestrian 
+  <BR>01C2: remove_references_to_actor 18@ //  Like  turning an actor 
+  into a random pedestrian <BR>01C2: 
+  remove_references_to_actor 19@ // Like turning  an actor into a random  
+ pedestrian 
+  <BR>
+  
+  <BR>
+  o</P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>0108: destroy_object 9@ <BR>00A6: 
+ destroy_car  0@ <BR>00A6: destroy_car 1@ <BR>009B: 
+  destroy_actor_instantly 11@ <BR>009B:  destroy_actor_instantly 14@ 
+ <BR>009B:  destroy_actor_instantly 15@ <BR>009B: 
+ destroy_actor_instantly 16@ <BR>009B:  destroy_actor_instantly 
+  17@ <BR>009B:  destroy_actor_instantly 18@ 
+  <BR>009B:  destroy_actor_instantly 19@<BR>
+  <BR>
+  <BR></P>
+<BR></P>
+No uses los (01C2, 01C3, 0108, 00A6, 009B, etc ..) en un  
+ coche o en un actor que no existe (o con el handle que debe conservar como  
+ like 0@, $car,  etc... no lo tienen), por que el juego se colgara.  <BR>Una vez 
+  que te hayas  desecho de los actores/automoviles/objetos (cuando los  hayas  
+ terminado de  usar,  y luego los hayas destruido, solo despues de eso) 
+tienes  que liberar a  los  modelos que has utilizado por que ya no seran de 
+utilidad. </P>
+<BR></P>
+  <BR></P>
+  
+  <BR>
+  CODE  <BR>0249: release_model #WMYBOUN 
+  <BR>0249: release_model #BMYBOUN <BR>0249: release_model 
+ #HFYBE <BR>0249: release_model 
+  #POLICE_BARRIER<BR>0249:  release_model #DESERT_EAGLE<BR>0249: 
+ release_model #MP5LNG  <BR>0249: release_model  #CHEETAH 
+  <BR>0249: release_model #TURISMO  
+  <BR>
+  <BR></P>
+<BR></P>
+Seguramente ya has comprendido por que hay que liberar los 
+modelos. No es necesario que se carguen una vez que ya los hayas creado en el  
+ juego, ya sea un auto, un ped o un objeto. Pero te aconsejo liberarel modelo  
+ al final de tu script/mission cuando ya sea seguro que no son necesarios. Es  
+ una  prevencion para no retornar al escritorio. <BR><BR>Conclusion:  
+<BR><BR>Toda  esta  primera parte era mas que nada informacion. Pero ahora que 
+ sabes que un  opcode  tiene 4 digitos podras hacer cosas con los opcodes que  
+ has aprendido.  Ahora  conoces los diferentes tipos de parametros, lo que una 
+  variable local y  una  global. Y muchas otras cosas que necesitas saber para 
+  seguir adelante.  Ahora que  hablamos el mismo idioma puedes llegar a la  
+ codificacion  real.</P>
+<P><BR></P>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

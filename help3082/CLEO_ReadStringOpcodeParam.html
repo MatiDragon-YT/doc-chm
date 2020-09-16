@@ -1,0 +1,44 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEO_ReadStringOpcodeParam</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<PRE>LPSTR WINAPI CLEO_ReadStringOpcodeParam(CScriptThread* thread, LPSTR buf, int size);</PRE>
+<P><b>Descripcion:</b><BR>La funcion lee del script 1 un operando de   
+ tipo String en el bufer y devuelve un puntero a este bufer.</P>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Parametro</TH>                                                  
+                                                                   
+    <TH>Descripcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD><i>thread</i></TD>
+    <TD>Puntero de estructura de       flujo  </TD></TR>
+  <TR>
+    <TD><i>buf</i></TD>
+    <TD>Puntero a la cadena en la que se escribira el resultado.   
+                                                                                 
+                               Al       pasar                   NULL,       la   
+          cadena       del                   script       se             leera   
+          en       el                   bufer                         interno    
+         y                               se       devolvera       un             
+                                    puntero a       este                 
+    bufer.</TD></TR>
+  <TR>
+    <TD><i>size</i></TD>
+    <TD>Peso de la cadena en        
+bytes.</TD></TR></TBODY></TABLE>
+<P><b>Ejemplo de   uso:</b></P>
+<PRE>char * str = CLEO_ReadStringOpcodeParam(thread, <B>NULL</B>, 0);
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

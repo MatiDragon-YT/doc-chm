@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Variables</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Una variable (var) es una ubicacion de almacenamiento, con un nombre que  
+contiene uno o varios datos, que se pueden manipular para ser leidos o escritos multiples veces.</P>
+<HR>
+
+<h4 id=global>Variables Globales</h4>
+<P>Las variables globales comienza con un <code>$</code>, seguido de un identificador (nombre).<BR>
+El nombre de la variable global es cualquier combinación de letras, dígitos y <code>_</code>:</P>
+<PRE class="sb3">$variable1
+$100
+$____</PRE>
+<div class="inf">Una variable global con el nombre que sólo consta de dígitos se denomina <code>DMA</code>-variable (<b>D</b>irect <b>M</b>emory <b>A</b>ddress). Revise también <a href="Codificacion.ComandosAdicionales.html#Alloc">Alloc</a>.</div>
+<P>Sus valores están disponibles desde cualquier lugar del código.</P>
+
+<h4>Variables Guardables</h4>
+<P>Una variable guardable es una variable global especial disponible solo en los modos <code>LCS</code> y <code>VCS</code>.<br>
+Sus nombres tiene el prefijo <code>$_</code>, por ejemplo, <code>$_var</code>. El valor de esta variable persiste en las partidas guardadas. Las variables globales guardadas con <code>$</code> solamente (por ejemplo <code>$var</code> no se guardan y obtienen valores en blanco cuando se carga el juego LCS o VCS.</P>
+
+<HR>
+
+<h4 id=local>Variables Locales:</h4>
+<P>Un nombre de variable local solo puede ser un número seguido de <code>@</code>:</P>
+<PRE class="sb3">0@
+999@
+56@</PRE>
+<P>Sus valores solo están disponibles dentro del script actual o de la misión.</P>
+<div class="dan">El número de variables locales es estrictamente <a href="DocumentacionSCM.LimitesDeLosGTA.html">limitado</a> por el script.</div></P> 
+
+<h4>Variables Temporizadoras:</h4>
+<P>Cada script o misión tiene 2 variables locales especiales llamadas <code>TIMERA</code> y <code>TIMERB</code>. El valor de una variable de temporizador aumenta automáticamente cuando avanza el reloj del juego, por lo que se usan comúnmente para medir el tiempo transcurrido en el guión.</P>
+<PRE class="sb3">0006: TIMERA = 0
+
+:WAIT_2S
+0001: wait 0 ms
+00D6: if
+0019:   TIMERA > 2000
+004D: jump_if_false @WAIT_2S
+0662: printstring "Han pasado dos segundos"</PRE>
+<div class="inf">Tenga en cuenta que los nombres <code>TIMERA</code> y <code>TIMERB</code> solo están disponibles a partir de Sanny Builder v3.3.0. Los scripts más antiguos tienen estos temporizadores como variables numéricas <code>16</code>@, <code>17@</code> (GTA3, VC) o <code>32@</code>, <code>33@</code> (SA).</div> 
+
+<HR>
+
+<h4 id="var">Constructor: VAR..END</h4>
+<P>Las variables se usan comunmente en las expresiones. Si el operando derecho es  
+una constante numerica, no se necesita un opcode:    
+<PRE class="sb3">$variable = 0
+$arreglo($indice, 10i) &gt;= 150</PRE>
+<P></P>
+<P>Si ambas expreciones son variables, el compilador no puede detectar el opcode, debido al tipo desconocido de las variables.     
+<P>Por ejemplo, hay dos opcodes para incrementar el valor de una variable: <code>0058</code> para los valores enteros y <code>0059</code> para los valores flotantes (decimales).</P>
+<PRE class="sb3">0058: $Var1 += $Var2 // (int) 
+0059: $Var1 += $Var2 // (float)
+</PRE>Suponiendo 
+Suponiendo que no haya un opcode, ¿cuál usar? 
+<PRE class="sb3">$Var1 += $Var2 // ??
+</PRE>
+<P></P>
+<P>Para comunicar al compilador un tipo de variable utiliza el constructor <code>VAR..END</code> que permite declarar variables y sus tipos para su uso avanzados.</P>
+<P>Sintaxis: <code>var &lt;variable&gt;: &lt;tipo&gt; end</code></P>
+<P>Por ejemplo, si se declaran ambas variables, el compilador puede procesar la expresión sin opcodes:</P>
+<PRE class="sb3">
+var
+    $Var1 : Integer
+    $Var2 : Integer
+end
+$Var1 += $Var2 // opcode 0058
+</PRE>
+<P>Se admiten los siguientes tipos de variables::</P>
+<UL>
+  <LI><code>Integer</code>, <code>Int</code>- valores enteros</LI>
+  <LI><code>Float</code>: valores decimales</LI>
+  <LI><code>String</code>, <code>ShortString</code>: una variable que contiene una cadena de texto con la  longitud fija (solo para los arreglos, use <code>s$</code>, <code>@s</code> para  variables)</LI>
+  <LI><code>LongString</code>: una variable que contiene una cadena de texto con la  longitud fija (solo para los arreglos, use <code>v$</code>, <code>@v</code> para  variables)</LI>
+  <LI><code>&lt;Nombre de clase&gt;</code> - cualquier nombre de la <a href="Codificacion.Clases.html">clase</a> disponible</LI></UL>
+<P>Los tipos de las variables locales tambien se pueden declarar.</P>
+<div class="inf">
+Una vez declarado el tipo de la variable, se utiliza para todo el código que sigue a la declaración.
+Puede volver a declarar variables para establecer el nuevo tipo:
+<PRE class="sb3">thread 'Food'
+var
+    10@ : Float
+    $Variable : Float
+end
+$variable = 1
+10@ = $Variable
+end_thread
+
+thread 'Loop'
+var
+    10@ : Int
+    $Variable : Int
+end
+$variable = 1
+10@ = $Variable
+end_thread
+</PRE>
+<P>En el script <code>'Food'</code> está la variable <code>10@</code> como flotante.<br>
+En el script <code>'Loop'</code> está la variable <code>10@</code> como entero.</P>
+<P>Puede redeclarar variables tantas veces como lo necesite.</P>
+</div>
+<HR>
+
+<h4 id=var-tiny>Forma de declaración más corta</h4>
+<P>Desde v3.2.0 es posible declarar una variable de un tipo integrado (<code>Int</code>, <code>Float</code>, <code>String</code>, <code>LongString</code>) utilizando sólo el nombre de tipo.</P>
+<P>Sintaxis: <code>&lt;tipo&gt;&nbsp;&lt;nombre de variable&gt;</code></P>
+<PRE class="sb3">
+int 0@ //0@ es declarada como una variable entera.
+</PRE>
+<p>A partir de v3.4.0 es posible declarar variables con nombres personalizados:</p>
+<PRE class="sb3">
+int a
+float distance
+string name
+
+a = 1
+distance = 15.5
+name = 'CJ'
+</PRE>
+<p>Un valor inicial puede seguir el nombre de la variable para reducir el número de líneas de código:</p>
+<PRE class="sb3">
+int a = 1
+float distance = 15.5
+string name = 'CJ'
+</PRE>
+<p>El compilador enlaza una nueva variable local a cada nombre. En el ejemplo anterior se puede esperar que un código resultante tenga el aspecto de:</p> 
+<PRE class="sb3">
+0006: 0@ = 1 
+0007: 1@ = 15.5 
+05AA: 2@ = 'CJ'
+</PRE>
+<div class="dan">Debido a <a target="_black" href="https://github.com/sannybuilder/dev/issues/32">limitaciones de diseño</a>, esta característica solo está disponible en CLEO scripts.</div>
+<HR>
+<h4 id="var-ini">Inicialización variable</h4>
+<P>Puede especificar un valor inicial para la variable al declararla. Escribiendo <code>=</code>, a continuación del tipo de valor:</P>
+<PRE class="sb3">var
+    $fVar1 : float = 1.0
+end
+</PRE>o 
+<PRE class="sb3">float $fVar1 = 1.0</PRE>
+<P>La variable <code>$fVar</code> declarada como <code>Float</code> y  tambien el 
+ compilador agregara el opcode <code>0005</code> al script:</P>
+<PRE class="sb3">0005: $fVar1 = 1.0</PRE>
+<P>La inicializacion esta permitida solo para las variables, no para los arreglos.</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

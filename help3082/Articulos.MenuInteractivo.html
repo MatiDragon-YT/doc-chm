@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Plantilla: Menu interactivo</title>
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P class=light>Encuentra toda la informacion que nesecites aqui.</P>
+<hr>
+<PRE class="sb3">{$CLEO .cs}
+:MENUE_AND_JUMPTABLE_TEMPLATE
+03A4: name_thread 'MENUEJP'
+
+const  
+L_PANEL_VAR = 0@
+L_ACTIVE_ROW_VAR = 1@
+L_PANEL_IS_SHOWN_VAR = 2@
+end
+
+while true
+    wait 0
+   if
+      Player.ifDefined($PLAYER_CHAR)
+   then
+      if
+         L_PANEL_IS_SHOWN_VAR  == 0
+      then    
+         if  and
+            Game.ifPressedPhysicalKey(Key_F9)
+            not Actor.ifDriving($PLAYER_ACTOR)
+         then
+            MENU_1()
+         end
+      else // se muestra el menú, si L_PANEL_IS_SHOWN_VAR es igual a 1
+         if
+            Game.ifPressedVirtualKey(0, Key_Sprint) //--- tecla de Correr
+         then
+            Selection_1()
+         end
+         if
+            Game.ifPressedVirtualKey(0, Key_Interact) //--- tecla de Entrar/Salir
+         then
+            Remove_panel()
+         end
+      end
+   else // Si el jugador muere o es arrestado
+      if
+         L_PANEL_IS_SHOWN_VAR  == 1
+      then
+         Remove_panel() // si el jugador muere o es arrestado mientras se muestra el menú
+      end    
+   end
+end
+
+:MENU_1
+L_PANEL_VAR = Panel.Create('CHEAT7', 340.0, 120.0, 240.0, 1, 1, 1, 0)
+Panel.setColumnHeaderData(L_PANEL_VAR, 0, 'PLA_19', 'DEBW1', 'DEBW2', 'DEBW3', 'DEBW4', 'DEBW5', 'DEBW6', 'DEBW7', 'DEBW8', 'DEBW9', 'DEBW10', 'DEBW11', 'DEBW12')
+L_PANEL_IS_SHOWN_VAR = 1
+return
+
+:Remove_panel
+Panel.remove(L_PANEL_VAR)
+L_PANEL_IS_SHOWN_VAR = 0   
+return
+
+
+:Selection_1
+Panel.getActiveRow(L_ACTIVE_ROW_VAR, L_PANEL_VAR)
+0871: init_jump_table L_ACTIVE_ROW_VAR total_jumps  12  0 @Sel_T00 jumps  0 @Sel_T01  1 @Sel_T11  2 @Sel_T22  3 @Sel_T33  4 @Sel_T44  5 @Sel_T55 6 @Sel_T66
+0872: jump_table_jumps  7 @Sel_T77  8 @Sel_T88  9 @Sel_T99  10 @Sel_T101  11 @Sel_T111  -1 @Sel_T00  -1 @Sel_T00  -1 @Sel_T00  -1 @Sel_T00
+
+:Sel_T00 // aquí va el código si el valor de la variable no existe en la tabla de saltos
+Gxt.ShowTextTitle('FEM_OFF', 1000, 4) // OFF
+wait 1000
+jump @Sel_EXIT
+
+:Sel_T01
+Game.setWeather(ExtraSunnyLS)
+jump @Sel_EXIT
+
+:Sel_T11
+Game.setWeather(SunnyLS)
+jump @Sel_EXIT
+
+:Sel_T22
+Game.setWeather(ExtraSunnySmogLS)
+jump @Sel_EXIT
+
+:Sel_T33
+Game.setWeather(SunnySmogLS)
+jump @Sel_EXIT
+
+:Sel_T44
+Game.setWeather(CloudyLS)
+jump @Sel_EXIT
+
+:Sel_T55
+Game.setWeather(SunnySF)
+jump @Sel_EXIT
+
+:Sel_T66
+Game.setWeather(ExtraSunnySF)
+jump @Sel_EXIT
+
+:Sel_T77
+Game.setWeather(CloudySF)
+jump @Sel_EXIT
+
+:Sel_T88
+Game.setWeather(RainySF)
+jump @Sel_EXIT
+
+:Sel_T99
+Game.setWeather(FoggySF)
+jump @Sel_EXIT
+
+:Sel_T101
+Game.setWeather(SunnyLV)
+jump @Sel_EXIT
+
+:Sel_T111
+Game.setWeather(ExtraSunnyLV)
+jump @Sel_EXIT
+
+:Sel_EXIT
+return
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+    </BODY></HTML>

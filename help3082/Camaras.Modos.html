@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Modos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Estos son modos de camara que se usan en San Andreas tanto internamente como  
+ en SCM.<BR>Estos valores se usan para los codigos de operacion:</P>
+<P>
+<PRE class="sb3">0158: camera_on_car $car00 mode 18 switchstyle 2
+0159: camera_on_ped $actor00 mode 15 switchstyle  2
+0160: set_camera_point_at 665.2346 -325.2343 16.3474 switchstyle 2
+</PRE>
+<P></P>
+<P>SwichStyle: (estilo de traslado)</P>
+<UL>
+  <LI>1 =&nbsp;Tranlado Suave</LI>
+  <LI>2 = Salto Directo/Cortado</LI></UL>
+<P>
+<PRE class="sb3">0679: put_camera_on_car $car01 with_offset 0.0 -2.0 $Z_CAMERA rotation 0.0 0.0 10.5 tilt 0.0 switchstyle  2
+067A: put_camera_on_car $car02 with_offset 15.0 15.0 10.0 point_to_car $car03 tilt 15.0 switchstyle 2
+067C: put_camera_on_actor $PLAYER_ACTOR offset 0.0 2.0 -2.0 rotation 0.0 0.0 0.0 tilt 0.0 switchstyle 2
+067E: put_camera_on_actor $actor01 offset 0.0 -5.0 4.0 target_actor $actor02 tilt 0.0 switchstyle 2 </PRE>
+<P></P>
+<P>Tilt: (inclinacion)</P>
+<P>
+<PRE class="sb3">0920: point_camera 2359.521 -1246.843 28.7047 transverse_to 2359.276 -1247.129 28.7047 time 7000 smooth_transition 1 </PRE>
+<P></P>
+<P>Time: (tiempo: duracion de la animacion en milesimas de segundos         
+"ms")<BR>Smooth_Transition (transicion  suave):</P>
+<UL>
+  <LI>0 = Desactivado</LI>
+  <LI>1 = Activado</LI></UL>
+<P>Algunos valores pueden quedar de     versiones  anteriores de juegos de GTA y 
+ no funcionan correctamente en San      Andreas.<BR>Algunos tambien pueden haber 
+ sido utilizados para depurar el      prelanzamiento de San Andreas y han sido   
+ eliminados.</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+  
+<SCRIPT src="HL.js"></SCRIPT>
+ </BODY></HTML>

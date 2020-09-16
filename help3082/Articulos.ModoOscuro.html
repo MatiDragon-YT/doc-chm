@@ -1,0 +1,100 @@
+<!DOCTYPE HTML><HTML><HEAD>  <TITLE>Tema oscuro de SB3</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Este modo es el que ves en los codigos que se muestra en esta 
+documentacion, echo por mi (MatiDragon). Tambien puedes invertir los  blancos y 
+los negros para tener un tema claro, parecido al nuevo tema de W10 y VBS   
+<hr>
+<H4>Vista previa</H4>
+<P>Borra el ejemplo y pega el codigo de tu cleo para ver como se veria mas o menos en tu SB.<BR>
+<PRE class="sb3" id="sb3" contenteditable="true" style="overflow: auto; height:300px;">{$CLEO}
+thread 'EJEMPLO'
+while true 
+   wait 0
+   if or
+      Game.isPressedVK(0, Key_Vertical)
+      Game.isPressed(Key_R)
+   then
+      wait 0
+      Actor.setWalkStyle($PLAYER_ACTOR, "parkourman")
+   else
+      wait 1000
+      Actor.setWalkStyle($PLAYER_CHAR, "man")
+   end
+end
+</PRE>
+<UL>
+  <LI><A class="btn red text-white" onclick="document.getElementById('sb3').innerHTML='';" 
+  href="#1">        Limpiar Campo        </A>        <A class="btn cyan text-white" 
+  onclick="aplicarColores();" href="#1">Aplicar Colores</A>       </LI></UL>
+<hr>
+<H4>Aplicar tema</H4>
+<p>Para apicar estos estilos, primero deberas dirigirte a la carpeta <code>data</code> de tu SB3 y abrir el archivo <code>settings.ini</code> con cualquier editor de texto y remplazar los valores de cada <code>[ETIQUETA]</code> con los de aquí abajo</p>
+<PRE class="ini"  style="overflow: auto; height:300px;">
+[Main]
+Colors::ActiveLineColor=2105376
+Colors::GutterColor=10525595
+Colors::EditorColor=4274740
+Editor::Font=16777215|-16|Consolas|0|96|12|nnnn
+
+[Class]
+Background=536870911
+Foreground=4390892
+Style=1
+[Command]
+Background=536870911
+Foreground=10135078
+Style=1
+[Comment]
+Background=536870911
+Foreground=14079702
+Style=2
+[Directive]
+Background=536870911
+Foreground=16749867
+Style=0
+[Label]
+Background=536870911
+Foreground=5287756
+Style=1
+[Model]
+Background=536870911
+Foreground=3621876
+Style=1
+[Number]
+Background=536870911
+Foreground=3491060
+Style=5
+[Reserved Word]
+Background=536870911
+Foreground=16119285
+Style=1
+[Space]
+Background=536870911
+Foreground=536870911
+Style=0
+[String]
+Background=536870911
+Foreground=39423
+Style=1
+[Symbol]
+Background=536870911
+Foreground=16777215
+Style=0
+[Variable]
+Background=536870911
+Foreground=16749867
+Style=1
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+     
+<SCRIPT src="HL.js"></SCRIPT>
+   </BODY></HTML>

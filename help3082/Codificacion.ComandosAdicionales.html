@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Comandos Adicionales</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Los comandos adicionales son para acelerar la   produccion de siertas         
+                                                                                 
+ funciones,       como       generar               numeros       random,         
+    entre             otras                   cosas.</P><hr>
+<h4>INC</h4>Incrementa el primer parametro por el segundo.   El                  
+                  primer parametro es una variable.         
+<P></P>
+<PRE class="sb3">Inc($IntVar1, $Value)
+=
+$IntVar1 += $Value
+</PRE>
+<P>El segundo parametro es igual a 1 si no se especifica.</P>
+<PRE class="sb3">Inc(1@)
+=
+1@ += 1
+</PRE>
+<P>Desde la version 3.06, es posible usar un operador ++ similar a C++ que se    
+                                  puede aplicar a las variables e incrementa    
+ el       valor     que       tienen     en              uno.</P>
+<PRE class="sb3">$var1++
+=
+$var1 += 1</PRE>
+<HR>
+
+<h4>                              DEC</h4>Disminuye el primer parametro por      
+   el         segundo.         El          primer     parametro es una           
+  variable.                                        
+<PRE class="sb3">Dec($IntVar2, $Value)
+=
+$IntVar2 -= $Value</PRE>
+<P>El segundo parametro es igual a 1 si no se especifica.</P>
+<PRE class="sb3">Dec(1@)
+=
+1@ -= 1</PRE>
+<P>Desde la version 3.06 es posible usar un operador similar a C++, que se       
+                              puede  aplicar a las variables y disminuye el      
+ valor     que       tienen     en             uno.</P>
+<PRE class="sb3">$var--
+=
+$var -= 1</PRE>
+<HR>
+
+<P>
+<h4>MUL</h4>Multiplica el primer parametro por el segundo.                       
+               El primer parametro es una   variable.         
+<P></P>
+<PRE class="sb3">Mul($IntVar3, $Value)
+=
+$IntVar3 = $IntVar3 * $Value</PRE>
+<P>El segundo parametro es igual a 2 si no se especifica.</P>
+<PRE class="sb3">Mul(1@)
+=
+1@ = 1@ * 2</PRE>
+<HR>
+
+<P>
+<h4>DIV</h4>Divide el primer parametro por el segundo. El                        
+              primer parametro es una   variable.         
+<P></P>
+<PRE class="sb3">Div($IntVar4, $Value)
+=
+$IntVar4 = $IntVar4 / $Value</PRE>
+<P>El segundo parametro es igual a 2 si no se especifica.</P>
+<PRE class="sb3">Div(1@)
+=
+1@ = 1@ / 2</PRE><BR>
+<HR>
+
+<h4>(interno) ALLOC*</h4>
+<P><A name="ALLOC"></A><BR>Esta   funcion                                    
+ establece la direccion de memoria para la   variable          global.     Se    
+  debe           usar     solo      para   aquellos con      nombres         
+ personalizados   (es   decir,       $text).               Para  otros, la     
+ direccion de         memoria   se         establece    por   su     nombre: la  
+   variable                  $40                 siempre se    dirige a   la     
+       direccion de     memoria       #40.</P>
+<PRE class="sb3">Alloc($MyVar5, 40) &lt;la variable $MyVar5 pasa a compilarse como $40&gt;</PRE>(!) 
+                                     Ver tambien<B>                   
+'help\examples\alloc.txt'</B><BR><BR>
+<HR>
+
+<h4>SQR</h4>
+<P><BR>Calcula el cuadrado de una    variable pasada como                        
+           parametro*. Se puede usar solo como              procedimiento.</P>
+<PRE class="sb3">sqr($var6) 
+=
+$var6 *= $var6</PRE>
+<P>* tipo de variable tiene que ser definido. <BR><BR></P>
+<HR>
+
+<h4>RANDOM</h4>
+<P><BR>Esta funcion genera un    numero aleatorio                                
+   dentro de un rango especificado por los           parametros.</P>
+<PRE class="sb3">$rnd = random(1, $high)</PRE>
+<P>Esta funcion se puede usar para enteros y flotantes. El codigo de operacion   
+                                   se elige de acuerdo con el tipo de variable   
+  de           resultado       ($rnd         en     este                
+ caso)</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+    
+<SCRIPT src="HL.js"></SCRIPT>
+   </BODY></HTML>

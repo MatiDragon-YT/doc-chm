@@ -1,0 +1,43 @@
+<!DOCTYPE HTML><HTML><HEAD>  <TITLE>Plantilla: Punto de guardado</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P class=light>Encuentra toda la informacion que nesecites aqui.</P>
+<hr>
+<PRE class="sb3">{
+hay muchas formas de hacer un punto e guardado,
+por lo que dejare esta, y depues tal vez solo una
+funcion para que los creen con una sola linea.
+}
+{$CLEO}
+thread 'CodeMD' 
+
+while true
+    wait 0
+    1@ = Pickup.Create(1277, enable, -2054.56, 161.1184, 8.8004)
+    repeat
+        wait 0
+    until Pickup.isPickedUp(1@) 
+    if 
+        Player.isDefined($PLAYER_CHAR)
+    then 
+        if 
+            $ONMISSION == 0 
+        then
+            wait 100 
+            Actor.setPositionAt($PLAYER_ACTOR, -2050.98, 161.1913, 8.8004)
+            Game.setShowSaveScreen()
+            wait 100 
+            Player.setCanMove($PLAYER_CHAR) = True
+        end
+    end
+end
+</PRE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

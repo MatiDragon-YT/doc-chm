@@ -1,0 +1,332 @@
+<!DOCTYPE HTML><HTML><HEAD>  <TITLE>Trucos en SB3</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Comunmente vemos mucho Scripts que tienen un monton de   numeros que no   
+entendemos, y magicamente al escribir un Cheat en el teclado, se   activa.   
+bueno,no hay tanta "magia" en eso, solo es necesario entender que   existen   
+diferentesformas para crear un Cheat.</P>
+<OL>
+  <LI><A href="#1">Por medio de ASCII.</A></LI>
+  <LI><A href="#2">Usando Strings (texto)</A></LI>
+  <LI><A href="#3">Con el CLEO 4</A></LI></OL>
+<HR>
+
+<H5 align="center">CLEO 3</H5>Cleo 3 tiene la particularidad de utilizar mas     
+codigo para realizar algo,requiere un poco mas de conocimientos en leguajes de   
+ programacion. Esto se debea que no existe acceso directo a algunas   
+caracteristicas. Como a continuacion,les mostrare:             
+<H5>Informacion basica:</H5>
+<PRE class="sb3">0A8D: 0@ = read_memory 0x00969110 size 4 virtual_protect 0</PRE>
+<P>Parametros:</P>
+<OL>
+  <LI>variable que almacena la informacion (<B class="text-blue">@</B> o <B 
+  class="text-blue">$</B>)</LI>
+  <LI>Direccion de la memoria (<B class="text-red">0x</B>)</LI>
+  <LI>Numero de bytes para leer/escribir (<B class="text-red">1</B>, <B class="text-red">2</B> 
+                  o <B class="text-red">4</B>)</LI>
+  <LI>Proteccion virtual:                               
+  <UL>
+    <LI><B class="text-red">1</B> = Solo-lectura</LI>
+    <LI><B class="text-red">0</B> = re-escribible</LI></UL></LI></OL>
+<H5>Strings:(Texto)</H5>    En Cleo, para asignar o guardar un Texto en una   
+ variable, existen variables especificas. <B>NO</B> podemos guardar un texto en  
+  una variable convencional (<B class="text-blue">0@</B>, <B 
+class="text-blue">1@</B>, <B class="text-blue">2@</B>, <B 
+class="text-blue">3@</B>... <B class="text-blue">30@</B>, <B 
+class="text-blue">31@</B>). Pero, podemos modificarlas paraque <B>SI</B> puedan  
+ hacerlo, lo unico que se debe hacer es agregardespes de la arroba, una <B>S</B> 
+o una <B>V</B>, por ejemplo:         
+<PRE class="sb3">0@s, 2@s, 4@s, 6@s, 8@s, etc. 
+0@v, 4@v, 8@v, 12@v, etc.
+</PRE>
+<TABLE class="table">
+  <THEAD>
+  <TR>
+    <TH>Tipo</TH>
+    <TH>Descripcion</TH>
+    <TH>Funcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH><EM>S</EM></TH>
+    <TD>String de <B class="text-red">8</B> <B>bytes</B>, almacena palabras    
+                                                   cortas <B>Max</B>. <B class="text-red">7</B> 
+                      letras*</TD>
+    <TD>Utiliza <B class="text-red">8</B> bytes, lo que significa que utiliza  
+                                                             <B>DOS</B> 
+      variables             convencionales, en       este       caso <B class="text-blue">0@</B> 
+                              y <B class="text-blue">1@</B></TD></TR>
+  <TR>
+    <TH><EM>V</EM></TH>
+    <TD>String de <B class="text-red">16</B> <B>bytes</B>, alamacena palabras  
+                                                     largas <B>Max</B>. <B 
+      class="text-red">14</B>                   letras*</TD>
+    <TD>Utiliza <B class="text-red">16</B> bytes, lo que significa que utiliza 
+                                                              <B>CUATRO</B> 
+      variables             convencionales,       en       este caso        <B 
+      class="text-blue">0@</B>,        <B class="text-blue">1@</B>,        <B 
+      class="text-blue">2@</B>                   y        <B 
+      class="text-blue">3@</B></TD></TR></TBODY></TABLE>
+<HR>
+
+<H5 id="1">1# Forma - Creando un Cheat (truco) por medio de ASCII        
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></H5>
+<P>     Solo se permite utilizar esta forma para cheats con palabras que tengan  
+ solo <B class="text-red">4</B>, <B class="text-red">6</B>, <B 
+class="text-red">8</B>, <B class="text-red">10</B>, <B class="text-red">12</B>  
+letras (pares)     </P>
+<P><B>-Creando un cheat de 4 letras</B><BR>     El <B>cheat</B> sera: <B class="text-orange">"JUMP"</B> 
+    </P>
+<P>     Vamos a almacenar el cheat en la variable <B class="text-blue">0@</B> y  
+ tenemos la direccion de memoria, que es: <B class="text-red">0x00969110</B> 
+sabemos tambien, que  por ser <B class="text-red">4</B> letras tendra   
+ un&nbsp;espacio  de <B class="text-red">4</B> bytes, <B class="text-red">1</B> 
+byte por letra. y   esta direccion de memoria es <B>re-escribible</B>(<B class="text-red">0</B>). 
+  Por lo tanto, la parte de nuestro script para activarlo se veria de la    
+ siguiente  forma:     </P>
+<PRE class=sb3>
+<P>:LABEL
+wait 0 
+0A8D: 0@ = read_memory 0x00969110 size 4 virtual_protect 0
+if
+04A4:   0@ == 0X4A554D50 // Texto en Hex -&gt; JUMP
+jf @LABEL
+0A8C: write_memory 0x00969110 size 4 value 0 virtual_protect 0 // borrar buffer para prevenir bucles del cheat</P></PRE>
+<P><B>OMG!!!</B> :0 Pero que significa esto!? <B 
+class="text-red">0x4A554D50</B><BR>     Ese es nuestro <B>cheat</B> en     
+caracteres <B>ASCII </B>(<B>hex</B>)<BR>En este caso:     </P>
+<UL>
+  <LI><B>JUMP</B> -&gt; <B>4A 55 4D 50</B></LI></UL>
+<P>Y le agregamos <B class="text-red">0x</B> al inicio, a continuacion les dejo  
+ la lista de los caracteres</P>
+<H5>Caracteres ASCII (HEX)</H5>
+<PRE>41 = A   |   4E = N
+42 = B   |   4F = O
+43 = C   |   50 = P
+44 = D   |   51 = Q
+45 = E   |   52 = R
+46 = F   |   53 = S
+47 = G   |   54 = T
+48 = H   |   55 = Y
+49 = I   |   56 = V
+4A = J   |   57 = W
+4B = K   |   58 = X
+4C = L   |   59 = Y
+4D = M   |   5A = Z
+</PRE>
+<P><B>-Creando un cheat de 6 letras:</B><BR>     El <B>cheat</B> sera: <B class="text-orange">"KILLME"</B> 
+    </P>
+<PRE class=sb3>LABEL
+wait 0
+0A8D: 1@ = read_memory 0x00969110 size 4 virtual_protect 0 // 4 bytes
+0A8D: 2@ = read_memory 0x00969114 size 2 virtual_protect 0 // 2 bytes
+if and
+0039:   1@ == 0x4C4C4D45 // LLME
+0039:   2@ == 0x4B49     // KI
+jf @LABEL
+0A8C: write_memory 0x00969110 size 4 value 0 virtual_protect 0 // borrar buffer
+0A8C: write_memory 0x00969114 size 2 value 0 virtual_protect 0 // borrar buffer
+</PRE>
+<P><B>OJO</B>: vean que ahora el codigo ha cambiado, pero esto por que?...<BR>   
+  Solo se admiten <B class="text-red">4</B> bytes por variable y nuestro         
+<B>cheat</B>, tiene <B class="text-red">6</B>, entonces, debemos utilizar otra   
+ variable para completar el <B>cheat</B>.     </P>
+<P>     De igual forma que en el anterior;<BR><B>KILLME</B> - <B>4D 49  4C 4D    
+ 45</B>     </P>
+<P>     Pero no admite <B class="text-red">6</B> bytes, entonces, debemos     
+separar nuestro <B>cheat</B> en dos, y debemos  colocarlo en  orden reverso,     
+como que si se estuviera leyendo de <B>ABAJO</B> para <B>ARRIBA</B>, de la     
+siguiente manera:<BR><B>LLME</B> ----- <B>4C4C4D45</B><BR><B>KI</B> -------      
+   <B>4B49</B><BR>     No olviden que cada letra tiene <B class="text-red">1</B> 
+byte. Y ya le hemos dicho al  juego con  las <B>primeras</B> <B>dos</B> lineas,  
+ del  codigo  de arriba que utilizaremmos las variables <B 
+class="text-blue">1@</B> y <B class="text-blue">2@</B> donde <B class="text-blue">1@</B> 
+tiene <B class="text-red">4</B> bytes disponibles y <B class="text-blue">2@</B> 
+tiene <B class="text-red">2</B> bytes.<BR>     entonces quedaria de la      
+siguiente forma: (siempre anteponiendo <B class="text-red">0x</B>)<BR><B class="text-blue">1@</B> 
+== <B class="text-red">0x4C4C4D45</B><BR><B class="text-blue">2@</B> == <B 
+class="text-red">0x4B49</B>     </P>
+<P>Con esas dos lineas, estamos diciendo; que escribamos <B 
+class="text-orange">"KILLME"</B> en el teclado?<BR><I>Yes...</I></P>
+<P></P>
+<P><B>-Creando un cheat de 8 letras:</B><BR>     El <B>cheat</B> sera: <B class="text-red">"JUMPRAMP"</B> 
+    </P>
+<PRE class=sb3>:LABEL
+wait 0
+0A8D: 1@ = read_memory 0x00969110 size 4 virtual_protect 0
+0A8D: 2@ = read_memory 0x00969114 size 4 virtual_protect 0
+if and
+04A4:   1@ == 0x52414D50 // RAMP
+04A4:   2@ == 0x4A554D50 // JUMP
+jf @LABEL
+0A8C: write_memory 0x00969110 size 4 value 0 virtual_protect 0  // borrar buffer
+0A8C: write_memory 0x00969114 size 4 value 0 virtual_protect 0  // borrar buffer
+</PRE>
+<P>Ejemplos:</P>
+<PRE class=sb3>//Estructura de Nivel Alto
+{$CLEO}
+0000:
+while true // escribir KILLME para activar
+ 0A8D: 0@ = read_memory 0x969110 size 4 virtual_protect 0
+ 0A8D: 1@ = read_memory 0x969114 size 2 virtual_protect 0
+ if and // KILLME
+  0039: 0@ == 0x4C4C4D45  // LLME 
+  0039: 1@ == 0x4B49      // KI
+  then
+   0A8C: write_memory 0x969110 size 4 value 0x0 virtual_protect 0
+   03E5: show_text_box 'HELP101' // ignorar mensaje...
+   // ENCENDIDO
+   wait 500
+
+   while true
+    0A8D: 0@ = read_memory 0x969110 size 4 virtual_protect 0
+    0A8D: 1@ = read_memory 0x969114 size 2 virtual_protect 0
+    if and //KILLME
+     0039: 0@ == 0x4C4C4D45 // LLME
+     0039: 1@ == 0x4B49     // KI
+     then
+      0A8C: write_memory 0x969110 size 4 value 0x0 virtual_protect 0
+      03E5: show_text_box 'HELP101' // ignorar mensaje...
+      // APAGADO 
+      break
+    end
+    wait 0
+  end
+  wait 3000
+ end 
+ wait 0
+end
+</PRE>
+<PRE class=sb3>//Estructura de Nivel Bajo
+{$CLEO}
+0000:
+:LABEL_ON // escribir JUMP para activar
+wait 0
+0A8D: 0@ = read_memory 0x00969110 size 4 virtual_protect 0
+if
+04A4:   0@ == 0X4A554D50 // Texto en Hex -&gt; JUMP
+jf @LABEL_ON
+0A8C: write_memory 0x00969110 size 4 value 0 virtual_protect 0 // borrar buffer para prevenir bucles del cheat
+03E5: show_text_box 'HELP101'  // ignorar mensaje...
+// ENCENDIDO
+wait 500
+:LABEL_OFF
+wait 0
+0A8D: 0@ = read_memory 0x00969110 size 4 virtual_protect 0
+if
+04A4:   0@ == 0X4A554D50 // Texto en Hex -&gt; JUMP
+jf @LABEL_OFF
+0A8C: write_memory 0x00969110 size 4 value 0 virtual_protect 0 // borrar buffer para prevenir bucles del cheat
+03E5: show_text_box 'HELP101' // ignorar mensaje...
+// APAGADO 
+wait 3000
+goto @LABEL_ON
+</PRE>
+<HR>
+
+<H5 id="2">2# Forma - Usando Strings (texto)        
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></H5>
+<P>     Esta es una variante del metodo anterior, en este metodo no     
+convertiremos las letras en <B>hex</B>, sino que sencillamente escribiremos el   
+ texto, veamos;     </P>
+<P><B>-Creando un cheat de 4 letras:</B><BR>     El <B>cheat</B> sera:<B class="text-orange"> 
+"JUMP"</B>     </P>
+<PRE class=sb3>:LABEL 
+wait 0 
+0A8D: 0@ = read_memory 0x969110 size 4 virtual_protect 0
+0006: 1@ = 0x0
+if
+05AE:   0@s == "PMUJ" // @s == short
+jf @LABEL
+0A8C: write_memory 0x969110 size 4 value 0x0 virtual_protect 0 // borrar bufer<I class="text-grey">
+</I></PRE>
+<P>     Entonces, asignamos nuestro <B>cheat</B> de <B class="text-red">4</B> 
+letras a una variable <B>String</B>, utilizando  el opcode         
+<B>05AE</B><BR><B>OJO</B>: el texto en este caso se debe escribir en orden     
+reverso, veamos:     </P>
+<UL>
+  <LI><B>J U M P</B> -&gt; cheat</LI>
+  <LI><B>P M U J</B> -&gt; empezando con la ultima letra</LI></UL>
+<P>y listo.</P>
+<P></P>
+<P><B>-Creando un cheat de 6 letras:</B><BR>El <B>cheat</B> sera: <B class="text-orange">"KILLME"</B> 
+    </P>
+<PRE class=sb3>:LABEL
+wait 0
+0A8D: 0@ = read_memory 0x969110 size 4 virtual_protect 0
+0A8D: 1@ = read_memory 0x969114 size 2 virtual_protect 0
+if
+05AE:   0@s == "EMLLIK" // @s == short
+jf @LABEL
+0A8C: write_memory 0x969110 size 4 value 0x0 virtual_protect 0 // borrar bufer<I class="text-grey">
+</I></PRE>
+<P>El cheat: <B>K I L L M E</B></P>
+<UL>
+  <LI>-&gt; <B>E M L L I K</B></LI></UL>
+<P>y listo.</P>
+<P></P>
+<P><B>-Creando un cheat de 16 letras:</B><BR>     El <B>cheat</B> sera:<B class="text-orange">"THEBANANAPHONE"</B> 
+    </P>
+<PRE class=sb3>:LABEL
+wait 0
+0A8D: 0@ = read_memory 0x969110 size 4 virtual_protect 0
+0A8D: 1@ = read_memory 0x969114 size 4 virtual_protect 0
+0A8D: 2@ = read_memory 0x969118 size 4 virtual_protect 0
+0A8D: 3@ = read_memory 0x96911C size 2 virtual_protect 0
+if and
+05AE:   2@s == "ENOHPA" // @s == short
+05AE:   0@s == "NANABEHT" // @s == short
+jf @LABEL
+0A8C: write_memory 0x969110 size 4 value 0x0 virtual_protect 0
+</PRE>
+<P></P>
+<P>El cheat: <B>T H E B A N A N A P H O N E</B></P>
+<UL>
+  <LI>-&gt; <B>E N O H P A N A N A B E H T</B></LI></UL>
+<P>     Pero, como estamos utilizando <B>Strings</B> cortos, de <B class="text-red">8</B> 
+bytes, este cheat tiene <B class="text-red">14</B>  bytes, por lo tanto es     
+necesario  separar el <B>cheat</B> en <B>dos</B>, de la siguiente    
+ manera;<BR><B class="text-blue">0@s</B> -&gt; contiene a <B 
+class="text-blue">0@</B> y <B class="text-blue">1@</B> con un total de <B class="text-red">8</B> 
+bytes (<B class="text-red">8</B> letras)<BR><B class="text-blue">2@s</B> -&gt;   
+ contiene a   <B class="text-blue">2@</B> y <B class="text-blue">3@</B> con un   
+ total de <B class="text-red">6</B> bytes (<B class="text-red">6</B> letras)     
+      </P>
+<P>entonces;<BR><B class="text-blue">0@s</B> -&gt; <B class="text-red">8</B> 
+letras -&gt; <B>N A N A B E H T</B><BR><B class="text-blue">2@s</B> -&gt; <B 
+class="text-red">6</B> letras -&gt; <B>E N O H P A</B><BR>     y listo ;)        
+     </P>
+<P></P>
+<H5><U>Forma 3 - Usando Arrays</U></H5>
+<P>-Pendiente</P>
+<P></P>
+<HR>
+
+<H5 align="center" id="3">CLEO 4        
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></H5>
+<P>CLEO 4 fue creado para facilitarnos la vida... en vez de utilizar los     
+metodos anteriores, este nos ofrece un opcode:</P>
+<PRE class=sb3>0ADC:   test_cheat "BLOWUP"</PRE>
+<P>asi de facil....</P>
+<P>     Conclusion:<BR>     Utilizar el que mejor les convenga, si lo que desean 
+ es proteger sus scripts, entonces, entre mas complejo sea, mas dificil sera que 
+ se los roben, ahora, si lo que desean es explicar, entonces el metodo de        
+<B>CLEO4</B> es la mejor opcion.</P>
+<HR>
+
+<P>    Espero te sea de tu ayuda.<BR>    Pagina <B>OFICIAL</B> de donde salio la 
+ informacion:<BR><A href="http://j16d.blogspot.com/2015/02/spanish-creando-cheats-cleo-34.html" 
+target="_black">http://j16d.blogspot.com/2015/02/spanish-creando-cheats-cleo-34.html</A><BR> 
+   creditos del tutorial, a su respectivo autor.<BR>    Yo solo lo adapte un     
+poco :3    </P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+          
+<SCRIPT src="HL.js"></SCRIPT>
+        </BODY></HTML>

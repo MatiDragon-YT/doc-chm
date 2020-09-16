@@ -1,0 +1,125 @@
+<!DOCTYPE HTML><HTML lang="es"><HEAD>  <TITLE>Clases</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P class="light">Una <B>clase</B> es un grupo de comandos aplicados a las 
+entidades del juego: jugador, peds, objetos, etc. Por ejemplo, la clase 
+<CODE>Player</CODE> agrupa los comandos realizados sobre el personaje del 
+jugador.</P>
+<HR>
+<H4>Sintaxis general</H4>
+<h5>Sintaxis</h5>
+<pre>&lt;Nombre&gt;.&lt;Miembro&gt;(&lt;parámetros&gt;)</pre>
+<UL>
+<LI><code>&lt;Nombre&gt;</code> - el nombre de un grupo de comandos definidos en el archivo <code>classes.db</code> para este modo de edición</LI>
+<LI><code>&lt;Miembro&gt;</code> - uno de los comandos incluidos en la clase</LI>                             
+<LI><code>&lt;parámetros&gt;</code> - 0 o más <a href="Codificacion.TiposDeDatos.html">parámetros</a> delimitados por comas</LI>
+</UL>
+<pre class=sb3>Player.setMinWantedLevel($PLAYER_CHAR, 2)</pre>
+<UL>
+<LI><code>Player</code> - nombre de la clase</LI>
+<LI><code>setMinWantedLevel</code> - miembro de la clase</LI>                             
+<LI><code>$PLAYER_CHAR, 2</code> - dos parametros de <code>setMinWantedLevel</code></LI>
+</UL>
+<h6>Hay tres tipos de miembros de la clase</h6>
+<ol>
+<li>condiciones</li>
+<li>métodos</li>
+<li>propiedades</li>
+</ol>
+<h5>Condiciones</h5>
+<p>La lista que aparece cuando presiona <code>Ctrl+Space</code> marca los comandos condicionales con la palabra <code>Check</code>. Se utilizan en <a href="Codificacion.Condiciones.html">expresiones condicionales</a>:</p>
+<pre class=sb3>
+if
+    Player.isDefined($PLAYER_CHAR)
+jf @dondequiera
+</pre>
+<h5>Métodos</h5>
+<p>Los métodos son comandos habituales que se utilizan para completar una única acción en el juego, p.ej. mover un objeto, destruir un vehículo, etc:</p>
+<pre class=sb3>
+Object.setPositionAt($crate, 10.0, -25.5, 12.2)
+Car.setDestroy($car)
+</pre>
+<p>Están marcados con <code>Proc</code> de trabajo en la lista de miembros de la clase.</p>
+<p>Es un tipo especial de métodos constructor. Un constructor crea una nueva instancia de una clase y almacena su identificador en una variable.</p>
+<p>En Sanny Builder, el constructor se puede escribir de dos formas equivalentes:</p>
+<pre class=sb3>
+Player.Create($PLAYER_CHAR, #NULL, 2488.5601, -1666.84, 13.38)
+</pre>
+<pre class=sb3>
+$PLAYER_CHAR = Player.Create(#NULL, 2488.5601, -1666.84, 13.38)
+</pre>
+<h5>Propiedades</h5>
+<p>La propiedad le permite acceder a los atributos de la clase y/o modificarlos.</p>
+<p>P.ej. la propiedad <code>.Money</code> de la clase <code>Player</code> permite operar con la cantidad de dinero del jugador:</p>
+<pre class=sb3>
+Player($PLAYER_CHAR).Money += 1000000 // agrega más dinero
+Player($PLAYER_CHAR).Money > 461@ // comprueba la cantidad
+4@ = Player($PLAYER_CHAR).Money // leer y almacenar la cantidaden en una variable
+</pre>
+<div class=dan>
+Actualmente, el compilador ignora los espacios en blanco en las <a href="Codificacion.TiposDeDatos.html#strings">cadena literarias</a> utilizadas en los parámetros de propiedad:
+<pre class=sb3>0@ = File.Open("file name","wb")</pre>
+se compilará como:
+<pre class=sb3>0@ = File.Open("filename","wb")</pre>
+</div>
+<hr>
+<h4 id="instances">Instancias de clase</h4>
+<p>Casi todos los miembros de la clase toman una variable como el primer parámetro. Esta variable tiene un identificador de la instancia de clase, que es una entidad concreta del juego a la que se aplica el comando:</p>
+<pre class=sb3>Player.Build($PLAYER_CHAR)</pre>
+<p><code>$PLAYER_CHAR</code> - instancia de la clase.</p>
+<p>Para algunas entidades del juego, solo existe una instancia. Un ejemplo de eso sería la cámara que controla lo que el jugador puede ver. Los miembros de clases para tales entidades no requieren una variable con la instancia de clase:</p>
+<pre class=sb3>Camera.SetBehindPlayer()</pre>
+<h5>Declarar una instancia de clase</h5>
+<p>Las <a href="Codificacion.Variables.html#var">variables</a> pueden ser declaradas usando un nombre de clase como el tipo:</p>
+<pre class=sb3>
+var
+    $PLAYER_CHAR: Player
+end
+</pre>
+<p>Indica al compilador que <code>$PLAYER_CHAR</code> contiene una instancia de la clase <code>Player</code>. Esta variable puede servir como un alias para el nombre de la clase:</p>
+<pre class=sb3>
+if
+    $PLAYER_CHAR.Defined
+jf @dondequiera
+</pre>
+<div class=dan>
+Si una variable sustituye al nombre de una clase, el compilador también lo convierte en el primer parámetro, por lo que no es necesario volver a usarlo en la lista de parámetros:
+<pre class=sb3>$PLAYER_CHAR.SetClothes("PLAYER_FACE", "HEAD", Head)</pre>
+<p>es equivalente a:</p>
+<pre class=sb3>Player.SetClothes($PLAYER_CHAR, "PLAYER_FACE", "HEAD", Head)</pre>
+</div>
+<p>Las variables declaradas como instancias de una clase se pueden volver a declarar con otro tipo.</p>
+<h5>La clase <code>Model</code></h5>
+<p>Los <a href="Codificacion.TiposDeDatos.html#models">nombres de modelo</a> son siempre instancias de la clase <code>Model</code>:</p>
+<pre class=sb3>#AK47.Load
+  
+:loop
+wait 0
+if
+    #AK47.Available
+jf @loop
+</pre>
+<p>es equivalente a:</p> 
+<pre class=sb3>Model.Load(#AK47)
+
+:loop
+wait 0
+if
+    Model.Available(#AK47)
+jf @loop
+</pre>
+<hr>
+<h4>Constantes de clase</h4>
+<p>Algunos miembros de la clase tienen constantes predefinidas para algunos valores de parámetros. Hace que el código fuente sea más legible:</p>
+<pre class=sb3>Player.SetClothes($PLAYER_CHAR, "VEST", "VEST", Torso)</pre>
+<p>El último parámetro (<code>Torso</code>) es una constante de clase sustituida por 0 durante la compilación. Las constantes de clase se definen en el archivo <code>classes.db</code>.</p>
+<div class=inf>El tipo <code>Extended</code> especial está reservado para parámetros que tienen una lista de constantes. Puede ver el tipo <code>Extended</code> en la lista de miembros de la clase y en una sugerencia que aparece a medida que escribe los parámetros de los miembros de la clase.</div>
+
+
+<SCRIPT src="jQuery.js"></SCRIPT><SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

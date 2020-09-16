@@ -1,0 +1,99 @@
+<!DOCTYPE HTML><HTML lang="es"><HEAD>  <TITLE>Lista de Opcodes 
+(SCM.INI)</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"> </HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P><CODE>SCM.INI</CODE> es el archivo que contiene 
+información sobre los códigos de operación utilizados durante la descompilacion 
+y la compilación de los script. Sanny Builder incluye una lista de opcodes para 
+cada modo de <A href="#">edición</A>.</P>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Juego</TH>
+    <TH>Archivo</TH>
+    <TH>Localización</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>GTA III</TD>
+    <TD>SCM.INI</TD>
+    <TD>data\gta3</TD></TR>
+  <TR>
+    <TD>Vice City</TD>
+    <TD>VCSCM.INI</TD>
+    <TD>data\vc</TD></TR>
+  <TR>
+    <TD>San Andreas</TD>
+    <TD>SASCM.INI</TD>
+    <TD>data\sa</TD></TR>
+  <TR>
+    <TD>Liberty City Stories</TD>
+    <TD>LCSSCM.INI</TD>
+    <TD>data\lcs</TD></TR>
+  <TR>
+    <TD>Vice City Stories</TD>
+    <TD>VCSSCM.INI</TD>
+    <TD>data\vcs</TD></TR>
+  <TR>
+    <TD>SA Mobile</TD>
+    <TD>SASCM.INI</TD>
+    <TD>data\sa_mobile</TD></TR>
+    </TBODY>
+</TABLE>
+<h5>Formato de archivo</h5>
+<p>Líneas que comienzan con <code>;</code> son ignoradas</p>
+<P>Todos los archivos tienen la misma sintaxis. Primero, los parametros     
+ especiales podrian escribirse al comienzo del INI.     Son:<BR><B>VERSION</B> - 
+ esta linea define una version de este INI.     Ver la directiva   
+<B>$VERSION</B>.<BR><B>PUBLISHER</B>:  la  persona publico esta  
+version.<BR><B>DATE</B>: la ultima fecha de     actualizacion.<BR>El  
+descompilador inserta estos valores en los archivos      fuente.<BR>La lista de  
+codigos de operacion va inmediatamentedespuesde esos      parametros 
+ especiales.      
+<P>Cada linea de codigo de operacion tiene la siguiente sintaxis:     
+<PRE>xxxx=N, yyyy<BR></PRE>
+<P>where <B>XXXX</B> es el numero de codigo de operacion, <B>N</B> - la cantidad 
+ de parametros,<B> YYYY</B> - la descripcion del codigo de operacion.      
+<P>Los primeros dos valores no se pueden cambiar de ninguna manera, sin embargo, 
+ la descripcion puede. Tambien tome nota de la parte de la descripcion indicada  
+ por el signo% - un parametro de codigo de operacion esta creado de esta      
+ manera.      
+<P>Por ejemplo,      
+<P>
+<P>
+<PRE>0001=1,wait %1d% ms</PRE>esta linea 
+realiza el descompilador cuando procesa  un codigo de operacion 0001 escribe las 
+palabras 'wait' y 'ms' y el unico       parametro entre ellas.      
+<P>Un parametro consta de dos partes: un numero y un tipo.      
+<P>El numero en el parametro% 1d% es su numero en si mismo. El punto es que      
+algunos codigos de operacion pueden tener sus parametros ordenados en un orden   
+ no numerico. Todo consiste en hacer que un codigo fuente sea mas legible y se   
+ vea como los lenguajes de programacion comunes. Por ejemplo,      
+<P>
+<PRE>0053=5,%5d% = create_player %1o% at %2d% %3d%%4d%<BR></PRE>
+<P>Preste atencion, el decompilador escribe el quinto parametro al principio. Si 
+ los parametros siguen su orden numerico, el codigo de operacion 0053 se vera    
+ como:  
+<PRE class="sb3">0053: create_player #NULL at 2488.562 -1666.865 12.8757 $PLAYER_CHAR</PRE>
+<P>Es significativo que el orden numerico sea tipico para gtama y SASCM.INI de   
+ PLPynton.<BR>Las siguientes letras indican el tipo de     
+ parametro:<BR><B>D</B> = cualquier valor<BR><B>P</B> =       
+etiqueta<BR><B>O</B> = nombre del modelo<BR><B>G</B> =     entrada de  
+gxt<BR><B>X</B> = ID de script externo      
+<P>El tipo cambia el comportamiento del descompilador. Por ejemplo, agrega un    
+ comentario con el contenido de la clave gxt para el parametro g; convierte el   
+  p-one en la etiqueta, el o-parametro en el nombre del modelo (como #NULL en el 
+   0053), etc.<BR>¡Atencion! El orden de los parametros nunca se puede cambiar,  
+ ya   que causara la imposibilidad de compilar los scripts correctamente por los 
+   otrosusuarios. La unica forma de hacerlo es si nunca va a publicar su      
+script.<BR>Puede cambiar libremente las palabras de descripcion y los tipos de   
+ parametros, si es necesario. Los comentarios estan marcados con el punto y      
+ coma al comienzo de la linea. </P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

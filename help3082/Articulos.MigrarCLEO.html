@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+ <TITLE>Adaptación a Android</TITLE>
+ <meta charset="ISO-8859-1">
+ <META http-equiv="X-UA-Compatible" content="IE=edge">
+ <META name="viewport" content="width=device-width, initial-scale=1">
+ <LINK href="bootstrap.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY>
+ <header id="a"></header>
+ <DIV class="container">
+  <DIV class="row">
+   <DIV class="col-12">
+    <P>
+     Ovbimente si estas aca, es por que intentaste pasar bien tu mod de pc a android y no te funciono del todo bien.<BR>Bueno, para pasar un mod de <b>PC</b> a <b>ANDROID</b>, hay varias opciones.
+    </P>
+    <OL>
+     <LI><A href="#1">Cambio de condiciones.</A></LI>
+     <LI><A href="#2">Cambio de clase.</A></LI>
+     <LI><A href="#3">Cambio de opcodes.</A></LI>
+     <LI><A href="#4">Cambio de formato.</A></LI>
+    </OL>
+    <hr><h5 id="1">1. Cambio de condiciones    
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></h5>
+<P>Si estas usando condiciones especiales de una PC, debes darte cuenta de  
+ que si colocas una condicion que por ejemplo, que evalue si precionamos una 
+ tecla, es estupido.<BR>
+<PRE class="sb3">wait 0
+if
+   Game.ifPressedPhysicalKey(Key_Tab)
+else_jump @myLabel
+wait 1000
+...</PRE>
+En este caso, la mejor opcion es cambiar de teclado fisico a virtual.<BR>El  
+ teclado virtual solo lee las acciones que realizas como "correr,   
+ agacharte,  caminar, etc".<BR>Por ejemplo, aqui, en vez de decirle si   
+ precionamos  "tabulador", ponemos si presionamos "accion":  
+ 
+<PRE class="sb3">wait 0
+if
+   Game.ifPressedVirtualKey(0, Key_Action)
+else_jump @myLabel
+wait 1000
+...
+</PRE>
+<P><BR></P>
+<hr><h5 id="2">2. Cambio de clase  
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></h5>
+<P>Este paso se da mas, cuando se usa clases, ya que ya mayoria de opcodes de PC 
+ no son los mismo que en Android, y muchas veces no tenemos los mismos opcodes,  
+ asi que debemos pasar todas las clases a opcodes y comprobar de que sean las    
+ mismas.<BR>
+<PRE class="sb3">wait 0
+if
+   Actor.ifPositionAtSphereXYZ($PLAYER_ACTOR...)
+else_jump @myLabel
+wait 1000
+Actor.asWalkTo(1@...)
+...
+</PRE>
+Esto, pasa a esto:
+    
+<PRE class="sb3">0001: wait 0 ms
+00D6: if
+00fe:   actor $PLAYER_ACTOR...
+004D: jump_if_false @myLabel
+0001: wait 1000
+07CD: AS_actor 1@... 
+...
+</PRE>Tambien, 
+ puedes borrar los comentarios y espacios que estan entre los parametros,   
+ dejandolo asi (esto ultimo es opcional): 
+ 
+<PRE class="sb3">0001: 0
+00D6:
+00fe: $PLAYER_ACTOR...
+004D: @myLabel
+0001: 1000
+07CD: 1@... 
+...
+</PRE>
+<P><BR></P>
+<hr><h5 id="3">3. Cambio de opcodes 
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></h5>
+<P>Este paso se da mas, cuando usas siertas condiciones precisas, aun que tambien se puede ver en algunos opcodes para ejecutar otros tipos de acciones.<br>
+Esto consistiria en buscar que opcode cambia de lugar entre PC y Android, y otros son removidos<BR>
+<P><BR></P>
+<hr><h5 id="4">4. Cambio de formato   
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></h5>
+<P>Esto es algo muy comun, algo que le suele pasar a mucho, y la pregunta 
+ es:<BR>Que tipo de extencion le tengo que dar?<BR>Bueno, eso dependera    
+  para tu mod, si deseas que se active solo siempre que realice sus condiciones, 
+   o  que se active todo atra vez del menu de cleos. 
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Formato</TH>
+    <TH>Descripcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH>.CSA</TH>
+    <TD>Es para mods que se activan de forma automatica al hacer alguna accion 
+  o al precionar algo, o que 
+    simplementeelmod yaseactiva al   
+  iniciar unapartida.</TD></TR>
+  <TR>
+    <TH>.CSI</TH>
+    <TD>Es para activar los mods atra vez de la lista de cleos... yo no se de  
+  ustedes, pero  este metodo 
+  no megusta,a siqueopto porla ce
+  ese  a...</TD></TR></TBODY></TABLE>
+<P>Bien, eso es todo. <BR></P>
+<PRE class="sb3">
+//No nesecitas modificar tu script
+</PRE>
+<P>Bueno, Si nada de esto te funciono, revisa bien tu script</P></DIV></DIV></DIV>
+    <script src="jQuery.js"></script>
+    <script src="HL.js"></script>
+  </BODY></HTML>

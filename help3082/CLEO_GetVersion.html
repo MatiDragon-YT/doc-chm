@@ -1,0 +1,23 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEO_GetVersion</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<PRE>DWORD WINAPI CLEO_GetVersion();</PRE>
+<P><b>Descripcion:</b><BR>La funcion devuelve el numero de version de  
+ CLEO, este valor debe compararse con la constante CLEO_VERSION.<BR>
+<P><b>Ejemplo de   uso:</b></P>
+<PRE><B class="text-blue">if</B> (CLEO_GetVersion() &lt; <B class="text-pink">CLEO_VERSION</B>) {
+  MessageBox(HWND_DESKTOP, <B class="text-orange">"Se cargo una version incorrecta de CLEO."</B>, NULL, MB_ICONERROR);
+  <B class="text-blue">return</B> <B>FALSE</B>;
+}
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

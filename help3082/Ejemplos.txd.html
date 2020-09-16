@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>txd</title>
+ <meta charset=Windows-1252"ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header></header>
+<div class="container-fluid">
+<div class="row">
+<div class="col-12">
+<pre class=sb3>
+/*
+  NewOpcodes 2.0
+  Example script: TXD
+  An example of loading txd and using textures from it.
+*/
+
+{$CLEO}
+{$I stdc}
+
+if
+    0D42: load_txd "myTxd" from "MODELS\\FRONTEN2.TXD" // IF and SET 
+then
+    0D43: 0@ = txd "myTxd" id
+    while true
+        0209: 1@ = random_int_in_ranges 2 9
+        0AD3: 2@v = format "back%d" 1@
+        if
+            0D46: 6@ = find_texture 2@v in_dictionary 0@ // IF and SET
+        then
+            32@ = 0
+            while 32@ < 3000
+                wait 0
+                sprite.Draw(6@, 100.0, 100.0, 600.0, 400.0, 255, 255, 255, 200, 0.0)
+            end
+        else
+            wait 0
+        end
+    end
+end
+</pre>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

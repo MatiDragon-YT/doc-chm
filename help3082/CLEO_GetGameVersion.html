@@ -1,0 +1,31 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEO_GetGameVersion</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<PRE><B class="text-blue">int</B> WINAPI CLEO_GetGameVersion();</PRE>
+<P><b>Descripcion:</b><BR> La funcion devuelve el identificador de la  
+ version del juego:</P>
+<UL>
+  <LI> GV_US10 - US version 1.0</LI>
+  <LI>GV_US11 - Version de EE. UU. 1.01, esta version no es compatible con       
+                                                                                 
+    CLEO</LI>
+  <LI>GV_EU10 - Version europea 1.0</LI>
+  <LI>GV_EU11 - Version europea 1.01</LI>
+  <LI>GV_UNK &nbsp;- Cualquier otra<BR></LI></UL>
+<P><b>Ejemplo de   uso:</b></P>
+<PRE><B class="text-blue">if</B> (CLEO_GetGameVersion() != <B class="text-pink">GV_US10</B>) {
+  MessageBox(HWND_DESKTOP, <B class="text-orange">"Esta version del juego no es compatible."</B>, NULL, MB_ICONERROR);
+  <B class="text-blue">return</B> <B>FALSE</B>;
+}
+</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

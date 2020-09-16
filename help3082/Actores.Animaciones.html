@@ -1,0 +1,146 @@
+<!DOCTYPE HTML><HTML lang="es"><HEAD><TITLE>Animaciones</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-8 col-sm-9 col-md-10 pt-md-4">
+<P>Lleguemos a algo muy importante en GTA: las animaciones de los  actores    
+ !!!!!!<BR> El  tema de animaciones en SA en interminable pero como con los    
+ objetos   veremos las cosas mas importantes.<BR>Primero digamos que son      
+secuencias de animacion, son animaciones de un actor.<BR>Como cuando  CJ mueve   
+ los brazos mientras habla, cuando Ryder fuma,  cuando CJ  usa la tarjeta, o    
+ cuando CJ usa el paracaidas...</P></DIV>
+<DIV class="col-4 col-sm-3 col-md-2"><IMG 
+src="Part20II.files/dfghvjgn.gif"></DIV>
+<DIV class="col-12"><BR>Más generalmente cuando un actor esta haciendo una   
+ accion, es cuando esta      <I>animandose</I>! <BR> Hay dos tipos de secuencias 
+  de  animacion, las   (<B>AS</B>),&nbsp;que realiza una animacion precisa y  
+ otras  que   hacen que la animacion, se coloque como uno de los  
+ parametros&nbsp;del opcode   de animaciones&nbsp;de un archivo (*<B>.ifp</B> en 
+  el  archivo  anim.img  en la  carpeta  anim  del directorio del juego) El   
+ segundo tipo  necesita que la  animacion se  cargue  con 04ED y, como de   
+ costumbre, debes  verificar si la  animacion esta  cargada.<BR>
+<P></P>
+<H5>Animaciones especificas&nbsp;del AS</H5>
+<P>Algunos ejemplos:</P>
+<P>
+<PRE class="sb3">0321: AS_actor $actor00 die_headshotted
+04EB: AS_actor $actor00 crouch 1
+05BA: AS_actor $actor00 chew_gum 10000 ms
+05BC: AS_actor $actor00 jump 1
+05BD: AS_actor $actor00 tired 5000 ms
+05C0: AS_actor $actor00 look_at_car $car00 1000 ms
+05C5: AS_actor $actor00 cower 3000 ms
+05D3: AS_actor $actor00 go_to 81.42 1474.63 51.56 speed 4 3000 ms
+0672: AS_actor $actor00 attack_car $car00
+0677: AS_actor $actor00 chat_with_actor $actor01 1 1
+</PRE>
+<P></P>
+<P>Son los mas faciles de usar, solo pon el opcode con&nbsp;los     parametros  
+correspondientes. Primero el actor que ara la&nbsp;animacion  (<B class="blue-text">$actor00</B>), 
+seguido de las cantidades que se ejecutaran, los objetivos,&nbsp;la 
+duracion,&nbsp;etc.    <BR>Son faciles de usar, hay muchos&nbsp;y    funcionan  
+muy bien, ¡no dudes en  utilizar algunos de ellos!<BR>Puedes encontrar una lista 
+de todos ellos <A href="Animaciones.AS.html">aqui</A>.</P>
+<H5>Animaciones de un archivo</H5>
+<P>Algunos  ejemplos:</P>
+<P>
+<PRE class="sb3">0829: actor $actor00 perform_animation "CRCKDETH3" IFP_file 'CRACK' 4.0 time 0 and_dies 
+0605: actor $actor00 perform_animation_sequence "PASS_RIFLE_PED" IFP_file 'MISC' 4.0 loop 0 0 0 0 time -1 //versionA 
+0812: AS_actor $actor00 perform_animation "LRGIRL_IDLELOOP" IFP_file 'LOWRIDER' 4.0 loopA 0 lockX 0 lockY 0 lockF 0 time -1 //versionB 
+0A1A: actor $actor00 perform_animation "HIKER_POSE_L" IFP_file 'MISC' 4.0 loopA 0 lockX 0 lockY 0 lockF 1 -1 ms //versionC 
+088A: actor $actor00 perform_animation "RAIL_FALL" IFP_file 'SWAT' 8.0 loopA 0lockX 0 lockY 0 lockF 1 limT -1 unknown 0 unknown 1 
+070A: AS_actor $actor00 attach_to_object $object00 offset 0.0 0.0 0.0 on_bone 6 16 perform_animation "NULL" IFP_file 'NULL' time 1 
+09A0: actor $actor00 attach_object $object01 with_offset 0.0 0.0 0.0 on_bone 5 16 perform_animation "NULL" IFP_file 'NULL' time -1
+</PRE>
+<P></P>
+<P> O con muy buenas descripciones sascm.ini de PLPynton se ven asi:  <BR></P>
+<P>
+<PRE class="sb3">0829: char $actor00 perform_animation "CRCKDETH3" group 'CRACK' 4.0 limT 0 and_dies
+0605: char $actor00 perform_animation "PASS_RIFLE_PED" group 'MISC' 4.0 loopA 0 lockX 0 lockY 0 lockF 0 limT -1 //versionA
+0812: char $actor00 perform_animation "EAT_VOMIT_P" group 'FOOD' 4.0 loopA 0 lockX 0 lockY 0 lockF 0 limT -1 //versionB
+0A1A: char $actor00 perform_animation "VEND_EAT1_P" group 'VENDING' 4.0 loopA 0 lockX 0 lockY 0 lockF 0 limT -1 //versionC
+088A: char $actor00 perform_animation "RAIL_FALL" group 'SWAT' 8.0 loopA 0 lockX 0 lockY 0 lockF 1 limT -1 unknown 0 unknown 1
+070A: set_char $actor00 attach_objectA $object00 with_offset 0.0 0.0 0.0 on_bone 6 16 perform_animation "NULL" group 'NULL' time 1 //objectA
+09A0: set_char $actor00 attach_objectB $object00 with_offset 0.0 0.0 0.0 on_bone 5 16 perform_animation "NULL" group 'NULL' time -1 //objectB
+</PRE>
+<P></P>
+<P>Primero para aquellos que tienes que  <U><B>cargar el</B></U> archivo de      
+   <U><B>animacion</B></U> antes de usar el codigo de  operacion de la 
+animacion.    Es aesy, es como sisolicitaramos modelos  de automoviles y actores 
+antes:        <BR></P>
+<P>
+<PRE class="sb3">:ANIMLOAD
+0001: wait 0 ms
+04ED: load_animation "FOOD"
+00D6: if
+04EE: animation "FOOD" loaded
+004D: jump_if_false @ANIMLOAD
+</PRE>
+<P></P>
+<P> Comoprobablemente habras notado, es un poco diferente que con los  modelos,  
+ porque aqui cargas directamente el anim, y con los modelos,  solicitas (con    
+ 0247) yluego cargas los modelos (con 038b). <BR>No  olvides <U><B>despues de    
+ usarlo</B></U> para liberar la animacion con   <BR></P>
+<P>
+<PRE class="sb3">04EF: release_animation "LOWRIDER"<BR></PRE>
+<P></P>
+<P>Aqui, para  explicar los parametros de los opcodes, utilizare las      
+ descripciones desacsm.ini de PLPynton en lugar de utilizar las  descripciones   
+  originales desnycm.ini de Sanny Builder, como suelo hacer,  porque sera mucho  
+   mas facil parausted comprenderlas. Pero no se preocupe,  es el mismo orden de 
+    parametros. <BR> Parametros(gracias ceedj):  <BR></P>
+<P>
+<OL type="1">
+  <LI>La primera palabra entre comillas es el nombre de la animación (           
+       "CRCKDETH3"  , "PASS_RIFLE_PED" ,   "HIKER_POSE_L",  etc.)                
+  <LI>El segundo es la biblioteca (archivo de animaciones) donde esta la   
+  animación (               "CRACK"  , "SWAT",  "VENDING", "FOOD", etc  ...).    
+  En  algunos casos,     como         para  09a0 y  070a, "NULO"   significa que 
+    no serealizara      ninguna     animacion.<BR>
+  <LI>4.0 es la velocidad de reproducción. El valor predeterminado es 4.0,    
+  menos             de lo que se  ralentiza, más velocidad y puede omitir    
+  cuadros     de animacion     con      numeros mas   altos.                     
+      
+  <LI><B>loopA</B> o <B>loop</B> Es el booleano del bucle, para   que la   
+  animacion              comience nuevamente  una vez finalizada.    1 activado, 
+    0 apagado, PERO si  esta         activado,      Timelimit (parametro 8.) 
+  DEBE   establecerse   en 
+  -1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                      
+  <LI><B>lockX</B> desbloquea o bloquea al actor enposición en el  eje X. Si 1 y 
+                si el actor se   mueve en el eje  X desde el origen  del  actor  
+   (de       izquierdaa       derecha),   semantendraen  esos  nuevos coords. Si 
+     es 0,         elactor    volvera a     los coords  deposicion  inicial.     
+                          
+  <LI><B>lockY</B> desbloquea o bloquea al actor enposicion en el  eje Y. Si 1 y 
+                si el actor se   mueve en el eje  Ydesdeel origen  del  actor 
+  (de          adelante        hacia atras),   semantendraen esos  nuevos 
+  coords.  Si     es 0,        elactor        volvera a los  coords  deposicion 
+  inicial.                           
+  <LI><B>lockF</B> bloquea al actor en la posicionfinal.  Si 1 reproducira la    
+             animacion una vez,   bloquea al actoren el  fotograma  final  de  
+  la               animacion. Esto NO se  puededetener  conel codigo de  
+  operacion     0687             (clear_actor_task),pero  continuara con  otra 
+  animacion.                             
+  <LI><B>limT</B> el Timelimit en milisegundos, es el tiempo que el   actor   
+  hara&nbsp;la animcaión,   establecido  en 1000ms&nbsp;es 1 segundo, 6000  ms   
+  son 6             segundos, etc.... Si  se establece en -1, reproducira  toda  
+      la animacion,   de         una vez. Con el booleano&nbsp;del bucle&nbsp;en 
+     (1), la animacion   se  repetira    hasta   que se       interrumpa con el  
+   codigo  de operacion     0687(clear_actor_task)&nbsp;ú otra animación.  
+</LI></OL>
+<P></P>
+<P>Para encontrar el nombre de anims y en que archivo anim se  encuentran,    
+ puedes buscar en el muy buen archivo escrito por ceedj: <A 
+href="Animaciones.SAAnims.html"><U>SAAnims.txt  </U></A>,perotambien puedes pensar en   donde se 
+ ha usado esta animacion en el juego original, ve a la  mision o la  secuencia   
+ de  comandos externa en main.scm original se  usa y busque con  Sanny Builder   
+la  animacion que desee en la mision/  externa que haya    
+visto.</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+        
+<SCRIPT src="HL.js"></SCRIPT>
+        </BODY></HTML>

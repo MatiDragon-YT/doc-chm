@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Explociones</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Olvidemos la seguridad ahora y destruyamos todo:</P>
+<PRE class="sb3">020C: create_explosion_with_radius 0 at 1827.1169 -2415.7666 13.5547 
+0565: create_soundless_explosion_at 681.8004 -474.1063 15.5363 type 7 
+0948: create_explosion_at 870.1503 -25.3395 62.9589 type 11 camera_shake 5.0 
+0356: explosion_type -1 in_cube_cornerA 541.0 -1278.0 17.5 cornerB 536.0 -1275.0 31.5
+</PRE>
+<P>Aqui las  carrozas son las  posiciones, la buena  idea aqui es usar  numeros  
+ aleatorios, y  los numeros int   <B class="text-red">11</B>, <B class="text-red">0</B> 
+ y  <B class="text-red">7</B> son  el  tipo de explosion.   </P>
+<P>Aqui hay una minuscula rutina para hacer algunas  explosiones agradables:</P><PRE class="sb3">:LABEL
+0001: wait 25 ms
+00AA: store_car $car00 position_to 1@ 2@ 3@
+00A0: store_actor $actor00 position_to 1@ 2@ 3@
+01BB: store_object $object00 position_to 1@ 2@ 3@
+0208: 6@ = random_float_in_ranges -20.0 20.0
+0208: 4@ = random_float_in_ranges -15.0 15.0
+0208: 9@ = random_float_in_ranges -5.0 5.0
+005B: 6@ += 1@ // (float)
+005B: 4@ += 2@ // (float)
+005B: 9@ += 3@ // (float)
+020C: create_explosion_with_radius 10 at 6@ 4@ 9@
+000A: 8@ += 1
+00D6: if
+0029:   8@ >= 100
+004D: jump_if_false @LABEL</PRE>
+<P>Al cambiar <B class="text-red">25</B> en la espera del  
+<STRONG>wait</STRONG>, las explosiones estaran mas espaciadas, elija  entre  
+ actor, automovil u objeto. Al cambiar los numeros aleatorios, cambia la  
+longitod  y altitud del area que golpeara.&nbsp;Aqui veras&nbsp;<B class="text-red">100</B>&nbsp;explosiones. 
+ Que te  diviertas.</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

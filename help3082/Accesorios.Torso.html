@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>TOrso</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<STYLE>
+td:nth-child(4){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+td:nth-child(3),td:nth-child(2){
+ color: #ff9800;
+ font-weight: bolder!important; 
+text-transform: uppercase; 
+}
+</STYLE>
+
+<TABLE id="myTable">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT class="w-100" id="myInput" title="Solo Escribe" onkeyup="myFunction()" 
+      type="search" placeholder="Buscar..."></TH>
+    <TH>Textura</TH>
+    <TH>Modelo</TH>
+    <TH>Ubicación</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>Torso ;(default) </TD>
+    <TD>player_torso </TD>
+    <TD>torso </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Black Tank </TD>
+    <TD>vestblack </TD>
+    <TD>vest </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>White Tank </TD>
+    <TD>vest </TD>
+    <TD>vest </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Striped T-Shirt </TD>
+    <TD>tshirt2horiz </TD>
+    <TD>tshirt2 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>White T-Shirt </TD>
+    <TD>tshirtwhite </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>L.S. T-Shirt </TD>
+    <TD>tshirtilovels </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Sharps T-Shirt </TD>
+    <TD>tshirtblunts </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Plaid Shirt </TD>
+    <TD>shirtbplaid </TD>
+    <TD>shirtb </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Checkered Shirt </TD>
+    <TD>shirtbcheck </TD>
+    <TD>shirtb </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Combat Jacket </TD>
+    <TD>field </TD>
+    <TD>field </TD>
+    <TD>0 </TD></TR>
+  <TR>
+    <TD>Eris T-Shirt </TD>
+    <TD>tshirterisyell </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Eris T-Shirt2 </TD>
+    <TD>tshirterisorn </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Track Top </TD>
+    <TD>trackytop2eris </TD>
+    <TD>trackytop1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Rimmers Jacket </TD>
+    <TD>bbjackrim </TD>
+    <TD>bbjack </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>R-Star Jacket </TD>
+    <TD>bballjackrstar </TD>
+    <TD>bbjack </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Dribblers Vest </TD>
+    <TD>baskballdrib </TD>
+    <TD>baskball </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Saint's Shirt </TD>
+    <TD>baskballrim </TD>
+    <TD>baskball </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>69ers T-Shirt </TD>
+    <TD>sixtyniners </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Bandits Top </TD>
+    <TD>bandits </TD>
+    <TD>baseball </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>ProLaps T-Shirt </TD>
+    <TD>tshirtprored </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>ProLaps Black T </TD>
+    <TD>tshirtproblk </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>trackytop1pro                                                          
+                                                     
+    <TD>Track Top </TD>
+    <TD>trackytop1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Slappers Top </TD>
+    <TD>hockeytop </TD>
+    <TD>sweat </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Baseball T </TD>
+    <TD>bbjersey </TD>
+    <TD>sleevt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Leisure Top </TD>
+    <TD>shellsuit </TD>
+    <TD>trackytop1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>White Heat T </TD>
+    <TD>tshirtheatwht </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Bobo Ape T </TD>
+    <TD>tshirtbobomonk </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Red Bobo T </TD>
+    <TD>tshirtbobored </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Base 5 T </TD>
+    <TD>tshirtbase5 </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Suburban T </TD>
+    <TD>tshirtsuburb </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Mercury Hood </TD>
+    <TD>hoodyamerc </TD>
+    <TD>hoodya </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Base 5 Hood </TD>
+    <TD>hoodyabase5 </TD>
+    <TD>hoodya </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Rockstar Hood </TD>
+    <TD>hoodyarockstar </TD>
+    <TD>hoodya </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Vest &amp; T-Shirt </TD>
+    <TD>wcoatblue </TD>
+    <TD>wcoat </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Grn Windbreaker </TD>
+    <TD>coach </TD>
+    <TD>coach </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Blk Windbreaker </TD>
+    <TD>coachsemi </TD>
+    <TD>coach </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Rockstar Sweat </TD>
+    <TD>sweatrstar </TD>
+    <TD>sweat </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Blue Hoody </TD>
+    <TD>hoodyAblue </TD>
+    <TD>hoodyA </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Black Hoody </TD>
+    <TD>hoodyAblack </TD>
+    <TD>hoodyA </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Green Hoody </TD>
+    <TD>hoodyAgreen </TD>
+    <TD>hoodyA </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Brown Shirt </TD>
+    <TD>sleevtbrown </TD>
+    <TD>sleevt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Sky Blue Shirt </TD>
+    <TD>shirtablue </TD>
+    <TD>shirta </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Yellow Shirt </TD>
+    <TD>shirtayellow </TD>
+    <TD>shirta </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Gray Shirt </TD>
+    <TD>shirtagrey </TD>
+    <TD>shirta </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Green Shirt </TD>
+    <TD>shirtbgang </TD>
+    <TD>shirtb </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Cream Logo T </TD>
+    <TD>tshirtzipcrm </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Gray Logo T </TD>
+    <TD>tshirtzipgry </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Jean Jacket </TD>
+    <TD>denimfade </TD>
+    <TD>denim </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Bowling shirt </TD>
+    <TD>bowling </TD>
+    <TD>hawaii </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Hooded Jacket </TD>
+    <TD>hoodjackbeige </TD>
+    <TD>hoodjack </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Loc-Down Vest </TD>
+    <TD>baskballloc </TD>
+    <TD>baskball </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Loc-Down T </TD>
+    <TD>tshirtlocgrey </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Madd Tagg T </TD>
+    <TD>tshirtmaddgrey </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Green Tagg T </TD>
+    <TD>tshirtmaddgrn </TD>
+    <TD>tshirt </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Gray Jacket </TD>
+    <TD>suit1grey </TD>
+    <TD>suit1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Black Jacket </TD>
+    <TD>suit1blk </TD>
+    <TD>suit1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Biker Jacket </TD>
+    <TD>leather </TD>
+    <TD>leather </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Chore Coat </TD>
+    <TD>painter </TD>
+    <TD>painter </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Hawaiian Shirt </TD>
+    <TD>hawaiiwht </TD>
+    <TD>hawaii </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Blue Hawaiian </TD>
+    <TD>hawaiired </TD>
+    <TD>hawaii </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Sports Jacket </TD>
+    <TD>sportjack </TD>
+    <TD>trackytop1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Red Jacket </TD>
+    <TD>suit1red </TD>
+    <TD>suit1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Blue Jacket </TD>
+    <TD>suit1blue </TD>
+    <TD>suit1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Yellow Jacket </TD>
+    <TD>suit1yellow </TD>
+    <TD>suit1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Tweed Jacket </TD>
+    <TD>suit2grn </TD>
+    <TD>suit2 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Tuxedo Pants </TD>
+    <TD>tuxedo </TD>
+    <TD>suit2 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Green Jacket </TD>
+    <TD>suit1gang </TD>
+    <TD>suit1 </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Letterman Top </TD>
+    <TD>letter </TD>
+    <TD>sleevt </TD>
+    <TD>0</TD></TR></TBODY></TABLE><BR>
+</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Documentación SCM</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+ <header></header>
+ <div class="container">
+  <div class="row">
+   <div class="col-12">
+    <h4>Introduccíon</h4>
+    <p>Bueno, antes que nada, hay que tener en cuenta que cualquier entorno de desarrollo integrado o interactivo por sus siglas IDE (en inglés, <b>Integrated Development Environment</b>) para modificar nuestro GTA, están basados en una Cadena de Gestión de Suministro o SCM (en inglés, <b>Supply Chain Management</b>), en forma de Código de Operación o por sus siglas OPCODE (en inglés, <b>Operation Code</b>). Lo que significa, que todas las instrucciones de programación, ya están creadas, por lo que a ti solo te toca guionar las instrucciones.</p>
+    <hr class="mt-5 mb-5">
+    <h4>Características</h4>
+    <table>
+     <thead>
+      <tr>
+       <th>IDE</th>
+       <th>Plugin SDK</th>
+       <th>Sanny Builder</th>
+       <th>GTA 3 Script</th>
+       <th>SA Mission Builder</th>
+      </tr>
+     </tbody>
+      <tr>
+       <td><b>Compatibles</b></td>
+       <td>III, VC y SA</td>
+       <td>FULL PC & Android</td>
+       <td>III, VC y SA</td>
+       <td>SA</td>
+      </tr>
+      <tr>
+       <td><b>Aprendizaje</b></td> 
+       <td>Alta</td>
+       <td>Media</td>
+       <td>Alta</td>
+       <td>Baja</td>
+      </tr>
+      <tr>
+       <td><b>Resaltador</b></td>
+       <td>Profesional</td>
+       <td>Profesional</td>
+       <td>Simple</td>
+       <td>Ninguno</td>
+      </tr>
+      <tr>
+       <td><b>Autocompletado</b></td> 
+       <td>Profesional</td>
+       <td>Simple</td>
+       <td>Profesional</td>
+       <td>Ninguno</td>
+      </tr>
+      <tr>
+       <td><b>Accesos Rápidos</b></td>
+       <td>Escasos</td>
+       <td>Profesionales</td>
+       <td>Simples</td>
+       <td>Escasos</td>
+      </tr>
+      <tr>
+       <td><b>Documentación</b></td>
+       <td>Completa</td>
+       <td>Completa</td>
+       <td>Incompleta</td>
+       <td>Escasa</td>
+      </tr>
+      <tr>
+       <td><b>Nivel de Sintaxis</b></td>  
+       <td>Alto</td>
+       <td>Medio</td>
+       <td>Alto</td>
+       <td>Bajo</td>
+      </tr>
+      <tr>
+       <td><b>Recomendada</b></td>
+       <td>Si</td>
+       <td>Si</td>
+       <td>Si</td>
+       <td>No</td>
+      </tr>
+     </tbody>
+    </table>
+    <h5>Sintaxis</h5>
+    <p><b>Plugin SDK</b> y <b>GTA3 Script</b> se maneja con comandos y palabras claves.<br>
+    <b>Sanny Builder</b> se maneja principalmente con opcodes, pero estos pueden ser transformados o pasados a clases, comandos y palabras claves para una mayor facilidad a la hora de crear mods.<br>
+    <b>SA Mission Builder</b> se maneja únicamente con opcodes.</p> 
+<pre class="sb3">//Opcode
+00A5: $CAR01 = car_create #JESTER 341.5 75.32 5.234
+
+//Clase
+$CAR01 = Car.Create(#JESTER, 341.5, 75.32, 5.234)
+
+//Comando
+CREATE_CAR $CAR01 #JESTER 341.5 75.32 5.234</pre>
+    <hr class="mt-5 mb-5">
+    <h4>Conclución</h4>
+    <p>Esto es como un lenguaje ensamblador y en mi opinión, con lo que me respecta decir, es que por el momento se recomendable usar Sanny Builder, y cuando quieras ir mas lejos, quizás pasarte a Plugin SDK te ayude de algo. Aunque Sanny Builder tiene un SDK para que puedas ir un poco mas lejos con él.</p>
+   </DIV>
+  </DIV>
+ </DIV>
+ <SCRIPT src="jQuery.js"></SCRIPT>
+ <SCRIPT src="HL.js"></SCRIPT>
+</BODY>
+</HTML>

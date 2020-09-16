@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Condiciones</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>El operador <code>IF</code> evalúa una o más condiciones y crea una nueva rama de código.</P><hr>
+<h4 id="low-level">Declaraciones IF de bajo nivel</h4>
+<h5>Sintaxis</h5>
+<PRE class=sb3>
+00d6: if &lt;N&gt;
+    &lt;1 condición&gt;
+    &lt;2 condición&gt;
+    ...
+    &lt;N+1 condición&gt;
+004D: jump_if_false &lt;etiqueta&gt;
+</PRE>
+<ul>
+<li><code>&lt;N&gt;</code> - significa el número total de condiciones dentro de la declaración IF y la forma en que ocurre la evaluación de las condiciones.</li>
+<li>
+<table>
+ <thead>
+  <tr>
+   <th>N</th>
+   <th>Número de condiciones</th>
+   <th>Operador lógico</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>0</td>
+   <td>1</td>
+   <td>la declaración IF es verdadera sí la condicion es verdadera</td>
+  </tr>
+  <tr>
+   <td>1..7</td>
+   <td>2..8</td>
+   <td><code>AND</code> (todas las condiciones deben ser verdaderas para que la declaración IF sea verdadera)</td>
+  </tr>
+  <tr>
+   <td>21..27</td>
+   <td>2..8</td>
+   <td><code>OR</code> (al menos una de las condiciones debe ser verdadera para que la declaración IF sea verdadera)</td>
+  </tr>
+ </tbody> 
+</table>
+<div class=dan>Una sola instrucción IF puede contener hasta 8 condiciones.</div>
+<div class=inf>Sanny Builder permite omitir el <code>0</code> después del IF.<br><code>IF 0</code> y <code>IF</code> son equivalentes.</div>
+</li>
+<li><code>&lt;etiqueta&gt;</code> - el nombre de la <a href="Codificacion.TiposDeDatos.html#labels">etiqueta</a> donde el script saltara si la declaración IF es falsa.</li>
+<li><code>&lt;condicíon&gt;</code> - cualquier opcode condicional que evalúe como <code>True</code> o <code>False</code></li>
+<li>
+<p>Si usted tiene las <code>condiciones de verificación</code> habilitado en las <a href="Opciones.General.html#check-conditions">opciones</a>, se puede sustituir el número si con las palabras clave <code>AND</code> y <code>OR</code>. El compilador calcula el valor correcto por sí mismo.</p>
+<pre class=sb3>
+if and 
+    $var &gt; 0
+    $var2 == 10.0
+jf @dondequiera
+</pre>
+</li>
+<li><p>El compilador escribe el número <code>1</code> en lugar de <code>and</code>.</p></li>
+<li><code>IF AND</code> - condiciones conectadas con el operador lógico <code>AND</code> (un reemplazo de <code>if 1..7</code>)</li>
+<li><code>IF OR</code> - condiciones conectadas con el operador lógico <code>OR</code> (un reemplazo para <code>if 21..27</code>)</li>
+</ul> 
+<HR>
+<h4 id="high-level">Construcctor de alto nivel</h4>
+<P>Para facilitar las condiciones de escritura, existen construcciones de alto nivel que no requieren etiquetas adicionales:</P>
+<h5>Sintaxis</h5>
+<PRE class=sb3>
+IF &lt;N&gt;/AND/OR
+    &lt;1 condición&gt;
+    &lt;2 condición&gt;
+    ...
+    &lt;N+1 condición&gt;
+THEN
+    &lt;comandos si la declaración es verdadera&gt;
+END
+</PRE>
+<PRE class=sb3>
+IF &lt;N&gt;/AND/OR
+    &lt;1 condición&gt;
+    &lt;2 condición&gt;
+    ...
+    &lt;N+1 condición&gt;
+THEN
+    &lt;comandos si la declaración es verdadera&gt;
+ELSE
+    &lt;comandos si la declaración es falsa&gt;
+END
+</PRE>
+<P>
+Una condición es creada con las reglas descritas de las <a href="#low-level">condiciones de bajo nivel</a>.<br>
+Después de <code>THEN</code>, debe especificar los comandos que se ejecutarán si se cumple la condición.<br>
+Después de <code>ELSE</code>, debe especificar los comandos que se ejecutan si no se cumple la condición.
+</P>
+<div class=dan>La opción de verificación de condiciones debe estar habilitada.</div>
+<div class=inf>Se admiten declaraciones IF anidadas.</div>
+<hr>
+<h4>Operadores relacionales</h4>
+<table>
+ <tbody>
+  <tr>
+   <td>A <code>==</code> B</td>
+   <td>A es igual a B</td>
+  </tr>
+  <tr>
+   <td>A <code>&lt;&gt;</code> B</td>
+   <td>A es desigual a B</td>
+  </tr>
+  <tr>
+   <td>A <code>&gt;=</code> B</td>
+   <td>A es mayor o igual que B</td>
+  </tr>
+  <tr>
+   <td>A <code>&lt;=</code> B</td>
+   <td>A es menor o igual que B</td>
+  </tr>
+  <tr>
+   <td>A <code>&gt;</code> B</td>
+   <td>A es mayor que B</td>
+  </tr>
+  <tr>
+   <td>A <code>&lt;</code> B</td>
+   <td>A es menor que B</td>
+  </tr>
+ </tbody> 
+</table>
+<p><code>A</code> y <code>B</code> son operandores. El compilador puede averiguar un código de operación si uno de los operandos es un número o una cadena literal, o se conoce el tipo de ambas variables.</p>
+</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+  
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

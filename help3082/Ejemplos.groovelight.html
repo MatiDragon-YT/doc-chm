@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>groovelight</title>
+ <meta charset=Windows-1252"ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header></header>
+<div class="container-fluid">
+<div class="row">
+<div class="col-12">
+<pre class=sb3>
+/*
+  NewOpcodes 2.0
+  Example script: GrooveLight
+  Creates 2 spotlights near CJ's house.
+*/
+
+{$CLEO}
+{$I stdc}
+{$I inloop}
+0D5B: draw_spotlight_from 2456.4092 -1661.6938 20.1 to 2456.4092 -1661.6938 12.3 base_radius 0.3 target_radius 50.0 enable_shadow 1 shadow_intensity 0.4 flag1 1 flag2 1
+0D5B: draw_spotlight_from 2471.88 -1673.611 20.1 to 2471.991 -1673.8223 12.3 base_radius 0.3 target_radius 50.0 enable_shadow 1 shadow_intensity 0.4 flag1 1 flag2 1
+{$I end}
+</pre>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>
