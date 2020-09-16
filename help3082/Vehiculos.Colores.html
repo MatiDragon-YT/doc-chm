@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Colores</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<STYLE>
+td:nth-child(2){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+td:nth-child(3){
+ color: #ff9800;
+ font-weight: bolder!important;  
+}
+</STYLE>
+          
+<DIV class="row">
+<DIV class="col-12 col-md-6">
+<P>Puedes cambiar los colores de un vehiculo con estos opcodes:          
+<PRE class="sb3">0229: set_car $car00 primary_color_to 2 secondary_color_to 7</PRE><BR>Si 
+ te gusta crear vehiculos para el  juego,    te gustara saver que tienes la     
+ posibilidad de usar dos colores mas  para tus      creaciones con:&nbsp;        
+ 
+<PRE class="sb3">0A11: set_car $car01 tertiary_color_to 6 quaternary_color_to 14</PRE>
+<UL>
+  <LI> -1&nbsp;= random</LI></UL></DIV>
+<DIV class="col-12 col-md-6">
+<P><IMG class="border w-100" src="img/vehiculos.colores.png"></P></DIV></DIV>
+<HR>
+
+<P>Si usar NewOpcodes.cleo, podras      cambiar los colores con:       
+<PRE class="sb3">0D63: set_car $car02 color 1 RGB 230 54 225</PRE>
+<P></P>
+<P><B><U>Parametros:</U></B></P>
+<UL>
+  <LI>Variable donde tenemos alojado nuestro vehiculo</LI>
+  <LI>Constante o ID de la capa de color</LI></UL>
+<TABLE id="myTable">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT title="Solo Escribe" class="w-100" id="myInput" onkeyup="myFunction()" type="text" placeholder="Buscar..." value=""></TH>
+    <TH>ID</TH>
+    <TH>STDC</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>Colores por Defectos</TD>
+    <TD>0</TD>
+    <TD>DEFAULT_COLORS</TD></TR>
+  <TR>
+    <TD>Primero</TD>
+    <TD>1</TD>
+    <TD>PRIMARY_COLOR</TD></TR>
+  <TR>
+    <TD>Segundo</TD>
+    <TD>2</TD>
+    <TD>SECONDARY_COLOR</TD></TR>
+  <TR>
+    <TD>Tercero</TD>
+    <TD>3</TD>
+    <TD>TERTIARY_COLOR</TD></TR>
+  <TR>
+    <TD>Cuarto</TD>
+    <TD>4</TD>
+    <TD>QUATERNARY_COLOR</TD></TR>
+  <TR>
+    <TD>Todos</TD>
+    <TD>5</TD>
+    <TD>ALL_COLORS</TD></TR></TBODY></TABLE>
+<UL></UL>
+<UL>
+  <LI>Escala de los colores RGB(rojo, verde y azul, desde el 0 hasta el          
+                                            255)&nbsp;  </LI></UL>
+<P>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Color</TH>
+    <TH>Valores</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>Negro</TD>
+    <TD>0 0 0</TD></TR>
+  <TR>
+    <TD>Rojo</TD>
+    <TD>255 0 0</TD></TR>
+  <TR>
+    <TD>Verde</TD>
+    <TD>0 255</TD></TR>
+  <TR>
+    <TD>Azul</TD>
+    <TD>0 0 255</TD></TR>
+  <TR>
+    <TD>Blanco</TD>
+    <TD>255 255 255</TD></TR></TBODY></TABLE>
+<P></P>
+<SCRIPT src="jQuery.js"></SCRIPT>
+   
+<SCRIPT src="HL.js"></SCRIPT>
+ </DIV></DIV></DIV></BODY></HTML>

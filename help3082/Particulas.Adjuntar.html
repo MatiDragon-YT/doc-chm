@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Adjuntar</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Puede crear particulas adjuntadas a actores, vehiculos,   objetos desde el 
+principio.<BR>Cada particula tiene su propia forma de    moverse, el humo sube, 
+el  liquido o el semiliquido fluyen hacia abajo,  las  chispas van en su mayoria 
+en  todas las direcciones, el polvo se   expande.<BR>Pero puedes darle una 
+direccion  usando los angulos de   rotacion.<BR>probablemente  tendras que pasar 
+por algunas  pruebas  para   conseguirlo en  la  direccion que desees. Algunos   
+efectos son limitados en el  tiempo, por lo que es posible que debas   
+repetirlos. Nunca olvide activarlo con  064C,  <B>SIEMPRE</B> tiene  que    
+hacerlo  visible.</P>
+<P>
+<PRE class=sb3>0669: $particle00 = attach_particle "EXHALE" to_actor $actor00 with_offset 0.0 0.0 0.0 flag 1
+066A: $particle00 = attach_particle "PETROLCAN" to_actor $actor00 with_offset 0.0 0.0 0.0 rotation 0.0 0.0 0.0 flag 1
+066B: $particle00 = attach_particle "PRT_SPARK" to_car $car00 with_offset 0.0 0.0 0.0 flag 1
+066C: $particle00 = attach_particle "CEMENT" to_car $car00 with_offset 0.0 0.0 0.0 rotation 0.0  0.0 0.0 flag 1
+066D: $particle00 = attach_particle "SMOKE_FLARE" to_object $object00 with_offset 0.0 0.0 0.0 flag 1
+066E: create_particle "COKE_TRAIL" attached_to_object $object00 with_offset 0.0 0.0 0.0 rotation 0.0 0.0 0.0 flag 1 handle_as $particle00
+</PRE>
+<P></P>
+<P>Parametros:</P>
+<OL>
+  <LI><B class="text-blue">$particle00</B> es el   identificador de particulas   
+  que se utilizara para   almacenarlo.</LI>
+  <LI><B class="text-orange">"EXHALE"</B> es el  ID(identificador) de la   
+  particula que crearemos.</LI>
+  <LI><B class="text-blue"> $actor00</B>, <B class="text-blue">$car00</B> y <B 
+  class="text-blue">$object00</B> son a quienes le adjuntaremos las     
+  particulas.</LI>
+  <LI><B class="text-red">0.0 0.0 0.0</B> es el numero de    desplazamiento de   
+  la particula sobre esa   identidad, en los ejes X, Y y Z.</LI>
+  <LI><B class="text-red">0.0 0.0 0.0</B>   la rotacion, encargada   de dar le 
+  direccion a  una particula.</LI>
+  <LI><B class="text-red">1</B> de flag, aun no se  sabe para que es, pero   
+  siempre esta   asi.</LI></OL>
+<P>Tambien puedes anclar adjuntar particulas a un actor, de una forma mas   
+escricta o compleja con esta secuencia de  comandos:  
+<PRE class=sb3>0883: attach_particle $particle00 to_actor $actor00 mode 5</PRE>
+<P></P>
+<P>Parametros:</P>
+<OL>
+  <LI><B class="text-blue">$particle00</B> es la particula   que ya teniamos   
+  creada de antes.</LI>
+  <LI><B class="text-blue">$actor00</B> es a quien le  pondremos la   
+  particula.</LI>
+  <LI><B class="text-red">5</B> es la ubicacion de en donde queremos que    
+  aparesca.</LI></OL>
+<P>Posiciones:<BR><B class="text-red">-1</B> y por abajo: hacer que la particula 
+ no&nbsp;sea visible<BR><B class="text-red">0</B>: Cuerpo<BR><B 
+class="text-red"> 1</B>: Cadera<BR><B class="text-red"> 2</B>: Estomago<BR><B 
+class="text-red"> 3</B>:  Cofre<BR><B class="text-red"> 4</B>: Cuello<BR><B 
+class="text-red">  5</B>: Boca<BR><B class="text-red">6</B>:  Frente<BR><B 
+class="text-red">7</B>:   Cabeza<BR><B class="text-red"> 8</B>: Nuca<BR><B 
+class="text-red"> 8</B> &lt; <B class="text-red">9</B>:  hace que la   particula 
+no  aparesca</P>
+<P><BR></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

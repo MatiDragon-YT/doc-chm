@@ -1,0 +1,63 @@
+<!DOCTYPE HTML><HTML lang="es"><HEAD>  <TITLE>Ejemplo</TITLE>  
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"> </HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<H5>Shader</H5>
+<PRE class="shader bg-dark text-white p-2 m-1">shared texture screen : SCREEN_TEX;
+float dist;
+
+sampler2D screenSampler = sampler_state
+{
+    Texture = <screen>;
+};
+
+float4 PS_screen(float2 tex: TEXCOORD0): COLOR
+{
+    float4 color;
+    color =  tex2D(screenSampler, tex);
+    color += tex2D(screenSampler, tex + dist);
+    color += tex2D(screenSampler, tex - dist);
+    return color / 3;
+}
+
+technique ShowScreen
+{
+    pass P0
+    {
+        PixelShader  = compile ps_2_0 PS_screen();
+    }
+}
+</screen></PRE>
+<H5>Script</H5>
+<PRE class=sb3>{$CLEO}
+{$I shaderApi}
+
+var
+    0@: shader
+end
+
+if
+    0@ = shader.Load("CLEO\blur.txt")
+then
+    while true
+        wait 0
+        068D: get_camera_position_to 4@ 5@ 6@
+        050A: 7@ = distance_between_XYZ 1@ 2@ 3@ and_XYZ 4@ 5@ 6@
+        7@ *= 0.0008
+        068D: get_camera_position_to 1@ 2@ 3@
+        0@.SetFloat("dist", 7@)
+        0@.Draw("ShowScreen", SCREEN_BASE_X, SCREEN_BASE_Y, SCREEN_SIZE_X, SCREEN_SIZE_Y)
+        
+    end
+end
+0A93: end_custom_thread
+</PRE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+ 
+<SCRIPT src="HL.js"></SCRIPT>
+ </DIV></DIV></DIV></BODY></HTML>

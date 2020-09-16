@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Pasajeros</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<STYLE>
+td:nth-child(1){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+</STYLE>
+<h5>Entrar</h5>
+<p class=light>Puedes entrar un actor a un vehiculo al instante o con tiempo al asiento que deses con estos opcodes.</p>
+<PRE class="sb3">// Al asiento del Conductor 
+072A: put_actor $actor01 into_car $car01 driverseat // Instantaneo
+05CB: AS_actor $actor10 enter_car $car10 as_driver 3000 ms // Cronometrado
+// A un asiento de Pasajero
+0430: put_actor $actor02 into_car $car02 passenger_seat 2 // Instantaneo
+05CA: AS_actor $actor20 enter_car $car20 passenger_seat 2 time 3000 // Cronometrado
+</PRE>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>ID</TH>
+    <TH>Asiento de pasajero</TH></TR>
+  <TR>
+    <TD>0</TD>
+    <TD>Copiloto</TD></TR>
+  <TR>
+    <TD>1</TD>
+    <TD>Pasajero Izquierdo</TD></TR>
+  <TR>
+    <TD>2</TD>
+    <TD>Pasajero Derecho</TD></TR></TBODY></TABLE>
+<h5>Sacar</h5>
+<p class=light>Puedes sacar un actor de un vehiculo de varias formas especificas</p>
+<PRE class="sb3">05CD: AS_actor $actor01 exit_car $car01
+05CF: AS_actor $actor10 exit_car $car10 in_direction 623.6346 854.64 26.352
+0633: AS_actor $actor02 exit_car
+</PRE>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT> 
+</DIV></DIV></DIV></BODY></HTML>

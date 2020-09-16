@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Garajes</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<STYLE>
+td:nth-child(3){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+td:nth-child(2){
+ color: #ff9800;
+ font-weight: bolder!important;  
+}
+</STYLE>
+      
+<P>Si lo que quieres es activar garajes sin tener que pasar por misiones o solo  
+ quieres&nbsp;abilitar el uso de las que aparecen solamente en las misiones,   
+ estas en el lugar indicado. Con este opcode podras bloquearlo:                  
+      
+<PRE class="sb3">
+0299: activate_garage 'BODLAWN'
+//Tambien puedes usar la clase Garage de esta forma;
+Garage.Activate("GarageID")
+//Y puedes usar este opcode para detectar si esta abierto
+03B0:   garage 'BODLAWN' door_open
+</PRE> 
+ Y bloquearlo de nuevo con:                       
+<PRE class="sb3">02B9: deactivate_garage 'BODLAWN'</PRE>
+<P></P>
+<TABLE id="myTable">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT style="width: 100%;" title="Solo Escribe" id="myInput" onkeyup="myFunction()" type="search" placeholder="Buscar..." value=""></TH>
+    <TH>ID</TH>
+    <TH>Coordenadas XYZ</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <th colspan="3">Los Santos</th></TR>
+  <TR>
+    <TD>Ganton garage</TD>
+    <TD>CJSAFE</TD>
+    <TD>(2502.31, -1699.36, 12.4323)</TD></TR>
+  <TR>
+    <TD>Muholland garage</TD>
+    <TD>CESAFE1</TD>
+    <TD>(1352.58, -636.657, 108.135)</TD></TR>
+  <TR>
+    <TD>Downtown garage used in "Life's a Beach"</TD>
+    <TD>MUL_LAN</TD>
+    <TD>(1640.37, -1520.07, 12.5118)</TD></TR>
+  <TR>
+    <TD>impound lot</TD>
+    <TD>IMP_LA</TD>
+    <TD>(1523.92, -1653.23, 4.72837)</TD></TR>
+  <TR>
+    <TD>El Corona garage used in "Los  Desperados"</TD>
+    <TD>DUF_LAS</TD>
+    <TD>(1873.97, -2096.55, 12.487)</TD></TR>
+  <TR>
+    <TD>bomb shop</TD>
+    <TD>LASBOMB</TD>
+    <TD>(1843.91, -1858.8, 12.3645)</TD></TR>
+  <TR>
+    <TD>Cesar's garage</TD>
+    <TD>MODGLAS</TD>
+    <TD>(1809.46, -2150.67, 12.4283)</TD></TR>
+  <TR>
+    <TD>El Corona garage</TD>
+    <TD>CARLAS1</TD>
+    <TD>(1694.8, -2088.7, 12.3636)</TD></TR>
+  <TR>
+    <TD>burglary garage</TD>
+    <TD>BURG_LK</TD>
+    <TD>(2738.4, -2012.55, 12.5759)</TD></TR>
+  <TR>
+    <TD>Loco Low Co</TD>
+    <TD>MODLAST</TD>
+    <TD>(2640.78, -2049.99, 12.543)</TD></TR>
+  <TR>
+    <TD>Verona Beach Pay n Spray</TD>
+    <TD>SPLAW2 </TD>
+    <TD>(491.103, -1747.55, 9.45516)</TD></TR>
+  <TR>
+    <TD>Santa Maria Beach garage</TD>
+    <TD>BEACSV </TD>
+    <TD>(319.326, -1768.93, 3.35686)</TD></TR>
+  <TR>
+    <TD>Transfender</TD>
+    <TD>BODLAWN</TD>
+    <TD>(1038.24, -1025.67, 31.1027)</TD></TR>
+  <TR>
+    <TD>+</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <th colspan="3">; used twice</th></TR>
+  <TR>
+    <TD>Idlewood Pay n Spray</TD>
+    <TD>SPRLAE</TD>
+    <TD>(2056.6, -1835.9, 12.5443)</TD></TR>
+  <TR>
+    <TD>Temple Pay n Spray </TD>
+    <TD>SPRLAE</TD>
+    <TD>(1021.81 -1018.71 30.9081)</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <th colspan="3">San Fierro</th></TR>
+  <TR>
+    <TD>Wu Zi's garage</TD>
+    <TD>FDORSFE</TD>
+    <TD>(-2171.43, 649.416, 49.8742)</TD></TR>
+  <TR>
+    <TD>Michelle's garage</TD>
+    <TD>MICHDR</TD>
+    <TD>(-1790.97, 1209.71, 23.763)</TD></TR>
+  <TR>
+    <TD>Windy road grg</TD>
+    <TD>SAV1SFE</TD>
+    <TD>(-2108.92, 886.553, 75.566)</TD></TR>
+  <TR>
+    <TD>impound lot</TD>
+    <TD>IMP_SF</TD>
+    <TD>(-1652.78, 647.502, -6.04924)</TD></TR>
+  <TR>
+    <TD>"Wheels Arch Angel" garage</TD>
+    <TD>MDS1SFS</TD>
+    <TD>(-2728.53, 212.295, 3.45112)</TD></TR>
+  <TR>
+    <TD>garage a block south of "Wheels Arch                                   
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+          Angel"</TD>
+    <TD>TBON</TD>
+    <TD>(-2735.46, 60.7331, 3.07005)</TD></TR>
+  <TR>
+    <TD>Hashbury garage</TD>
+    <TD>SVGSFS1</TD>
+    <TD>(-2454.02, -131.556, 25.0886)</TD></TR>
+  <TR>
+    <TD>Transfender</TD>
+    <TD>MDSSFSE</TD>
+    <TD>(-1941.04, 251.714, 33.4274)</TD></TR>
+  <TR>
+    <TD>Downtown Pay n Spray</TD>
+    <TD>SPRSFSE</TD>
+    <TD>(-1908.93, 292.353, 40.0413)</TD></TR>
+  <TR>
+    <TD>burglary garage</TD>
+    <TD>BRGSFSE</TD>
+    <TD>(-2112.48, -21.214, 34.303)</TD></TR>
+  <TR>
+    <TD>Doherty garage #1 left</TD>
+    <TD>HBGDSFS</TD>
+    <TD>(-2057.35, 150.803, 27.8286)</TD></TR>
+  <TR>
+    <TD>Doherty garage #2 right</TD>
+    <TD>LCKSFSE</TD>
+    <TD>(-2043.1, 118.609, 27.821)</TD></TR>
+  <TR>
+    <TD>Juniper Hollow Pay n Spray</TD>
+    <TD>SPRSFW</TD>
+    <TD>(-2430.13, 1013.71, 49.3413)</TD></TR>
+  <TR>
+    <TD>Paradiso garage</TD>
+    <TD>SAV1SFW</TD>
+    <TD>(2699.12, 821.489, 49.0042)</TD></TR>
+  <TR>
+    <TD>+</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>Esplanade North garage (for "Yay                                       
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                       Ka-Boom-Boom")</TD>
+    <TD>noname</TD>
+    <TD>(-1694.78 1033.15 44.1937)</TD></TR>
+  <TR>
+    <TD>Downtown garage (for stealing manana)</TD>
+    <TD>noname</TD>
+    <TD>(-1794.15 1429.69 4.37321)</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <th colspan="3">Las Venturas</th></TR>
+  <TR>
+    <TD>burglary garage</TD>
+    <TD>VGELOCK</TD>
+    <TD>(2602.6, 1438.84, 9.8337)</TD></TR>
+  <TR>
+    <TD>Transfender</TD>
+    <TD>VECMOD</TD>
+    <TD>(2382.28, 1044, 9.8337)</TD></TR>
+  <TR>
+    <TD>Rockshore West garage</TD>
+    <TD>VESVGRG</TD>
+    <TD>(2449.5, 695.018, 10.4742)</TD></TR>
+  <TR>
+    <TD>impound lot</TD>
+    <TD>IMP_LV</TD>
+    <TD>(2218.06, 2448.06, -8.43807)</TD></TR>
+  <TR>
+    <TD>AT 400 hangar</TD>
+    <TD>VGSHNGR</TD>
+    <TD>(1550.98, 1155.36, 8.97329)</TD></TR>
+  <TR>
+    <TD>Welding and Wedding bomb shop</TD>
+    <TD>BLOB2</TD>
+    <TD>(2002.96, 2303.72, 9.61706)</TD></TR>
+  <TR>
+    <TD>Redsands East Pay n Spray</TD>
+    <TD>BLOB1</TD>
+    <TD>(1968.23, 2157.88, 9.59696)</TD></TR>
+  <TR>
+    <TD>Redsands West garage</TD>
+    <TD>BLOB6</TD>
+    <TD>(1408.65, 1899.52, 10.115)</TD></TR>
+  <TR>
+    <TD>Prickle Pine garage</TD>
+    <TD>BLOB69</TD>
+    <TD>(1269.2, 2525.14, 9.80013)</TD></TR>
+  <TR>
+    <TD>Whitewood Estates garage</TD>
+    <TD>BLOB7</TD>
+    <TD>(929.554, 2008.59, 10.115)</TD></TR>
+  <TR>
+    <TD>+</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>unused Pay n Spray (the door doesn't                                   
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+          work)</TD>
+    <TD>TIMY1 </TD>
+    <TD>(2389.6, 1483.26, 9.81843)</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <th colspan="3">Countryside</th></TR>
+  <TR>
+    <TD>Fort Carson Pay n Spray</TD>
+    <TD>CN2SPRY</TD>
+    <TD>(-103.636, 1112.42, 18.7017)</TD></TR>
+  <TR>
+    <TD>Fort Carson garage</TD>
+    <TD>CN2GAR1</TD>
+    <TD>(-364.439, 1194.37, 18.597)</TD></TR>
+  <TR>
+    <TD>Verdant Meadows garage</TD>
+    <TD>CN2GAR2</TD>
+    <TD>(430.059, 2542.31, 15.166)</TD></TR>
+  <TR>
+    <TD>garage used in "Interdiction"</TD>
+    <TD>GHOSTDR</TD>
+    <TD>(-397.297, 2223.17, 41.3824)</TD></TR>
+  <TR>
+    <TD>Verdant Meadows Hangar</TD>
+    <TD>DHANGAR</TD>
+    <TD>(383.843, 2433.28, 15.166)</TD></TR>
+  <TR>
+    <TD>Dillimore Pay n Spray</TD>
+    <TD>CESPRAY</TD>
+    <TD>(715.806, -462.403, 14.9635)</TD></TR>
+  <TR>
+    <TD>Palomino Creek garage</TD>
+    <TD>BURBDOO</TD>
+    <TD>(2227.6, 168.649, 26.4635)</TD></TR>
+  <TR>
+    <TD>Dillimore garage</TD>
+    <TD>BURBDO2</TD>
+    <TD>(783.155, -492.75, 16.3361)</TD></TR>
+  <TR>
+    <TD>El Quebrados Pay n Spray</TD>
+    <TD>CNSPRAY</TD>
+    <TD>(-1424.11, 2576.61, 54.8156)</TD></TR>
+  <TR>
+    <TD>Angel Pine Ammunation             garage</TD>
+    <TD>AMUMIS</TD>
+    <TD>(-2114.42, -2462.27, 29.4809)</TD></TR></TBODY></TABLE><BR>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT> 
+</DIV></DIV></DIV></BODY></HTML>

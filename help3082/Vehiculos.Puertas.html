@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Puertas</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<STYLE>
+td:nth-child(1){
+ color: #F44336;
+ font-weight: bolder!important; 
+}
+</STYLE>
+    
+<P>Estableces el tipo de bloqueo de las puertas con:                       
+<PRE class="sb3">020a: set_car $car00 door_status_to 0</PRE>
+
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>ID</TH>
+    <TH>Bloqueo</TH></TR>
+  <TR>
+    <TD>1</TD>
+    <TD>Desbloqueado</TD></TR>
+  <TR>
+    <TD>2</TD>
+    <TD>Bloqueado</TD></TR>
+  <TR>
+    <TD>3</TD>
+    <TD>Desbloqueado para los NPC</TD></TR>
+  <TR>
+    <TD>4</TD>
+    <TD>Bloqueado</TD></TR>
+  <TR>
+    <TD>5</TD>
+    <TD>Bloqueado (vehiculo policial)</TD></TR>
+  <TR>
+    <TD>6</TD>
+    <TD>Desbloqueado, las puertas permanecen el el vehiculo</TD></TR>
+  <TR>
+    <TD>7</TD>
+    <TD>Bloqueado, las puertas pueden caerse</TD></TR>
+  <TR>
+    <TD>8</TD>
+    <TD>Bloqueado</TD></TR></TBODY></TABLE>
+<P></P>
+<P>Cierras todas las puertas, el capo y el cofre del vehiculo con:         
+<PRE class="sb3">0508: set_car $car00 close_all_doors</PRE>
+<P></P>
+<P>Para abrir una Puerta:                       
+<PRE class="sb3">0657: set_car $car01 open_door 0</PRE>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>ID</TH>
+    <TH>Compuerta</TH></TR>
+  <TR>
+    <TD>0 </TD>
+    <TD>Capo (cofre delantero)</TD></TR>
+  <TR>
+    <TD>1 </TD>
+    <TD>Baul  (cofre trasero)</TD></TR>
+  <TR>
+    <TD>2 </TD>
+    <TD>Delantero Izquierda(conductor)</TD></TR>
+  <TR>
+    <TD>3 </TD>
+    <TD>Delantero Derecha (pasajero)</TD></TR>
+  <TR>
+    <TD>4 </TD>
+    <TD>Trasero Izquierda</TD></TR>
+  <TR>
+    <TD>5 </TD>
+    <TD>Trasero            Derecha</TD></TR></TBODY></TABLE>
+<P></P>
+<P>Estableces la destruccion o la visibilidad de una puerta con:       
+           
+<PRE class="sb3">0689: set_car $car02 door 2 visible 0</PRE>
+<P></P>
+<P>Estableces el reparamiento de una puerta     
+ con:        
+<PRE class="sb3">068A: set_car $car03 repair_door 2</PRE>
+<P></P>
+<P>Estableces golpes en una puerta con:               
+<PRE class="sb3">0730: set_car $car04 damage_door 4</PRE>
+<P></P>
+<P>Establece el angulo de una puerta con:              
+<PRE class="sb3">08A6: set_car $car05 door 2 rotation_to 0.0</PRE>
+<P></P>
+<P>Establece el bloqueo de una puerta con:              
+<PRE class="sb3">0905: set_door $car05 lock 1</PRE>
+<P></P>
+<P>Establece el angulo de una puerta y el estado de cierre con:        
+<PRE class="sb3">095E: set_car $car06 door 1 unlatch 2 angle 0.5</PRE>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH>ID</TH>
+    <TH>Desbloqueo</TH></TR>
+  <TR>
+    <TD>0 </TD>
+    <TD> La puerta esta bloqueada en un angulo</TD></TR>
+  <TR>
+    <TD>1 </TD>
+    <TD>Se permite que la puerta se abra y se cierre</TD></TR>
+  <TR>
+    <TD>2 </TD>
+    <TD>La puerta esta golpeada y bloqueada en un angulo</TD></TR>
+  <TR>
+    <TD>3 </TD>
+    <TD>La puerta esta golpeada y se deja abrir y cerrar</TD></TR>
+  <TR>
+    <TD>4 </TD>
+    <TD>La puerta se caera del vehiculo y se procesara como quemada(por la     
+                                                                    explosion 
+      del                  vehiculo)</TD></TR></TBODY></TABLE>
+<P></P>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT> 
+</DIV></DIV></DIV></BODY></HTML>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>SDK de CLEO 4</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h4>Funciones</h4>
+<P>El modulo base CLEO.asi version 4.1 tiene la capacidad de agregar             
+ dinamicamente controladores opcode gratuitos (0AF0...7FFF). El registro de un   
+  nuevo controlador se puede hacer desde el complemento CLEO, que permite a los  
+   desarrolladores externos escribir nuevos codigos de operacion, ampliando asi  
+  la   funcionalidad de las secuencias de comandos CLEO y GTA en general.</P>
+<P>El SDK de CLEO incluye</P>
+<UL>
+  <LI>Archivo de ayuda (en ruso)</LI>
+  <LI>Archivos CLEO.h, CLEO.lib utilizados para vincular con el modulo base 
+  CLEO.asi</LI>
+  <LI>El codigo fuente de los complementos de demostracion IniFiles.cleo, 
+  FileSystemOperations.cleo e IntOperations.cleo</LI></UL>
+<hr>
+<h4>Aplicacion</h4>
+<p>Formato de controlador de codigo de operacion</p>
+<P>El manejador de codigo de operacion tiene el siguiente formato:</P>
+<PRE>OpcodeResult WINAPI opcodeHandler(CScriptThread* thread);</PRE>
+<P><B>Descripcion:</B> 
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>thread</TD>
+    <TD>puntero a la estructura de flujo.</TD></TR></TBODY></TABLE><BR>
+<P><B>Valor de retorno:</B><BR>La funcion debe devolver uno de los valores:</P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>OR_CONTINUE</TD>
+    <TD>indica que continue la ejecucion del script actual.</TD></TR>
+  <TR>
+    <TD>OR_INTERRUPT</TD>
+    <TD>pasa la ejecución al siguiente script de la                            
+                                                      
+cola.</TD></TR></TBODY></TABLE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

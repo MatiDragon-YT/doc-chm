@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Misiones</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Establece el numero total de misiones que se pueden     completar.
+<PRE class="sb3">042C: set_total_missions_to 147
+</PRE>
+<HR>
+
+<P>Establece el progreso maximo que el jugador puede alcanzar.
+<PRE class="sb3">030D: set_max_progress 187
+</PRE>
+<P></P>
+<HR>
+
+<P>Establece el nivel maximo deseado que el jugador puede recibir.
+<PRE class="sb3">01F0: set_max_wanted_level_to 6
+</PRE>
+<P></P>
+<HR>
+
+<P>Vuelve a cargar el area en las coordenadas especificadas. Dando texturas LOD  
+ a   los modelos hasta que termine la recarga.
+<PRE class="sb3">04E4: refresh_game_renderer_at 2488.562 -1666.865 
+</PRE>
+<P></P>
+<HR>
+
+<P>Comienza a cargar una ubicacion especifica, al igual que si el jugador    
+ estuviera alli, eliminando las texturas LOD. Hace que la ubicacion se cargue    
+ rapidamente y deja de cargar otras ubicaciones.
+<PRE class="sb3">03CB: set_rendering_origin_at 2488.562 -1666.865 13.3757
+</PRE>
+<P></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+   
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

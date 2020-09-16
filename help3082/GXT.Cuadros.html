@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Cuadros de Información</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Un cuadro de texto es un  cuadrado negro en la esquina superior izquierda con 
+  letras  blancas<BR>Se hace con este opcode:</P>
+<PRE class=sb3>03E5: show_text_box 'HELP101'</PRE>
+<P>Este es el cuadro de texto  'normal'. Desaparecera despues de algún     
+tiempo.</P>
+<PRE class=sb3>0512: show_permanent_text_box 'HOSP_1'</PRE>
+<P>Este es un cuadro de texto permanente, por lo que se mostrara hasta que se    
+ ejecute un codigo de operacion que lo elimine. Ese es el siguiente codigo de    
+ operacion:</P>
+<PRE class=sb3>03E6: remove_text_box</PRE>
+<P>Por ejemplo:          
+<P>
+<PRE class=sb3>0512: show_permanent_text_box 'HOSP_1'
+wait 1000
+03E6: remove_text_box</PRE>
+<P>Con este codigo de operacion, visualizara un cuadro de texto y lo eliminara   
+ despues de 1 segundo.     </P>
+<PRE class=sb3>0513: show_text_box_1number 'SLOT_02' number 2</PRE>
+<P>Este es un codigo de operacion para un cuadro de texto con un número en el    
+ texto, en este caso el valor 2.<BR> Hay tres codigos de operacion que verifican 
+  si el cuadro de texto existe: </P>
+<PRE class=sb3>0A2A: text_box 'SGPUNT' displayed
+08FE: text_box_displayed
+0989: set_text_boxes_width 500 </PRE>
+<P>Con este codigo de operacion, puede editar el ancho del cuadro de texto. Para 
+ ver la diferencia, puede utilizar el siguiente codigo:        </P>
+<PRE class=sb3>0512: show_permanent_text_box 'HOSP_1'
+wait 1000
+0989:  set_text_boxes_width 500</PRE></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+ </BODY></HTML>

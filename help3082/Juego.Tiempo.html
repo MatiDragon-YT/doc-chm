@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Tiempo</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Es posible cambiar la hora del juego con un             
+solo opcode:       
+<PRE class="sb3">00C0: set_current_time_hours_to 12 minutes_to 0</PRE><STRONG> 
+Parametros</STRONG> 
+<OL>
+  <LI>Hora</LI>
+  <LI>Minuto</LI></OL>
+<P></P>
+<P>Es posible cambiar el clima del juego con un solo opcode:</P>
+<P>
+<PRE class="sb3">01B6: set_weather 1</PRE>
+<P></P>
+<STYLE>
+td:nth-child(2){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+td:nth-child(3){
+ color: #607d8b;
+ font-weight: bolder!important;
+}
+</STYLE>
+      
+<TABLE id="myTable">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT style="width: 100%;" id="myInput" title="Solo Escribe" onkeyup="myFunction()" 
+      type="search" placeholder="Buscar..."></TH> 
+    <TH>ID</TH>
+    <TH>Lugar Parecido</TH>
+    <TH>Horario Provado</TH></TR></THEAD>
+  <TBODY>
+  <TR>                 
+    <TD>Extra Caluroso</TD>
+    <TD>0 </TD>
+    <TD>Los Santos </TD>
+    <TD>12:00</TD></TR>
+  <TR>               
+    <TD>Caluroso</TD>
+    <TD>1 </TD>
+    <TD>Los Santos </TD>
+    <TD>12:00</TD></TR>
+  <TR>                    
+    <TD>Extra Caluroso Niebla </TD>
+    <TD>2 </TD>
+    <TD>Los Santos </TD>
+    <TD>12:00</TD></TR>
+  <TR>                         
+    <TD>Caluroso con Niebla  </TD>
+    <TD>3 </TD>
+    <TD>Los Santos </TD>
+    <TD>12:00</TD></TR>
+  <TR>                 
+    <TD>Nublado</TD>
+    <TD>4 </TD>
+    <TD>Los Santos </TD>
+    <TD>12:00</TD></TR>
+  <TR>                   
+    <TD>Caluroso</TD>
+    <TD>5 </TD>
+    <TD>San Fierro </TD>
+    <TD>12:00</TD></TR>
+  <TR>                      
+    <TD>Extra Caluroso</TD>
+    <TD>6 </TD>
+    <TD>San Fierro </TD>
+    <TD>12:00</TD></TR>
+  <TR>                  
+    <TD>Nublado</TD>
+    <TD>7 </TD>
+    <TD>San Fierro </TD>
+    <TD>12:00</TD></TR>
+  <TR>                  
+    <TD>Lluvioso</TD>
+    <TD>8 </TD>
+    <TD>San Fierro </TD>
+    <TD>12:00</TD></TR>
+  <TR>                     
+    <TD>Brumoso </TD>
+    <TD>9 </TD>
+    <TD>San Fierro </TD>
+    <TD>12:00</TD></TR>
+  <TR>                     
+    <TD>Caluroso</TD>
+    <TD>10 </TD>
+    <TD>Las Venturas </TD>
+    <TD>12:00</TD></TR>
+  <TR>                      
+    <TD>Extra Caluroso</TD>
+    <TD>11 </TD>
+    <TD>Las Venturas </TD>
+    <TD>12:00</TD></TR>
+  <TR>                     
+    <TD>Nublado</TD>
+    <TD>12 </TD>
+    <TD>Las Venturas </TD>
+    <TD>12:00</TD></TR>
+  <TR>                       
+    <TD>Extra Caluroso</TD>
+    <TD>13 </TD>
+    <TD>Countryside </TD>
+    <TD>12:00</TD></TR>           
+  <TR>              
+    <TD>Caluroso</TD>
+    <TD>14 </TD>
+    <TD>Countryside </TD>
+    <TD>12:00</TD></TR>
+  <TR>                
+    <TD>Nublado</TD>
+    <TD>15 </TD>
+    <TD>Countryside </TD>
+    <TD>12:00</TD></TR>
+  <TR>                
+    <TD>Lluvioso</TD>
+    <TD>16 </TD>
+    <TD>Countryside </TD>
+    <TD>12:00</TD></TR>
+  <TR>                     
+    <TD>Extra Caluroso</TD>
+    <TD>17 </TD>
+    <TD>Desert</TD>
+    <TD>12:00</TD></TR>
+  <TR>                 
+    <TD>Caluroso</TD>
+    <TD>18 </TD>
+    <TD>Desert</TD>
+    <TD>12:00</TD></TR>
+  <TR>                              
+    <TD>Tormenta de Arena </TD>
+    <TD>19 </TD>
+    <TD>Desert</TD>
+    <TD>12:00</TD></TR>
+  <TR>                                      
+    <TD>Ambiente Apocaliptico </TD>
+    <TD>20 </TD>
+    <TD>Desconocido</TD>
+    <TD>12:00</TD></TR>
+  <TR>                                
+    <TD>Ambiente Rosado </TD>
+    <TD>21 </TD>
+    <TD>Desconocido</TD>
+    <TD>12:00</TD></TR>
+  <TR>                    
+    <TD>Cielo Gris</TD>
+    <TD>22 </TD>
+    <TD>Desconocido</TD>
+    <TD>12:00</TD></TR>
+  <TR>                          
+    <TD>Ambiente Infernal</TD>
+    <TD>100 </TD>
+    <TD>Desconocido</TD>
+    <TD>09:00</TD></TR>
+  <TR>                                  
+    <TD>Ambiente Super Rosado</TD>
+    <TD>250 </TD>
+    <TD>Desconocido</TD>
+    <TD>06:00</TD></TR>
+  <TR>                                            
+    <TD>Cielo Verde  amarillento  </TD>
+    <TD>254 </TD>
+    <TD>Desconocido</TD>
+    <TD>15:00</TD></TR>
+  <TR>                                       
+    <TD>Ambiente Terrorifico  </TD>
+    <TD>1000 </TD>
+    <TD>Desconocido</TD>
+    <TD>12:00</TD></TR>
+  <TR>
+    <TD>2009 </TD>
+    <TD>Cielo Rosa Liso</TD>
+    <TD>Desconocido</TD>
+    <TD>12:00</TD></TR>
+  <TR>                                        
+    <TD>Ambiente Sangriento  </TD>
+    <TD>4000 </TD>
+    <TD>Desconocido</TD>
+    <TD>12:00</TD></TR></TBODY></TABLE>
+<P></P>
+<P>Estos no son todos los IDs, solo puse los mas curiosos y utiles, ya que estos 
+ van desde el 0 hasta el 4000. Experimenta con ellos             
+:D</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+   
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

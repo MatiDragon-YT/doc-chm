@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Interiores</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>En GTA San Andreas, toda la zona interior no se encuentra dentro de los       
+ edificios, sino que estan en el cielo por encima del nivel maximo de vuelo en   
+  un  cielo mundial. 17 de ellos, para ser visibles y solidos actores,     
+vehiculos, objetos y     jugadores tienen    que estar vinculados a el, puede    
+ encontrar una lista de     cielos y son numeros en   los contenidos de <A href="interiores.ids.html">aqui</A>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </P>
+<PRE class="sb3">
+04BB: select_interior 0 
+0860: link_actor $actor00 a_interior 6  
+0840: link_car $car00 a_interior 14 
+0566: link_object $object00 a_interior 1  
+077E: get_active_interior_to $interior00 
+09E8: $interior00 = actor $actor00 active_interior 
+04F9: set_interior 1 color_to 0  
+04FA: reset_interior 0 colores</PRE>
+<P><BR>Interior 0 no es interior, el mundo exterior normal. Los otros numeros    
+ hasta 18 son interiores.<BR>04BB es para la camara y el reproductor, 0860 para  
+  actores como <B class="text-blue">$actor00</B>, 0840 para automoviles y 0566   
+ para objetos.<BR>077E se    usa  para saber en que interior se encuentra el     
+ jugador y guardarlo en     <B class="text-blue">$interior00</B>.<BR>09E8 hace   
+  lo  mismo con <B class="text-blue">$actor00</B>.<BR>04F9 cambia el color de un 
+    interior y 04FA cambia el interior a color        
+ normal.<BR></P>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT> 
+</DIV></DIV></DIV></BODY></HTML>

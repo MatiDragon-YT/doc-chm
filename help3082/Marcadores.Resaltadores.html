@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Resaltadores</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Los resaltadores, son las tipicas flechas o conos apuntando a un objetos que  
+  se nos muestra tanto en el radar, como en el mapa:</P>
+<P align="center"><IMG width="22.65%" src="Part20II.files/rtgerterh.jpg"><IMG 
+width="20%" src="Part20II.files/rthrtyjty.jpg"></P>
+<P>Hay varios opcodes para crearlos, y cada uno es especial por ser dirigidos a  
+ una cosa en concreto.</P>
+<P>Para crearlo en un Vehiculo:  
+<PRE class="sb3">0186: $marker04 = create_marker_above_car $car00</PRE>
+<P></P>
+<P>Para crearlo en un Actor:  
+<PRE class="sb3">0187: $marker05 = create_marker_above_actor $actor00</PRE>
+<P></P>
+<P>Para crearlo en un Objeto:  
+<PRE class="sb3">0188: $marker06 = create_marker_above_object $object00</PRE>
+<P></P>
+<P>Para crearlo en un Agarrable:  
+<PRE class="sb3">03DC: $marker07 = create_marker_above_pickup $myweaps00</PRE>
+<P></P>
+<P>Para crearlo en un Lugar:  
+<PRE class="sb3">0167:&nbsp;$marker03 = create_marker_at&nbsp;425.234 242.2&nbsp;2.7&nbsp;color&nbsp;1 flag 1</PRE>
+<P>Y puedes destruirlos con:</P>
+<PRE class="sb3">0164: disable_marker $markerxx</PRE>
+<P></P>
+<P><U><STRONG>Mas Informacion:</STRONG></U></P>
+<OL>
+  <LI><A 
+href="Resaltadores.Personalizar.html">Personalizar</A><BR></LI></OL></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+  
+<SCRIPT src="HL.js"></SCRIPT>
+   </BODY></HTML>

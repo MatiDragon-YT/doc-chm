@@ -1,0 +1,107 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>Pasar cleos para Android</TITLE> 
+<META http-equiv="X-UA-Compatible" content="IE=edge">
+<META name="viewport" content="width=device-width, initial-scale=1"><LINK href="bootstrap.css" 
+rel="stylesheet" type="text/css"></HEAD> 
+<BODY>
+<header id="a"></header>
+<DIV class="container-fluid">
+<DIV class="row">
+<DIV class="col-12">
+<P>Ovbimente si estas aca, es por que intentaste pasar   bien  tu mod de pc a 
+ android y no te funciono del todo bien.<BR>Bueno, para   pasar    un 
+mod&nbsp;de  <STRONG>PC</STRONG>&nbsp;a     <STRONG>ANDROID</STRONG>, hay      
+varias  opciones.</P>
+<OL>
+  <LI><A href="#1">Cambios de condiciones.</A></LI>
+  <LI><A href="#2">Cambios a opcodes.</A></LI>
+  <LI><A href="#3">Formato del script.</A></LI></OL>
+<H4 id="1">1. Cambio de condiciones    
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></H4>
+<P>Si estas usando condiciones&nbsp;especiales de una PC, debes darte cuenta de  
+ que si colocas una condicion que por ejemplo, que evalue si precionamos una     
+ tecla, es estupido.<BR>
+<PRE id="sb3">wait 0
+if
+  ifPressed.PhysicalKey(TAB)
+else_jump @myLabel
+wait 1000
+...</PRE>
+En este caso, la mejor opcion es cambiar de teclado fisico a virtual.<BR>El      
+ teclado virtual solo lee las acciones que realizas&nbsp;como "correr,           
+ agacharte,  caminar, etc".<BR>Por ejemplo, aqui, en vez de decirle si           
+ precionamos  "tabulador", ponemos si presionamos "accion":                      
+                                                                               
+<PRE><STRONG>wait</STRONG> <B class="text-red">0</B>
+<B>if</B>
+   <B class="text-yellow">ifPressed</B>.<B class="text-teal">VirtualKey</B>(<FONT class="text-red">0</FONT>, KEY_OF_ACTION)
+<B>else_jump</B> <B class="text-green">@myLabel</B>
+<B>wait</B> <B class="text-red">1000</B>
+...
+</PRE>
+<P><BR></P>
+<H4 id="2">2. Cambio a opcode   
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></H4>
+<P>Este paso se da mas, cuando se usa clases, ya que ya mayoria de opcodes de PC 
+ no son los mismo que en Android, y muchas veces no tenemos los mismos opcodes,  
+ asi que debemos pasar todas las clases a opcodes y comprobar de que sean las    
+ mismas.<BR>
+<PRE><B>wait</B> <B class="text-red">0</B>
+<B>if</B>
+   <B class="text-yellow">ifPosition</B>.<B class="text-teal">ActorAtXYZ</B>(<B class="text-blue">$PLAYER_ACTOR</B>...)
+<B>else_jump</B> <B class="text-green">@myLabel</B>
+<B>wait</B> <B class="text-red">1000</B>
+<B class="text-yellow">asActor</B>.<STRONG><FONT color="#009688">WalkTo</FONT></STRONG>(<B class="text-blue">1@</B>...)
+...</PRE>
+Esto, pasa a esto:                                                               
+                                           
+<PRE>0001: <B>wait</B> <B class="text-red">0</B> ms
+00D6: <B>if</B>
+00fe:   actor <B class="text-blue">$PLAYER_ACTOR</B>...
+004D: jump_if_false <B class="text-green">@myLabel</B>
+0001: <B>wait</B> <B class="text-red">1000</B>
+07CD: AS_actor <B class="text-blue">1@</B>... <BR>...
+</PRE>Tambien, 
+ puedes borrar los comentarios y espacios&nbsp;que estan entre los parametros,   
+ dejandolo asi (esto ultimo es opcional):                                        
+         
+<PRE>0001: <B class="text-red">0</B>
+00D6:
+00fe: <B class="text-blue">$PLAYER_ACTOR</B>...
+004D: <B class="text-green">@myLabel</B>
+0001: <B class="text-red">1000</B>
+07CD: <B class="text-blue">1@</B>... <BR>...
+</PRE>
+<P><BR></P>
+<H4 id="3">3. Formato del Script   
+<DIV class="float-right"><A href="#a">&amp;</A></DIV></H4>
+<P>Esto es algo muy comun, algo que le suele pasar a mucho, y la pregunta        
+ es:<BR>¿Que tipo de&nbsp;extencion le tengo que dar?<BR>Bueno, eso dependera    
+  para tu mod, si deseas que se active solo siempre que realice sus condiciones, 
+   o  que se active todo atra vez del menu de cleos.     
+<TABLE class="table">
+  <THEAD>
+  <TR>
+    <TH>Formato</TH>
+    <TH>Descripcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH>.CSA</TH>
+    <TD>Es para mods que se activan de forma automatica al hacer alguna accion 
+                                                      o al precionar algo, o que 
+            simplemente       el       mod ya       se       activa al           
+              iniciar una               partida.</TD></TR>
+  <TR>
+    <TH>.CSI</TH>
+    <TD>Es para activar los mods atra vez de la lista de cleos... yo no se de  
+                                                     ustedes, pero  este metodo 
+      no me       gusta,       a si       que       opto por       la ce       
+      ese                 a...</TD></TR></TBODY></TABLE>
+<P>Bien, eso es todo. <BR></P>
+<PRE>//No nesecitas modificar tu script
+</PRE>
+<P>Bueno, Si nada de esto te funciono, revisa bien tu             script         
+        &#65533;&#65533;</P></DIV></DIV></DIV>
+    <script src="jQuery.js"></script>
+    <script src="HL.js"></script>
+    <script src="Az.js"></script>
+  </BODY></HTML>

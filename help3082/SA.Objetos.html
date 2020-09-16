@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Objetos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Encuentra toda la informacion que nesecites aqui.</P>
+<hr><p>En Grand Theft Auto San Andreas hay muchas cosas que puedes hacer con  
+objetos, pero no (y no puedo) contarte todo al respecto. Te dare lo  suficiente 
+como para hacer cosas agradables y divertidas con ellos.  <BR> No repetire 
+(incluso si repito muchas cosas) como solicitar y cargar  modelos para crear 
+objetos, se dice superior. No repetire como  destruir/eliminar referencias y 
+liberar objetos por el mismo motivo.  <BR> Primero algunos generales (generales 
+porque hay codigos de  operacion similares para vehiculos y actores) cosas sobre 
+coordenadas  y desplazamientos. En algun momento debe saber donde se coloca  el 
+objeto y, a veces, necesita saber cuales son las coordenadas que  estan un poco 
+alejadas del objeto (esto se denomina desplazamiento):  <BR>
+<PRE class="sb3">
+01BB: store_object $object00 position_to $objpos_x $objpos_y $objpos_z
+0400: create_coordinate $objpos_x $objpos_y $objpos_z from_object $object00 offset 1.02.0 3.0</PRE>
+<UL>
+  <LI>01bb simplemente obtendra las coordenadas xyz del objeto $object00  y las 
+  almacenara en $objpos_x  $objpos_y $objpos_z .    
+  <LI>En 0400 almacenara las coordenadas en los desplazamientos1.0 2.03.0 del  
+  objeto.Significa que las  coordenadas que se almacenaran en  $objpos_x 
+  $objpos_y $objpos_zestaran a  1,0unidad del objeto en el eje z  delobjeto, a 
+  2,0 unidades del objeto en  el eje y del objeto ya 3,0 unidades  del objeto en 
+  el eje z delobjeto.   </LI></UL> Como dije, hay   codigos de  operacion 
+similares para  automoviles y  actores, la   explicacion es la misma que  antes  
+simplemente reemplazan  objeto por  automovil o  actor:      
+<UL>
+  <LI>Para vehiculos:  
+<PRE class="sb3"
+>00AA: store_car $car00 position_to $carpos_x $carpos_y $carpos_z
+0407: create_coordinate $carpos_x $carpos_y $carpos_z from_car $car00 offset 1.0 2.0 3.0</PRE></LI></UL>
+<P>Para los actores:<BR>
+Una vez que se crea el objeto, puede mover el  objeto a 
+nuevas coordenadas:</P>
+<P>
+<PRE class="sb3">
+01BC: put_object $object00 at 2368.5601 -1666.84 13.38
+</PRE>
+<P></P>
+<P> Para informacion, codigos de operacionsimilares para actores y autos  son: 
+00a1 para actores y 00ab paraautomoviles. <BR> Puede usar esto para  hacer que 
+el objetoavance, no es la mejor manera de hacerlo, pero  es simple y funciona 
+bien. Aqui hay un ejemplo:</P>
+<P>
+<PRE class="sb3">
+:MOVE_10
+0001: wait 3 ms
+00D6: if
+0031: 0@ &gt;= 200.0 //valor de punto flotante
+004D: jump_if_false @MOV_90
+01BC: put_object $object00 at 0@ 1@ 2@
+000B: 0@ += 0.1 //valor de punto flotante
+0002: jump @MOVE_10
+</PRE>
+<P></P>
+<P> Puede ver aqui que el objeto se movera a lolargo del eje x, ya que cada  3ms 
+el objeto ira 0.1 unidad de distancia mas en el eje x hasta que  0@ (que esaqui 
+la unidad del eje x) alcanza 200.0 .NO OLVIDES LA  ESPERA!!!!!!<BR> De la misma 
+manera puedes cambiar los angulos de objeto  creados xy y z</P>
+<P>
+<PRE class="sb3">
+0453: objeto $object00 set_rotation 0.0 0.0 180.0
+</PRE>
+<P></P>
+<P> Igual que 01bc con un pequeño lazo, puede hacer que el objeto gire. Y en  
+cuanto a 01bc hay mejores formas de hacerlo, pero este es simple y  funciona 
+bien. Tambien tiene la ventaja de darlela posibilidad de  cambiar cualquier 
+angulo xy o z. <BR> Pero tambien puedes usar 034d para  que se mueva alrededor 
+del eje x: <BR></P>
+<P>
+<PRE class="sb3">
+034D: object $object00 at_angle 0.0 then_rotate_by_angle 360.0 flag 0
+</PRE>
+<P></P>
+<P> Asi es como Rockstar abre muchas puertas degaraje (no todas). <BR> Pero  
+antes de usar codigos de operacion enmovimiento (como 034d o 0381)  necesita 
+darle al objeto la capacidad de moverse (los objetos no pueden  moverse cuando 
+los crea): <BR></P>
+<P>
+<PRE class="sb3">
+0392: objeto $object00 toggle_in_moving_list 1
+</PRE>
+<P></P>
+<P></P>
+<UL>
+  <LI>0 = incapaz de moverse    
+  <LI>1 = capaz de moverse </LI></UL>
+<P>Tambien puedes arrojar el objeto (como lanzar una pelota) con  0381: </P>
+<P>
+<PRE class="sb3">
+0381: throw_object $object00 distance 20.0 10.0 5.0
+</PRE>
+<P></P>
+<P></P>
+<UL>
+  <LI>20 es la distancia en el eje x    
+  <LI>10 es la distancia en el eje y    
+  <LI>5 es la distancia en el eje z </LI></UL>
+<P>Puede adjuntar objetos a automoviles, actores u otros objetos:   </P>
+<P>
+<PRE class="sb3">0681: attach_object $object00 to_car $car00 at_offset 0.50.3 0.3rotation 0.0 0.0 0.0<BR>069B: attach_object $object00 to_actor $actor00 at_offset 0.0 0.5 -1.0 rotation 0.0 0.0 0.0<BR>069A: attach_object $object00 to_object $object01 at_offset 0.0 0.0 0.0 rotation 0.0 0.0 0.0<BR></PRE>
+<P></P>
+<P> Esas son bastante obvias, y como ya explique sobre las compensaciones,  
+entonces solo tendre que decir que las tres carrozas despues de la  rotacion son 
+los angulos x y z que se estableceran, y que elobjeto no es  solido cuando se 
+conecta con algo mas. <BR>Si no quiere que el  objeto sea solido, puede 
+desactivar la deteccion de colision <BR></P>
+<P>
+<PRE class="sb3">
+0382: set_object $object00 collision_detection 0
+</PRE>
+<P></P>
+<P></P>
+<UL>
+  <LI>0 no solido    
+  <LI>1 solido </LI></UL>
+<P>Puedes hacer que el objeto se pueda levantar de esta manera:</P>
+<P><IMG src="Part20II.files/TRXCT.jpg"> <BR> con 08e9: <BR></P>
+<P>
+<PRE class="sb3">
+08E9: set_object $object00 liftable 1
+</PRE>
+<P></P>
+<P>Como costumbre: 1 = encendido, 0 = apagado. <BR> Esto es algo muy muy  bueno 
+(gracias a DexX y PLPynton): <BR><IMG src="Part20II.files/azerdfy.jpg"> <BR> 
+Puedes adjuntar objetos a las partes del cuerpo del actor, en  realidad puedes 
+adjuntar 2 objetos al actor y hacer que el actorhaga  una animacion !!!!!!! <BR> 
+Habra mas sobre animacion mas adelante,  pero ahora los explicare: <BR></P>
+<P>
+<PRE class="sb3">
+070A: AS_actor $PLAYER_ACTOR attach_to_object $object00offset 0.0 0.00.0 on_bone 6 16 perform_animation "NULL" IFP_file "NULL" time 0 
+</PRE>
+<P></P>
+<P> adjuntar el primer objeto (objeto A) <BR></P>
+<P>
+<PRE class="sb3">
+09A0: actor $PLAYER_ACTOR attach_object $object01with_offset 0.0 0.00.0 on_bone 5 16 perform_animation "NULL" IFP_file "NULL" time -1
+</PRE>
+<P></P>
+<P> adjuntar el segundo objeto (objeto B) <BR> Para ambos : <BR></P>
+<UL>
+  <LI>$PLAYER_ACTORes el manejador del actor(aqui eres tu CJ)     
+  <LI>los tres flotadores0.0 0.00.0 sonlos desplazamientos x y z de las  
+  coordenadas normales  delhueso    
+  <LI>el primer entero5o 6 es el numero de hueso (no es lo mismoque los  numeros 
+  de partes del cuerpo  deljugador para laropa)     
+  <UL>
+    <LI>0 : bloquea eljuego    
+    <LI>1- ¿cofre?      
+    <LI>2 - cuello?     
+    <LI>3 - hombroizquierdo   
+    <LI>4- hombroderecho    
+    <LI>5 - manoizquierda   
+    <LI>6 - mano derecha      
+    <LI>7 - raiz? 
+    <LI>8 - ??     
+    <LI>9 - pieizquierdo      
+    <LI>10 - pie derecho      
+    <LI>11 - rodilladerecha  
+    <LI>12 - ??      
+    <LI>13 - codo izquierdo      
+    <LI>14 - codo derecho      
+    <LI>15 - clavicula izquierda   
+    <LI>16 - clavicula derecha      
+    <LI>17 - parte posterior del cuello       
+    <LI>18 - boca obarbilla      
+    <LI>19 - bloquea el juego</LI></UL>
+  <LI>el segundo entero 16es desconocido y siempre es 16     
+  <LI>la primera cadena larga <SPAN>"NULO" es el archivo de animacion (mas  
+  sobre ellos mas  adelante, yTIENE QUE SER CARGADO como  modelos) donde el 
+  motor  obtendrala animacion. Aqui <SPAN>"NULO"  significa que no serealizara  
+  animacion.   </SPAN></SPAN>  
+  <LI>la segunda cadena larga <SPAN>"NULL" es la animacion misma dentro del  
+  archivo de animacion.  Aqui <SPAN>"NULL" nuevamente  significaque no 
+  serealizara animacion.    </SPAN></SPAN>  
+  <LI>El ultimo entero 0 , 1o -1 es desconocido </LI></UL>
+<P>Para quitar estos objetos, tienes dos codigos de operacion:   </P>
+<P>
+<PRE class="sb3">
+070B: set_actor $PLAYER_ACTOR onbone_attached_object_operation 1 //descartao separa el objeto B automaticamente con el objeto A
+09A1: set_actor $PLAYER_ACTOR onbone_attached_objectB_operation 0 //coloca o sueltasolo el objeto
+</PRE>
+<P></P>
+<P> 070b: separa / suelta el objeto A y B si elobjeto B esta adjunto <BR> 09a1: 
+separa / suelta el objeto B <BR></P>
+<UL>
+  <LI>$PLAYER_ACTORsigue siendo el encargado del actor(aqui eres tu CJ)     
+  <LI>el numero entero1o 0 indica si el objeto sera droped de acabade ser  
+  separado.     
+  <UL>
+    <LI>1 cae el objeto      
+    <LI>0 separa el objeto </LI></UL></LI></UL>
+<P></P>
+<CENTER>!!!!!!!!!!!!!!!!!!!!!!!!!!! Cuidado !!!!!!!!!!!!!!!!!!!!!!!!!!!!!</CENTER>  
+Adjunte el objeto A porque de lo contrario el objeto B no  aparecera. 
+Cuandosostienes el objeto A no puedes subir a un  automovil y tu arma no 
+estaravisible. Si sostienes dosobjetos, el  objeto B <U>caera</U> cuando te 
+caigas o dispares con un arma.  Simueres, ambos objetos caeran. <BR>
+<P>Como dije, hay muchas cosas que hacer conobjetos en San Andreas, pero  ahora 
+usted sabe las cosas mas importantes quepuede hacer.  <BR></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+  
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>Crear rupos de Animaciones</TITLE>
+<META content="IE=edge" http-equiv="X-UA-Compatible">
+<META name="viewport" content="width=device-width, initial-scale=1"><LINK rel="stylesheet" 
+type="text/css" href="bootstrap.css"></HEAD>
+<BODY>               
+<header></header>
+<DIV class="container-fluid">
+<DIV class="row">
+<DIV class="col-12">
+<P>Tambien puedes crear  tus propio grupos de animaciones con animaciones        
+ originales del juego o con     animaciones creadas por la        comunidad,     
+ siguiendo estos 3 sencillos pasos.<BR>Recomiendo tener instalado el             
+  ModLoader  para no        remplazar ningun archivo original del juego.</P>
+<P><STRONG>Paso N°1</STRONG><BR>Copiar "animgrp.dat" de la carpeta "data" del    
+ juego, a una nueva carpeta ubicada dentro del ModLoader.<BR><STRONG>Paso        
+ N°2</STRONG><BR>Abrir     con un editor de texto el "animgrp.dat", en esta nos  
+  encontraremos algo     parecido  a esto:<BR><PRE>#
+#... etc
+#
+<FONT class="text-orange">man</FONT>, <FONT class="text-lime">ped</FONT>, <STRONG>walkcycle</STRONG>, <FONT class="text-red">6</FONT>
+	walk_civi 
+	run_civi
+	sprint_panic
+	idle_stance
+	roadcross
+	walk_start
+<STRONG>end</STRONG>
+
+<FONT class="text-orange">shuffle</FONT>, <FONT class="text-lime">ped</FONT>, <STRONG>walkcycle</STRONG>, <FONT class="text-red">6</FONT>
+	WALK_shuffle
+	RUN_civi
+	sprint_panic
+	IDLE_STANCE
+	roadcross
+	walk_start
+<STRONG>end</STRONG>
+</PRE>
+Aqui en donde tenemos los "#" encontraremos la toda la informacion sobre como    
+ usar este archivo. Yo&nbsp;se los mostrare traducidos&nbsp;y adaptados para     
+ mayor     comprencion:                                                          
+                          <PRE>#
+# nombre del archivo:  animgrp.dat
+# descripcion:	En el archivo describe la asociacion de grupos de animaciones. 
+#
+# formacion:
+#name, filename, animtype, numanims
+#	animlist....
+#end
+#
+# name: 	nombre definido para el grupo de animaciones
+# filename:	nombre del archivo que contiene las animaciones (de extencion IFP en minusculas)
+# animtype:	tipo de animaciones (en este caso el tipo es "walkcycle", correspondiendo a las animaciones de apariencia) 
+# numanims:	cantidad de animaciones en el grupo
+# animlist:	nombre de la animacion (no inclullen para armas)
+#
+</PRE>Tu 
+ solo debes crear tu propio grupo al final del texto, luego de la seccion        
+ "#Miscellaneous", esto con el unico fin de tener todo mas ordenados y respetar  
+  las primeras prioridades.<BR>Un ejemplo que de doy, puede ser con animaciones  
+  de  parkour que podes hacer que se activen al hacer cierta cosa, como al       
+  precionar un nuevo boton asignado para sprintar y hacer trucos.                
+                                                  
+<P></P><STRONG>animgrp.dat</STRONG><PRE><FONT class="text-orange">parkourman</FONT>, <FONT class="text-lime">parkour</FONT>, <STRONG>walkcycle</STRONG>, <FONT class="text-red">6</FONT>
+	parkour_walk_civi
+	parkour_run_civi
+	sprint_panic
+	parkour_idle_stance
+	roadcross
+	parkour_walk_start
+<STRONG>end</STRONG>
+</PRE><STRONG> 
+ cleo.cs</STRONG><PRE id=sb3>while true
+ wait 0
+ if
+  ifPressed.VirtualKey(0, KEY_OF_GO_FORWARD)
+  ifPressed.PhysicalKey(KEY_R)
+  then
+   wait 0
+   setActor.WalkStyle($PLAYER_ACTOR, "parkourman")
+  else
+   wait 0
+   setActor.WalkStyle($PLAYER_ACTOR, "man")
+ end
+end
+</PRE>
+<P>Aunque este es un simple ejemplo que les doy, lo ideal para este mod seria    
+ hacer que todas las animaciones cambien mientras se mantiene una tecla          
+ precionada &#55357;&#56842;<BR></P></DIV></DIV></DIV></BODY>
+<SCRIPT src="HL.js"></SCRIPT>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="Az.js"></SCRIPT></HTML>

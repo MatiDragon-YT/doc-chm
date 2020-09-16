@@ -1,0 +1,126 @@
+<!DOCTYPE HTML><HTML><HEAD>   <TITLE>Opcodes: SA Movil +IOS</TITLE>
+ <meta charset="ISO-8859-1">
+<META http-equiv="X-UA-Compatible" content="IE=edge">         
+<META name="viewport" content="width=device-width, initial-scale=1"><LINK href="bootstrap.css" 
+rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container-fluid">
+<DIV class="row">
+<DIV class="col-12">
+<P>Generado automaticaticamente&nbsp;por&nbsp;la&nbsp;base de        datos     
+ de:&nbsp;<BR><BUTTON 
+class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON> 
+<PRE>Este es el significado de estas cosas:
+
+<B class="blue-text">%~d%</B> = Cualquier cosa
+<B class="teal-text">%~p%</B> = Punto de etiqueta
+<B class="green-text">%~o%</B> = Modelos de objetos de todo tipo
+<B class="yellow-text">%~g%</B> = Referencia GXT
+<B class="orange-text">%~x%</B> = Script Externo
+<B class="red-text">%~s%</B> = Ubicacion de archivo/carpeta
+<B class="pink-text">%~h%</B> = Indefinido
+
+<B class="grey-text">=n   = Cantidad de parametros</B>
+</PRE>
+<H5>[OPCODES]</H5>
+<DIV class="bg-dark text-white p-2 m-1">0242=2,arm_car_with_bomb %1d%         
+                                                                            
+  %2d%<BR>0a51=1,&nbsp;                   is_widget_pressed                      
+           %1d%<BR>0a52=1,&nbsp;                                                 
+          is_widget_released                             %1d%<BR>0a53=1,&nbsp;   
+                        is_widget_doubletapped                                   
+                                      %1d%<BR>0a54=1,&nbsp;           
+  is_widget_swiped                   %1d%<BR>0A55=1,&nbsp;                       
+                                                    is_widget_swiped_left        
+                 %1d%<BR>0A56=1,&nbsp;                             
+  is_widget_swiped_right                                                         
+    %1d%<BR>0a57=2,&nbsp;                             do_mission_skip   %1d%     
+                %2d%<BR>0a58=1,&nbsp;                                            
+                                 skip_to_mission_num           
+  %1d%<BR>0a59=1,&nbsp;               skip_to_mission_page                       
+                                                    
+  %1d%<BR>0a5A=2,get_widget_value               %1d%                             
+                    %2d%<BR>0A5B=3,get_widget_value2       %1d%                  
+                 %2d%                                                     
+  %3d%<BR>0A5C=3,display_text_widget     %1d%   %2d%                             
+                                                          
+  %3g%<BR>0A5D=5,get_widget_position     %1d%     %2d%     %3d%       %4d%       
+                                                                        
+  %5d%<BR>0A5E=2,set_widget_value   %1d%                             
+  %2d%<BR>0A5F=3,set_widget       %1d%         range     %2d%                    
+                                              %3d%<BR>0a60=2,add_widget_flag 
+  %1d%                                                                       
+  %2d%<BR>0a61=2,remove_widget_flag               %1d%                           
+                                            %2d%<BR>0a62=2,add_button_flag %1d%  
+                                                   
+  %2d%<BR>0a63=2,remove_button_flag                             %1d%             
+                                    %2d%<BR>0a64=0,&nbsp;                        
+             is_touch_enabled<BR>0a65=0,&nbsp;                                   
+                                                                                 
+         skip_intro_cutscene<BR>0a66=0,write_log<BR>0a67=0,write_log_int   ; i   
+  i           i                                                                  
+           s<BR>0a68=0,write_log_float   ;   f   f   f                           
+                              s<BR>0a69=1,create_shop_widget                     
+                                  %1g%<BR>0a6a=2,add_shop_item   %1g%            
+                                                 %2d%<BR>0a6b=1,delete_widget    
+                                                                       
+  %1d%<BR>0a6c=2,set_equipped_item       %1d%                                    
+                                                   
+  %2d%<BR>0a6d=2,print_help_forever_conditional   %1g%                           
+                                                                            
+  %2d%<BR>0a6e=0,set_widget_texture<BR>0a6f=1,checkpoint_save                    
+                                                                       
+  %1d%<BR>0a70=4,display_text_clamped       %1d%         %2d%         %3d%       
+                                                                                 
+     %4d%<BR>0a71=5,display_text_with_number_clamped   %1d%     %2d%     %3g%    
+               %4d%                                                              
+             %5d%<BR>0a73=4,set_widget_value3         %1d%   %2d%         %3d%   
+                                  %4d%<BR>0a74=1,&nbsp;                          
+                                       is_checkpoint_resuming                    
+                                         
+  %1d%<BR>0a75=2,set_active_menu_item_car_mods       %1d%                        
+                                                %2d%<BR>0a76=1,&nbsp;       
+  hid_implements                                             
+  %1d%<BR>0a77=1,checkpoint_save_oddjob                                          
+                                          %1d%<BR>0a78=2,print_help_conditional  
+   %1g%                                                                          
+                         %2d%<BR>0a79=2,print_help_conditional_touch %1g%        
+                                                                                 
+    %2d%<BR>0a7a=2,print_help_conditional_hid     %1g%                           
+                                                                          
+  %2d%<BR>0a7b=2,print_help_conditional_touch_classic   %1g%                     
+                                                                                 
+           %2d%<BR>0a7c=2,print_help_conditional_touch_adapted     %1g%          
+                                                                                 
+                %2d%<BR>0a7d=2,print_help_conditional_hid_joypad     %1g%        
+                                                                                 
+                      %2d%<BR>0a7e=2,print_help_conditional_hid_keyboard     
+  %1g%                                                                           
+                            %2d%<BR>0a7f=2,print_help_conditional_touch_analog   
+        %1g%                                                                     
+                                      
+  %2d%<BR>0a80=2,print_help_conditional_unknown     %1g%                         
+                                                  
+  %2d%<BR>0a81=2,set_widget_info2     %1g%                                       
+      %2d%<BR>0a82=2,set_widget_info2     %1g%                                   
+                                              %2d%<BR>0a83=2,set_widget_info2   
+  %1g%                                                           
+  %2d%<BR>0a84=2,set_widget_info2         %1g%                                   
+                                      %2d%<BR>0a85=2,set_widget_info2   %1g%     
+                            %2d%<BR>0a86=2,set_widget_info2                      
+                           %1g%                                     
+  %2d%<BR>0a87=2,set_widget_info2       %1g%                                     
+                        %2d%<BR>0a88=2,set_widget_info2   %1g%                   
+                                                          
+  %2d%<BR>0a89=3,set_widget_value             %1d%     %2d%                      
+                                           %3d%<BR>0a8a=8,set_widget_info   %1d% 
+              %2d%         %3d% %4d%           %5d%         %6d%         %7d%    
+                                                     
+  %8g%<BR>0a8b=7,set_widget_info       %1d%     %2d%   %3d%               %4d%   
+                      %5d%             %6g%                                      
+                                       
+  %7g%<BR>0a8c=0,load_all_streaming_models<BR>0a8d=1,&nbsp;                      
+                                                         is_hid_released         
+      %1d%<BR></LI></UL></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>                
+<SCRIPT src="HL.js"></SCRIPT>

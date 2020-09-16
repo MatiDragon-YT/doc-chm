@@ -1,0 +1,94 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>CLEOPlus</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P class="light">Encuentra toda la informacion que nesecites aqui.</P>
+<HR>
+
+<PRE>Este es el significado de estas cosas:
+
+<B class="blue-text">%~d%</B> = Cualquier cosa
+<B class="teal-text">%~p%</B> = Punto de etiqueta
+<B class="green-text">%~o%</B> = Modelos de objetos de todo tipo
+<B class="yellow-text">%~g%</B> = Referencia GXT
+<B class="orange-text">%~x%</B> = Script Externo
+<B class="red-text">%~s%</B> = Ubicacion de archivo/carpeta
+<B class="pink-text">%~h%</B> = Indefinido
+
+<B class="grey-text">=n   = Cantidad de parametros</B>
+</PRE></DIV>
+<TABLE id="myTable">
+<THEAD>
+<TR class="header">
+<TH><INPUT class="w-100" id="myInput" title="Solo Escribe" onkeyup="myFunction()" type="search" placeholder="Buscar..."></TH></TR>
+</THEAD>
+<TBODY>
+<TR><TD><b>0EA0=3,set_actor_second_player %1d% enable_camera %2d% separate_cars %3d%</b></TD></TR>
+<TR><TD><b>0EA1=1,disable_second_player_restore_camera %1d%</b></TD></TR>
+<TR><TD><b>0EA2=1,fix_two_players_separated_cars %1d%</b></TD></TR>
+<TR><TD><b>0E01=7,create_object_no_save %1o% at %2d% %3d% %4d% offset %5d% ground %6d% to %7d%</b></TD></TR>
+<TR><TD><b>0E02=1,set_car_generator %1d% no_save</b></TD></TR>
+<TR><TD><b>0D59=1,get_current_weather_to %1d%</b></TD></TR>
+<TR><TD><b>0E04=1,get_next_weather_to %1d%</b></TD></TR>
+<TR><TD><b>0E05=1,set_next_weather_to %1d%</b></TD></TR>
+<TR><TD><b>0E06=1,get_rain_intensity %1d%</b></TD></TR>
+<TR><TD><b>0E07=1,set_rain_intensity %1d%</b></TD></TR>
+<TR><TD><b>0E08=1,is_car_script_controlled %1d%</b></TD></TR>
+<TR><TD><b>0E09=1,mark_car_as_needed %1d%</b></TD></TR>
+<TR><TD><b>0E0A=1,is_char_script_controlled %1d%</b></TD></TR>
+<TR><TD><b>0E0B=1,mark_char_as_needed %1d%</b></TD></TR>
+<TR><TD><b>0E0C=1,is_object_script_controlled %1d%</b></TD></TR>
+<TR><TD><b>0E0D=1,mark_object_as_needed %1d%</b></TD></TR>
+<TR><TD><b>0E0E=2,get_current_resolution_to %1d% %2d%</b></TD></TR>
+<TR><TD><b>0E0F=4,get_fixed_xy_aspect_ratio %1d% %2d% to %3d% %4d%</b></TD></TR>
+<TR><TD><b>0E10=0,is_mouse_wheel_up</b></TD></TR>
+<TR><TD><b>0E11=0,is_mouse_wheel_down</b></TD></TR>
+<TR><TD><b>0E23=1,get_mouse_sensibility_to %1d%</b></TD></TR>
+<TR><TD><b>0E12=2,get_vehicle %1d% subclass_to %2d%</b></TD></TR>
+<TR><TD><b>0E13=2,get_entity %1d% type_to %2d%</b></TD></TR>
+<TR><TD><b>0E14=3,init_extended_char_vars %1d% id %2d% new_vars %3d%</b></TD></TR>
+<TR><TD><b>0E15=4,set_extended_char_var %1d% id %2d% var %3d% value %4d%</b></TD></TR>
+<TR><TD><b>0E16=4,get_extended_char_var %1d% id %2d% var %3d% to %4d%</b></TD></TR>
+<TR><TD><b>0E17=3,init_extended_car_vars %1d% id %2d% new_vars %3d%</b></TD></TR>
+<TR><TD><b>0E18=4,set_extended_car_var %1d% id %2d% var %3d% value %4d%</b></TD></TR>
+<TR><TD><b>0E19=4,get_extended_car_var %1d% id %2d% var %3d% to %4d%</b></TD></TR>
+<TR><TD><b>0E1A=3,init_extended_object_vars %1d% id %2d% new_vars %3d%</b></TD></TR>
+<TR><TD><b>0E1B=4,set_extended_object_var %1d% id %2d% var %3d% value %4d%</b></TD></TR>
+<TR><TD><b>0E1C=4,get_extended_object_var %1d% id %2d% var %3d% to %4d%</b></TD></TR>
+<TR><TD><b>0E1D=0,is_on_mission</b></TD></TR>
+<TR><TD><b>0E20=0,is_on_samp</b></TD></TR>
+<TR><TD><b>0E25=0,is_on_cutscene</b></TD></TR>
+<TR><TD><b>0E24=4,fix_char %1d% ground %2d% brightness %3d% and_fade_in %4d%</b></TD></TR>
+<TR><TD><b>0E26=2,is_weapon %1d% fire_type %2d%</b></TD></TR>
+<TR><TD><b>0D1E=4,quat_slerp_from %1d% to %2d% lambda %3d% result %4d%</b></TD></TR>
+<TR><TD><b>0E1F=4,ease %1d% mode %2d% way %3d% to %4d%</b></TD></TR>
+<TR><TD><b>0E27=5,get_angle_from_two_coords %1d% %2d% and %3d% %4d% to %5d%</b></TD></TR>
+<TR><TD><b>0E21=1,get_audio_sfx_volume %1d%</b></TD></TR>
+<TR><TD><b>0E22=1,get_audio_radio_volume %1d%</b></TD></TR>
+<TR><TD><b>0D4E=4,%4d% = read_struct %1d% offset %2d% size %3d% // newopcodes ordering</b></TD></TR>
+<TR><TD><b>0D4F=4,write_struct %1d% offset %2d% size %3d% value %4d%</b></TD></TR>
+<TR><TD><b>0E2A=9,add_cleo_blip %1d% position %2d% %3d% is_short %4d% RGBA %5d% %6d% %7d% %8d% store_to %9d%</b></TD></TR>
+<TR><TD><b>0E2B=1,remove_cleo_blip %1d%</b></TD></TR>
+<TR><TD><b>0E2E=10,create_render_object_to_char_bone %1d% model %2d% bone %3d% offset %4d% %5d% %6d% rotation %7d% %8d% %9d% store_to %10d%</b></TD></TR>
+<TR><TD><b>0E2F=1,delete_render_object %1d%</b></TD></TR>
+<TR><TD><b>0E30=4,set_render_object_auto_hide %1d% dead %2d% weapon %3d% car %4d%</b></TD></TR>
+<TR><TD><b>0E31=2,set_render_object_visible %1d% %2d%</b></TD></TR>
+<TR><TD><b>0E35=4,set_render_object_position %1d% %2d% %3d% %4d%</b></TD></TR>
+<TR><TD><b>0E36=4,set_render_object_rotation %1d% %2d% %3d% %4d%</b></TD></TR>
+<TR><TD><b>0E37=4,set_render_object_scale %1d% %2d% %3d% %4d%</b></TD></TR>
+<TR><TD><b>0E33=5,get_pickup_this_coord %1d% %2d% %3d% only_available %4d% store_to %5d%</b></TD></TR>
+<TR><TD><b>0E34=2,get_pickup_model %1d% %2d%</b></TD></TR>
+<TR><TD><b>0E38=2,get_pickup_pointer %1d% store_to %2d%</b></TD></TR>
+<TR><TD><b>0E39=2,get_pickup_type %1d% store_to %2d%</b></TD></TR>
+<TR><TD><b>0E2C=1,get_current_save_slot %1d%</b></TD></TR>
+<TR><TD><b>0E2D=0,is_game_first_start</b></TD></TR>
+<TR><TD><b>0E32=4,set_char_coordinates_simple %1d% coord %2d% %3d% %4d%</b></TD></TR>
+</TBODY></TABLE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</DIV></DIV></BODY></HTML>

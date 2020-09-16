@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Entradas Dinamicas</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<DIV class="row">
+<DIV class="col-12 col-md-6">
+<P>Los textos dinamicos, son como variables, algo parecidas a los strings, con   
+ la unica diferencia, de que en vez de modificar el texto que guardamos en       
+ estas,  lo que haremos sera mostrar el texto que guardamos. <BR>Por ejemplo     
+ para ver  los en titulos de misiones:</P>
+<pre class=sb3>
+0ADF: add_dynamic_GXT_entry 'TI7_LO' your_text "EJEMPLO"
+00BA: show_text_styled GXT 'TI7_LO' time 250 style 1 //necesita un GXT
+</pre>
+</DIV>
+<DIV class="col-12 col-md-6">
+<IMG class="w-100" src="img/title1.png">
+</DIV></DIV>  <hr>
+<P>y  como la mayorias de las cosas que creamos asi,    
+tambien las podemos borrar para   colocar otra cosa en su lugar, con este    
+opcode:</P>
+<pre class=sb3>0AE0: remove_dynamic_GXT_entry 'TI7_LO'</pre></DIV></DIV></DIV>
+</BODY>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT></HTML>

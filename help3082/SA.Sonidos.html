@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Sonidos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Encuentra toda la informacion que nesecites aqui.</P>
+<hr>
+<h4>Introducción</h4><p>En la raiz de tu juego, en <STRONG>AUDIO/SFX</STRONG> incluye archivos      
+*.wav para sonidos y dialogos.<BR>Puedes echarle un ojito al Directorio <A href="Sonidos.DirectorioSFX.html">SA 
+   SFX</A><BR></P>
+<P>Los   archivos de musicade radio solo se pueden reproducir en   vehiculos:    
+  <BR>No hay   ninguna posibilidad de que el scripting para   reproducirlos a 
+pie      <BR>Para la   radio existen solo estos codigos para   establecer la 
+estacion  de  radio , para   obtener el numero de staion de radio y   para 
+establecer en  la   estacion de   favoritos <BR></P>
+<PRE class="sb3">041E: set_radio_station 3
+051E: 1@ = get_current_radio_station
+0A26: set_radio_to_favorite_station
+</PRE>La 
+ musica de GTASA-AUDIO-StreamsBEATy AMBIENCEse pueden reproducir con otros      
+ codigos de operacion <BR>
+<PRE class="sb3">0953: get_soundtrack_status_to 17@
+if
+0039:   17@ ==  0;; integer values
+004D: jump_if_false @
+//0952: load_soundtrack 12
+//0954: start_playing_loaded_soundtrack
+//0955: end_playing_loaded_soundtrack
+//use following track numbers: 1, 2, 3, 4, 8, 9, 10, 12, 13
+</PRE>Reproducir 
+ cancion de titel <BR>
+<PRE class="sb3">0394: play_music 1
+//or 
+0394: play_music 2
+</PRE>
+<P>su     utilizado  principalmente como floreciente por la mision comlete    
+<BR>encontrar</P>
+<P>
+<HR id="0">
+el archivo de la cancion en GTASA -AUDIO-Streams-BEATLos    sonidos  o los  
+ discursos de GTASA-AUDIO-SFXse utilizan para "wav" - o "sonido"-    jugar      
+<BR>Pero los sonidos de GENRL no se pueden reproducir con secuencias   de   
+ comandos 
+<P></P>
+<P>Una parte de ellos se <BR>documentan en datos    -AudioEvents.txt   <BR>Estos 
+ para los dialogos de la historia y sonidos para el   juego</P>
+<P>
+<P>
+<HR id="0">
+///////SOUNDS///// <BR>Una minuscula parte de los sonidos    enumerados  en  
+AudioEvents puede ser startet con codigos de operacion de  sonido   de   
+ reproduccion: 018C: 097A: 09F1: Encuentra sonidos en el rango de   SOUND_1002   
+  a  SOUND_1191. No todos funcionaron por mi. Parece que alguien  solo  puede    
+     <BR>utilizar desde el exe Alguien de estos sonidos son  duraderos 
+y&nbsp;deben   iniciarse con 018D: y se detuvo con 018E: Algunos  otros de estos 
+ sonidos   tienen  un modo de reproduccion (musica para  minijuegos)  y se puede 
+ detener   con un    sonido <BR>de parada  SOUND_PILOT_AWARD_TRACK_START  1187  
+iniciar   sonido <BR>SOUND_PILOT_AWARD_TRACK_STOP 1188 stop sound 
+<P></P>
+<UL>
+  <LI><A href="Sonidos.IDsDeAudios.html">Lista de IDs de audios</A><BR></LI></UL>
+<P><BR>//////WAVE///// <BR>La mayor parte de      AudioEvents.txt incluye ondas 
+y debe  utilizarse con <BR></P>
+<PRE class="sb3">03CF: load_wav  1828 as  1
+00D6: if  
+03D0:   wav  1 loaded
+004D: jump_if_false @
+03D1: play_wav 1
+</PRE>se 
+ puede adjuntar al actor u objeto <BR>
+<PRE class="sb3">0949: link_wav 1 to_actor 0@
+</PRE>si la onda es acabado     
+ debe ser  descargado <BR>
+<PRE class="sb3">040D: unload_wav 1
+</PRE>en original es habitual descargar   
+ wav antes de  cargar un wav <BR>
+<PRE class="sb3">:AUDIOL_33
+00D6: if  
+0039:   4@ ==  0  // integer values
+004D: jump_if_false @AUDIOL_38
+040D: unload_wav 3@
+03CF: load_wav 7@ as 3@
+</PRE>tambien 
+ puede comprobar si el sonido esta terminado <BR>
+<PRE class="sb3">00D6: if 
+03D2:   wav 1 ended
+004D: jump_if_false @
+</PRE>
+<P>Los  sonidos que se utilizan con 03CF: load_wav 1828 como 1 son en su  
+ mayoria   sonidos de dialogo de misiones.<BR>Los nombres de estas ondas,     
+enumerados  en AudioEvents.txt son los nombres de entrada de los textos de   
+ dialogo gxt  exemble: SOUND_MAN5_BK busqueda 24412 en american.gxt para   
+ MAN5_BK   y encontrar   el texto del cuadro de dialogo: <BR>az -Tienes ganismos 
+  frios   corriendo por tus   venas!<BR></P>
+<P>
+<HR id="0">
+
+<P></P>
+<P>Los numeros de sonido  no   tienen   ninguna&nbsp;asociacion con los numeros 
+ de archivo de audio,   carpeta,  bancos   La unica   manera que se para 
+ encontrar sonidos es escribir   un script  de prueba   de sonido&nbsp;</P>
+<P>/////AUTO. FRASES///// <BR>Otra forma   de dejar  hablar al  actor  que no  
+ esta  escrito en AudioEvents.txt es <BR></P>
+<PRE class="sb3">09D5: play_sound_of_actor $PLAYER_ACTOR soundslot 342 flags 1  1  1 as 2@
+</PRE>
+<P><BR>primer  param, $PLAYER_ACTOR es el nombre de la variable de actor  second 
+param      (342)  es una ranura con algunas frases diferentes suena  
+<BR>tercero, cuarto,     fift  param de banderas son desconocidos <BR>ultimo 
+ param, 2 es el nombre de     variable  de esta funcion de sonido, no es 
+ necesario liberar o descargar de      ninguna manera  <BR>y no se puede 
+utilizar mas en cualquier otro codigo de      operacion.<BR></P>
+<P>
+<HR id="0">
+
+<P></P>
+<P>Nota: las ranuras de sonido      incluye mas  sonidos que se cambian 
+ automaticamente si el mismo sonidose se      ejecuta de nuevo  El soundslot con 
+ el mismo numero incluye diferentes sonidos     para diferentes  actores 
+ PLAYER_ACTOR, actores especiales, mujeres y hombres     tienen diferentes  
+ sonidos solo con las novias especiales actores (GANGRL2) es    posible 
+ reproducir  las voces sexuales de GFSEX guion Los vendedores de la      tienda 
+ tienen sonidos  propios y no pueden jugar con otros actores opcode 09D5    es 
+la  unica manera de  reproducir estos sonidos de voz que tambien se utilizan    
+ sobre todo de exe para  los peds al azar en la calle como sonidos de dolor,     
+ respiracion, tos ect ...&nbsp; <BR><BR>Usos presumibles PAIN_A SFX, SPC_FA SFX, 
+     SPC_PA Directorio de archivo</P>
+<P><A 
+href="http://www.zazmahall.de/ZAZGTASANATORIUM/GTASA_SFX_Directory.htm">Directorio 
+ SFX</A> Los id de archivo de  audio no tienen asociacion con el id  utilizado   
+  para secuencias de comandos, pero  algunos miembros encontraron un   metodo    
+para  identificar id de script de audio de  id de archivo de audio    
+ encontrarlo  aqui:  GTA SA - <A href="https://gtaforums.com/topic/403594-sa-~-cleo-script-tutorial-~/">Como 
+ determinar Sound ID</A>?          </P>
+<P></P>
+<P></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+    
+<SCRIPT src="HL.js"></SCRIPT>
+    </BODY></HTML>

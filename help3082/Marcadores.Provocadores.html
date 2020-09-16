@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Provocadores</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P> Una esfera (tambien llamada cilindro POI) es  la cosa redonda roja en la que 
+entras cuando comienzas una mision. <BR> Incluso si no ve realmente el circulo 
+rojo, el juego (y usted mientras  modela) usamuchas esferas todo el tiempo. Solo 
+para verificar si el actor x  esta cerca de una determinada coordenada dentro de 
+un cierto radio. <BR> Para crear esas esferas especiales que comprueban si el 
+actor esta cerca,  necesitas un tipo especial de codigos de operacion que tengan 
+un comando y  seancondicionales. Es raro pero muy util desde GTA III.Son 
+condicionales  porque comprueban<U>si</U> el actor esta cerca y, mientras 
+tanto,muestran  la esfera roja en el juego. <BR>
+<DIV><B>Opcodes&nbsp;2D</B> Desde <U>00ec</U> hasta el <U>00f4</U>.<BR>
+<PRE class="sb3">00EC:   actor $PLAYER_ACTOR 0 near_point 1812.369 -1929.9215 radius 80.0 80.0 
+00ED:   actor $PLAYER_ACTOR 0 near_point_on_foot 2043.6801 -1635.73 radius 4.0 4.0 
+00EE:   actor $PLAYER_ACTOR 0 near_point_in_car 2067.3999 -1831.2 radius 15.0 15.0 
+00EF:   actor $PLAYER_ACTOR stopped 0 near_point 2196.239 -1191.459 radius 2.0 2.0 
+00F0:   actor $PLAYER_ACTOR stopped 0 near_point_on_foot 2175.29 -2259.22 radius 3.0 3.0
+00F1:   actor $PLAYER_ACTOR stopped 0 near_point_in_car -175.29 -59.22 radius 3.0 3.0 
+00F2:   actor 67@ near_actor $PLAYER_ACTOR radius 20.0 20.0 0 
+00F3:   actor $PLAYER_ACTOR near_actor_on_foot 15@ radius 2.0 2.0 0 
+00F4:   actor 34@ near_actor_in_car $PLAYER_ACTOR radius 6.0 6.0 0
+</PRE> 
+ Esos codigos de operacion no deben utilizarse porque pueden provocar muchos  
+errores, especialmente en interiores.&nbsp;<BR><B>Opcodes 3D</B>  Desde 
+<U>00fe</U> hasta el  <U>0106</U>.<BR>
+<PRE class="sb3">00FE:   actor $PLAYER_ACTOR 0 near_point_3d 658.0068 -1866.3127 4.4537 radius 15.0 15.0 15.0 
+00FF:   actor $PLAYER_ACTOR 0 near_point_3d_on_foot $X_JOHNSON_HOUSE $Y_JOHNSON_HOUSE $Z_JOHNSON_HOUSE radius 1.0 1.0 2.0 
+0100:   actor $PLAYER_ACTOR near_point_3d_in_car 1793.0676 -1904.2538 12.3989 radius 4.0 4.0 4.0 sphere 1 
+0101:   actor $PLAYER_ACTOR stopped_near_point_3d 10@ 11@ 12@ radius 5.0 5.0 3.0 sphere 0
+0103:   actor $PLAYER_ACTOR stopped_near_point_3d_in_car -1577.9417 52.6333 16.3281radius 4.0 4.0 6.0 sphere 0
+0104:   actor $PLAYER_ACTOR near_actor_3d 1@ radius 15.0 15.0 15.0 sphere 0 
+0105:   actor $PLAYER_ACTOR near_actor_3d_on_foot 102@(42@, 9i) radius 5.0 5.0 2.0 sphere 0 
+0106:   actor $PLAYER_ACTOR near_actor_3d_in_car 71@ radius 15.0 15.0 15.0 0
+</PRE> 
+ ¡Estos codigos de operacion son buenos para usarlos!   <BR></DIV>Para todos 
+ellos codigos de operacion: Donde sea  que se coloque, el entero0 o1 le dice al 
+motor que muestre el circulo  rojo (1 = mostrar; 0 = no mostrar). <BR> Los 
+primeros 2 o 3 (2 para 2D, 3  para 3D)flotan como -366.066 -1418.683 25.5 son la 
+posicion. <BR> Los segundos 2 o 3 (2 para 2D, 3 para 3D)flotan como 4.0 4.0 6.0 
+son  el radio de la esfera. <BR> $ PLAYER_ACTOR o 71@ , son las variables  del 
+actor. <BR> Para que la esfera funcione (y luego aparezca)debes  colocarla en un 
+bucle: <BR>
+<PRE class="sb3">:SPHERE_LOOP 
+0001: wait 0 ms 
+00D6: if
+00EC:   actor $PLAYER_ACTOR 0 near_point 1812.369 -1929.9215 radius 80.0 80.0 
+004D: jump_if_false @SPHERE_LOOP 
+</PRE>
+El hilo debe estar ejecutandose en el ciclopara que se verifique la  condicion y 
+para que aparezca el circulo rojo. La espera es necesaria, no  lahagas demasiado 
+larga, de lo contrario parpadeara, mantenla a 0 ms para  que sea agradable.
+<P></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

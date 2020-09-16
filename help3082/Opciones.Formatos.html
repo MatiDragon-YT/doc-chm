@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Formatos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light></p>
+<IMG 
+src="old/options/sbo/formats_page.png"> 
+<P>Aqui puede configurar los nombres de los archivos de 
+origen, el formato de las etiquetas y los identificadores..</P>
+<HR>
+<IMG src="old/options/sbo/form_form.png"> 
+<P>Alli estan las mascaras de nombre de archivo. La linea 
+superior contiene la ruta y el nombre del archivo de texto que se 
+crea al descompilar. Las lineas inferiores contienen rutas y nombres 
+de dos archivos binarios SCM e IMG que se crean durante la 
+compilacion. Todas las lineas tienen la misma sintaxis Utiliza 
+palabras especiales que significan parte del nombre completo del 
+archivo:<BR><BR><B>$dir </B>– ruta de archivo<BR><B>$name </B>– 
+nombre del archivo<BR><B>$ext </B>– extension de 
+archivo<BR><BR>Example, if you decompile the file 
+C:\MyDir\main.scm, entonces <BR><BR><B>$dir = </B>C:\MyDir; 
+<BR><B>$name</B> = principal<BR><B>$ext </B>- .scm<BR>Entonces, si 
+la mascara es <B>$dir\$name.txt</B>, el archivo de salida sera 
+nombrado <STRONG>C:\MyDir\main.txt</STRONG></P>
+<HR>
+<IMG src="old/options/sbo/form_label.png"> 
+<P>Aqui puede elegir uno de los diversos formatos de 
+nombre para las etiquetas utilizadas en la 
+descompilacion.<BR><BR><B>Global Offset: all labels</B> tendra un 
+nombre numerico, por ejemplo <FONT 
+class=text-green><STRONG>@12345</STRONG></FONT>. El numero significa la 
+compensacion de esta etiqueta en el archivo que se 
+descompila.<BR><BR><B>Thread+Local Offset: </B>El nombre de la 
+etiqueta constara de dos partes: un nombre del hilo donde esta la 
+etiqueta (se usa el codigo de operacion name_thread para esto) y 
+adicionalmente se compensa con el comienzo de este hilo, por 
+<A>ejemplo</A> <b 
+class=text-green>@MAIN_12</b>.<BR><BR><B>Thread + Global 
+Offset: </B>esta opcion es similar a la anterior, excepto que 
+despues del nombre del hilo no habra un desplazamiento local sino el 
+global (como el primer caso), por <A>ejemplo</A> <b 
+class=text-green>@HELP_34567</b>.<BR><BR>Si desea que los 
+desplazamientos sean hexadicos, seleccione la opcion adecuada. Por 
+defecto, todas las compensaciones son decimales.</P><A 
+name=LABLE></A>
+<HR>
+<IMG src="old/options/sbo/form_names.png"> 
+<P>Estas opciones hacen que el decompilador use o no los 
+nombres personalizados para varios literales de scripts.</P>
+<P>Los nombres de las etiquetas se encuentran en el 
+archivo CustomLabels.ini en la carpeta SB \ data \ &lt;juego&gt;. 
+Este archivo contiene la lista de nombres y compensaciones de 
+etiquetas (para main.scm version 1.0). Si se marca la primera 
+casilla, el decompilador la etiqueta como se define.</P>
+<P>Los nombres de variables estan presentes en el archivo 
+CustomVariables.ini para cada juego. Parece la lista de direcciones 
+de variables globales (DMA) y su representacion textual. Si esta 
+casilla esta marcada, el descompilador le da a la variable global su 
+nombre personalizado.</P>
+<P>La lista de nombres de matrices esta presente en el 
+archivo CustomArrays.ini. Su sintaxis es la siguiente: el primer 
+numero es el nombre de la variable global (DMA) que es el primer 
+elemento de la matriz (nombre de la matriz), el segundo - el tamanio 
+de la matriz, el tercero - el nombre personalizado. Esta opcion se 
+usa para que el descompilador agregue un indice a algunas variables 
+globales que son una matriz. Entonces, estas variables se vuelven 
+indexadas<b><A 
+href="variables.htm#Index">.</A></b></P><A name=strA></A>
+<HR>
+<IMG src="old/options/sbo/form_case.png"> 
+<P>Esta opcion tiene dos significados. El decompilador 
+nombra variables globales, etiquetas, matrices utilizando el caso de 
+letras seleccionado. El compilador escribe las cadenas en el SCM 
+usando el caso de letra seleccionado tambien.</P>
+</DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT></DIV></BODY></HTML>

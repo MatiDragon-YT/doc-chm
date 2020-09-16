@@ -1,0 +1,472 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>Crear trucos en SB3</TITLE>
+<META content="IE=edge" http-equiv="X-UA-Compatible">
+<META name="viewport" content="width=device-width, initial-scale=1"> <LINK rel="stylesheet" 
+type="text/css" href="bootstrap.css"></HEAD>
+<BODY>       
+<header></header>
+<DIV class="container-fluid">
+<DIV class="row">
+<DIV class="col-12">Comunmente vemos mucho Scripts que tienen un monton  
+ de    numeros que no entendemos, y magicamente al escribir un Cheat en el  
+ teclado, se   activa. bueno,no hay tanta "magia" en eso, solo es necesario  
+ entender que    existen diferentesformas para crear un Cheat.
+<H4 align="center">CLEO 3</H4>Cleo 3 tiene la particularidad de utilizar mas     
+ codigo para realizar algo,requiere un poco mas de conocimientos en leguajes de  
+  programacion. Esto se debea que no existe acceso directo a algunas     
+ caracteristicas. Como a continuacion,les mostrare:
+<H4>Informacion basica:</H4><PRE> 0A8D: <B class="text-blue">0@</B> = read_memory <B class="text-red">0x00969110</B> size <B class="text-red">4</B> virtual_protect <B class="text-red">0</B></PRE>
+<P>Parametros:</P>
+<OL>
+  <LI>variable que almacena la informacion (<B class="text-blue">@</B> o&nbsp;   
+                  <B class="text-blue">$</B>)                                    
+                                                               
+  <LI>Direccion de la memoria (<B class="text-red">0x</B>)                       
+                                                                                 
+                                   
+  <LI>Numero de bytes para leer/escribir (<B class="text-red">1</B>, <B class="text-red">2</B> 
+                    o <B class="text-red">4</B>)                     
+  <LI>Proteccion virtual:                                                
+  <UL>
+    <LI><B class="text-red">1</B> = Solo-lectura                                 
+                               
+    <LI><B class="text-red">0</B> = re-escribible                                
+                                                                                 
+                </LI></UL></LI></OL>
+<H4>Strings:(Texto)</H4>  En Cleo, para asignar o guardar un Texto en una     
+ variable, existen variables especificas. <B>NO</B> podemos guardar un texto en  
+  una variable convencional (<B class="text-blue">0@</B>, <B 
+class="text-blue">1@</B>, <B class="text-blue">2@</B>, <B 
+class="text-blue">3@</B>... <B class="text-blue">30@</B>, <B 
+class="text-blue">31@</B>). Pero, podemos modificarlas paraque <B>SI</B> puedan  
+ hacerlo, lo unico que se debe hacer es agregardespes de la arroba, una <B>S</B> 
+  o una <B>V</B>, por ejemplo: <PRE class="bg-dark text-white p-2"><B class="text-blue">0@s</B>, <B class="text-blue">2@s</B>, <B class="text-blue">4@s</B>, <B class="text-blue">6@s</B>,<B class="text-blue"> 8@s</B>, etc. 
+<B class="text-blue">0@v</B>, <B class="text-blue">4@v</B>, <B class="text-blue">8@v</B>, <B class="text-blue">12@v</B>, etc.</PRE>
+<TABLE class="table">
+  <THEAD>
+  <TR>
+    <TH scope="col">Tipo</TH>
+    <TH scope="col">Descripcion</TH>
+    <TH scope="col">Funcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH scope="row"><EM>S</EM></TH>
+    <TD scope="row">String de <B class="text-red">8</B><B>bytes</B>,           
+                                                          almacena         
+      palabras                     cortas                                        
+                                                              <B>Max</B>.        
+                                     <B class="text-red">7</B>                   
+          letras*            </TD>
+    <TD scope="row">Utiliza <B class="text-red">8</B> bytes, lo que            
+                                                                                 
+                                                                                 
+                significa       que                           utiliza            
+                                                        <B>DOS</B>               
+                                variables                                        
+                                           convencionales,                       
+                  en                                           este  caso        
+                     <B class="text-blue">0@</B>                               y 
+                             <B class="text-blue">1@</B></TD></TR>
+  <TR>
+    <TH scope="row"><EM>V</EM></TH>
+    <TD scope="row">String de <B class="text-red">16</B><B>bytes</B>,          
+                                                           alamacena         
+      palabras                           largas                                  
+                                                                              
+      <B>Max</B>.         <B class="text-red">14</B>                             
+              letras*                        </TD>
+    <TD scope="row">Utiliza <B class="text-red">16</B> bytes, lo que           
+                                                                                 
+                                                                                 
+                 significa             que                                       
+                                                                    
+      utiliza&nbsp;<B>CUATRO</B>                                               
+      variables                                                                  
+                                                                         
+      convencionales,             en       este        caso                      
+        <B class="text-blue">0@</B>,                                        <B 
+      class="text-blue">1@</B>,                             <B 
+      class="text-blue">2@</B>                                               y 
+      <B class="text-blue">3@</B></TD></TR></TBODY></TABLE>
+<P><SPAN><SPAN></SPAN></SPAN>&nbsp;</P>
+<H4><U>1# Forma - Creando un Cheat (truco) por medio de ASCII</U></H4>
+<P>Solo se permite utilizar esta forma para cheats con palabras que tengan solo  
+                 <FONT color="#ff0000"><STRONG>4</STRONG></FONT>, <FONT color="#ff0000"><STRONG>6</STRONG></FONT>, 
+      <FONT color="#ff0000"><STRONG>8</STRONG></FONT>, <FONT 
+color="#ff0000"><STRONG>10</STRONG></FONT>, <FONT 
+color="#ff0000"><STRONG>12</STRONG></FONT> letras (pares)</P>
+<P><SPAN><SPAN><STRONG><U><EM>-Creando un cheat de 4              
+ letras<BR></EM></U></STRONG></SPAN></SPAN><SPAN><SPAN>El <STRONG>cheat</STRONG> 
+  será: <FONT color="#ff0000"><STRONG>"JUMP"</STRONG></FONT></SPAN></SPAN></P>
+<P>vamos a almacenar el cheat en la variable <FONT 
+color="#0080ff"><STRONG>0@</STRONG></FONT> y tenemos la direccion de memoria,    
+ que  es: <FONT color="#ff8080"><STRONG>0x00969110</STRONG></FONT> sabemos       
+ también, que  por ser <FONT color="#ff0000"><STRONG>4</STRONG></FONT> letras    
+  tendrá un tamaño de  <FONT color="#ff0000"><STRONG>4</STRONG></FONT> bytes,    
+              <STRONG><FONT color="#ff0000">1</FONT></STRONG> byte por letra. y  
+ esta    dirección  de memoria es  <STRONG>re-escribible</STRONG>(<FONT color="#ff0000"><STRONG>0</STRONG></FONT>). 
+ por lo tanto, la parte de nuestro    script para activarlo se veria de la       
+ siguiente  forma:</P>
+<BLOCKQUOTE><FONT face="Consolas"><FONT color="#008000">:LABEL<BR></FONT><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT> <BR>0A8D: <FONT 
+  color="#0080ff">0@</FONT> =  read_memory <FONT 
+  color="#ff0000">0x00969110</FONT> size <FONT color="#800000">4</FONT>          
+                                             virtual_protect <FONT color="#800000">0</FONT><BR><FONT 
+  color="#000000">if</FONT><BR>04A4:<FONT color="#0080ff"> 0@</FONT> == <FONT 
+  color="#ff0000">0X4A554D50</FONT> <FONT color="#808080">// Texto en Hex -&gt;  
+           'JUMP'</FONT><BR><FONT color="#000000">jf</FONT><FONT 
+  color="#008000">@LABEL</FONT><BR>0A8C:     write_memory    <FONT color="#ff0000">0x00969110</FONT> 
+                          size <FONT color="#800000">4</FONT>                    
+             value        <FONT color="#800000">0</FONT>                 
+  virtual_protect             <FONT color="#800000">0</FONT><FONT color="#808080">&nbsp;// 
+                       borrar               buffer para               prevenir   
+    bucles del          cheat</FONT></FONT></BLOCKQUOTE>
+<P><SPAN><SPAN><STRONG>OMG!!!</STRONG> :0 pero que significa esto:<FONT color="#d3d3d3"></FONT><FONT 
+color="#ff8080"><STRONG>0x4A554D50</STRONG></FONT><BR>Ese es         nuestro  
+<STRONG>cheat</STRONG> en caracteres <STRONG>ASCII                   
+</STRONG>(<STRONG>hex</STRONG>)<BR>En este caso:</SPAN></SPAN></P>
+<UL>
+  <LI><SPAN><SPAN><STRONG>JUMP</STRONG>&nbsp;-&gt; <STRONG>4A 55 4D              
+                                          50</STRONG></SPAN></SPAN></LI></UL>
+<P><SPAN><SPAN>Y le agregamos <STRONG><FONT color="#ff8080">0x</FONT></STRONG>   
+ al  inicio, a continuación les dejo la lista de los     
+caracteres</SPAN></SPAN></P>
+<H4><U>Caracteres ASCII (HEX)</U></H4>
+<P><STRONG>41 = A<BR>42 = B<BR>43 = C<BR>44 = D<BR>45 = E<BR>46 = F<BR>47 =      
+ G<BR>48 = H<BR>49 = I<BR>4A = J<BR>4B = K<BR>4C = L<BR>4D = M<BR>4E = N<BR>4F = 
+  O<BR>50 = P<BR>51 = Q<BR>52 = R<BR>53 = S<BR>54 = T<BR>55 = Y<BR>56 = V<BR>57  
+  =   W<BR>58 = X<BR>59 = Y<BR>5A = Z</STRONG></P>
+<P><SPAN><SPAN><STRONG><EM><U>-Creando un cheat de 6              
+ letras:<BR></U></EM></STRONG>El <STRONG>cheat</STRONG> será: <FONT color="#ff0000"><STRONG>"KILLME"</STRONG></FONT></SPAN></SPAN></P>
+<BLOCKQUOTE><FONT face="Consolas"><FONT color="#008000">:LABEL</FONT><BR><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT><BR>0A8D: <FONT 
+  color="#0080ff">1@</FONT> =  read_memory <FONT 
+  color="#ff0000">0x00969110</FONT> size <FONT color="#800000">4</FONT>          
+                                             virtual_protect <FONT color="#800000">0</FONT><FONT 
+  color="#808080">//             4                bytes</FONT><BR>0A8D: <FONT 
+  color="#0080ff">2@</FONT>     =     read_memory                        <FONT 
+  color="#ff0000">0x00969114</FONT> size   <FONT color="#800000">2</FONT>        
+                                       virtual_protect       <FONT color="#800000">0</FONT><FONT 
+  color="#808080">//       2         bytes</FONT><BR></FONT><FONT face="Consolas"><FONT 
+  color="#000000">if                                     and<BR></FONT>0039:     
+      <FONT color="#0080ff">1@</FONT>                 ==<FONT color="#ff0000">   
+                              0x4C4C4D45</FONT><FONT color="#808080">//          
+                 LLME</FONT><BR>0039:    <FONT color="#0080ff">2@</FONT>         
+        ==                                      <FONT 
+  color="#ff0000">0x4B49</FONT><FONT color="#808080">         //                 
+        KI</FONT><BR><FONT color="#000000">jf</FONT><FONT 
+  color="#008000">@LABEL</FONT><BR>0A8C:             write_memory    <FONT 
+  color="#ff0000">0x00969110</FONT>                     size    <FONT color="#800000">4</FONT> 
+                          value       <FONT color="#800000">0</FONT>             
+                    virtual_protect       <FONT color="#800000">0</FONT> <FONT 
+  color="#808080">                                      //   borrar          
+  buffer</FONT><BR>0A8C:                   write_memory <FONT 
+  color="#ff0000">0x00969114                                    </FONT>size     
+  <FONT color="#800000">2</FONT>                     value      <FONT color="#800000">0</FONT> 
+        virtual_protect    <FONT color="#800000">0</FONT><FONT color="#808080">  
+          //         borrar                  buffer</FONT></FONT></BLOCKQUOTE>
+<P><STRONG>OJO</STRONG>: vean que ahora el código ha cambiado, pero esto por     
+ que?...<BR>Solo se admiten <FONT color="#ff0000"><STRONG>4</STRONG></FONT>     
+ bytes  por variable y nuestro <STRONG>cheat</STRONG>, tiene <FONT color="#ff0000"><STRONG>6</STRONG></FONT>, 
+ entonces, debemos utilizar otra      variable para completar el              
+<STRONG>cheat</STRONG>. </P>
+<P>De igual forma que en el anterior;<BR><STRONG>KILLME</STRONG> - <STRONG>4D 49 
+ 4C 4D 45</STRONG> </P><BR>
+<P>Pero no admite <FONT color="#ff0000"><STRONG>6</STRONG></FONT> bytes,         
+ entonces,  debemos separar nuestro <STRONG>cheat</STRONG> en dos, y debemos     
+  colocarlo en  orden reverso, como que si se estuviera leyendo de               
+   <STRONG>ABAJO</STRONG> para  <STRONG>ARRIBA</STRONG>, de la siguiente         
+ manera:<BR><STRONG>LLME</STRONG> -----                   
+<STRONG>4C4C4D45</STRONG><BR><STRONG>KI</STRONG> -------&nbsp;                  
+<STRONG>4B49</STRONG><BR>No olviden que cada letra tiene <FONT 
+color="#ff0000"><STRONG>1</STRONG></FONT> byte.&nbsp;Y ya le hemos dicho al      
+ juego con  las <STRONG>primeras</STRONG> <STRONG>dos</STRONG> líneas, del       
+ codigo  de arriba  que utilizaremmos las variables <FONT 
+color="#0080ff"><STRONG>1@</STRONG></FONT> y  <FONT 
+color="#0080ff"><STRONG>2@</STRONG></FONT> donde <FONT 
+color="#0080ff"><STRONG>1@</STRONG></FONT> tiene <FONT 
+color="#ff0000"><STRONG>4</STRONG></FONT> bytes disponibles y <FONT color="#0080ff"><STRONG>2@</STRONG></FONT> 
+ tiene <FONT color="#ff0000"><STRONG>2</STRONG></FONT> bytes.<BR>entonces        
+  quedaría de la  siguiente forma: (siempre anteponiendo <FONT 
+color="#ff8080"><STRONG>0x</STRONG></FONT> )<BR><FONT 
+color="#0080ff"><STRONG>1@</STRONG></FONT> == <FONT 
+color="#ff8080"><STRONG>0x4C4C4D45</STRONG></FONT><BR><FONT 
+color="#0080ff"><STRONG>2@</STRONG></FONT> == <FONT 
+color="#ff8080"><STRONG>0x4B49  </STRONG></FONT></P>
+<P><SPAN><SPAN>con esas dos líneas, estamos diciendo; que escribamos <FONT 
+color="#ff0000">"<STRONG>KILLME</STRONG>"</FONT> en el              
+teclado?</SPAN></SPAN></P>
+<P><SPAN><SPAN></SPAN></SPAN>&nbsp;</P>
+<P><SPAN><SPAN><STRONG><EM><U>-Creando un cheat de 8              
+ letras:<BR></U></EM></STRONG>El <STRONG>cheat</STRONG> será: <FONT color="#ff0000"><STRONG>"JUMPRAMP"</STRONG></FONT></SPAN></SPAN></P>
+<BLOCKQUOTE><FONT face="Consolas"><FONT color="#008000">:LABEL</FONT><BR><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT><BR>0A8D: <FONT 
+  color="#0080ff">1@</FONT> =  read_memory <FONT 
+  color="#ff0000">0x00969110</FONT> size <FONT color="#800000">4</FONT>          
+                                             virtual_protect <FONT color="#800000">0</FONT><BR>0A8D: 
+               <FONT color="#0080ff">2@</FONT>                             = 
+  read_memory <FONT color="#ff0000">0x00969114</FONT>             size       
+  <FONT color="#800000">4</FONT>                                             
+  virtual_protect     <FONT color="#800000">0</FONT><BR></FONT><FONT face="Consolas"><FONT 
+  color="#000000">if                        and<BR></FONT>04A4:                  
+                  <FONT color="#0080ff">1@</FONT>       == <FONT 
+  color="#ff0000">0x52414D50                               </FONT><FONT color="#808080">// 
+                    RAMP</FONT><BR>04A4:   <FONT color="#0080ff">2@</FONT>       
+          ==       <FONT color="#ff0000">0x4A554D50</FONT><FONT color="#808080"> 
+                 //                         JUMP</FONT><BR><FONT 
+  color="#000000">jf</FONT><FONT color="#008000">@LABEL</FONT><BR>0A8C:          
+           write_memory  <FONT color="#ff0000">0x00969110</FONT>                 
+            size <FONT color="#800000">4</FONT>         value                    
+                 <FONT color="#800000">0</FONT>         virtual_protect       
+  <FONT color="#800000">0</FONT><FONT color="#808080">            //  borrar     
+                    buffer</FONT><BR>0A8C:           write_memory         <FONT 
+  color="#ff0000">0x00969114</FONT>   size     <FONT color="#800000">4</FONT>    
+                   value                     <FONT color="#800000">0</FONT>      
+   virtual_protect           <FONT color="#800000">0</FONT> <FONT color="#808080"> 
+           // borrar                               
+buffer</FONT></FONT><BR></BLOCKQUOTE>
+<P><SPAN><SPAN>Ejemplos;</SPAN></SPAN></P>
+<BLOCKQUOTE><FONT face="Consolas"><FONT color="#808080">//Estructura de Nivel  
+                                     Alto</FONT><BR><FONT 
+  color="#008000">{$CLEO}</FONT><BR>0000:        <BR><BR><FONT 
+  color="#000000">While       true</FONT><FONT color="#808080">       //         
+                escribir       KILLME               para       
+  activar</FONT><BR>0A8D:              <FONT color="#0080ff">0@</FONT>       =   
+                read_memory             <FONT color="#ff0000">0x969110</FONT>    
+       size      <FONT color="#800000">4</FONT>                                  
+     virtual_protect                </FONT><FONT face="Consolas"><FONT color="#800000">0<BR></FONT>0A8D: 
+        <FONT color="#0080ff">1@</FONT>         =                      
+  read_memory   <FONT color="#ff0000">0x969114</FONT>                     size   
+    <FONT color="#800000">2</FONT>                     virtual_protect           
+    <FONT color="#800000">0</FONT><BR><FONT color="#000000">if                   
+                    and</FONT> <FONT color="#808080">//   
+  KILLME</FONT><BR>&nbsp;&nbsp;                       0039:    <FONT color="#0080ff">0@</FONT> 
+      ==   <FONT color="#ff0000">0x4C4C4D45</FONT> <FONT color="#808080">        
+    //                                     LLME</FONT> <BR>&nbsp;&nbsp; 0039:    
+    <FONT color="#0080ff">1@</FONT>                 ==<FONT color="#ff0000">     
+                0x4B49</FONT><FONT color="#808080">   //                 
+  KI</FONT><BR><FONT color="#000000">then</FONT><BR>&nbsp;&nbsp;                 
+  0A8C:                 write_memory    <FONT color="#ff0000">0x969110</FONT>    
+               size   <FONT color="#800000">4</FONT>                     value 
+  <FONT color="#ff0000">0x0</FONT>             virtual_protect          <FONT 
+  color="#800000">0</FONT><BR>&nbsp;&nbsp;                       03E5:           
+          show_text_box       <FONT color="#ff0000">'HELP101'</FONT><FONT color="#808080"> 
+             // ignorar                                          
+  mensaje...</FONT><BR>&nbsp;&nbsp;     <FONT color="#808080">//                 
+          ENCENDIDO</FONT><BR><FONT color="#000000">&nbsp;&nbsp;                 
+                wait</FONT><FONT color="#800000">500</FONT><BR><BR><FONT color="#000000">&nbsp;&nbsp; 
+                    while                     true</FONT><BR>&nbsp;&nbsp;        
+     0A8D:   <FONT color="#0080ff">0@</FONT>                         =         
+  read_memory <FONT color="#ff0000">0x969110</FONT>             size       <FONT 
+  color="#800000">4</FONT>                                 virtual_protect    
+  <FONT color="#800000">0</FONT><BR>&nbsp;&nbsp;         0A8D:                   
+                       <FONT color="#0080ff">1@</FONT>     =                  
+  read_memory    <FONT color="#ff0000">0x969114                                  
+     </FONT>size          <FONT color="#800000">2</FONT>                         
+                virtual_protect    <FONT 
+  color="#800000">0</FONT><BR>&nbsp;&nbsp;                   <FONT color="#000000">if 
+                    and</FONT> <FONT 
+  color="#808080">//KILLME</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     0039:    
+                                          <FONT color="#0080ff">0@</FONT>       
+  ==     <FONT color="#ff0000">0x4C4C4D45</FONT><FONT color="#808080">//         
+                          LLME</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0039:    
+         <FONT color="#0080ff">1@</FONT>                                 == 
+  <FONT color="#ff0000">0x4B49</FONT><FONT color="#808080">//                    
+       KI</FONT><BR><FONT color="#000000">&nbsp;&nbsp;                       
+  then</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           0A8C:   write_memory   
+                      <FONT color="#ff0000">0x969110</FONT>                   
+  size              <FONT color="#800000">4</FONT>         value <FONT color="#ff0000">0x0</FONT> 
+                          virtual_protect  <FONT 
+  color="#800000">0</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         03E5:       
+                                      show_text_box    <FONT 
+  color="#ff0000">'HELP101'</FONT><FONT color="#808080">//           ignorar     
+                                                                    
+  mensaje...</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#808080">   // 
+                                                                    
+  APAGADO</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT 
+  color="#000000">break</FONT><BR><FONT color="#000000">&nbsp;&nbsp;             
+        end</FONT><BR><FONT color="#000000">&nbsp;&nbsp;                       
+  wait</FONT><FONT color="#800000">0</FONT><BR><FONT 
+  color="#000000">end</FONT><BR><FONT color="#000000">wait</FONT><FONT color="#800000">3000</FONT><BR><BR><FONT 
+  color="#000000">end</FONT>&nbsp;<BR><FONT color="#000000">&nbsp;               
+    wait</FONT><FONT color="#800000">0</FONT><BR><FONT 
+  color="#000000">end</FONT></FONT></BLOCKQUOTE>
+<BLOCKQUOTE><FONT color="#808080">//Estructura de                              
+         Nivel&nbsp;Bajo</FONT><BR><FONT 
+  color="#008000">{$CLEO}</FONT><BR>0000:<BR><FONT 
+  color="#008000">:LABEL_ON</FONT> <FONT color="#808080">// escribir JUMP para   
+                                    activar</FONT><BR><FONT 
+  color="#000000">wait</FONT><FONT color="#800000">0</FONT><BR>0A8D:             
+               <FONT color="#0080ff">0@</FONT> =         read_memory  <FONT 
+  color="#ff0000">0x00969110</FONT>                 size <FONT 
+  color="#800000">4</FONT>                                                   
+  virtual_protect    <FONT color="#800000">0</FONT><BR><FONT 
+  color="#000000">if</FONT><BR>&nbsp;&nbsp;&nbsp;         04A4:&nbsp;&nbsp;     
+  <FONT color="#0080ff">0@</FONT>                 ==   <FONT 
+  color="#ff0000">0X4A554D50</FONT><FONT color="#808080"> // Texto en Hex       
+  -&gt;                                               'JUMP'</FONT><BR><FONT 
+  color="#000000">jf</FONT><FONT color="#008000">@LABEL_ON</FONT><BR>0A8C:       
+             write_memory <FONT color="#ff0000">0x00969110</FONT>                
+           size   <FONT color="#800000">4</FONT>     value                       
+                              <FONT color="#800000">0</FONT> virtual_protect     
+          <FONT color="#800000">0</FONT><FONT color="#808080">          // 
+  borrar                           buffer para prevenir       bucles del         
+                                cheat</FONT><BR>&nbsp;&nbsp;&nbsp;       03E5:   
+          show_text_box                       <FONT 
+  color="#ff0000">'HELP101'</FONT>&nbsp;<FONT color="#808080">         //        
+       ignorar                                                      
+  mensaje...</FONT><BR>&nbsp;&nbsp;&nbsp; <FONT 
+  color="#808080">//&nbsp;ENCENDIDO</FONT><BR>&nbsp;&nbsp;&nbsp;         <FONT 
+  color="#000000">wait</FONT><FONT color="#800000">500</FONT><BR><FONT color="#008000">:LABEL_OFF<BR></FONT><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT><BR>0A8D: <FONT 
+  color="#0080ff">0@</FONT> =             read_memory <FONT 
+  color="#ff0000">0x00969110</FONT> size  <FONT color="#800000">4</FONT>         
+                                              virtual_protect <FONT color="#800000">0<BR></FONT><FONT 
+  color="#000000">if</FONT><BR>&nbsp;&nbsp;&nbsp;         04A4:&nbsp;&nbsp;      
+                           <FONT color="#0080ff">0@</FONT>                 ==    
+      <FONT color="#ff0000">0X4A554D50</FONT><FONT color="#808080">// Texto en 
+  Hex                                -&gt;                       
+  'JUMP'</FONT><BR><FONT color="#000000">jf</FONT><FONT 
+  color="#008000">@LABEL_OFF</FONT><BR>0A8C:           write_memory <FONT color="#ff0000">0x00969110</FONT> 
+                                size     <FONT color="#800000">4</FONT>   value  
+                                               <FONT color="#800000">0</FONT>    
+       virtual_protect        <FONT color="#800000">0</FONT><FONT color="#808080"> 
+                 // borrar                  buffer para   prevenir   bucles     
+  del                                           
+  cheat</FONT><BR>&nbsp;&nbsp;&nbsp;   03E5:             show_text_box      
+  <FONT color="#ff0000">'HELP101'</FONT>&nbsp;                         <FONT 
+  color="#808080">    //     ignorar                                             
+  mensaje...</FONT><BR>&nbsp;&nbsp;&nbsp;     <FONT 
+  color="#808080">//&nbsp;APAGADO     </FONT><BR>&nbsp;&nbsp;&nbsp; <FONT color="#000000">wait</FONT><FONT 
+  color="#800000">3000</FONT><BR><FONT color="#000000">goto</FONT><FONT color="#008000">@LABEL_ON</FONT></BLOCKQUOTE>
+<P><SPAN><SPAN></SPAN></SPAN>&nbsp;</P>
+<H4><U>2# Forma - Usando Strings (texto)</U></H4>
+<P>Esta es una variante del método anterior, en este método no convertiremos las 
+ letras en <STRONG>hex</STRONG>, sino que sencillamente escribiremos el texto,   
+ veamos; </P>
+<P><EM><U><STRONG>-Creando un cheat de 4 letras:</STRONG></U></EM> <BR>El        
+           <STRONG>cheat</STRONG> será:<FONT color="#ff0000"><STRONG>     
+ "JUMP"</STRONG></FONT> </P>
+<BLOCKQUOTE><FONT color="#008000">:LABEL</FONT> <BR><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT> <BR>0A8D: <FONT 
+  color="#0080ff">0@</FONT> = read_memory <FONT color="#ff0000">0x969110</FONT>  
+                                                     size  <FONT 
+  color="#800000">4</FONT>                 virtual_protect          <FONT color="#800000">0</FONT><BR>0006: 
+                                            <FONT color="#0080ff">1@</FONT>   =  
+     <FONT color="#ff0000">0x0</FONT><BR><FONT 
+  color="#000000">if</FONT><BR>&nbsp;&nbsp;                                      
+         05AE: <FONT color="#0080ff">0@s</FONT> ==       <FONT 
+  color="#ff0000">"PMUJ"</FONT><FONT color="#808080">    // @s ==                
+              'short'</FONT><BR><FONT color="#000000">jf</FONT><FONT color="#008000">@LABEL</FONT><BR>0A8C: 
+          write_memory <FONT color="#ff0000">0x969110</FONT>           size 
+  <FONT color="#800000">4</FONT>                             value               
+  <FONT color="#ff0000">0x0</FONT>                           virtual_protect     
+           <FONT color="#800000">0</FONT><FONT color="#808080">//           
+  borrar            bufer</FONT> </BLOCKQUOTE>
+<P>Entonces, asignamos nuestro <STRONG>cheat</STRONG> de <FONT 
+color="#ff0000">4</FONT> letras a una variable <STRONG>String</STRONG>,          
+ utilizando  el opcode <STRONG>05AE</STRONG><BR><STRONG>OJO</STRONG>: el texto   
+  en  este caso  se debe escribir en orden reverso, veamos: </P>
+<UL>
+  <LI><STRONG>J U M P</STRONG> -&gt; cheat                                       
+                                                            
+  <LI><STRONG>P M U J</STRONG> -&gt; empezando con la ultima letra </LI></UL>
+<P>y listo.</P>
+<P>&nbsp;</P>
+<P><STRONG><EM><U>-Creando un cheat de 6 letras:<BR></U></EM></STRONG>El         
+          <STRONG>cheat</STRONG> será: <FONT 
+color="#ff0000"><STRONG>"KILLME"</STRONG></FONT></P>
+<BLOCKQUOTE><FONT color="#008000">:LABEL</FONT><BR><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT><BR>0A8D: <FONT 
+  color="#0080ff">0@</FONT> =  read_memory <FONT color="#ff0000">0x969110</FONT> 
+                                                      size <FONT 
+  color="#800000">4</FONT>                 virtual_protect          <FONT color="#800000">0</FONT><BR>0A8D: 
+                                             <FONT color="#0080ff">1@</FONT>   = 
+                    read_memory   <FONT color="#ff0000">0x969114</FONT>          
+       size     <FONT color="#800000">2</FONT>                 virtual_protect   
+          <FONT color="#800000">0</FONT><BR><FONT 
+  color="#000000">if</FONT><BR>&nbsp;&nbsp;                 05AE: <FONT color="#0080ff">0@s</FONT> 
+                    ==<FONT color="#ff0000">                               
+  "EMLLIK"</FONT><FONT color="#808080">         //           @s ==               
+         'short'</FONT><BR><FONT color="#000000">jf</FONT><FONT 
+  color="#008000">@LABEL</FONT><BR>0A8C:             write_memory <FONT color="#ff0000">0x969110</FONT> 
+          size <FONT color="#800000">4</FONT>     value                          
+                                         <FONT color="#ff0000">0x0</FONT>        
+         virtual_protect         <FONT color="#800000">0</FONT><FONT color="#808080"> 
+                     // borrar        bufer</FONT> </BLOCKQUOTE>
+<P>El cheat: <STRONG>K I L L M E</STRONG></P>
+<UL>
+  <LI>-&gt; <STRONG>E M L L I K</STRONG></LI></UL>
+<P>y listo.</P>
+<P><SPAN><SPAN></SPAN></SPAN>&nbsp;</P>
+<P><SPAN><SPAN><STRONG><EM><U>-Creando un cheat de 16              
+ letras:<BR></U></EM></STRONG>El <STRONG>cheat</STRONG> será:<FONT color="#ff0000"><STRONG> 
+ "THEBANANAPHONE"</STRONG></FONT></SPAN></SPAN></P>
+<BLOCKQUOTE><FONT color="#008000">:LABEL<BR></FONT><FONT 
+  color="#000000">wait</FONT> <FONT color="#800000">0</FONT><BR>0A8D:<FONT 
+  color="#0080ff"> 0@</FONT> =  read_memory <FONT 
+  color="#ff0000">0x969110</FONT> size <FONT color="#800000">4</FONT>            
+                                           virtual_protect <FONT 
+  color="#800000">0</FONT><BR>0A8D:             <FONT color="#0080ff">1@</FONT>  
+                           = read_memory <FONT color="#ff0000">0x969114</FONT>   
+                                size       <FONT color="#800000">4</FONT>     
+  virtual_protect   <FONT color="#800000">0</FONT><BR>0A8D:             <FONT 
+  color="#0080ff">2@</FONT>     =                                             
+  read_memory  <FONT color="#ff0000">0x969118</FONT>       size          <FONT 
+  color="#800000">4</FONT>         virtual_protect <FONT 
+  color="#800000">0</FONT><BR>0A8D:    <FONT color="#0080ff">3@</FONT>       =   
+                                          read_memory    <FONT 
+  color="#ff0000">0x96911C</FONT>       size     <FONT color="#800000">2</FONT>  
+                       virtual_protect <FONT color="#800000">0</FONT><BR><FONT 
+  color="#000000">if                     and</FONT><BR>05AE:                     
+       <FONT color="#0080ff">2@s</FONT>   ==      <FONT 
+  color="#ff0000">"ENOHPA"</FONT><FONT color="#808080"> //         @s ==         
+                             'short'</FONT><BR>05AE:        <FONT color="#0080ff">0@s</FONT> 
+    == <FONT color="#ff0000">"NANABEHT"</FONT><FONT color="#808080">    // @s    
+   ==             'short'</FONT><BR><FONT color="#000000">jf</FONT><FONT color="#008000">@LABEL</FONT><BR>0A8C: 
+                        write_memory                        <FONT color="#ff0000">0x969110</FONT> 
+              size <FONT color="#800000">4</FONT>           value  <FONT color="#ff0000">0x0</FONT> 
+                                          virtual_protect <FONT 
+  color="#800000">0</FONT></BLOCKQUOTE>
+<P>&nbsp;</P>
+<P>El cheat: <STRONG>T H E B A N A N A P H O N E</STRONG></P>
+<UL>
+  <LI>-&gt; <STRONG>E N O H P A N A N A B E H T</STRONG></LI></UL>
+<P>Pero, como estamos utilizando <STRONG>Strings</STRONG> cortos, de <FONT 
+color="#ff0000"><STRONG>8</STRONG></FONT> bytes, este cheat tiene <FONT color="#ff0000"><STRONG>14</STRONG></FONT> 
+ bytes, por lo tanto es necesario  separar el <STRONG>cheat</STRONG> en          
+        <STRONG>dos</STRONG>, de la siguiente  manera;<BR><FONT 
+color="#0080ff"><STRONG>0@s</STRONG></FONT> -&gt; contiene a<FONT color="#0080ff"><STRONG> 
+ 0@</STRONG></FONT> y <FONT color="#0080ff"><STRONG>1@</STRONG></FONT> con un    
+  total de <FONT color="#ff0000"><STRONG>8</STRONG></FONT> bytes (<FONT color="#ff0000"><STRONG>8</STRONG></FONT> 
+ letras)<BR><FONT color="#0080ff"><STRONG>2@s</STRONG></FONT> -&gt; contiene a   
+               <FONT color="#0080ff"><STRONG>2@</STRONG></FONT> y <FONT color="#0080ff"><STRONG>3@</STRONG></FONT> 
+ con un total de <FONT color="#ff0000"><STRONG>6</STRONG></FONT> bytes (<FONT 
+color="#ff0000"><STRONG>6</STRONG></FONT> letras) </P>
+<P>entonces;<BR><FONT color="#0080ff"><STRONG>0@s</STRONG></FONT> -&gt; <FONT 
+color="#ff0000"><STRONG>8</STRONG></FONT> letras -&gt; <STRONG>N A N A B E H     
+ T</STRONG> <BR><FONT color="#0080ff"><STRONG>2@s</STRONG></FONT> -&gt; <FONT 
+color="#ff0000"><STRONG>6</STRONG></FONT> letras -&gt; <STRONG>E N O H P         
+ A</STRONG><BR>y listo ;) </P>
+<P>&nbsp;</P>
+<H4><U>Forma 3 - Usando Arrays</U> </H4>
+<P>-Pendiente</P>
+<P>&nbsp;</P>
+<H4 align="center">CLEO 4</H4>
+<P>CLEO 4 fué diseñado para facilitarnos la vida... en vez de utilizar los       
+ métodos anteriores, éste nos ofrece un opcode: </P>
+<BLOCKQUOTE>0ADC: test_cheat <FONT color="#ff0000">"BLOWUP"</FONT> </BLOCKQUOTE>
+<P>asi de fácil....</P>
+<P>Conclusion:<BR>Utilizar el que mejor les convenga, si lo que desean es        
+ proteger sus scripts, entonces, entre más complejo sea, más difícil será que se 
+  los roben, ahora, si lo que desean es enseñar, entonces el método de           
+        <STRONG>CLEO4</STRONG> es la mejor opcion.</P>
+<P>Espero les sirva... ;)</P>
+<P>&nbsp;</P>
+<P><SPAN><SPAN>Espero te sea de tu ayuda. <BR>Pagina <STRONG>OFICIAL</STRONG> de 
+ donde salio la informacion:<BR><A href="http://j16d.blogspot.com/2015/02/spanish-creando-cheats-cleo-34.html"><U><FONT 
+color="#0066cc">http://j16d.blogspot.com/2015/02/spanish-creando-cheats-cleo-34.html</FONT></U></A><BR>creditos 
+ del tutorial, a su respectivo             
+ dueño.</SPAN></SPAN></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="Az.js"></SCRIPT></BODY></HTML>

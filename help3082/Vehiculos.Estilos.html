@@ -1,0 +1,594 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Estilo</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Para la mayoria de los vehiculos, solo se puede agregar un extra, por lo que  
+ tanto el segundo como el tercer parametro deben establecerse en la misma       
+variante deseada para evitar confusiones. Sin embargo, algunos vehiculos pueden  
+ tener 2&nbsp;extras diferentes activos</P>
+<PRE class="sb3">0506: set_vehicle_model #PONY next_variation 0 0</PRE>
+<P>La variante -1 es el modelo predeterminado sin extras.<BR>Las variantes 0 a 5 
+ son posibles variantes adicionales que volveran al valor predeterminado si el   
+ modelo no tiene tantos extras, y las variantes superiores a 5 bloquearan el     
+ juego:</P>
+<STYLE>
+td:nth-child(1),td:nth-child(2){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+</STYLE>
+ 
+<TABLE id="myTable">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT title="Solo Escribe" class="w-100" id="myInput" onkeyup="myFunction()" type="search" placeholder="Buscar..." value=""></TH>
+    <TH>ID</TH>
+    <TH>Cambios</TH>
+    <TH>0</TH>
+    <TH>1</TH>
+    <TH>2</TH>
+    <TH>3</TH>
+    <TH>4</TH>
+    <TH>5</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>#ambulan</TD>
+    <TD>416</TD>
+    <TD>Numeros: </TD>
+    <TD>37 </TD>
+    <TD>71</TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD></TR>
+  <TR>
+    <TD>#artict1</TD>
+    <TD>435</TD>
+    <TD>Side Ads:</TD>
+    <TD>Cok-o-Pops</TD>
+    <TD>Munky Juice</TD>
+    <TD>Hinterland</TD>
+    <TD>Zip</TD>
+    <TD>RS Haul</TD>
+    <TD>Ranch</TD></TR>
+  <TR>
+    <TD>#artict2</TD>
+    <TD>450</TD>
+    <TD>Contents:</TD>
+    <TD>Filled with<BR>gravel<BR>/coal<BR>/stone </TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD></TR>
+  <TR>
+    <TD>#bagboxb </TD>
+    <TD>607</TD>
+    <TD>Contents:</TD>
+    <TD colspan="3">Various distributions of loose                             
+                                                                                 
+         baggage</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#baggage</TD>
+    <TD>485</TD>
+    <TD>Rear Cargo Items:</TD>
+    <TD>Earmuffs</TD>
+    <TD>Small Case</TD>
+    <TD>Large Case</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#barracks</TD>
+    <TD>433</TD>
+    <TD>Bed Covering:</TD>
+    <TD>Opaque Fabric</TD>
+    <TD>Camo Netting</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#benson</TD>
+    <TD>499</TD>
+    <TD>Side Ads:</TD>
+    <TD>Shady Industries</TD>
+    <TD>LSD</TD>
+    <TD>The Uphill Gardener</TD>
+    <TD>Discount Furniture</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#bf400</TD>
+    <TD>581</TD>
+    <TD>Exhausts: <BR>Fairings <BR>(with                                       
+                                                                    
+    Windshields):</TD>
+    <TD>Single Type1<BR><BR><BR></TD>
+    <TD>Single Type2<BR><BR><BR></TD>
+    <TD><BR><BR><BR>Dual Type3</TD>
+    <TD><BR><BR><BR>Half-size</TD>
+    <TD><BR><BR><BR>Full-size</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#bfinject</TD>
+    <TD>424</TD>
+    <TD>Body:</TD>
+    <TD>Side Panels</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#bloodra</TD>
+    <TD>504</TD>
+    <TD>Numbers/ Roof Color:</TD>
+    <TD>328/ White</TD>
+    <TD>464/ Check</TD>
+    <TD>172/ Check</TD>
+    <TD>100/ White</TD>
+    <TD>284/ White</TD>
+    <TD>505/ Check</TD></TR>
+  <TR>
+    <TD>#bobcat</TD>
+    <TD>422</TD>
+    <TD>Bed Items:</TD>
+    <TD>Spare Tire</TD>
+    <TD>Sprunk Cans</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>#burrito</TD>
+    <TD>482</TD>
+    <TD>Roof Items:</TD>
+    <TD>Roof Lights + Spoiler</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#caddy</TD>
+    <TD>457</TD>
+    <TD>Rear Cargo<BR>Driver Side: <BR>Rear                                    
+                                                                         
+      Cargo<BR>Pass           Side:</TD>
+    <TD>Golfbag1<BR><BR></TD>
+    <TD>Satchel1<BR><BR></TD>
+    <TD>Golfbag2<BR><BR></TD>
+    <TD><BR><BR><BR>Satchel2</TD>
+    <TD><BR><BR><BR>Golfbag3</TD>
+    <TD><BR><BR><BR>Golfbag4</TD></TR>
+  <TR>
+    <TD>#camper</TD>
+    <TD>483</TD>
+    <TD>&nbsp;</TD>
+    <TD>Open Curtains &amp; Second Bench Seat</TD>
+    <TD>Open Roof Vent Closed Curtains Bed in Back                             
+                                                                                
+      Peace        Sign</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#cheetah</TD>
+    <TD>415</TD>
+    <TD>Side Mirrors:</TD>
+    <TD>Single, Placed High</TD>
+    <TD>Dual, Placed Normally</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#coach</TD>
+    <TD>437</TD>
+    <TD>Name on Side:</TD>
+    <TD>Big O Tours</TD>
+    <TD>Bikini Line</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#coastg</TD>
+    <TD>472</TD>
+    <TD>Various Items:</TD>
+    <TD>Items all Over,</TD>
+    <TD>Items Grouped in Back</TD>
+    <TD>Items all Over +2 Oars in Front</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#fcr900</TD>
+    <TD>521</TD>
+    <TD>Exhausts:<BR>Fairings<BR>(with  Windshields):</TD>
+    <TD>Single Type1<BR><BR><BR></TD>
+    <TD>Dual Type1<BR><BR><BR><BR></TD>
+    <TD>Dual Type2<BR><BR><BR><BR></TD>
+    <TD><BR><BR><BR>Half-size</TD>
+    <TD><BR><BR><BR>Full-size</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD height="24">#firetruk</TD>
+    <TD>407</TD>
+    <TD>Numbers:</TD>
+    <TD>64</TD>
+    <TD>16</TD>
+    <TD>47</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#flatbed</TD>
+    <TD>455</TD>
+    <TD>Cargo:</TD>
+    <TD>Crates in Front</TD>
+    <TD>Crates in center under Tarp</TD>
+    <TD>Two Sets of crates (Front and Back)</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#hotknife</TD>
+    <TD>434</TD>
+    <TD>&nbsp;</TD>
+    <TD>Partial Engine Cover</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#hotrina</TD>
+    <TD>502</TD>
+    <TD>Numbers:</TD>
+    <TD>96</TD>
+    <TD>67</TD>
+    <TD>73</TD>
+    <TD>52</TD>
+    <TD>45</TD>
+    <TD>14</TD></TR>
+  <TR>
+    <TD>#hotrinb</TD>
+    <TD>503</TD>
+    <TD>Numbers:</TD>
+    <TD>82</TD>
+    <TD>26</TD>
+    <TD>65</TD>
+    <TD>07</TD>
+    <TD>36</TD>
+    <TD>60</TD></TR>
+  <TR>
+    <TD>#kart</TD>
+    <TD>571</TD>
+    <TD>Body Panels:</TD>
+    <TD>Both Sides</TD>
+    <TD>Steering Column</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#launch</TD>
+    <TD>595</TD>
+    <TD>Roofs:</TD>
+    <TD>Over passenger section </TD>
+    <TD>Over driver section</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#marquis</TD>
+    <TD>484</TD>
+    <TD>&nbsp;</TD>
+    <TD>Windshield over cabin Entrance</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#mesa</TD>
+    <TD>500</TD>
+    <TD>&nbsp;</TD>
+    <TD>Roof Over Back</TD>
+    <TD>Roll Bar in Back</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#monstera</TD>
+    <TD>556</TD>
+    <TD>&nbsp;</TD>
+    <TD>Roof Spoiler</TD>
+    <TD>Roof Lights</TD>
+    <TD>Roll Bar with Lights</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#monsterb</TD>
+    <TD>557</TD>
+    <TD>&nbsp;</TD>
+    <TD>x</TD>
+    <TD>Roof Lights</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#mrwhoop</TD>
+    <TD>423</TD>
+    <TD>Rear Sign:</TD>
+    <TD>Cherry Popping Good,</TD>
+    <TD>Slow Children Ahead </TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#mule</TD>
+    <TD>414</TD>
+    <TD>Side Ads:</TD>
+    <TD>Toy Corner</TD>
+    <TD>Binco</TD>
+    <TD>Semi</TD>
+    <TD>Shafted Appliances</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#nrg500</TD>
+    <TD>522</TD>
+    <TD>Exhausts:<BR>Fairings<BR>(with  Windshields):</TD>
+    <TD>Single Pair1<BR><BR><BR><BR></TD>
+    <TD>Single Pair2<BR><BR><BR></TD>
+    <TD>Dual Pair2<BR><BR><BR><BR></TD>
+    <TD><BR><BR><BR>Smooth</TD>
+    <TD><BR><BR>With Side Cutouts</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#patriot</TD>
+    <TD>470</TD>
+    <TD>Cargo Area:</TD>
+    <TD>Low Cover</TD>
+    <TD>Roof/High Cover</TD>
+    <TD>Roll Bar</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#peren</TD>
+    <TD>404</TD>
+    <TD>&nbsp;</TD>
+    <TD>Roof Rack</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#picador</TD>
+    <TD>600</TD>
+    <TD>Items in Bed</TD>
+    <TD>Planks</TD>
+    <TD>Sprunk Cans</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#pony</TD>
+    <TD>413</TD>
+    <TD>&nbsp;</TD>
+    <TD>Sound System in Back</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#reefer</TD>
+    <TD>453</TD>
+    <TD>Items in Back:</TD>
+    <TD>Boxes of Fish</TD>
+    <TD>Bench</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#romero</TD>
+    <TD>442</TD>
+    <TD>Coffins:</TD>
+    <TD>Brown Style1</TD>
+    <TD>Black Style2</TD>
+    <TD>Brown Style3</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#rumpo</TD>
+    <TD>440</TD>
+    <TD>Side Ads:</TD>
+    <TD>Cok-o-Pops</TD>
+    <TD>Harry Plums</TD>
+    <TD>Dick Goblin's</TD>
+    <TD>Final Build</TD>
+    <TD>Transfender</TD>
+    <TD>Wheel Arch Angels</TD></TR>
+  <TR>
+    <TD>#sadler</TD>
+    <TD>543</TD>
+    <TD>Items in Bed</TD>
+    <TD>Two Propane Tanks &amp; Crate</TD>
+    <TD>Two Barrels</TD>
+    <TD>Sprunk Cans</TD>
+    <TD>Open Crates</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#sadlshit</TD>
+    <TD>605</TD>
+    <TD>Items in Bed</TD>
+    <TD>Two Propane Tanks &amp; Crate</TD>
+    <TD>Two Barrels</TD>
+    <TD>Sprunk Cans</TD>
+    <TD>Open Crates</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#securica</TD>
+    <TD>428</TD>
+    <TD>Side Logo:</TD>
+    <TD>Chuff</TD>
+    <TD>Lock&amp;Load</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#slamvan</TD>
+    <TD>535</TD>
+    <TD>Steering Wheel:</TD>
+    <TD>Normal</TD>
+    <TD>Chain</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#stallion</TD>
+    <TD>439</TD>
+    <TD>Roof:</TD>
+    <TD>Hardtop</TD>
+    <TD>Softtop (up)</TD>
+    <TD>Softtop (folded)</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#supergt</TD>
+    <TD>506</TD>
+    <TD>&nbsp;</TD>
+    <TD>Full Roof</TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD>
+    <TD>x </TD></TR>
+  <TR>
+    <TD>#swatvan</TD>
+    <TD>601</TD>
+    <TD>Numeros:</TD>
+    <TD>1</TD>
+    <TD>9</TD>
+    <TD>6</TD>
+    <TD>7</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#topfun</TD>
+    <TD>459</TD>
+    <TD>&nbsp;</TD>
+    <TD>Boxes of Toys in Back</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#tram</TD>
+    <TD>449</TD>
+    <TD>&nbsp;</TD>
+    <TD>?</TD>
+    <TD>?</TD>
+    <TD>?</TD>
+    <TD>?</TD>
+    <TD>?</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#trash</TD>
+    <TD>408</TD>
+    <TD>&nbsp;</TD>
+    <TD>Some bits of trash sticking out of the back</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#utility</TD>
+    <TD>552</TD>
+    <TD>&nbsp;</TD>
+    <TD colspan="2">Cones, Barrel in back, Cone lying on                       
+                                                                                 
+                                                 <BR>passenger       |           
+        driver                            <BR>side            rail</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#walton</TD>
+    <TD>478</TD>
+    <TD>Items in Bed</TD>
+    <TD>Two Propane Tanks</TD>
+    <TD>Open Crates</TD>
+    <TD>Propane Tank and Barrel</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#windsor</TD>
+    <TD>555</TD>
+    <TD>&nbsp;</TD>
+    <TD>Roof</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD>#yankee</TD>
+    <TD>456</TD>
+    <TD>Side Ads:</TD>
+    <TD>Big Gas </TD>
+    <TD>RS Haul</TD>
+    <TD>Star Balls</TD>
+    <TD>Flower Power</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR>
+  <TR>
+    <TD>#zr350 </TD>
+    <TD>477</TD>
+    <TD>&nbsp;</TD>
+    <TD>Rear Spoiler</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD>
+    <TD>x</TD></TR></TBODY></TABLE><BR>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT> 
+</DIV></DIV></DIV></BODY></HTML>

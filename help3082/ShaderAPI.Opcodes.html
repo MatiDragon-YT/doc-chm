@@ -1,0 +1,46 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>Opcodes</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P class="light">Encuentra toda la informacion que nesecites aqui.</P>
+<HR>
+
+<PRE>Este es el significado de estas cosas:
+
+<B class="blue-text">%~d%</B> = Cualquier cosa
+<B class="teal-text">%~p%</B> = Punto de etiqueta
+<B class="green-text">%~o%</B> = Modelos de objetos de todo tipo
+<B class="yellow-text">%~g%</B> = Referencia GXT
+<B class="orange-text">%~x%</B> = Script Externo
+<B class="red-text">%~s%</B> = Ubicacion de archivo/carpeta
+<B class="pink-text">%~h%</B> = Indefinido
+
+<B class="grey-text">=n   = Cantidad de parametros</B>
+</PRE></DIV>
+<TABLE id="myTable">
+<THEAD>
+<TR class="header">
+<TH><INPUT class="w-100" id="myInput" title="Solo Escribe" onkeyup="myFunction()" type="search" placeholder="Buscar..."></TH></TR>
+</THEAD>
+<TBODY>
+<TR><TD><b>0DF0=2, %2d% = load_shader_from_file %1s%</b></TD></TR>
+<TR><TD><b>0DF1=6,draw_shader %1d% technique %2s% at %3d% %4d% %5d% %6d%</b></TD></TR>
+<TR><TD><b>0DF2=3,set_shader %1d% float_param %2s% to %3d%</b></TD></TR>
+<TR><TD><b>0DF3=3,set_shader %1d% int_param %2s% to %3d%</b></TD></TR>
+<TR><TD><b>0DF4=3,set_shader %1d% bool_param %2s% to %3d%</b></TD></TR>
+<TR><TD><b>0DF5=6,set_shader %1d% vector_param %2s% to %3d% %4d% %5d% %6d%</b></TD></TR>
+<TR><TD><b>0DF6=3,set_shader %1d% matrix_param %2s% to %3d%</b></TD></TR>
+<TR><TD><b>0DF7=3,set_shader %1d% dx_texture_param %2s% to %3s%</b></TD></TR>
+<TR><TD><b>0DF8=2,load_dx_texture %1s% from_file %2s%</b></TD></TR>
+<TR><TD><b>0DF9=1,unload_dx_texture %1s%</b></TD></TR>
+<TR><TD><b>0DFA=6,draw_shader %1d% technique %2s% at %3d% %4d% %5d% %6d% as_hud_element</b></TD></TR>
+<TR><TD><b>0DFB=3,set_shader %1d% rw_texture_param %2s% to %3h%</b></TD></TR>
+</TBODY></TABLE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</DIV></DIV></BODY></HTML>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Iconos del Radar</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Asi como a veces podemos ver iconos en el mapa y en el rada, como <IMG src="pic/icon5.gif"> <IMG src="pic/icon15.gif"> <IMG src="pic/icon25.gif">, tambien     podremos crearlos&nbsp;por nuestra propia     
+ cuenta,&nbsp;y&nbsp;para eso     hay&nbsp;cuatro Opcodes con los que los vamos  
+  a  poder colocar:</P>
+<P>Tres son para crear los sin una esfera:</P>
+<P>Crear marcador de icono sin esfera.   
+<PRE class="sb3">04CE: $marker01 = create_icon_marker_without_sphere 12 at 2447.3643 -1974.4963 12.5469</PRE>
+<P></P>
+<P>Crear marcador de radar activo con el icono.   
+<PRE class="sb3">0570: $marker02 = create_asset_radar_marker_with_icon 36 at 1837.3643 -1974.4963 12.5469</PRE>
+<P>Crear marcador.  
+<PRE class="sb3">02A8: $marker03 = create_marker 23 at 658.0068 -1866.3127 4.4537</PRE>02a8 
+      SIEMPRE  estara visible en el radar   
+<P></P>
+<P>Y para crear lo con una esfera:</P>
+<P>crear marcador de icono y esfera.  
+<PRE class="sb3">04CE: $marker01 = create_icon_marker_without_sphere 12 at 2447.3643 -1974.4963 12.5469</PRE><BR> 
+ Al     igual que 02a8, este es muy  bueno porque   SIEMPRE  estara visible en  
+el     radar,  donde quiera que vayas lo  veras.   
+<P></P>
+<P>Pero ten en cuenta que es solo una esfera (solo el circulo rojo), no verifica 
+ si el jugador esta cerca, solo el marcador de radar y la esfera. Para comprobar 
+ si el jugador esta cerca, use los codigos de operacion que se indican en las    
+ esferas superiores.</P>
+<P>Y puedes destruirlos con:  
+<PRE class="sb3">0164: disable_marker $markerxx</PRE>
+<h4>A continuación</h4>
+<ul>
+<LI><A href="Iconos.IDs.html">IDsr</A></LI></ul>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Barras de Estados</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Puedes encontrar barras como medidores de estados como en las misiones "Drive-By" y "supply-lines"<br>
+Estas se muestran con valores que van del 0 al 100, para mostrar de sierta forma un porcentajes.</P>
+<PRE class=sb3>
+03C4: $health2 = create_counter_type 1 with_GXT 'SWE4_08' // CAR HEALTH
+</PRE>
+<h6>Parametros</h6>
+<ul>
+<li><code>$health2</code> - variable para almacenar y manipular (unicamente del tipo <a href="Codificacion.Variables.html">global</a>)</li>
+<li><code>1</code> - Forma para mostrar el contador, con <code>0</code> en numeros, y con <code>1</code> en barra de porcentaje</li>
+<li><code>'SWE4_08'</code> - ID del <a href="SA.GXT.html">texto GXT</a></li>
+</ul>
+<div class=inf>
+Estos se crean unicamente con variables globales, por que estos no desaparecen hasta que los destruyas con el opcodes <code>0151</code>
+<pre class=sb3>
+03C4: $counter = create_type 1 with_GXT 'NULL'
+$counter = 100
+repeat
+    wait 50 ms
+    $counter -= 1
+until  $counter < 0
+0151: remove_status_text $health2
+</pre>
+</div>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

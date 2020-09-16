@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Subtitulos</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<DIV class="row">
+<DIV class="col-12 col-md-6">
+<P>El texto blanco a lo largo de la parte inferior de la pantalla se    
+puede muestra con dos codigos de operacion.<BR>Existe una diferencia   
+ entre los   codigos de operacion de alta prioridad y de baja     
+prioridad. La  alta prioridad reemplazara a la baja     
+prioridad. </P>
+<P>Por ejemplo:</P>
+<pre class=sb3>00BB: show_text_lowpriority GXT 'CJDIAG01' time 1000  flag 1 //necesita un GXT
+00BC: show_text_highpriority GXT 'SJDIAG01' time 1000 flag 2 //necesita un GXT
+</pre></DIV>
+<DIV class="col-12 col-md-6">
+<img src="gtx-subt.jpg" class=w-100>
+</DIV></DIV>
+Asi que aqui se mostrara 'CJDIAG01' 
+por primera vez, pero despues de 1 segundo sera   reemplazado por 
+'SJDIAG01'.</P>
+<P>Puedes borrar los textos con los siguientes  codigos  de operacion:</P>
+<pre class=sb3>00BE: text_clear_all
+03D5: remove_text 'CJDIAG01'</pre></DIV></DIV></DIV></BODY>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT></HTML>

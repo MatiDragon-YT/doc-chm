@@ -1,0 +1,416 @@
+<!DOCTYPE HTML><HTML><HEAD><TITLE>SAMPFUNCS</TITLE>  
+<META charset="ISO-8859-1">  
+<META http-equiv="X-UA-Compatible" content="IE=edge">  
+<META name="viewport" content="width=device-width, initial-scale=1">  <LINK 
+href="bootstrap.css" rel="stylesheet" type="text/css"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container">
+<DIV class="row">
+<DIV class="col-12">
+<P class="light">Encuentra toda la informacion que nesecites aqui.</P>
+<HR>
+
+<PRE>Este es el significado de estas cosas:
+
+<B class="blue-text">%~d%</B> = Cualquier cosa
+<B class="teal-text">%~p%</B> = Punto de etiqueta
+<B class="green-text">%~o%</B> = Modelos de objetos de todo tipo
+<B class="yellow-text">%~g%</B> = Referencia GXT
+<B class="orange-text">%~x%</B> = Script Externo
+<B class="red-text">%~s%</B> = Ubicacion de archivo/carpeta
+<B class="pink-text">%~h%</B> = Indefinido
+
+<B class="grey-text">=n   = Cantidad de parametros</B>
+</PRE></DIV>
+<TABLE id="myTable">
+<THEAD>
+<TR class="header">
+<TH><INPUT class="w-100" id="myInput" title="Solo Escribe" onkeyup="myFunction()" type="search" placeholder="Buscar..."></TH></TR>
+</THEAD>
+<TBODY>
+<TR><TD><b>0AF6=0,samp spawn_player</b></TD></TR>
+<TR><TD><b>0AF7=1,samp %1d% = get_base</b></TD></TR>
+<TR><TD><b>0AF8=-1,samp add_message_to_chat %1s% color %2d%</b></TD></TR>
+<TR><TD><b>0AF9=-1,samp say_msg %1s%</b></TD></TR>
+<TR><TD><b>0AFA=0, is_samp_available</b></TD></TR>
+<TR><TD><b>0AFB=1,samp request_class %1d%</b></TD></TR>
+<TR><TD><b>0AFC=4,samp send_scm_event %1d% event_id %2d% param_1 %3d% param_2 %4d%</b></TD></TR>
+<TR><TD><b>0AFD=1,samp set_special_action %1d%</b></TD></TR>
+<TR><TD><b>0AFE=2,samp send_death_by_player %1d% with_reason %2d%</b></TD></TR>
+<TR><TD><b>0AFF=2,samp %2d% = car_handle_by_samp_vehicle_id %1d%</b></TD></TR>
+<TR><TD><b>0B20=2,samp %2d% = actor_handle_by_samp_player_id %1d%</b></TD></TR>
+<TR><TD><b>0B21=0,	samp is_chat_opened</b></TD></TR>
+<TR><TD><b>0B22=2,samp set_sendrate %1d% to %2d%</b></TD></TR>
+<TR><TD><b>0B25=2,samp %2d% = get_player_health %1d%</b></TD></TR>
+<TR><TD><b>0B26=2,samp %2d% = get_player_armor %1d%</b></TD></TR>
+<TR><TD><b>0B27=1,samp set_gamestate %1d%</b></TD></TR>
+<TR><TD><b>0B28=1,samp disconnect_with_reason %1d%</b></TD></TR>
+<TR><TD><b>0B29=1,samp set_local_name %1s%</b></TD></TR>
+<TR><TD><b>0B23=1, samp is_player_connected %1d%</b></TD></TR>
+<TR><TD><b>0B24=2,samp %2d% = get_player_struct_ptr %1d%</b></TD></TR>
+<TR><TD><b>0B2A=2,samp %2d% = get_player_ping %1d%</b></TD></TR>
+<TR><TD><b>0B2B=2,samp %2d% = get_player_id_by_actor_handle %1d%</b></TD></TR>
+<TR><TD><b>0B2C=2,samp %2d% = get_vehicle_id_by_car_handle %1d%</b></TD></TR>
+<TR><TD><b>0B2D=3,write_samp_memory offset %1d% value %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0B2E=3,%3d% = read_samp_memory offset %1d% size %2d%</b></TD></TR>
+<TR><TD><b>0B2F=4,samp get_streamed_out_player_pos %1d% to %2d% %3d% %4d%</b></TD></TR>
+<TR><TD><b>0B30=2,samp send_enter_vehicle %1d% as_passenger %2d%</b></TD></TR>
+<TR><TD><b>0B31=1,samp send_exit_vehicle %1d%</b></TD></TR>
+<TR><TD><b>0B32=0,samp send_spawn</b></TD></TR>
+<TR><TD><b>0B33=5,samp send_damage_vehicle %1d% panel %2d% doors %3d% lights %4d% tires %5d%</b></TD></TR>
+<TR><TD><b>0B34=2,samp register_client_command %1s% to_label %2p%</b></TD></TR>
+<TR><TD><b>0B35=1,samp %1d% = get_last_command_params</b></TD></TR>
+<TR><TD><b>0B36=2,samp %2d% = get_player_nickname %1d%</b></TD></TR>
+<TR><TD><b>0B37=2,samp %2d% = get_player_color %1d%</b></TD></TR>
+<TR><TD><b>0B38=2,samp connect_to_server %1s% port %2d%</b></TD></TR>
+<TR><TD><b>0B39=2,samp get_current_server_address %1d% port %2d%</b></TD></TR>
+<TR><TD><b>0B3A=1,samp %1s% = get_current_server_name</b></TD></TR>
+<TR><TD><b>0B3B=6,samp show_dialog id %1d% caption %2s% text %3s% button_1 %4s% button_2 %5s% style %6d%</b></TD></TR>
+<TR><TD><b>0B3C=4, samp is_dialog_responded id %1d% button %2d% list_item %3d% input_text %4s%</b></TD></TR>
+<TR><TD><b>0B43=0,samp cmd_ret</b></TD></TR>
+<TR><TD><b>0B44=10,samp %10d% = create_3d_text %1s% color %2d% position %3d% %4d% %5d% view_distance %6d% show_behind_walls %7d% attached_to_player %8d% attached_to_vehicle %9d%</b></TD></TR>
+<TR><TD><b>0B45=1,samp destroy_3d_text %1d%</b></TD></TR>
+<TR><TD><b>0B46=1,	samp 3d_text %1d% defined</b></TD></TR>
+<TR><TD><b>0B47=1,samp close_current_dialog_with_button %1d%</b></TD></TR>
+<TR><TD><b>0B48=1,	samp %1d% = get_current_dialog_list_item</b></TD></TR>
+<TR><TD><b>0B49=1,samp set_current_dialog_list_item %1d%</b></TD></TR>
+<TR><TD><b>0B4A=1,samp %1d% = get_current_dialog_editbox_text</b></TD></TR>
+<TR><TD><b>0B4B=1,samp set_current_dialog_editbox_text %1d%</b></TD></TR>
+<TR><TD><b>0B4C=1, samp is_dialog_active %1d%</b></TD></TR>
+<TR><TD><b>0B4D=1,samp %1d% = get_current_dialog_type</b></TD></TR>
+<TR><TD><b>0B4E=1,samp %1d% = get_current_dialog_id</b></TD></TR>
+<TR><TD><b>0B4F=1,samp %1d% = get_gamestate</b></TD></TR>
+<TR><TD><b>0B50=2,samp %2d% = object_handle_by_id %1d%</b></TD></TR>
+<TR><TD><b>0B51=2,samp %2d% = pickup_handle_by_id %1d%</b></TD></TR>
+<TR><TD><b>0B52=2,samp %2d% = object_id_by_handle %1d%</b></TD></TR>
+<TR><TD><b>0B53=2,samp %2d% = pickup_id_by_handle %1d%</b></TD></TR>
+<TR><TD><b>0B54=1,samp %1d% = listbox_items_count</b></TD></TR>
+<TR><TD><b>0B55=5,convert_3D_coords %1d% %2d% %3d% to_screen %4d% %5d%</b></TD></TR>
+<TR><TD><b>0B56=2,set_game_key %1d% state %2d%</b></TD></TR>
+<TR><TD><b>0B57=2,samp %2d% = player %1d% animation_id</b></TD></TR>
+<TR><TD><b>0B58=3,samp get_animation_name_to %2d% file_to %3d% by_id %1d%</b></TD></TR>
+<TR><TD><b>0B59=3,samp %3d% = animation_id_by_name %1d% file %2d%</b></TD></TR>
+<TR><TD><b>0B5A=2,get_screen_resolution %1d% %2d%</b></TD></TR>
+<TR><TD><b>0B5B=2,samp get_listbox_item %1d% text_to %2d%</b></TD></TR>
+<TR><TD><b>0B5D=1,samp toggle_cursor %1d%</b></TD></TR>
+<TR><TD><b>0B5E=2,get_cursor_pos %1d% %2d%</b></TD></TR>
+<TR><TD><b>0B5F=4,convert_window_screen_coords %1d% %2d% to_game_screen_coords %3d% %4d%</b></TD></TR>
+<TR><TD><b>0B60=4,convert_game_screen_coords %1d% %2d% to_window_screen_coords %3d% %4d%</b></TD></TR>
+<TR><TD><b>0B5C=1, samp is_player %1d% paused</b></TD></TR>
+<TR><TD><b>0B61=0, samp is_local_player_spawned</b></TD></TR>
+<TR><TD><b>0B62=2,samp %2d% = player %1d% special_action</b></TD></TR>
+<TR><TD><b>0B63=1,samp unregister_client_command %1d%</b></TD></TR>
+<TR><TD><b>0B64=1, samp is_player %1d% npc</b></TD></TR>
+<TR><TD><b>0B65=2,samp %2d% = player %1d% score</b></TD></TR>
+<TR><TD><b>0B8C=0,	samp is_cursor_active</b></TD></TR>
+<TR><TD><b>0B8D=1,samp set_cursor_mode %1d%</b></TD></TR>
+<TR><TD><b>0B8E=1,samp %1d% = get_cursor_mode</b></TD></TR>
+<TR><TD><b>0B74=5,samp set_chat_string %1d% text %2d% prefix %3d% color %4d% prefix_color %5d%</b></TD></TR>
+<TR><TD><b>0B75=5,samp get_chat_string %1d% text_to %2d% prefix_to %3d% color_to %4d% prefix_color_to %5d%</b></TD></TR>
+<TR><TD><b>0B8F=6,convert_screen_coords %1d% %2d% depth %3d% to_world_3d %4d% %5d% %6d%</b></TD></TR>
+<TR><TD><b>0B76=1,samp set_chat_input_text %1d%</b></TD></TR>
+<TR><TD><b>0B77=1,samp get_chat_input_text_to %1d%</b></TD></TR>
+<TR><TD><b>0B78=-1,log %1s%</b></TD></TR>
+<TR><TD><b>0B79=1,samp set_chat_input_enabled %1d%</b></TD></TR>
+<TR><TD><b>0B3D=1,raknet %1d% = new_bit_stream</b></TD></TR>
+<TR><TD><b>0B3E=1,raknet delete_bit_stream %1d%</b></TD></TR>
+<TR><TD><b>0B3F=1,raknet reset_bit_stream %1d%</b></TD></TR>
+<TR><TD><b>0B40=4,raknet bit_stream %1d% write %2d% type %3d% size %4d%</b></TD></TR>
+<TR><TD><b>0B41=6,raknet send_rpc %1d% bit_stream %2d% priority %3d% reliability %4d% ordering_channel %5d% shift_timestamp %6d%</b></TD></TR>
+<TR><TD><b>0B42=4,raknet send bit_stream %1d% priority %2d% reliability %3d% ordering_channel %4d%</b></TD></TR>
+<TR><TD><b>0B8A=2,raknet send_rpc %1d% bit_stream %2d%</b></TD></TR>
+<TR><TD><b>0B8B=1,raknet send bit_stream %1d%</b></TD></TR>
+<TR><TD><b>0B66=5,render argb %1d% to_a %2d% r %3d% g %4d% b %5d%</b></TD></TR>
+<TR><TD><b>0B67=5,render a %1d% r %2d% g %3d% b %4d% to_argb %5d%</b></TD></TR>
+<TR><TD><b>0B68=6,render draw_line_point1 %1d% %2d% point2 %3d% %4d% width %5d% color %6d%</b></TD></TR>
+<TR><TD><b>0B69=5,render draw_box_pos %1d% %2d% size %3d% %4d% color %5d%</b></TD></TR>
+<TR><TD><b>0B6A=7,render draw_box_with_border_pos %1d% %2d% size %3d% %4d% color %5d% border_size %6d% border_color %7d%</b></TD></TR>
+<TR><TD><b>0B6B=3,render %3d% = font %1d% draw_text %2d% length</b></TD></TR>
+<TR><TD><b>0B6C=2,render %2d% = font %1d% draw_height</b></TD></TR>
+<TR><TD><b>0B6D=4,render %4d% = create_font %1d% height %2d% flags %3d%</b></TD></TR>
+<TR><TD><b>0B6E=1,render release_font %1d%</b></TD></TR>
+<TR><TD><b>0B6F=5,render font %1d% draw_text %2d% pos %3d% %4d% color %5d%</b></TD></TR>
+<TR><TD><b>0B70=7,render draw_polygon_pos %1d% %2d% size %3d% %4d% corners %5d% rotation %6d% color %7d%</b></TD></TR>
+<TR><TD><b>0B71=2,render %2d% = load_texture_from_file %1d%</b></TD></TR>
+<TR><TD><b>0B72=1,render release_texture %1d%</b></TD></TR>
+<TR><TD><b>0B73=7,render draw_texture %1d% pos %2d% %3d% size %4d% %5d% rotation %6d% color %7d%</b></TD></TR>
+<TR><TD><b>0B80=2,dialog %2d% = create %1d%</b></TD></TR>
+<TR><TD><b>0B81=3,dialog %1d% pop_event_to %2d% control_id_to %3d%</b></TD></TR>
+<TR><TD><b>0B82=7,dialog %1d% add_button id %2d% text %3d% pos_XY %4d% %5d% size %6d% %7d%</b></TD></TR>
+<TR><TD><b>0B83=7,dialog %1d% add_checkbox id %2d% text %3d% pos_XY %4d% %5d% size %6d% %7d%</b></TD></TR>
+<TR><TD><b>0B84=5,dialog %1d% set_pos_XY %2d% %3d% size %4d% %5d%</b></TD></TR>
+<TR><TD><b>0B85=5,dialog %1d% get_position_to %2d% %3d% size_to %4d% %5d%</b></TD></TR>
+<TR><TD><b>0B86=2,dialog %1d% set_visible %2d%</b></TD></TR>
+<TR><TD><b>0B87=1, dialog %1d% is_visible</b></TD></TR>
+<TR><TD><b>0B88=7,dialog %1d% add_editbox id %2d% text %3d% pos_XY %4d% %5d% size %6d% %7d%</b></TD></TR>
+<TR><TD><b>0B89=3,dialog %1d% get_control %2d% text_to %3d%</b></TD></TR>
+<TR><TD><b>0B90=3,dialog %1d% control %2d% set_visible %3d%</b></TD></TR>
+<TR><TD><b>0B91=7,dialog %1d% add_static id %2d% text %3d% pos_XY %4d% %5d% size %6d% %7d%</b></TD></TR>
+<TR><TD><b>0B92=2, dialog %1d% checkbox %2d% is_checked</b></TD></TR>
+<TR><TD><b>0B93=2,dialog %1d% set_background_color %2d%</b></TD></TR>
+<TR><TD><b>0B94=3,dialog %1d% set_control %2d% text %3d%</b></TD></TR>
+<TR><TD><b>0B95=2, dialog %1d% control %2d% is_visible</b></TD></TR>
+<TR><TD><b>0B96=7,dialog %1d% add_slider id %2d% pos_XY %3d% %4d% size %5d% %6d% max %7d%</b></TD></TR>
+<TR><TD><b>0B97=3,dialog %1d% slider %2d% get_value_to %3d%</b></TD></TR>
+<TR><TD><b>0B98=3,dialog %1d% slider %2d% set_value_to %3d%</b></TD></TR>
+<TR><TD><b>0B99=6,dialog %1d% add_listbox id %2d% pos_XY %3d% %4d% size %5d% %6d%</b></TD></TR>
+<TR><TD><b>0B9A=5,dialog %1d% listbox %2d% insert_element %3d% with_data %4d% after %5d%</b></TD></TR>
+<TR><TD><b>0B9B=4,dialog %1d% listbox %2d% selected_element_to %3d% elements_count_to %4d%</b></TD></TR>
+<TR><TD><b>0B9C=3,dialog %1d% listbox %2d% delete_element %3d%</b></TD></TR>
+<TR><TD><b>0B9D=5,dialog %1d% listbox %2d% element %3d% store_text_to %4d% data_to %5d%</b></TD></TR>
+<TR><TD><b>0B9E=3,dialog %1d% checkbox %2d% set_checked %3d%</b></TD></TR>
+<TR><TD><b>0B9F=2,dialog %1d% enable_caption %2d%</b></TD></TR>
+<TR><TD><b>0BA0=1, dialog %1d% is_caption_enabled</b></TD></TR>
+<TR><TD><b>0BA1=2,dialog %1d% set_minimized %2d%</b></TD></TR>
+<TR><TD><b>0BA2=1, dialog %1d% is_minimized</b></TD></TR>
+<TR><TD><b>0BA3=2,dialog %1d% control %2d% free</b></TD></TR>
+<TR><TD><b>0BA4=1,dialog %1d% free</b></TD></TR>
+<TR><TD><b>0BA5=2,dialog %1d% set_focus_on_control %2d%</b></TD></TR>
+<TR><TD><b>0BA6=4,dialog %1d% set_control %2d% size_XY %3d% %4d%</b></TD></TR>
+<TR><TD><b>0BA7=4,dialog %1d% get_control %2d% size_to %3d% %4d%</b></TD></TR>
+<TR><TD><b>0BA8=4,dialog %1d% set_control %2d% pos_XY %3d% %4d%</b></TD></TR>
+<TR><TD><b>0BA9=4,dialog %1d% get_control %2d% pos_to %3d% %4d%</b></TD></TR>
+<TR><TD><b>0BAA=3,dialog %1d% set_checkbox %2d% color %3d%</b></TD></TR>
+<TR><TD><b>0BAB=1,	dialog %1d% is_exists</b></TD></TR>
+<TR><TD><b>0C00=2,math %2d% = abs %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C01=2,math %2d% = radian_to_angle %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C02=2,math %2d% = angle_to_radian %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C03=2,math %2d% = sine %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C04=2,math %2d% = arcsine %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C05=2,math %2d% = cosine %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C06=2,math %2d% = arccosine %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C07=2,math %2d% = tangent %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C08=2,math %2d% = arctangent %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C09=3,math %3d% = power %1d% %2d% // (float)</b></TD></TR>
+<TR><TD><b>0C0A=2,math %2d% = ceil %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C0B=2,math %2d% = floor %1d% // (float)</b></TD></TR>
+<TR><TD><b>0C0C=4,%4d% = struct %1d% offset %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C0D=4,struct %1d% offset %2d% size %3d% = %4d%</b></TD></TR>
+<TR><TD><b>0C0E=3,%3d% = array %1d% element %2d%</b></TD></TR>
+<TR><TD><b>0C0F=3,array %1d% element %2d% = %3d%</b></TD></TR>
+<TR><TD><b>0C10=3,memcpy destination %1d% source %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C11=3,memset destination %1d% value %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C12=3,memcmp buffer1 %1d% buffer2 %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C13=2,strcpy destination %1d% source %2d%</b></TD></TR>
+<TR><TD><b>0C14=2,strcmp string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C15=2,strcat destination %1d% source %2d%</b></TD></TR>
+<TR><TD><b>0C16=3,%3d% = strtok string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C17=2,%2d% = strlen %1d%</b></TD></TR>
+<TR><TD><b>0C18=3,%3d% = strstr string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C19=3,%3d% = strcspn string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C1A=2,%2d% = atoi %1d%</b></TD></TR>
+<TR><TD><b>0C1B=2,%2d% = atof %1d%</b></TD></TR>
+<TR><TD><b>0C1C=3,%3d% = itoa %1d% radix %2d%</b></TD></TR>
+<TR><TD><b>0C1D=4,%4d% = array %1d% element %2d% el_size %3d%</b></TD></TR>
+<TR><TD><b>0C1E=4,array %1d% element %2d% el_size %3d% = %4d%</b></TD></TR>
+<TR><TD><b>0C1F=4,%4d% = string_array %1d% element %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C20=4,string_array %1d% element %2d% size %3d% = %4d%</b></TD></TR>
+<TR><TD><b>0C21=2,stricmp string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C60=4,set_global_var %1d% access_for_thread %2d% read %3d% write %4d%</b></TD></TR>
+<TR><TD><b>0C61=4,get_global_var %1d% access_for_thread %2d% read_to %3d% write_to %4d%</b></TD></TR>
+<TR><TD><b>1337=1,make_script_private %1d%</b></TD></TR>
+<TR><TD><b>0B7A=1,samp %1d% = get_rakclient_interface</b></TD></TR>
+<TR><TD><b>0B7B=1,samp %1d% = get_rakpeer</b></TD></TR>
+<TR><TD><b>0B7C=2,samp %2d% = get_rakclient_func_by_index %1d%</b></TD></TR>
+<TR><TD><b>0B7D=2,samp %2d% = get_rpc_func_by_index %1d%</b></TD></TR>
+<TR><TD><b>0B7E=2,samp %2d% = get_rpc_node_by_index %1d%</b></TD></TR>
+<TR><TD><b>0B7F=1,samp %1d% = get_samp_info_ptr</b></TD></TR>
+<TR><TD><b>0BAC=1,samp %1d% = get_server_settings_ptr</b></TD></TR>
+<TR><TD><b>0BAD=1,samp %1d% = get_samp_pools_ptr</b></TD></TR>
+<TR><TD><b>0BAE=1,samp %1d% = get_chat_info_ptr</b></TD></TR>
+<TR><TD><b>0BAF=1,samp %1d% = get_input_info_ptr</b></TD></TR>
+<TR><TD><b>0BB0=1,samp %1d% = get_dialog_info_ptr</b></TD></TR>
+<TR><TD><b>0BB1=1,samp %1d% = get_kill_info_ptr</b></TD></TR>
+<TR><TD><b>0BB2=1,samp %1d% = get_misc_info_ptr</b></TD></TR>
+<TR><TD><b>0BB3=1,samp %1d% = get_textdraw_pool_ptr</b></TD></TR>
+<TR><TD><b>0BB4=1,samp %1d% = get_object_pool_ptr</b></TD></TR>
+<TR><TD><b>0BB5=1,samp %1d% = get_gangzone_pool_ptr</b></TD></TR>
+<TR><TD><b>0BB6=1,samp %1d% = get_textlabel_pool_ptr</b></TD></TR>
+<TR><TD><b>0BB7=1,samp %1d% = get_player_pool_ptr</b></TD></TR>
+<TR><TD><b>0BB8=1,samp %1d% = get_vehicle_pool_ptr</b></TD></TR>
+<TR><TD><b>0BB9=1,samp %1d% = get_pickup_pool_ptr</b></TD></TR>
+<TR><TD><b>0BBA=2,samp store_player %1d% onfoot_data %2d%</b></TD></TR>
+<TR><TD><b>0BBB=2,samp store_player %1d% incar_data %2d%</b></TD></TR>
+<TR><TD><b>0BBC=2,samp store_player %1d% passenger_data %2d%</b></TD></TR>
+<TR><TD><b>0BBD=2,samp store_player %1d% trailer_data %2d%</b></TD></TR>
+<TR><TD><b>0BBE=2,samp store_player %1d% aim_data %2d%</b></TD></TR>
+<TR><TD><b>0BBF=1,samp send_rcon_command %1d%</b></TD></TR>
+<TR><TD><b>0BC0=1,samp send_onfoot_data %1d%</b></TD></TR>
+<TR><TD><b>0BC1=1,samp send_incar_data %1d%</b></TD></TR>
+<TR><TD><b>0BC2=1,samp send_passenger_data %1d%</b></TD></TR>
+<TR><TD><b>0BC3=1,samp send_aim_data %1d%</b></TD></TR>
+<TR><TD><b>0BC4=1,samp send_bullet_data %1d%</b></TD></TR>
+<TR><TD><b>0BC5=1,samp send_trailer_data %1d%</b></TD></TR>
+<TR><TD><b>0BC6=1,samp send_unoccupied_data %1d%</b></TD></TR>
+<TR><TD><b>0BC7=1,samp send_spectator_data %1d%</b></TD></TR>
+<TR><TD><b>0BC8=2,samp send_click_player %1d% source %2d%</b></TD></TR>
+<TR><TD><b>0BC9=4,samp send_dialog_response dialog %1d% button %2d% listitem %3d% input %4d%</b></TD></TR>
+<TR><TD><b>0BCA=1,samp send_click_textdraw %1d%</b></TD></TR>
+<TR><TD><b>0BCB=4,samp send_give_damage playerid %1d% damage %2d% weapon %3d% bodypart %4d%</b></TD></TR>
+<TR><TD><b>0BCC=4,samp send_take_damage issuerid %1d% damage %2d% weapon %3d% bodypart %4d%</b></TD></TR>
+<TR><TD><b>0BCD=9,samp send_edit_object playerobject %1d% object %2d% response %3d% pos %4d% %5d% %6d% rotation %7d% %8d% %9d%</b></TD></TR>
+<TR><TD><b>0BCE=13,samp send_edit_attached_object response %1d% index %2d% model %3d% bone %4d% offset %5d% %6d% %7d% rot %8d% %9d% %10d% scale %11d% %12d% %13d%</b></TD></TR>
+<TR><TD><b>0BCF=1,samp send_interior_change %1d%</b></TD></TR>
+<TR><TD><b>0BD0=0,samp send_request_spawn</b></TD></TR>
+<TR><TD><b>0BD1=1,samp send_picked_up_pickup %1d%</b></TD></TR>
+<TR><TD><b>0BD2=1,samp send_menu_select_row %1d%</b></TD></TR>
+<TR><TD><b>0BD3=0,samp send_menu_quit</b></TD></TR>
+<TR><TD><b>0BD4=1,samp send_vehicle_destroyed %1d%</b></TD></TR>
+<TR><TD><b>0BD5=0, samp is_scoreboard_opened</b></TD></TR>
+<TR><TD><b>0BD6=1,samp enable_scoreboard %1d%</b></TD></TR>
+<TR><TD><b>0BD7=1,samp get_dialog_text %1d%</b></TD></TR>
+<TR><TD><b>0BD8=1,samp get_dialog_caption %1d%</b></TD></TR>
+<TR><TD><b>0BD9=1,samp set_dialog_clientside %1d%</b></TD></TR>
+<TR><TD><b>0BDA=0, samp is_dialog_clientside</b></TD></TR>
+<TR><TD><b>0BDB=0, samp is_chat_visible</b></TD></TR>
+<TR><TD><b>0BDC=1,samp %1d% = get_chat_display_mode</b></TD></TR>
+<TR><TD><b>0BDD=1,samp set_chat_display_mode %1d%</b></TD></TR>
+<TR><TD><b>0BDE=1,pause_thread %1d%</b></TD></TR>
+<TR><TD><b>0BDF=1,resume_thread %1d%</b></TD></TR>
+<TR><TD><b>0BE0=1,raknet hook_ret %1d%</b></TD></TR>
+<TR><TD><b>0BE1=1,raknet setup_outcoming_rpc_hook %1d%</b></TD></TR>
+<TR><TD><b>0BE2=1,raknet setup_outcoming_packet_hook %1d%</b></TD></TR>
+<TR><TD><b>0BE3=1,raknet setup_incoming_rpc_hook %1d%</b></TD></TR>
+<TR><TD><b>0BE4=1,raknet setup_incoming_packet_hook %1d%</b></TD></TR>
+<TR><TD><b>0BE5=2,raknet %2d% = get_hook_param %1d%</b></TD></TR>
+<TR><TD><b>0BE6=2,raknet set_hook_param %1d% = %2d%</b></TD></TR>
+<TR><TD><b>0BE7=3,raknet %3d% = bit_stream_read %1d% type %2d%</b></TD></TR>
+<TR><TD><b>0BE8=3,raknet bit_stream %1d% read_array %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0BE9=1,raknet bit_stream %1d% reset_read_pointer</b></TD></TR>
+<TR><TD><b>0BEA=1,raknet bit_stream %1d% reset_write_pointer</b></TD></TR>
+<TR><TD><b>0BEB=2,raknet bit_stream %1d% ignore_bits %2d%</b></TD></TR>
+<TR><TD><b>0BEC=2,raknet bit_stream %1d% set_write_offset %2d%</b></TD></TR>
+<TR><TD><b>0BED=2,raknet bit_stream %1d% set_read_offset %2d%</b></TD></TR>
+<TR><TD><b>0BEE=2,raknet %2d% = bit_stream %1d% get_number_of_bits_used</b></TD></TR>
+<TR><TD><b>0BEF=2,raknet %2d% = bit_stream %1d% get_number_of_bytes_used</b></TD></TR>
+<TR><TD><b>0BF0=2,raknet %2d% = bit_stream %1d% get_number_of_unread_bits</b></TD></TR>
+<TR><TD><b>0BF1=2,raknet %2d% = bit_stream %1d% get_write_offset</b></TD></TR>
+<TR><TD><b>0BF2=2,raknet %2d% = bit_stream %1d% get_read_offset</b></TD></TR>
+<TR><TD><b>0BF3=2,raknet %2d% = bit_stream %1d% get_data_ptr</b></TD></TR>
+<TR><TD><b>0BF4=3,raknet bit_stream %1d% decode_string %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0BF5=3,raknet bit_stream %1d% encode_string %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0BF6=2,raknet emul_rpc_receive %1d% bit_stream %2d%</b></TD></TR>
+<TR><TD><b>0BF7=2,raknet emul_packet_receive %1d% bit_stream %2d%</b></TD></TR>
+<TR><TD><b>0BF8=2,raknet %2d% = get_rpc_name %1d%</b></TD></TR>
+<TR><TD><b>0BF9=2,raknet %2d% = get_packet_name %1d%</b></TD></TR>
+<TR><TD><b>0BFA=0,push_vars</b></TD></TR>
+<TR><TD><b>0BFB=0,pop_vars</b></TD></TR>
+<TR><TD><b>0BFC=2,set_global_var %1d% = %2d%</b></TD></TR>
+<TR><TD><b>0BFD=2,%2d% = get_global_var %1d%</b></TD></TR>
+<TR><TD><b>0BFE=1,%1d% = get_tick_count</b></TD></TR>
+<TR><TD><b>0BFF=15,process_line_of_sight start %1d% %2d% %3d% end %4d% %5d% %6d% check_solid %7d% car %8d% actor %9d% object %10d% particle %11d% <TR><TD><b>see_through_stuff %12d% ignore_some_objects_for_camera %13d% store_col_point_to %14d% entity_to %15d%</b></TD></TR>
+<TR><TD><b>0C34=2,register_global_func %1d% to_label %2d%</b></TD></TR>
+<TR><TD><b>0C35=-1,call_global_func %1d% params %2d%</b></TD></TR>
+<TR><TD><b>0C36=-1,func_ret %1d%</b></TD></TR>
+<TR><TD><b>0C37=1, is_global_func %1d% defined</b></TD></TR>
+<TR><TD><b>0C38=3,get_global_func %1d% thread %2d% label %3d%</b></TD></TR>
+<TR><TD><b>0C39=1,unregister_global_func %1d%</b></TD></TR>
+<TR><TD><b>0C3A=-1,%1d% = string %2d% pointer</b></TD></TR>
+<TR><TD><b>0C3B=1,render begin %1d%</b></TD></TR>
+<TR><TD><b>0C3C=0,render end</b></TD></TR>
+<TR><TD><b>0C3D=1,render color %1d%</b></TD></TR>
+<TR><TD><b>0C3E=2,render vertex %1d% %2d%</b></TD></TR>
+<TR><TD><b>0C3F=2,render set_tex_coord %1d% %2d%</b></TD></TR>
+<TR><TD><b>0C40=1,render bind_texture %1d%</b></TD></TR>
+<TR><TD><b>0C41=2,render %2d% = texture %1d% struct</b></TD></TR>
+<TR><TD><b>0C42=2,render %2d% = texture %1d% sprite</b></TD></TR>
+<TR><TD><b>0C43=3,render get_texture %1d% size_to %2d% %3d%</b></TD></TR>
+<TR><TD><b>0C44=2,render set_render_state %1d% = %2d%</b></TD></TR>
+<TR><TD><b>0C45=10,samp create_3d_text id %1d% text %2d% color %3d% position %4d% %5d% %6d% view_distance %7d% show_behind_walls %8d% attached_to_player %9d% attached_to_vehicle %10d%</b></TD></TR>
+<TR><TD><b>0C46=10,samp get_3d_text_info_by_id %1d% string_ptr %2d% color %3d% position %4d% %5d% %6d% view_distance %7d% show_behind_walls %8d% attached_to_player %9d% attached_to_vehicle %10d%</b></TD></TR>
+<TR><TD><b>0C47=2,samp set_3d_text %1d% string %2d%</b></TD></TR>
+<TR><TD><b>0C48=4,samp textdraw %1d% create %2d% pos %3d% %4d%</b></TD></TR>
+<TR><TD><b>0C49=5,samp textdraw %1d% set_box %2d% color %3d% size %4d% %5d%</b></TD></TR>
+<TR><TD><b>0C4A=2,samp textdraw %1d% set_align %2d%</b></TD></TR>
+<TR><TD><b>0C4B=2,samp textdraw %1d% set_proportional %2d%</b></TD></TR>
+<TR><TD><b>0C4C=2,samp textdraw %1d% set_style %2d%</b></TD></TR>
+<TR><TD><b>0C4D=3,samp textdraw %1d% set_shadow %2d% color %3d%</b></TD></TR>
+<TR><TD><b>0C4E=3,samp textdraw %1d% set_outline %2d% color %3d%</b></TD></TR>
+<TR><TD><b>0C4F=8,samp textdraw %1d% set_model %2d% rotation %3d% %4d% %5d% zoom %6d% veh_color %7d% %8d%</b></TD></TR>
+<TR><TD><b>0C50=2,samp textdraw %1d% set_string %2d%</b></TD></TR>
+<TR><TD><b>0C51=3,samp textdraw %1d% set_pos %2d% %3d%</b></TD></TR>
+<TR><TD><b>0C52=4,samp textdraw %1d% set_letter_size %2d% %3d% color %4d%</b></TD></TR>
+<TR><TD><b>0C53=5,samp textdraw %1d% get_box_enabled %2d% color %3d% size %4d% %5d%</b></TD></TR>
+<TR><TD><b>0C54=2,samp %2d% = textdraw %1d% get_align</b></TD></TR>
+<TR><TD><b>0C55=2,samp %2d% = textdraw %1d% get_proportional</b></TD></TR>
+<TR><TD><b>0C56=2,samp %2d% = textdraw %1d% get_style</b></TD></TR>
+<TR><TD><b>0C57=3,samp textdraw %1d% get_shadow %2d% color %3d%</b></TD></TR>
+<TR><TD><b>0C58=3,samp textdraw %1d% get_outline %2d% color %3d%</b></TD></TR>
+<TR><TD><b>0C59=8,samp textdraw %1d% get_model %2d% rotation %3d% %4d% %5d% zoom %6d% veh_color %7d% %8d%</b></TD></TR>
+<TR><TD><b>0C5A=2,samp textdraw %1d% get_string_to %2d%</b></TD></TR>
+<TR><TD><b>0C5B=3,samp textdraw %1d% get_pos %2d% %3d%</b></TD></TR>
+<TR><TD><b>0C5C=4,samp textdraw %1d% get_letter_size %2d% %3d% color %4d%</b></TD></TR>
+<TR><TD><b>0C5D=1,samp textdraw %1d% is_exists</b></TD></TR>
+<TR><TD><b>0C5E=1,samp textdraw %1d% delete</b></TD></TR>
+<TR><TD><b>0C5F=1, is_global_var %1d% defined</b></TD></TR>
+<TR><TD><b>0C22=3,bin %1d% to_hex %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C23=3,hex %1d% to_bin %2d% buf_size %3d%</b></TD></TR>
+<TR><TD><b>0C24=3,strncpy destination %1d% source %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C25=3,strncmp string1 %1d% string2 %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C26=2,strupr in %1d% out %2d%</b></TD></TR>
+<TR><TD><b>0C27=3,strncat destination %1d% source %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C28=2,strlwr in %1d% out %2d%</b></TD></TR>
+<TR><TD><b>0C29=3,%3d% = stristr string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C2A=3,%3d% = strchr %1d% char %2d%</b></TD></TR>
+<TR><TD><b>0C2B=3,%3d% = strpbrk string %1d% control %2d%</b></TD></TR>
+<TR><TD><b>0C2C=3,%3d% = strrchr %1d% char %2d%</b></TD></TR>
+<TR><TD><b>0C2D=2,strrev in %1d% out %2d%</b></TD></TR>
+<TR><TD><b>0C2E=3,%3d% = strspn string1 %1d% string2 %2d%</b></TD></TR>
+<TR><TD><b>0C2F=4,%4d% = strtol %1d% radix %2d% store_end_to %3d%</b></TD></TR>
+<TR><TD><b>0C30=2,math matrix %1d% to_quat %2d%</b></TD></TR>
+<TR><TD><b>0C31=2,math quat %1d% to_matrix %2d%</b></TD></TR>
+<TR><TD><b>0C32=13,math matrix right %1d% %2d% %3d% front %4d% %5d% %6d% up %7d% %8d% %9d% to_quat %10d% %11d% %12d% %13d%</b></TD></TR>
+<TR><TD><b>0C33=13,math quat %1d% %2d% %3d% %4d% to_matrix right %5d% %6d% %7d% front %8d% %9d% %10d% up %11d% %12d% %13d%</b></TD></TR>
+<TR><TD><b>0C62=1,exec_console_command %1d%</b></TD></TR>
+<TR><TD><b>0C63=2,register_console_command %1d% to_label %2p%</b></TD></TR>
+<TR><TD><b>0C64=1,unregister_console_command %1d%</b></TD></TR>
+<TR><TD><b>0C65=3,%3d% = download_url %1d% to_file %2d%</b></TD></TR>
+<TR><TD><b>0C66=2,%2d% = get_download %1d% state</b></TD></TR>
+<TR><TD><b>0C67=3,get_windows_environment_variable %1d% to %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C68=3,unicode_string %1d% to_ansi %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C69=3,ansi_string %1d% to_unicode %2d% size %3d%</b></TD></TR>
+<TR><TD><b>0C6A=-1,%2d% = create_custom_thread_at_label %1d%</b></TD></TR>
+<TR><TD><b>0C6B=-1,%2d% = create_custom_thread_at_pointer %1d%</b></TD></TR>
+<TR><TD><b>0C6C=3,set_thread %1d% local_var %2d% = %3d%</b></TD></TR>
+<TR><TD><b>0C6D=3,%3d% = get_thread %1d% local_var %2d%</b></TD></TR>
+<TR><TD><b>0C6E=1,destroy_custom_thread %1d%</b></TD></TR>
+<TR><TD><b>0C6F=-1,restart_custom_thread %1d%</b></TD></TR>
+<TR><TD><b>0C70=2,%2d% = get_module %1d% handle</b></TD></TR>
+<TR><TD><b>0C71=3,%3d% = get_module %1d% proc %2d% address</b></TD></TR>
+<TR><TD><b>0C72=2,set_virtual_key %1d% down %2d%</b></TD></TR>
+<TR><TD><b>0C73=2,set_char_key %1d% down %2d%</b></TD></TR>
+<TR><TD><b>0C74=3,%3d% = create_timer_interval %1d% on_label %2d%</b></TD></TR>
+<TR><TD><b>0C75=1,kill_timer %1d%</b></TD></TR>
+<TR><TD><b>0C76=1,reset_timer %1d%</b></TD></TR>
+<TR><TD><b>0C77=2,set_timer %1d% interval %2d%</b></TD></TR>
+<TR><TD><b>0C78=2,set_timer %1d% active %2d%</b></TD></TR>
+<TR><TD><b>0C79=1,is_timer %1d% active</b></TD></TR>
+<TR><TD><b>0C7A=2,%2d% = get_timer %1d% interval</b></TD></TR>
+<TR><TD><b>0C7B=2,%2d% = get_timer %1d% time_elapsed</b></TD></TR>
+<TR><TD><b>0C7C=2,%2d% = get_timer %1d% time_left</b></TD></TR>
+<TR><TD><b>0C7D=1,release_download %1d%</b></TD></TR>
+<TR><TD><b>0C7E=0,is_console_active</b></TD></TR>
+<TR><TD><b>0C7F=2,samp set_client_command %1d% description %2d%</b></TD></TR>
+<TR><TD><b>0C80=2,samp set_console_command %1d% description %2d%</b></TD></TR>
+<TR><TD><b>0C81=1,samp force_vehicle_sync %1d%</b></TD></TR>
+<TR><TD><b>0C82=2,samp force_unoccupied_sync %1d% seat_id %2d%</b></TD></TR>
+<TR><TD><b>0C83=0,samp force_onfoot_sync</b></TD></TR>
+<TR><TD><b>0C84=0,samp force_aim_sync</b></TD></TR>
+<TR><TD><b>0C85=1,samp force_trailer_sync %1d%</b></TD></TR>
+<TR><TD><b>0C86=2,samp force_passenger_sync %1d% seat_id %2d%</b></TD></TR>
+<TR><TD><b>0C87=0,samp force_stats_sync</b></TD></TR>
+<TR><TD><b>0C88=0,samp force_weapons_sync</b></TD></TR>
+<TR><TD><b>0C89=1, key_just_pressed %1d%</b></TD></TR>
+<TR><TD><b>0C8A=2,samp %2d% = get_max_player_id streamed_only %1d%</b></TD></TR>
+<TR><TD><b>0C8B=2,samp %2d% = get_player_count streamed_only %1d%</b></TD></TR>
+<TR><TD><b>0C8C=3,render %3d% = load_texture_from_file_in_memory %1d% size %2d%</b></TD></TR>
+<TR><TD><b>0C8D=1,set_clipboard_text %1d%</b></TD></TR>
+<TR><TD><b>0C8E=2,get_clipboard_text %1d% size %2d%</b></TD></TR>
+<TR><TD><b>0C8F=1,samp process_chat_input %1d%</b></TD></TR>
+<TR><TD><b>0C90=1, samp is_client_command_defined %1d%</b></TD></TR>
+<TR><TD><b>0C91=1, is_console_command_defined %1d%</b></TD></TR>
+<TR><TD><b>0C92=1,%1d% = get_cleo_library_version</b></TD></TR>
+</TBODY></TABLE>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</DIV></DIV></BODY></HTML>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Particulas</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light>Encuentra toda la informacion que nesecites aqui.</P>
+<hr>
+<h4>Introducción</h4>
+<p>Las particulas en San Andreas son muchas cosas, desde minusculas gotas de 
+sangre, hasta cemento o gotas de liquido amarillo que no beberias. Como tambien 
+el humo, llamas, gases lacrimogenos, agua, hojas, proyectiles de bala, chispas, 
+hojas de arboles, nubes, trozos y pedazos de objetos, algunas llamaradas (aunque 
+tenemos una mejores metodos de hacer fuego)...<BR> Tambien se llama FxSystem, 
+simplemente porque son efectos especiales. Del mismo modo que las animaciones, 
+hay dos tipos de sistema de particulas o Fx.<BR> Un tipo, en el que lees desde 
+un archivo de particulas (nombrado con una variable de cadena, y tiene un 
+control para el motor como $particle00) que debe activarse con 064C, y otro 
+tipo, donde un opcode dentro de un bucle se hace todo.<BR> Ok, vamos a hacer 
+algunas particulas del archivo !!!<BR> Crear una particula es muy facil, no 
+nesecita cargar nada, solo tienes que crearlo con un opcode como este: </P>
+<PRE class="sb3">064B: $particle01 = create_particle "fire" at 153.573 -12.428 5.171 type 5
+</PRE>Pero 
+ no podras hacer que haga su animacion o que sea visible hasta que    uses       
+ esta             propiedad:         
+<PRE class="sb3">064C: make_particle $particle01 visible</PRE>Con 064E puede   
+hacer que la particula seainvisible y volver  a hacerla           visible mas   
+tarde con 064C:         
+<PRE class="sb3">064E: stop_particle $particle01</PRE>Y como todo lo que 
+ creamos, tambien  podemos destruir las de dos formas            diferentes:     
+   
+<PRE class="sb3">064F: remove_references_to_particle $particle01</PRE>Con  esta 
+ podremos  borrar     todas las propiedades que le pusimos una                
+ particula y  que se destruya     por  completo cuando no la estemos mirando, y  
+   con la   siguiente, destruira    todo  de  forma inmediata.       
+<PRE class="sb3">0650: destroy_particle  $particle01</PRE>o    con:       
+<PRE class="sb3">0976: destroy_particle $particle01</PRE>
+<h5>A continuación</h5>
+<UL>
+  <LI><A href="Particulas.IDs.html">IDs</A></LI>
+  <LI><A href="Particulas.Especiales.html">Especiales</A></LI>
+  <LI><A href="Particulas.Adjuntar.html">Adjuntar</A></LI></UL></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+   </BODY></HTML>

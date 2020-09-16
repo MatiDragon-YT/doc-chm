@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Indicadores</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Los indicadores, son aquellos marcadores que se nos muestra en el mapa del    
+ juego, indicandonos a donde debemos ir. Normalmente estos tienen forma          
+ circular:</P>
+<P>Hay varios opcodes para crearlos, y cada uno es especial por ser dirigidos a  
+ una cosa en concreto.</P>
+<P>Para miciones: 
+<PRE class=sb3>03BC: $marker01 = create_sphere_at&nbsp;123.34 32.235&nbsp;12.6&nbsp;radius 1.0</PRE>
+<P>Se destrulle con: 
+<PRE class=sb3>03BD: destroy_sphere $marker01</PRE>
+<P></P>
+<P>Para carreras: 
+<PRE class=sb3>06D5:&nbsp;$marker02 = create_racing_checkpoint_at&nbsp;12.3 32.5&nbsp;12.6&nbsp;point_to 13.4&nbsp;15.4 15.2&nbsp;type 0 radius 25.0</PRE>
+<P></P>
+<P><STRONG>Tipos:</STRONG></P>
+<UL>
+  <LI>0 = Deja espacio vacio en su interior.</LI>
+  <LI>1 = Coloca una flecha apuntando hacias las segundas coordenadas.</LI>
+  <LI>2 = Coloca una bandera en su interior.</LI></UL>
+<P>Se destrulle con: 
+<PRE class=sb3>06D6: disable_racing_checkpoint $marker02</PRE>
+<P></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

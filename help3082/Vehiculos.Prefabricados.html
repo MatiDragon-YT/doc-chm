@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Prefabricados</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Para mi, esta parte no es una codificacion real, pero  es util y muy 
+ frecuente, y es una buena oportunidad para explicar  comofunciona. <BR> Las 
+ camionetas y el automovil estacionado son codigos de  operacion 
+espacialesporque  indican el motor para crear dicho  automovil o tal arma si el 
+jugadoresta lo  suficientemente cerca del  punto. <BR> Bien, por ejemplo, los 
+autos/vehiculos  que siempre encuentras  en un lugar (elskimmer cerca de la 
+presa, el AT400 en el aeropuerto  de Vegas, el cropdusteren el desierto, estos 
+son los unicos en  los  que puedo pensar en este momento) siempre (en realidad 
+no cada  vez) vuelves,  esta aqui. Lo mismo para las armas (los cohetes  
+heatseek en el pueblo  abandonado, el arma detras de la casade  Sweet ...), la 
+vida (corazon rojo en  las guerras de pandillas) y  la armadura.<BR> Coches 
+estacionados/parkados: <BR>
+<PRE class="sb3">014B: $mycarx00 = init_parked_car_generator #CHEETAH 15 15 1 alarm 0 door_lock 0 0 0 at -1253.1 -348.01 3.9 angle 0.0
+014C: set_parked_car_generator $mycarx00 cars_to_generate_to 101
+</PRE>
+<P><STRONG> Parametros 014B</STRONG>:</P>
+<OL>
+  <LI>Variable de almacenamiento.</LI>
+  <LI>ID o Modelo 3D del vehiculo.</LI>
+  <LI>Color primario (se puedenotar a  veces -1 que significa cualquiera).</LI>
+  <LI>Color secundario (se puedenotar a  veces -1 que significa 
+cualquiera).</LI>
+  <LI>Es del jugador (si es 0, elevara el nivel de busqueda de los 
+   policias).</LI>
+  <LI>Posibilidad de recibir alarma (se basa en porcentaje, del 0 al 100).</LI>
+  <LI>Bloqueo de puerta&nbsp;(0 = desabilitado; 1 = abilitado).</LI>
+  <LI>Desconocido.</LI>
+  <LI>Desconocido.</LI>
+  <LI>Coordenadas&nbsp;3D&nbsp;del eje&nbsp;X.</LI>
+  <LI>Coordenadas&nbsp;3D del eje Y.</LI>
+  <LI>Coordenadas&nbsp;3D del eje Z.</LI>
+  <LI>Angulo al rededor del eje Z(0.0 y 360.0 es norte, 180.0 es sur,  90.0 es   
+  este,270.0 es oeste).</LI></OL>
+<P><STRONG>Parametros&nbsp;014C</STRONG>:</P>
+<OL>
+  <LI>Prefab/Handle del vehiculo.</LI>
+  <LI>Generador: 101&nbsp;Activa y 0 Desactiva.</LI></OL>
+<P>Es  necesario no olvidar&nbsp;que para cada generacion de automoviles, no 
+tienen que estar juntos, debes separarlos. <BR> Hay otros  tipos de  autos 
+estacionados, estan muy cerca de este y no son  muy utiles. </P>
+<P></P>
+<SCRIPT src="jQuery.js"></SCRIPT>
+  
+<SCRIPT src="HL.js"></SCRIPT>
+  </DIV></DIV></DIV></BODY></HTML>

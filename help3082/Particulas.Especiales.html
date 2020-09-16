@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Especiales</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Aqui algunos otros efectos utiles, que son del segundo tipo de efectos, no es 
+ necesario activarlo.<BR>No estan nombrados por un identificador, pero como son  
+ solo temporales, debes ponerlos dentro de un&nbsp;bucle con una espera.</P>
+<P><PRE class="sb3">
+09E5: create_flash_light_at 1306.4 -1137.5 22.5 RGB_mask 255 255 255 radio 200.0
+058A: create_gun_flash_from  2193.871 -1364.441 1031.124 at 2194.456 -1369.475 1031.124
+06BC: create_M4_shoot_from 1193.268 1165.441 31.124 objetive 1195.58 1166.341 61.124 energy 1
+08EB: create_sparks_at 1580.85 -1752.32 12.91 velocity_direction 0.0 0.0 1.0 density 60
+095C: create_smoke_at -2365.3 1471.5 64.7 velocity -1.5 1.5 0.1 RGBA 0.0 0.0 0.0 0.2 size 1.0 last_factor 1.0
+09B8: create_blood_gush_at 791.7 -1627.0 12.3 with_offset 0.1   0.0 0.2 density 20 on_actor $actor00
+</PRE>
+<P></P>
+<P>Mas o menos hablan por si mismos, para 09E5, RGB_mask es el color en <b 
+class="text-red">rojo</b>, <b class="text-green"> verde</b> y <b 
+class="text-blue">azul</b> en valores de <b class="text-red">0</b> a    
+  <b class="text-red">255</b> de la linterna.</P>
+<P>Con 095C puedes hacer el mejor humo con colores frios, con flotadores usados  
+ ??despues de <b class="text-red">R</b><b 
+class="text-green">G</b><b class="text-blue">B</b><b 
+color="#808080">A</b>; los primeros tres son     <b class="text-red">     
+ rojo</b>,<b class="text-green"> verde</b>, <b 
+class="text-blue">azul</b>, y el <b color="#808080">  grosor</b>   
+ (transparencia) del humo, y el&nbsp;ultimo factor es el tiempo en que la nube   
+  de  el humo desaparece, <b class="text-red">1.0</b> es      
+aproximadamente   de   20  a 30 segundos.</P>
+<P>058A crear&nbsp;su propio humo.</P>
+<P>06BC, en realidad, se dispara y si&nbsp;un actor esta a su vista perdera      
+vida. Mientras  la energia de valor int sea mas&nbsp;alta, mas mortal  es.</P>
+<P><U><STRONG>Otros efectos especiales:</STRONG></U></P>
+<UL>
+  <LI>Sombras.</LI>
+  <LI>Fuegos.</LI>
+  <LI>Explociones.</LI></UL>
+<P>Tambien puede hacer&nbsp;sombras&nbsp;con el sistema fx (tambien     
+ de&nbsp;bucle):               </P>
+<P>
+<PRE class=sb3>016F: create_particle 3 rotation_factor 1.0  size 3.0 intensity 50 indicators 0 0 0 at 2221.179 -1177.662 24.767
+016F: create_particle 2 rotation_factor 0.0 size 1.0 intensity 150 flags 0 0 0 at 1303.211 -788.2426 95.5
+</PRE></DIV></DIV></DIV><BR>
+</BODY>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT> </HTML>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><TITLE>Sintaxis de SB3</TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<META http-equiv="X-UA-Compatible" content="IE=edge"> 
+<META name="viewport" content="width=device-width, initial-scale=1"> <LINK href="bootstrap.css" 
+rel="stylesheet" type="text/css"> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.19597"></HEAD> 
+<BODY><HEADER></HEADER>
+<DIV class="container-fluid">
+<DIV class="row">
+<DIV class="col-12">
+<P>Sanny Builder tiene dos tipos de sintaxis:</P>
+<OL>
+  <LI>Bajo Nivel de Estructura.</LI>
+  <LI>Alto Nivel de Estructura.</LI></OL>
+<P>Las diferencias entre ambos son:</P>
+<OL>
+  <LI>Uno usa <B class="text-green">etiquetas</B> y el otro  no.</LI>
+  <LI>El codigo esta mas limpio en la Estructa de Alto Nivel</LI>
+  <LI>Es mas legible en Estructura de Alto Nivel</LI></OL>
+<P>Estructura de Bajo Nivel, usa:</P>
+<PRE><B class="text-green">:label</b> - <b>else_jump</b> <B class="text-green">@label</b> - <b>jf</b> <B class="text-green">@label</b> - <b>jump</b> <B class="text-green">@label</b></PRE>
+<P>Y la Estructura de Alto Nivel, usa:</P>
+<PRE><b>while true</b> - <b>end</b>
+<b>while</b> - <b>end</b>
+<b>repeat</b> - <b>until</b>
+<b>for</b> - <b>end</b>
+<b>if</b> - <b>then</b> - <b>end</b>
+<b>if</b> - <b>then</b> - <b>else</b> - <b>end</b>
+</PRE>
+<P><BR>Ahora, voy a mostrarles como usar la Estructura de nivel alto en lugar de 
+ la Estructura de nivel bajo. <BR><SPAN>Por ejemplo;</SPAN><BR>El Comando: <FONT 
+color="#ffffff"><STRONG>while true - end</STRONG></FONT><BR><SPAN>Lado           
+ Izquierdo:  Nivel de Alta Struct</SPAN><BR><SPAN>Lado Derecho:&nbsp;Nivel       
+  de&nbsp;Baja  Struct</SPAN></P><SPAN></SPAN> 
+<P><IMG class="w-100" src="while-true(j16d).jpg"></P>
+<P>Las lineas <FONT color="#ff0000">rojas</FONT>, indican el Flujo del Comando:  
+         <FONT color="#ffffff"><STRONG>while - end</STRONG></FONT></P>
+<P>&nbsp;</P>
+<P>Comando: <FONT color="#ffffff"><STRONG>while -              
+end</STRONG></FONT><SPAN><BR><SPAN>Parte Superior:&nbsp;&nbsp; Nivel             
+de&nbsp;Alta  Struct</SPAN><BR><SPAN>Parte Inferior:&nbsp;&nbsp; Nivel           
+ de&nbsp;Baja Struct</SPAN></SPAN></P>
+<P><SPAN><SPAN><IMG class="w-100" src="while(j16d).jpg"></SPAN></SPAN></P>
+<P>Las lineas <FONT color="#0000ff"><STRONG>azules</STRONG></FONT>, indican el   
+ flujo/lectura del juego. <BR>Las lineas&nbsp;<FONT 
+color="#ff0000"><STRONG>rojos</STRONG></FONT>, indican la nueva direccion del    
+ flujo/lectura (momentaneamente) a causa de un proceso. </P>
+<P>&nbsp;</P>
+<P>Comando: <FONT color="#ffffff"><STRONG>repeat - until</STRONG></FONT> <FONT 
+size="1">(repetir - hasta que)</FONT><BR><SPAN>Parte Superior:&nbsp;&nbsp; Nivel 
+ de&nbsp;Alta  Struct</SPAN><BR><SPAN>Parte Inferior:&nbsp;&nbsp; Nivel          
+ de&nbsp;Baja Struct</SPAN></P>
+<P><SPAN></SPAN><IMG class="w-100" src="repeat(j16d).jpg"></P><A href="http://4.bp.blogspot.com/-OQZumtZcI-0/U3g0d12ASfI/AAAAAAAAIdQ/qGYL5E8En94/s1600/repeat(j16d).jpg" 
+imageanchor="1"></A> 
+<P><SPAN>Las lineas <FONT color="#0000ff"><STRONG>azules</STRONG></FONT>,        
+ indican&nbsp;la nueva direccion del&nbsp;flujo/lectura del juego. <BR>Las       
+ lineas&nbsp;<FONT color="#ff0000"><STRONG>rojos</STRONG></FONT>,             
+indican&nbsp;el  flujo/lectura del  juego(momentaneamente) </SPAN></P>
+<P>&nbsp;</P>
+<P>Comando: <FONT color="#ffffff"><STRONG>for - end</STRONG></FONT><FONT size="1"> 
+ (para - final)<BR></FONT><SPAN>Parte Superior:&nbsp;&nbsp; Nivel de&nbsp;Alta   
+  Struct</SPAN><BR><SPAN>Parte Inferior:&nbsp;&nbsp; Nivel de&nbsp;Baja          
+ Struct</SPAN></P>
+<P><SPAN></SPAN><IMG class="w-100" src="for-end(j16d).jpg"></P><A href="http://1.bp.blogspot.com/-ZhTX3CL1hqg/U3g0dbnbWSI/AAAAAAAAIdU/fl7RwFTc_ug/s1600/for-end%2528j16d%2529.jpg" 
+imageanchor="1"></A> 
+<P><SPAN><SPAN>Las lineas <FONT color="#0000ff"><STRONG>azules</STRONG></FONT>,  
+ indican&nbsp;la nueva direccion del&nbsp;flujo/lectura del juego. <BR>Las       
+ lineas&nbsp;<FONT color="#ff0000"><STRONG>rojos</STRONG></FONT>,             
+indican&nbsp;el  flujo/lectura del              
+juego(momentaneamente)<BR></SPAN></SPAN><BR><SPAN></SPAN>Como  podemos ver, el   
+ proceso se repetirá (en este caso) <FONT color="#ff0000">10</FONT> veces,       
+ luego   mostrara el numero y continuara</P>
+<P>&nbsp;</P>
+<P>Comando: <FONT color="#ffffff"><STRONG>if - then - end </STRONG></FONT><FONT 
+size="1">(si - entonces - final)</FONT><BR><SPAN><SPAN>Parte             
+ Superior:&nbsp;&nbsp; Nivel  de&nbsp;Alta Struct</SPAN><BR><SPAN>Parte          
+  Inferior:&nbsp;&nbsp; Nivel de&nbsp;Baja  Struct</SPAN></SPAN></P>
+<P><IMG class="w-100" src="if-then-end(j16d).jpg"></P><A href="http://3.bp.blogspot.com/-Y-Vh5lxE7VE/U3g0dlh84oI/AAAAAAAAIdY/WhMpo-NyTe0/s1600/if-then-end%2528j16d%2529.jpg" 
+imageanchor="1"></A> 
+<P><SPAN><SPAN>Las lineas <FONT color="#0000ff"><STRONG>azules</STRONG></FONT>,  
+ indican&nbsp;la nueva direccion del&nbsp;flujo/lectura del juego. <BR>Las       
+ lineas&nbsp;<FONT color="#ff0000"><STRONG>rojos</STRONG></FONT>,             
+indican&nbsp;el  flujo/lectura del  juego(momentaneamente)</SPAN></SPAN></P>
+<P>&nbsp;</P>
+<P>Comando: <FONT color="#ffffff"><STRONG>if - then - else -  
+end</STRONG></FONT><FONT size="1">(si&nbsp;-&nbsp;entonces - de lo contrario-    
+       final)</FONT><BR><SPAN><SPAN><SPAN>Parte Superior: Nivel de&nbsp;Alta     
+   Struct</SPAN><BR><SPAN>Parte Inferior:&nbsp;&nbsp; Nivel de&nbsp;Baja         
+   Struct</SPAN></SPAN></SPAN></P>
+<P><SPAN><SPAN><SPAN></SPAN></SPAN></SPAN><IMG class="w-100" src="if-then-else-end(j16d).jpg"></P><SPAN><SPAN></SPAN></SPAN> 
+
+<P class="separator"><SPAN><SPAN>Las lineas <FONT 
+color="#0000ff"><STRONG>azules</STRONG></FONT>, indican&nbsp;la nueva dirección  
+ del&nbsp;flujo/lectura del juego. <BR>Las lineas&nbsp;<FONT 
+color="#ff0000"><STRONG>rojos</STRONG></FONT>, indican&nbsp;el flujo/lectura del 
+ juego(momentáaeamente)</SPAN></SPAN></P>
+<P class="separator"><SPAN><SPAN></SPAN></SPAN>&nbsp;</P>
+<P class="separator"><SPAN>Ya no podría ser más              
+simple.</SPAN><BR><SPAN><SPAN>Espero te              
+guste&nbsp;</SPAN></SPAN><SPAN>;)</SPAN><SPAN></SPAN></P><SPAN></SPAN> 
+<P class="separator"><SPAN>Espero te sea de tu ayuda. <BR>Pagina           
+<STRONG>OFICIAL</STRONG> de donde salio la informacion:<BR><A href="http://j16d.blogspot.com/2014/05/sanny-builder-syntax.html"><U><FONT 
+color="#0066cc">http://j16d.blogspot.com/2014/05/sanny-builder-syntax.html</FONT></U></A><BR>creditos 
+ del tutorial, a su respectivo  dueño. Yo solo lo adapte            
+:3</SPAN></P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+    
+<SCRIPT src="Az.js"></SCRIPT>
+  </BODY></HTML>

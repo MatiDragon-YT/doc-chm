@@ -1,0 +1,1646 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <title>Dirs. Memoria</title>
+        <meta charset="ISO-8859-1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <header></header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <P class=light>Nota: Ninguna de las siguientes direcciones de memoria funcionará para GTA: San Andreas v2.0 o 3.0 (steam). Todas las direcciones en v2.0 y superiores se han cambiado o movido. Por lo tanto inaccesible..</P>
+                <hr>
+                <h5><span class="mw-headline" id="Base_Memory_addresses">Direcciones de la mmoria</span></h5>
+                <h6><span class="mw-headline" id="No_category_yet">No category yet</span></h6>
+                <ul>
+                    <li><code>0xB7CE50</code> - [dword] Money</li>
+                    <li><code>0xBAA420</code> - Wanted Level</li>
+                    <li><code>0x8CDEE4</code> - [dword] Max wanted level</li>
+                    <li><code>0x8D5104</code> - [byte] Current blur level</li>
+                    <li><code>0x8CB7A5</code> - [byte] Current Radiostation-ID</li>
+                    <li><code>0xB700F0</code> - [dword] Current Car ID (from vehicles.ide) - not for bikes</li>
+                    <li><code>0xB7CB49</code> - [byte] Game freezes like when in menu:
+                        <ul>
+                            <li>0 = normal</li>
+                            <li>1 = everything stops</li>
+                        </ul>
+                    </li>
+                    <li><code>0xB7CB49</code> - [byte] Menu show:
+                        <ul>
+                            <li>0 = leave</li>
+                            <li>1 = show</li>
+                        </ul>
+                    </li>
+                    <li><code>0x863984</code> - [float] Gravity (default value: 1.0f/125.0f = 0.008f)</li>
+                    <li><code>0xB7CB64</code> - [float] Game speed in percent</li>
+                    <li><code>0xB7CEE4</code> - [byte/boolean] Is infinite run</li>
+                    <li><code>0xB7CEE6</code> - [byte/boolean] Is player fireproof</li>
+                    <li><code>0x96C009</code> - [byte/boolean] Is paynspray free</li>
+                    <li><code>0xA444A4</code> - [byte/boolean] Is radar greyed out</li>
+                    <li><code>0x8D2530</code> - [float] Pedestrian density multiplier</li>
+                    <li><code>0x8A5B20</code> - [float] Vehicle density multiplier</li>
+                    <li><code>0xB6F065</code> - [byte/boolean] Widescreen (the view that is displayed during cutscenes, not the display option)</li>
+                    <li><code>0xA4A948</code> - Lowrider Challenge score</li>
+                    <li><code>0xA4EC20</code> - Dancing minigame score</li>
+                    <li><code>0xB790B8</code> - [byte] Photographs taken number (4 bytes)</li>
+                    <li><code>0xA9AD74</code> - [byte] Tags number (4 bytes)</li>
+                    <li><code>0xB791E4</code> - [byte] Horseshoes number (4 bytes)</li>
+                    <li><code>0xB791EC</code> - [byte] Oysters number (4 bytes)</li>
+                </ul>
+                <p><b>Note:</b>
+                    For those number above if you change it to maximum amount they appear to pop a message and gives a bonus like weapons in cj savehouses.
+                </p>
+                <ul>
+                    <li><code>0x716642</code> - [float] Change solid clouds</li>
+                    <li><code>0x716655</code> - [float] Disable solid clouds</li>
+                </ul>
+                <p><b>Note:</b>
+                    Both values default to 200. If you change one of them to 100,000 you get very few clouds, a much nicer effect. If you change both of them to 100,000 you never get the clouds.
+                </p>
+                <ul>
+                    <li><code>0xB79078</code> - [byte] People dropped off in taxi (number used for the stats, 4 bytes)</li>
+                    <li><code>0xA49C30</code> - [byte] People dropped off in taxi (number used for giving your reward, 4 bytes)</li>
+                    <li><code>0xB79040</code> - [byte] Safehouse visits number (4 bytes)</li>
+                    <li><code>0xA49EFC</code> - [dword] Denise Progress</li>
+                    <li><code>0xA49F00</code> - [dword] Michelle Progress</li>
+                    <li><code>0xA49F04</code> - [dword] Helena Progress</li>
+                    <li><code>0xA49F08</code> - [dword] Barbara Progress</li>
+                    <li><code>0xA49F0C</code> - [dword] Katie Progress</li>
+                    <li><code>0xA49F10</code> - [dword] Millie Progress</li>
+                </ul>
+                <p><b>Note:</b>
+                    These above six addresses are within the scm block, and valid only for original scm. setting a value to 100 (ie. 100 pct) gives you all gifts of that GF (ie. car keys, wardrobe etc.).
+                </p>
+                <ul>
+                    <li><code>0xB79108</code> - Number of girls dated</li>
+                    <li><code>0xB79100</code> - Current number of girlfriends</li>
+                    <li><code>0xB79104</code> - Number of disastrous dates</li>
+                    <li><code>0xB79110</code> - Number of successful dates</li>
+                    <li><code>0xB79060</code> - Unique jumps found number</li>
+                    <li><code>0xB79064</code> - Unique jumps done number</li>
+                    <li><code>0xBA6774</code> - Map target:
+                        <ul>
+                            <li>0 = disabled</li>
+                            <li>1 = enabled</li>
+                        </ul>
+                    </li>
+                    <li><code>0x86329C</code> - List of valid command names</li>
+                    <li><code>0xC17054</code> - A pointer to the main game window handle (typically <code>0xC8CF88</code> since the pointer is static).</li>
+                    <li><code>0xBA3798</code> - Beginning of <a href="/wiki/Saves_(GTA_SA)#Block_10:_Zones" title="Saves (GTA SA)">ZoneInfo structure</a></li>
+                    <li><code>0xBA1DF0</code> - Beginning of <a href="/wiki/Saves_(GTA_SA)#Block_10:_Zones" title="Saves (GTA SA)">ZonePop structure</a></li>
+                    <li><code>0xA94B68</code> - array of pointers to RwTexture, corresponding to opcode <a href="/wiki/038F" title="038F">038F</a></li>
+                </ul>
+                <ul>
+                    <li><code>0xA444A0</code> - Is HUD enabled by an opcode 0826:
+                        <ul>
+                            <li>0 = disabled</li>
+                            <li>1 = enabled</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li><code>0x969110</code> - [char(30)] Buffer of 30 last typed chars, earlier typed chars are on next bytes.</li>
+                </ul>
+                <h6><span id="Time/Timers"></span><span class="mw-headline" id="Time.2FTimers">Time/Timers</span></h6>
+                <ul>
+                    <li><code>0xB70158</code> - [dword] Timer related to weather and time in ms</li>
+                    <li><code>0xB610E0</code> - [dword] A global timer in ms (read only)</li>
+                    <li><code>0xB7CB84</code> - [dword] A global timer in ms (while not in menu, read/write)</li>
+                    <li><code>0xA5153C</code> - [dword] Mission timer from a number to 0 (4 bytes)</li>
+                    <li><code>0xB7015C</code> - [dword] Defines how many ms (1 second... default 1000, set to 1 for a headache, number of ms per sec)</li>
+                    <li><code>0xB7014E</code> - [byte] Current Weekday (1 through 7)</li>
+                    <li><code>0xB79038</code> - [dword] How many days have passed in game</li>
+                    <li><code>0xB70153</code> - [byte] Current Hour</li>
+                    <li><code>0xB70152</code> - [byte] Current Minute</li>
+                    <li><code>0xA49D54</code> - [dword] Timer for driving/flying missions (in ms)</li>
+                    <li><code>0xA51974</code> - [dword] Timer for boat/bike missions (in ms)</li>
+                    <li><code>0xA5197C</code> - [dword] Timer for taxi driver missions (in ms)</li>
+                    <li><code>0xA51980</code> - [dword] Tip Bar timer for taxi driver missions (in seconds)</li>
+                    <li><code>0xA519A8</code> - [dword] Timer for paramedic missions (in ms)</li>
+                    <li><code>0xA519BC</code> - [dword] Timer for firefighter missions (in ms)</li>
+                    <li><code>0xA519D8</code> - [dword] Timer for vigilante missions (in ms)</li>
+                    <li><code>0xA51A3C</code> - Timer for Bloodring race</li>
+                </ul>
+                <h6><span id="DirectX_/_Rendering"></span><span class="mw-headline" id="DirectX_.2F_Rendering">DirectX / Rendering</span></h6>
+                <ul>
+                    <li><code>0xC97C1C</code> - A copy of the window handle that is used to initialize the DirectX device.</li>
+                    <li><code>0xC97C20</code> - Pointer to <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/bb174300%28v=vs.85%29.aspx">IDirect3D9</a> interface.</li>
+                    <li><code>0xC97C28</code> - Pointer to <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/bb174336%28v=vs.85%29.aspx">IDirect3DDevice9</a> interface.</li>
+                    <li><code>0xC9C040</code> - Global instance of <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/bb172588%28v=vs.85%29.aspx">D3DPRESENT_PARAMETERS</a> structure.</li>
+                </ul>
+                <h6><span class="mw-headline" id="Stats">Stats</span></h6>
+                <ul>
+                    <li><code>0xB791A4</code> - [dword] Lung capacity</li>
+                    <li><code>0xB793D4</code> - [float] Fat</li>
+                    <li><code>0xB793D8</code> - [float] Stamina</li>
+                    <li><code>0xB793DC</code> - [float] Muscle</li>
+                    <li><code>0xB793E0</code> - [float] Health</li>
+                    <li><code>0xB793E4</code> - [float] Sex Appeal</li>
+                    <li><code>0xB79480</code> - [float] Respect</li>
+                    <li><code>0xB79494</code> - [float] Pistol</li>
+                    <li><code>0xB79498</code> - [float] Silenced pistol</li>
+                    <li><code>0xB7949C</code> - [float] Desert eagle</li>
+                    <li><code>0xB794A0</code> - [float] Shotgun</li>
+                    <li><code>0xB794A4</code> - [float] Sawn-off shotgun</li>
+                    <li><code>0xB794A8</code> - [float] Combat shotgun</li>
+                    <li><code>0xB794AC</code> - [float] Machine pistol</li>
+                    <li><code>0xB794B0</code> - [float] SMG</li>
+                    <li><code>0xB794B4</code> - [float] AK47</li>
+                    <li><code>0xB794B8</code> - [float] M4</li>
+                </ul>
+                <h6><span class="mw-headline" id="Skills">Skills</span></h6>
+                <ul>
+                    <li><code>0xB790A0</code> - [dword] Driving</li>
+                    <li><code>0xB7919C</code> - [dword] Flying</li>
+                    <li><code>0xB791B4</code> - [dword] Bike</li>
+                    <li><code>0xB791B8</code> - [dword] Cycling</li>
+                    <li><code>0xB791C4</code> - [dword] Luck at gambling</li>
+                    <li><code>0xB794C4</code> - [float] Gambling</li>
+                </ul>
+                <h6><span class="mw-headline" id="HTML_Stats_File">HTML Stats File</span></h6>
+                <ul>
+                    <li><code>0x8663A0</code> - File Name ( Default&#160;: 'stats.html' )</li>
+                    <li><code>0x86636C</code> - File Title ( Default&#160;: '&lt;title&gt;Grand Theft Auto San Andreas Stats&lt;/title&gt;' )</li>
+                </ul>
+                <h6><span class="mw-headline" id="Cheats">Cheats</span></h6>
+                <p>[byte] Can be either on (1) or off (0).
+                </p>
+                <ul>
+                    <li><code>0x969130</code> - Weapon Set 1</li>
+                    <li><code>0x969131</code> - Weapon Set 2</li>
+                    <li><code>0x969132</code> - Weapon Set 3</li>
+                    <li><code>0x969133</code> - Health+Armor+250K</li>
+                    <li><code>0x969134</code> - Increase Wanted Level 2 Stars</li>
+                    <li><code>0x969135</code> - Clear Wanted Level</li>
+                    <li><code>0x969136</code> - Sunny Weather</li>
+                    <li><code>0x969137</code> - Very Sunny Weather</li>
+                    <li><code>0x969138</code> - Overcast Weather</li>
+                    <li><code>0x969139</code> - Rainy Weather</li>
+                    <li><code>0x96913A</code> - Foggy Weather</li>
+                    <li><code>0x96913B</code> - Faster Clock</li>
+                    <li><code>0x96913C</code> - Faster Gameplay</li>
+                    <li><code>0x96913D</code> - Slower Gameplay</li>
+                    <li><code>0x96913E</code> - Peds Attack Each other with Golfclub</li>
+                    <li><code>0x96913F</code> - Have Bounty on Head</li>
+                    <li><code>0x969140</code> - Everyone is Armed</li>
+                    <li><code>0x969141</code> - <i>Spawn Rhino (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969142</code> - <i>Spawn Bloodring Banger (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969143</code> - <i>Spawn Rancher (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969144</code> - <i>Spawn Racecar A (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969145</code> - <i>Spawn Racecar B (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969146</code> - <i>Spawn Romero (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969147</code> - <i>Spawn Stretch (<b>Not Tested!</b>)</i></li>
+                </ul>
+                <ul>
+                    <li><code>0x96914A</code> - Blow up All Cars</li>
+                    <li><code>0x96914B</code> - Wheels Only (Invisible Cars)</li>
+                    <li><code>0x96914C</code> - Perfect / Insane Handling</li>
+                    <li><code>0x96914D</code> - Suicide</li>
+                    <li><code>0x96914E</code> - All Green Lights</li>
+                    <li><code>0x96914F</code> - Aggressive Drivers</li>
+                    <li><code>0x969150</code> - Pink Traffic</li>
+                    <li><code>0x969151</code> - Black Traffic</li>
+                    <li><code>0x969152</code> - Cars can drive on water</li>
+                    <li><code>0x969153</code> - Boats Can Fly</li>
+                    <li><code>0x969154</code> - CJ is Fat</li>
+                    <li><code>0x969155</code> - Max Muscle</li>
+                    <li><code>0x969156</code> - CJ is Skinny</li>
+                    <li><code>0x969157</code> - Elvis Everywhere</li>
+                    <li><code>0x969158</code> - Peds attack with rockets</li>
+                    <li><code>0x969159</code> - Beach Theme</li>
+                    <li><code>0x96915A</code> - Gang Members everywhere</li>
+                    <li><code>0x96915B</code> - Gangs control the streets</li>
+                    <li><code>0x96915C</code> - Ninja Theme</li>
+                    <li><code>0x96915D</code> - Slut Magnet</li>
+                    <li><code>0x96915E</code> - Traffic is Cheap Cars</li>
+                    <li><code>0x96915F</code> - Traffic is Fast Cars</li>
+                    <li><code>0x969160</code> - Cars can Fly</li>
+                    <li><code>0x969161</code> - Huge Bunny Hop</li>
+                    <li><code>0x969162</code> - <i>Spawn Hydra (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969163</code> - <i>Spawn Vortex Hovercraft (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969164</code> - Tank Mode / Smash'n Boom</li>
+                    <li><code>0x969165</code> - All cars have nitro</li>
+                    <li><code>0x969166</code> - Cars Float Away when hit</li>
+                    <li><code>0x969167</code> - Always Midnight</li>
+                    <li><code>0x969168</code> - Stop Game Clock - Orange Sky</li>
+                    <li><code>0x969169</code> - Thunderstorm</li>
+                    <li><code>0x96916A</code> - Sandstorm</li>
+                    <li><code>0x96916C</code> - Mega Jump</li>
+                    <li><code>0x96916D</code> - Infinite Health</li>
+                    <li><code>0x96916E</code> - Infinite Oxygen</li>
+                    <li><code>0x96916F</code> - Get Parachute</li>
+                    <li><code>0x969170</code> - Get Jetpack</li>
+                    <li><code>0x969171</code> - Never Wanted</li>
+                    <li><code>0x969172</code> - Six Star Wanted Level</li>
+                    <li><code>0x969173</code> - Mega Punch</li>
+                    <li><code>0x969174</code> - Never get Hungry</li>
+                    <li><code>0x969175</code> - Peds Riot (Chaos Mode)</li>
+                    <li><code>0x969176</code> - Funhouse Theme</li>
+                    <li><code>0x969177</code> - Slower Gameplay</li>
+                    <li><code>0x969178</code> - Infinite Ammo, No Reload</li>
+                    <li><code>0x969179</code> - Full Weapon Aiming while driving</li>
+                    <li><code>0x96917A</code> - Decreased Traffic</li>
+                    <li><code>0x96917B</code> - Country Theme</li>
+                    <li><code>0x96917C</code> - Recruit Anyone (9mm)</li>
+                    <li><code>0x96917D</code> - Recruit Anyone (AK47)</li>
+                    <li><code>0x96917E</code> - Recruit Anyone (Rockets)</li>
+                    <li><code>0x96917F</code> - Max Respect</li>
+                    <li><code>0x969180</code> - Max Sex Appeal</li>
+                    <li><code>0x969181</code> - Max Stamina</li>
+                    <li><code>0x969183</code> - Hitman in All Weapons</li>
+                    <li><code>0x969184</code> - <i>Spawn Hunter (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969185</code> - <i>Spawn Quad (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969186</code> - <i>Spawn Tanker Truck (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969187</code> - <i>Spawn Dozer (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969188</code> - <i>Spawn Stunt Plane (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x969189</code> - <i>Spawn Monster (<b>Not Tested!</b>)</i></li>
+                    <li><code>0x96918B</code> - All Taxis Have Nitro</li>
+                </ul>
+                <p>[dword]
+                </p>
+                <ul>
+                    <li><code>0x96918C</code> - Has ever Cheated or not</li>
+                    <li><code>0xBAA472</code> - Has now Cheated or not</li>
+                    <li><code>0xB79044</code> - Cheated Count</li>
+                </ul>
+                <p>[byte]
+                </p>
+                <ul>
+                    <li><code>0x96918C</code> - 'Cheated' state:
+                        <ul>
+                            <li>0 = disabled</li>
+                            <li>1 = enabled</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>Note:</b>
+                    If it's set to 1 you'll get a warning message when saving a game. But this byte doesn't get set if you use a cheat enabler.
+                </p>
+                <h6><span class="mw-headline" id="Display_Settings">Display Settings</span></h6>
+                <ul>
+                    <li><code>0xBA6784</code> - [dword] Brightness</li>
+                    <li><code>0xBA6792</code> - [byte] Legend</li>
+                    <li><code>0xBA676C</code> - [byte] Radar Mode
+                        <ul>
+                            <li>0 = maps &amp; blips</li>
+                            <li>1 = blips</li>
+                            <li>2 = off</li>
+                        </ul>
+                    </li>
+                    <li><code>0xBA6769</code> - [byte] Hud Mode
+                        <ul>
+                            <li>0 = off</li>
+                            <li>1 = on</li>
+                        </ul>
+                    </li>
+                    <li><code>0xBA678C</code> - [byte] Subtitles</li>
+                    <li><code>0xBA6830</code> - [byte] Store gallery photos</li>
+                    <li><code>0xBA6788</code> - [float] Draw Distance</li>
+                    <li><code>0xBA6794</code> - [byte] Frame limiter</li>
+                    <li><code>0xBA6793</code> - [byte] Widescreen</li>
+                    <li><code>0xA9AE54</code> - [byte] Visual FX Quality</li>
+                    <li><code>0xBA680C</code> - [byte] Mip Mapping</li>
+                    <li><code>0xBA6814</code> - [byte] Antialiasing values:
+                        <ul>
+                            <li>1 = 0x (off)</li>
+                            <li>2 = 1x</li>
+                            <li>3 = 2x</li>
+                            <li>4 = 3x</li>
+                        </ul>
+                    </li>
+                    <li><code>0xBA6820</code> - [byte] Resolution values:
+                        <ul>
+                            <li>11 = 64<code>0x480</code></li>
+                            <li>12 = 80<code>0x400</code></li>
+                            <li>13 = 80<code>0x600</code></li>
+                            <li>15 = 1024x768</li>
+                        </ul>
+                    </li>
+                </ul>
+                <dl>
+                    <dd>(Depends on the graphic driver/hardware.)</dd>
+                </dl>
+                <h6><span class="mw-headline" id="Sound_Configuration">Sound Configuration</span></h6>
+                <ul>
+                    <li><code>0xBA6798</code> - [byte] Radio Volume [0 through 64]</li>
+                    <li><code>0xBA6797</code> - [byte] SFX Volume [0 through 64]</li>
+                    <li><code>0xBA6799</code> - [byte] Radio Equalizer</li>
+                    <li><code>0xBA6795</code> - [byte] Radio Auto-tune</li>
+                    <li><code>0xBA67F8</code> - [byte] Usertrack/Play mode values:
+                        <ul>
+                            <li>0 = radio</li>
+                            <li>1 = random</li>
+                        </ul>
+                    </li>
+                    <li><code>0xBA680D</code> - [byte] Usertrack/Automatic Media Scan</li>
+                    <li><code>0xBA679A</code> - [byte] Radio Station ID values:
+                        <ul>
+                            <li>1 to 12 (see below for station names according to ID)
+                                <ul>
+                                    <li>1 = "Playback FM"</li>
+                                    <li>2 = "K Rose"</li>
+                                    <li>3 = "K-DST"</li>
+                                    <li>4 = "Bounce FM"</li>
+                                    <li>5 = "SF-UR"</li>
+                                    <li>6 = "Radio Los Santos"</li>
+                                    <li>7 = "Radio X"</li>
+                                    <li>8 = "CSR 103.9"</li>
+                                    <li>9 = "K-JAH West"</li>
+                                    <li>10 = "Master Sounds 98.3"</li>
+                                    <li>11 = "WCTR Talk Radio"</li>
+                                    <li>12 = "User Track Player"</li>
+                                    <li>13 = "Radio Off"</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>AlienX:
+                    Seems that the Radio Station ID is just a menu identifier, this does not actually change the radio station while in-game!
+                </p>
+                <p>Another note... The opcode for switching players radio stations does not work in line with the station ID's, i have yet to figure out what station ID's are for the SCM code - Dont try to use the above ID's for the SCM Operation Code, it just wont work
+                </p>
+                <p>Thanks to AlienX For the station names and ID's
+                </p>
+                <h6><span class="mw-headline" id="Controller_Configuration">Controller Configuration</span></h6>
+                <ul>
+                    <li><code>0xBA6818</code> - [byte] Controller Configuration values:
+                        <ul>
+                            <li>0 = mouse + keys</li>
+                            <li>1 = joypad</li>
+                        </ul>
+                    </li>
+                    <li><code>0xB6EC1C</code> - [float] Mouse sensitivity</li>
+                    <li><code>0xC1CC02</code> - [byte] Steer with mouse</li>
+                    <li><code>0xC1CC03</code> - [byte] Fly with mouse</li>
+                </ul>
+                <ul>
+                    <li><code>0xB6EC2E</code> - REAL aiming mode offset, not menu:
+                        <ul>
+                            <li>0 = joypad</li>
+                            <li>1 = mouse + keys</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h6><span id="Other_Dynamic_Memory_Addresses_(non-static)"></span><span class="mw-headline" id="Other_Dynamic_Memory_Addresses_.28non-static.29">Other Dynamic Memory Addresses (non-static)</span></h6>
+                <h6><span class="mw-headline" id="Pedestrians">Pedestrians</span></h6>
+                <h4><span class="mw-headline" id="General">General</span></h4>
+                <ul>
+                    <li><code>0xB6F5F0</code> - Player pointer (CPed)</li>
+                    <li><code>0xB7CD98</code> - Player pointer, direct offset to the ped pool start (CPed)</li>
+                    <li><code>0xB74498</code> - CPeds maximum number (normally 140)</li>
+                    <li><code>0xB74490</code> - Pointer to ped pool usage information, which contains:
+                        <ul>
+                            <li>+0 = Pointer to the first ped in the pool</li>
+                            <li>+4 = Pointer to a byte map indicating which peds are in use</li>
+                            <li>+8 = [dword] Maximum number of peds in the pool</li>
+                            <li>+12 = [dword] Current number of peds in the pool</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Each ped object is 1988 (<code>0x7C4</code>) bytes.
+                </p>
+                <p>For each ped in the pool:
+                </p>
+                <p>In most cases, you can use even the dword of playeraddress as CPed value
+                </p>
+                <ul>
+                    <li>CPed +<code>0x14</code> = Pointer to XYZ position structure (and rotation)
+                        <ul>
+                            <li>(CPed+<code>0x14</code>) +<code>0x0</code> to +<code>0x2C</code> = [dword] Is the rotation matrix</li>
+                            <li>(CPed+<code>0x14</code>) +<code>0x30</code> = [dword] XPos</li>
+                            <li>(CPed+<code>0x14</code>) +<code>0x34</code> = [dword] YPos</li>
+                            <li>(CPed+<code>0x14</code>) +<code>0x38</code> = [dword] ZPos</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x2F</code> = [byte] Location status:
+                        <ul>
+                            <li>0 = outside</li>
+                            <li>3 = inside a building</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x42</code> = [byte] Is the BP/EP/FP/DP (special flags) status of the player as follows:<br />
+                        <ul>
+                            <li>Bit 1 = makes ped soft (ie. can move through walls and everything) (noclip in other words)</li>
+                            <li>Bit 2 = freezes ped (ie. ped cannot walk)</li>
+                            <li>Bit 3 = bullet-proof</li>
+                            <li>Bit 4 = flame-proof</li>
+                            <li>Bit 5 = collision-proof</li>
+                            <li>Bit 6 = MP-proof (MP)</li>
+                            <li>Bit 7 =&#160;?</li>
+                            <li>Bit 8 = explosion-proof</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0xC0</code> = [dword] Pointer to nearest car</li>
+                    <li>CPed +<code>0x15C</code> = Some anim states:
+                        <ul>
+                            <li>0 = landing from jump</li>
+                            <li>61 = punching</li>
+                            <li>102 = stopped</li>
+                            <li>154 = sprint</li>
+                            <li>205 = run</li>
+                        </ul>
+                    </li>
+                    <li>Cped +<code>0x46C</code> = [byte] Player check:
+                        <ul>
+                            <li>0 = in air/water</li>
+                            <li>1 = in car</li>
+                            <li>2 = entering interior</li>
+                            <li>3 = on foot</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x46D</code> = Jump state:
+                        <ul>
+                            <li>32 = landed/idle</li>
+                            <li>34 = in air</li>
+                            <li>36 = landing</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x46F</code> = Crouch state:
+                        <ul>
+                            <li>128 = stand</li>
+                            <li>132 = crouched</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x47C</code> = Pointer to anim struct</li>
+                    <li>CPed +<code>0x4DF</code> = Current anim play-state:
+                        <ul>
+                            <li>0 = nothing</li>
+                            <li>61 = starting/stopping</li>
+                            <li>62 = looping</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x504</code> = [word] Muzzle flash intensity:
+                        <ul>
+                            <li>0 to 10000 = on</li>
+                            <li>65536 = off</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x530</code> = [dword] State:
+                        <ul>
+                            <li>0 = leaving a car, falling down from a bike or something like this</li>
+                            <li>1 = normal case</li>
+                            <li>50 = driving</li>
+                            <li>55 = wasted</li>
+                            <li>63 = busted</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x534</code> = Runningstate:
+                        <ul>
+                            <li>0 = while driving</li>
+                            <li>1 = standing still</li>
+                            <li>4 = start to run</li>
+                            <li>6 = running</li>
+                            <li>7 = running fast (sprinting) by pressing sprint key</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x540</code> = [float] Health</li>
+                    <li>CPed +<code>0x544</code> = [float] Max health</li>
+                    <li>CPed +<code>0x548</code> = [float] Armor</li>
+                    <li>CPed +<code>0x558</code> = [float] Current rotation (Z angle)</li>
+                    <li>CPed +<code>0x55C</code> = [float] Target rotation (Z angle)</li>
+                    <li>CPed +<code>0x560</code> = [float] Rotation speed (Z angle)</li>
+                    <li>CPed +<code>0x568</code> = [dword] Current Car you are in contact with</li>
+                    <li>CPed +<code>0x584</code> = [dword] Current Entity you are in contact with</li>
+                    <li>CPed +<code>0x58C</code> = [dword] Last or Current Driven Car (CarPointer)</li>
+                    <li>CPed +<code>0x598</code> = [byte] Player lock (set to 1 to lock player controls, can't move)</li>
+                    <li>CPed +<code>0x5A0</code> = [byte] Start of weapon data (28 bytes) (See structures: WeaponSlot)</li>
+                    <li>CPed +<code>0x5D8</code> = [dword] Pistol weapon type:
+                        <ul>
+                            <li>22 = 9mm</li>
+                            <li>23 = silenced 9mm</li>
+                            <li>24 = desert eagle</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x5DC</code> = [dword] Pistol state</li>
+                    <li>CPed +<code>0x5E0</code> = [dword] Pistol ammo in clip</li>
+                    <li>CPed +<code>0x5E4</code> = [dword] Pistol total ammo (including clip)</li>
+                    <li>CPed +<code>0x5F4</code> = [dword] Shotgun weapon type:
+                        <ul>
+                            <li>25 = shotgun</li>
+                            <li>26 = sawn-off shotgun</li>
+                            <li>27 = spas-12</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x5F8</code> = [dword] Shotgun state:
+                        <ul>
+                            <li>1 = firing?</li>
+                            <li>2 = reloading</li>
+                        </ul>
+                    </li>
+                    <li>CPed +<code>0x5FC</code> = [dword] Shotgun ammo in clip</li>
+                    <li>CPed +<code>0x600</code> = [dword] Shotgun total ammo (including clip)</li>
+                    <li>CPed +<code>0x718</code> = [byte] Current weapon slot (1 byte)</li>
+                    <li>CPed +<code>0x740</code> = Current Weapon ID (from <a href="/wiki/Default.dat" class="mw-redirect" title="Default.dat">default.dat</a>)</li>
+                    <li>CPed +<code>0x760</code> = [dword] Weapon you were damaged with</li>
+                    <li>CPed +<code>0x764</code> = [dword] Pointer to the ped that damaged you</li>
+                </ul>
+                <h4><span class="mw-headline" id="Structures">Structures</span></h4>
+                                    <pre>WeaponSlot                 // Total 28Bytes
+                     DWORD       type          // + 0
+                     DWORD       state         // + 4 (0 idle, 1 firing, 2 reloading)
+                     DWORD       AmmoInClip    // + 8
+                     DWORD       AmmoRemaining // +12
+                     FLOAT       unknown       // +16 (increases each time you fire your weapon, 0 when weapon not active, 
+                                                  probably used to count bullets fired to know when to reload?)
+                     UNKNOWN     0..7 Bytes    // +20 (unknown - goggle mode, 0 off and 256 on)...+27
+                </pre>
+                                    <pre>WeaponSlot.type
+                      (Slot0: No Weapon)                    (Slot2: Handguns)
+                      0 - Fist                               22 - Pistol
+                      1 - Brass Knuckles                     23 - Silenced Pistol
+                      (Slot1: Melee)                         24 - Desert Eagle
+                      2 - Golf Club                         (Slot3: Shotguns)
+                      3 - Nitestick                          25 - Shotgun
+                      4 - Knife                              26 - Sawn-Off Shotgun
+                      5 - Baseball Bat                       27 - SPAS-12
+                      6 - Shovel                            (Slot4: Sub-Machineguns)
+                      7 - Pool Cue                           28 - Micro Uzi 
+                      8 - Katana                             29 - MP5
+                      9 - Chainsaw                           32 - TEC-9
+                      15 - Cane
+                      (Slot5: Machineguns)                   (Slot10: Gifts)
+                      30 - AK47                              14 - Flowers
+                      31 - M4                                (Slot9:Special1)
+                      (Slot6: Rifles)                        42 - Fire Extinguisher
+                      33 - Country Rifle                     43 - Camera 
+                      34 - Sniper Rifle                      (Slot11:Special2)
+                      (Slot7: Heavy Weapons)                 44 - NV Goggles
+                      35 - Rocket Launcher                   45 - IR Goggles
+                      36 - Heat Seaking RPG                  46 - Parachute
+                      37 - Flame Thrower                     (Slot12:Detonators)
+                      38 - Minigun                            40 - Detonator(for remote explosives)
+                      (Slot8: Projectiles)
+                      16 - Grenade
+                      18 - Molotov Cocktail
+                      39 - Remote Explosives
+                      (No slot: Fired from hunter / hydra / missile launcher)
+                      (This type is stored in the rocket pool as rocket type, but is the continuation of this list)
+                      19 - Normal rockets
+                      20 - Heatseeking rockets
+                      58 - Flares
+                </pre>
+                <h6><span class="mw-headline" id="Cars">Cars</span></h6>
+                <ul>
+                    <li><code>0xB6F980</code> - Is the direct pointer to the pool start (CVehicle)</li>
+                    <li><code>0xBA18FC</code> - Current vehicle pointer:
+                        <ul>
+                            <li>0 = on-foot</li>
+                            <li>&gt;0 = in-car</li>
+                        </ul>
+                    </li>
+                    <li><code>0x969084</code> - First vehicle you got into</li>
+                </ul>
+                <p><b>Note:</b>
+                    To get the next vehicle, so the second one, you need to add +<code>0x4</code> as many times you want. They are 0 if you haven't entered a first/second/third/etc car yet.
+                </p>
+                <ul>
+                    <li><code>0xB74494</code> - Pointer to vehicle pool usage information, which contains:
+                        <ul>
+                            <li>+0 = Pointer to the first vehicle in the pool</li>
+                            <li>+4 = Pointer to a byte map indicating which vehicles are in use</li>
+                            <li>+8 = [dword] Maximum number of vehicles in the pool</li>
+                            <li>+12 = [dword] Current number of vehicles in the pool</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Each vehicle object is 2584 (<code>0xA18</code>) bytes. It starts at <code>0xC502AA0</code>.
+                </p>
+                <p>For each vehicle in the pool:
+                </p>
+                <ul>
+                    <li>+20 = [byte] Contains a pointer to the rotation/position matrix (84 bytes):
+                        <ul>
+                            <li>+0 = [float] X-axis Rotation (Grad)</li>
+                            <li>+4 = [float] Y-axis Rotation (Grad)</li>
+                            <li>+8 = [float] Z-axis Rotation (Grad)</li>
+                            <li>+16 = [float] X-axis Rotation (Looking)</li>
+                            <li>+20 = [float] Y-axis Rotation (Looking)</li>
+                            <li>+24 = [float] Z-axis Rotation (Looking)</li>
+                            <li>+48 = [float] X-axis Position</li>
+                            <li>+52 = [float] Y-axis Position</li>
+                            <li>+56 = [float] Z-axis Position</li>
+                        </ul>
+                    </li>
+                    <li>+34 = [word] Vehicle ID from vehicles.ide</li>
+                    <li>+66 = [byte] Is the BP/EP/DP/DP (Special Flags) status of the car as follows:<br /><i>Add these values, and write the sum into +66</i>
+                        <ul>
+                            <li>1 = n/a</li>
+                            <li>2 = n/a</li>
+                            <li>4 = bullet-proof</li>
+                            <li>8 = fire-proof</li>
+                            <li>16 = damage-proof (from collisions etc)</li>
+                            <li>32 = n/a</li>
+                            <li>64 = n/a</li>
+                            <li>128 = explosion-proof</li>
+                        </ul>
+                    </li>
+                    <li>+68 = [float] X (East-West) speed</li>
+                    <li>+72 = [float] Y (North-South) speed</li>
+                    <li>+76 = [float] Z (Up-Down) speed</li>
+                    <li>+80 = [float] X (NS) Spin</li>
+                    <li>+84 = [float] Y (EW) Spin</li>
+                    <li>+88 = [float] Z (NW) Spin</li>
+                </ul>
+                <p><b>Note:</b>
+                    Do not get confused about the Spin Angles, these are NOT rotations but the angles of how fast your vehicle is turning in the given axis direction...
+                </p>
+                <p>(Car addresses continued:)
+                </p>
+                <ul>
+                    <li>+140 = [float] Mass (kg) from handling.cfg</li>
+                    <li>+144 = [float] Turn Mass from handling.cfg</li>
+                    <li>+148 = [float] Grip Divider:
+                        <ul>
+                            <li>1.0 = 1 x gGrip</li>
+                            <li>10.1 = 10 x gGrip</li>
+                            <li>100.0 = g / 100Grip</li>
+                        </ul>
+                    </li>
+                    <li>+152 = [float] Mass-to-Grip Multiplier. Ie. G Force when flying/during suspension/driving (acceleration towards ground)</li>
+                    <li>+160 = [float] Normalized Grip Level</li>
+                    <li>+164 = [float] CoM X</li>
+                    <li>+168 = [float] CoM Y</li>
+                    <li>+172 = [float] CoM Z</li>
+                    <li>+216 = [float] Increases when collision occurs</li>
+                    <li>+1064 = [byte] Engine State (whether the engine is running or stalled):
+                        <ul>
+                            <li>0 = stalled</li>
+                            <li>16 = ok</li>
+                        </ul>
+                    </li>
+                    <li>+1069 = [byte] Siren on/off</li>
+                    <li>+1076 = [byte] Body Color (as in <a href="/wiki/Carcols.dat" title="Carcols.dat">carcols.dat</a>, black being the 0)</li>
+                    <li>+1077 = [byte] Stripe Color (as in <a href="/wiki/Carcols.dat" title="Carcols.dat">carcols.dat</a>, black being the 0)</li>
+                    <li>+1078 = [byte] Body Color #2</li>
+                    <li>+1079 = [byte] Stripe Color #2</li>
+                    <li>+1080 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1084 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1088 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1092 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1096 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1100 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1104 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1108 = [dword] modding data as in garage info (Not working?)</li>
+                    <li>+1112 = [float] Car Wheel Size from vehicle.ide</li>
+                    <li>+1116 = [dword] Time left for car alarm to sound in ms</li>
+                    <li>+1120 = [dword] Pointer to driver</li>
+                    <li>+1124 = [dword] Pointer to passenger 1 (Front-right seat)</li>
+                    <li>+1128 = [dword] Pointer to passenger 2 (Rear-left seat)</li>
+                    <li>+1132 = [dword] Pointer to passenger 3 (Rear-right seat)</li>
+                    <li>+1136 = [dword] Pointer to passenger 4 (Used for buses)</li>
+                    <li>+1140 = [dword] Pointer to passenger 5 (Used for buses)</li>
+                    <li>+1144 = [dword] Pointer to passenger 6 (Used for buses)</li>
+                    <li>+1148 = [dword] Pointer to passenger 7 (Used for buses)</li>
+                    <li>+1152 = [dword] Pointer to passenger 8 (Used for buses)</li>
+                    <li>+1156 = [dword] Pointer to passenger 9 (Used for buses)</li>
+                    <li>+1172 = [float] Steer angle 1</li>
+                    <li>+1176 = [float] Steer angle 2</li>
+                    <li>+1180 = [float] Gas pedal</li>
+                    <li>+1184 = [float] Brake pedal</li>
+                    <li>+1192 = [byte] Places a car-bomb:
+                        <ul>
+                            <li>0 = No bomb.</li>
+                            <li>1 = Car has a time bomb, but it's not armed.</li>
+                            <li>2 = Car has an on-ignition bomb, but it's not armed.</li>
+                            <li>3 = Set remotely, perhaps (?).</li>
+                            <li>4 = Time bomb is armed.</li>
+                            <li>5 = On-ignition bomb is armed.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>Note:</b> You can set the above values to 0 or 1 to give the car a bomb. Some other flags get set when you arm the bomb. So if you set this value to 4 or 5, or actually arm the bomb through normal gameplay, it does not help if you try to change this value back.
+                </p>
+                <ul>
+                    <li>+1195 = [BYTE] The number of peds (usually cops) trying to hide behind this car.</li>
+                </ul>
+                <ul>
+                    <li>+<code>0x8A4</code> = [float] Nitro Count
+                        <ul>
+                            <li>1.0 Nitro filled (in case of number of NOS is equal to 0 it'll mean Empty)</li>
+                            <li>-1.0 Nitro discharged</li>
+                        </ul>
+                    </li>
+                    <li>+<code>0x48A</code> = [BYTE] Number of available NOS in the vehicle
+                        <ul>
+                            <li>1~10 Have Available NOS</li>
+                            <li>0 No Have Available NOS</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>+1200 = [float] Body dirt level:
+                        <ul>
+                            <li>0.0 = fully clean</li>
+                            <li>15.0 = maximum dirt visible</li>
+                        </ul>
+                    </li>
+                    <li>+1216 = [float] Health/Car Damage Left:
+                        <ul>
+                            <li>&lt;250.0 = on fire</li>
+                            <li>1000.0 = undamaged</li>
+                        </ul>
+                    </li>
+                    <li>+1272 = [dword] Car Door Locked State:
+                        <ul>
+                            <li>1 = open</li>
+                            <li>2 = locked</li>
+                        </ul>
+                    </li>
+                    <li>+1300 = [dword] Alternate siren (honking):
+                        <ul>
+                            <li>0 = off</li>
+                            <li>1 = on</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>Note:</b> Automatically gets reset back to 0. To prevent this just NOP <code>0x6E0A3B</code> (6 bytes).
+                </p>
+                <ul>
+                    <li>+1412 = [dword] Headlights switch:
+                        <ul>
+                            <li>0 = off</li>
+                            <li>1 = on</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>Note:</b> Same case as above, gets automatically reset - NOP <code>0x6E1EDE</code> (6 bytes).
+                </p>
+                <ul>
+                    <li>+1424 = [byte] Car type:
+                        <ul>
+                            <li>0 = car/plane</li>
+                            <li>5 = boat</li>
+                            <li>6 = train</li>
+                            <li>9 = bike</li>
+                        </ul>
+                    </li>
+                    <li>+1444 = [float] Train speed:
+                        <ul>
+                            <li>-0.1 = is forward</li>
+                            <li>0.1 = is reverse</li>
+                        </ul>
+                    </li>
+                    <li>+1445 = [byte] Car Tire (Left-Front) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = flat</li>
+                            <li>2 = Used by planes when landing gear is up</li>
+                        </ul>
+                    </li>
+                    <li>+1446 = [byte] Car Tire (Left-Rear) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = flat</li>
+                            <li>2 = Used by planes when landing gear is up</li>
+                        </ul>
+                    </li>
+                    <li>+1447 = [byte] Car Tire (Right-Front) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = flat</li>
+                            <li>2 = Used by planes when landing gear is up</li>
+                        </ul>
+                    </li>
+                    <li>+1448 = [byte] Car Tire (Right-Rear) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = flat</li>
+                            <li>2 = Used by planes when landing gear is up</li>
+                        </ul>
+                    </li>
+                    <li>+1628 = [byte] Bike Tire (Front) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = flat</li>
+                        </ul>
+                    </li>
+                    <li>+1629 = [byte] Bike Tire (Rear) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = flat</li>
+                        </ul>
+                    </li>
+                    <li>+1630 = [byte] Bicycle Tire (Front) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = shot</li>
+                        </ul>
+                    </li>
+                    <li>+1631 = [byte] Bicycle Tire (Rear) Status:
+                        <ul>
+                            <li>0 = ok</li>
+                            <li>1 = shot</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>Note:</b>
+                    You cannot actually shoot the wheels of bmx. If you set the value 1 at above two offsets, it rides as if the wheels were shot. They probably not work.
+                </p>
+                <ul>
+                    <li>+1736 = [byte] Is the bike identifier.</li>
+                </ul>
+                <p><b>Note:</b>
+                    Gets set to 1 if this vehicle is a bike (or bmx).
+                </p>
+                <ul>
+                    <li>+1824 = [float] Front-Left suspension height</li>
+                    <li>+1828 = [float] Rear-Left suspension height</li>
+                    <li>+1832 = [float] Front-Rear suspension height</li>
+                    <li>+1836 = [float] Rear-Rear suspension height</li>
+                </ul>
+                <ul>
+                    <li>+1980 = [float] Burn Timer (in ms) (for bikes)</li>
+                </ul>
+                <p><b>Note:</b> There is also a copy of the suspension values at -<code>0x10</code>, but these are 'smoother'. They range from 0 to 1 (1 = fully extended/airborne, 0 = fully compressed).
+                </p>
+                <ul>
+                    <li>+2020 = [float] Front-Left suspension height</li>
+                    <li>+2024 = [float] Rear-Left suspension height</li>
+                    <li>+2028 = [float] Front-Right suspension height</li>
+                    <li>+2032 = [float] Rear-Right suspension height</li>
+                </ul>
+                <ul>
+                    <li>+2156 = [word] Current load of vehicle, works for vehicles such as dumper, packer, dozer, forklift and so on.</li>
+                    <li>+2160 = [word] Last load value of vehicle. Used to detect whether vehicle should have sound of raising/lowering a load. After detecting it gets value of car struct +2156 below.</li>
+                </ul>
+                <ul>
+                    <li>+2276 = [float] Burn Timer (in ms) (for cars)</li>
+                </ul>
+                <p>Let's say, the Car Position of this given car starts at <code>0xC5F5DB4</code>:
+                </p>
+                <ul>
+                    <li>+0 = X Level to the ground</li>
+                    <li>+4 = Y Level to the ground</li>
+                    <li>+8 = Z Level to the ground</li>
+                    <li>+16 = X Where am I looking</li>
+                    <li>+20 = Y Where am I looking</li>
+                    <li>+24 = Z Where am I looking</li>
+                    <li>+32 = Dyn flight data</li>
+                    <li>+36 = Dyn flight data</li>
+                    <li>+40 = Dyn flight data</li>
+                    <li>+48 = CarPosX</li>
+                    <li>+52 = CarPosY</li>
+                    <li>+56 = CarPosZ</li>
+                </ul>
+                <p>Following offsets are Floats, as positions of doors and other car parts that gets detached by damage. We need to recalculate and set their locations if we warp a car from one location to another. Otherwise the car spins uncontrollably:
+                </p>
+                <ul>
+                    <li>+1828 = Detachables1 Pos X</li>
+                    <li>+1832 = Detachables1 Pos Y</li>
+                    <li>+1836 = Detachables1 Pos Z</li>
+                    <li>+1872 = Detachables2 Pos X</li>
+                    <li>+1876 = Detachables2 Pos Y</li>
+                    <li>+1880 = Detachables2 Pos Z</li>
+                    <li>+1916 = Detachables3 Pos X</li>
+                    <li>+1920 = Detachables3 Pos Y</li>
+                    <li>+1924 = Detachables3 Pos Z</li>
+                    <li>+1960 = Detachables4 Pos X</li>
+                    <li>+1964 = Detachables4 Pos Y</li>
+                    <li>+1968 = Detachables4 Pos Z</li>
+                </ul>
+                <p>The locations of the detachable objects are different for cars and bikes. This is merely because bike object is actually smaller than the car object. The car object is used for all vehicles (including heli) but the bikes.
+                </p>
+                <p>Offsets for Detachables:
+                </p>
+                <ul>
+                    <li>+1532 = BikeDetachPosAdr(0)</li>
+                    <li>+1632 = BikeDetachPosAdr(1)</li>
+                    <li>+1676 = BikeDetachPosAdr(2)</li>
+                    <li>+1720 = BikeDetachPosAdr(3)</li>
+                    <li>+1764 = BikeDetachPosAdr(4)</li>
+                </ul>
+                <ul>
+                    <li>+1828 = CarDetachPosAdr(0)</li>
+                    <li>+1872 = CarDetachPosAdr(1)</li>
+                    <li>+1916 = CarDetachPosAdr(2)</li>
+                    <li>+1960 = CarDetachPosAdr(3)</li>
+                </ul>
+                <p>The trailer of the tanker is handled the same way as the vehicles. Its pointer gets set at offset:
+                </p>
+                <ul>
+                    <li>+1224</li>
+                </ul>
+                <p>To the car object start. When warping vehicles that has trailer, we need to warp this 'vehicle' as well.
+                    The same pointer is used also when you are towing other vehicles as well.
+                </p>
+                <h6><span class="mw-headline" id="Wanted">Wanted</span></h6>
+                <p><code>0xB7CD9C</code> - Wanted pool start (CWanted). Each slot has 668 bytes of data.
+                </p>
+                <ul>
+                    <li>+<code>0x0</code> = Is the counter for how pissed the cops are:
+                        <ul>
+                            <li>above 50 = 1 star</li>
+                            <li>above 180 = 2 stars</li>
+                            <li>above 550 = 3 stars</li>
+                            <li>above 1200 = 4 stars</li>
+                            <li>above 2400 = 5 stars</li>
+                            <li>above 4600 = 6 stars</li>
+                        </ul>
+                    </li>
+                    <li>+<code>0x4</code> = like above, but 'before parole (timed wanted level decrease?)'</li>
+                    <li>+<code>0x8</code> = [dword] time value, the last time the wanted level decreased</li>
+                    <li>+<code>0xC</code> = [dword] time value, the last time the wanted level changed</li>
+                    <li>+<code>0x10</code> = [dword] 'time of parole'</li>
+                    <li>+<code>0x14</code> = [float] multiplier of wanted level contribution of crimes (set using <a href="/wiki/03C7" title="03C7">03C7</a>?)</li>
+                    <li>+<code>0x18</code> = [byte] Current amount of cops 'in pursuit'</li>
+                    <li>+<code>0x19</code> = [byte] Maximum number of foot cops simultaneously shooting at you ('in pursuit')</li>
+                    <li>+<code>0x1A</code> = [byte] Maximum number of cop cars in pursuit</li>
+                    <li>+<code>0x1B</code> = [byte] Amount of cops currently 'beating the suspect'</li>
+                    <li>+<code>0x1C</code> = [word] Chance a road block appears, range unknown (though 127 seems to have a special meaning)</li>
+                    <li>+<code>0x1E</code> = [bool] Is the player ignored by police? (set by script)</li>
+                    <li>+<code>0x1F</code> = [bool] Is the player ignored by police? (set by garages)</li>
+                    <li>+<code>0x20</code> = [bool] Is the player ignored by everyone?</li>
+                    <li>+<code>0x21</code> = [bool] Should the streamer load the SWAT models?</li>
+                    <li>+<code>0x22</code> = [bool] Should the streamer load the FBI models?</li>
+                    <li>+<code>0x23</code> = [bool] Should the streamer load the army models?</li>
+                    <li>+<code>0x24</code> = [dword] Current chase time</li>
+                    <li>+<code>0x28</code> = [dword] 'Current chase time counter'</li>
+                    <li>+<code>0x2C</code> = [bool] 'is time counting'</li>
+                    <li>+<code>0x2D</code> = [word] Current wanted level (1-6)</li>
+                    <li>+<code>0x2F</code> = [word] Wanted level before 'parole'</li>
+                    <li>need to do more</li>
+                </ul>
+                <p><b>Note:</b>
+                    Helicopters will still shoot if you change flag <code>0x19</code> to 0.
+                </p>
+                <h6><span class="mw-headline" id="Camera">Camera</span></h6>
+                <ul>
+                    <li><code>0xB6F028</code> - Camera Block Start (CCamera)</li>
+                    <li><code>0x52B730</code> - Start of camera 'MOVer' subroutine:
+                        <ul>
+                            <li><code>0xC3</code> = lock camera (retn)</li>
+                        </ul>
+                    </li>
+                    <li><code>0xB6F0DC</code> - [dword] Current View:
+                        <ul>
+                            <li>0 = bumper View</li>
+                            <li>1 = close external view</li>
+                            <li>2 = middle external view</li>
+                            <li>3 = furthest external view</li>
+                            <li>4 = nothing = same as last?</li>
+                            <li>5 = cinematic view</li>
+                            <li>6 to INF = same as 4?</li>
+                        </ul>
+                    </li>
+                    <li><code>0xB6F0E0</code> - [float] Car View Distance (arm length)</li>
+                    <li><code>0xB6F0E8</code> - [float] True View Distance (true arm length)</li>
+                </ul>
+                <h6><span class="mw-headline" id="Ignored">Ignored</span></h6>
+                <p><code>0xB7CD9C</code> - Ignored pointer (CIgnored).
+                </p>
+                <ul>
+                    <li>+<code>0x1E</code> = [byte/boolean] Is player ignored by cops</li>
+                    <li>+<code>0x298</code> = [byte/boolean] Is player ignored by everyone</li>
+                </ul>
+                <h6><span class="mw-headline" id="Pools">Pools</span></h6>
+                <p>See the <a href="/mediawiki/index.php?title=Data_Pools&amp;action=edit&amp;redlink=1" class="new" title="Data Pools (page does not exist)">Data Pools</a> functions in the <a href="/wiki/Function_Memory_Addresses_(SA)" title="Function Memory Addresses (SA)">Function Memory Addresses (SA)</a> section.
+            </p>
+            <p><code>0x550F10</code> - AllocatePools function.
+            </p>
+            <ul>
+                <li><code>0xB74484</code> - PtrNode Single</li>
+                <li><code>0xB74488</code> - PtrNode Double</li>
+                <li><code>0xB7448C</code> - EntryInfoNode</li>
+                <li><code>0xB74490</code> - Peds</li>
+                <li><code>0xB74494</code> - Vehicles</li>
+                <li><code>0xB74498</code> - Buildings</li>
+                <li><code>0xB7449C</code> - Objects</li>
+                <li><code>0xB744A0</code> - Dummys</li>
+                <li><code>0xB744A4</code> - ColModel</li>
+                <li><code>0xB744A8</code> - Task</li>
+                <li><code>0xB744AC</code> - Event</li>
+                <li><code>0xB744B0</code> - PointRoute</li>
+                <li><code>0xB744B4</code> - PatrolRoute</li>
+                <li><code>0xB744B8</code> - NodeRoute</li>
+                <li><code>0xB744CC</code> - TaskAllocator</li>
+                <li><code>0xB744C0</code> - PedIntelligence</li>
+                <li><code>0xB744C4</code> - PedAttractors</li>
+            </ul>
+            <h6><span class="mw-headline" id="Target">Target</span></h6>
+            <p><code>0xB6F3B8</code> = Pointer to Target.
+            </p>
+            <ul>
+                <li>+<code>0x79C</code> [dword] = Targetted CPed:
+                    <ul>
+                        <li>0 = no cped targetted</li>
+                    </ul>
+                </li>
+                <li>+<code>0xC0</code> = Pointer to last object (ped, car, maybe others) you collided with</li>
+            </ul>
+            <h6><span class="mw-headline" id="Handling">Handling</span></h6>
+            <p><code>0xC2B9DC</code> - Handling Block Start. Each slot has 224 bytes of data.
+            </p>
+            <ul>
+                <li>+<code>0x0</code> = [dword] Index/Identifier</li>
+                <li>+<code>0x4</code> = fMass</li>
+                <li>+<code>0x8</code> = 1.0 / fMass</li>
+                <li>+<code>0xC</code> = fTurnMass</li>
+                <li>+<code>0x10</code> = fDragMult</li>
+                <li>+<code>0x14</code> = CentreOfMass.x</li>
+                <li>+<code>0x18</code> = CentreOfMass.y</li>
+                <li>+<code>0x1C</code> = CentreOfMass.z</li>
+                <li>+<code>0x20</code> = [byte] nPercentSubmerged</li>
+                <li>+<code>0x24</code> = fMass * 8.0000001e-1 / nPercentSubmerged</li>
+                <li>+<code>0x28</code> = fTractionMultiplier</li>
+                <li>+<code>0x74</code> = [byte] TransmissionData.nDriveType</li>
+                <li>+<code>0x75</code> = [byte] TransmissionData.nEngineType</li>
+                <li>+<code>0x76</code> = [byte] TransmissionData.nNumberOfGears</li>
+                <li>+<code>0x7C</code> = TransmissionData.fEngineAcceleration (Multiplied by 3.9999999e-4)</li>
+                <li>+<code>0x80</code> = TransmissionData.fEngineInertia</li>
+                <li>+<code>0x84</code> = TransmissionData.fMaxVelocity (Multiplied by 5.5555599e-3)</li>
+                <li>+<code>0x94</code> = fBrakeDeceleration (Multiplied by 3.9999999e-4)</li>
+                <li>+<code>0x98</code> = fBrakeBias</li>
+                <li>+<code>0x9C</code> = [byte] bABS</li>
+                <li>+<code>0xA0</code> = fSteeringLock</li>
+                <li>+<code>0xA4</code> = fTractionLoss</li>
+                <li>+<code>0xA8</code> = fTractionBias</li>
+                <li>+<code>0xAC</code> = fSuspensionForceLevel</li>
+                <li>+<code>0xB0</code> = fSuspensionDampingLevel</li>
+                <li>+<code>0xB4</code> = fSuspensionHighSpdComDamp</li>
+                <li>+<code>0xB8</code> = Suspension upper limit</li>
+                <li>+<code>0xBC</code>= Suspension lower limit</li>
+                <li>+<code>0xC0</code> = Suspension bias between front and rear</li>
+                <li>+<code>0xC4</code> = Suspension anti-dive multiplier</li>
+                <li>+<code>0xC8</code> = [float] fCollisionDamageMultiplier { memory fCollisionDamageMultiplier = fCollisionDamageMultiplier * ( 1.0 / fMass) * 2000.0 }</li>
+                <li>+<code>0xCC</code> = [hex] modelFlags</li>
+                <li>+<code>0xD0</code> = [hex] handlingFlags</li>
+                <li>+<code>0xD4</code> = fSeatOffsetDistance</li>
+                <li>+<code>0xD8</code> = [dword] nMonetaryValue</li>
+                <li>+<code>0xDC</code> = [byte] Front lights</li>
+                <li>+<code>0xDD</code> = [byte] Rear lights</li>
+                <li>+<code>0xDE</code> = [byte] Vehicle anim group</li>
+            </ul>
+            <h6><span class="mw-headline" id="Controls">Controls</span></h6>
+            <p><code>0xB73458</code> - Start of controls block.
+            </p>
+            <ul>
+                <li>+<code>0x20</code> = [word] Accelerate:
+                    <ul>
+                        <li>0 = off</li>
+                        <li>255 = on</li>
+                    </ul>
+                </li>
+                <li>+<code>0x22</code> = [word] Brake</li>
+            </ul>
+            <h6><span class="mw-headline" id="Rockets">Rockets</span></h6>
+            <p>The rocket pool contains info on launched rockets (for example, Hydra rockets).
+            </p>
+            <p><code>0xC891A8</code> - Rocket pool start. Each slot has 36 bytes of data. There are 32 elements in the pool.
+            </p>
+            <ul>
+                <li>+0 = [dword] Rocket type:
+                    <ul>
+                        <li>16 = none</li>
+                        <li>17 = tear gas</li>
+                        <li>19 = normal</li>
+                        <li>20 = heatseeking</li>
+                        <li>39 = remote explosives</li>
+                        <li>58 = flare</li>
+                    </ul>
+                </li>
+                <li>+4 = [dword] Pointer to launching entity</li>
+                <li>+8 = [dword] Pointer to target vehicle (when heatseeking), 0 otherwise</li>
+                <li>+16 = [byte] Does rocket exist?
+                    <ul>
+                        <li>0 = exploded/does not exist</li>
+                        <li>1 = travelling</li>
+                    </ul>
+                </li>
+                <li>+20 = [float] X-axis position</li>
+                <li>+24 = [float] Y-axis position</li>
+                <li>+28 = [float] Z-axis position</li>
+            </ul>
+            <h6><span class="mw-headline" id="Bullets">Bullets</span></h6>
+            <p><code>0xC88740</code> - Bullet pool start.
+            </p>
+            <ul>
+                <li>+12 = [byte] Bullet exists
+                    <ul>
+                        <li>0 = Does not exist</li>
+                        <li>1 = Exists</li>
+                    </ul>
+                </li>
+                <li>+16 = [float] X-axis position</li>
+                <li>+20 = [float] Y-axis position</li>
+                <li>+24 = [float] Z-axis position</li>
+            </ul>
+            <p><b>Note:</b> It works only for Sniper Rifle
+            </p>
+            <h6><span class="mw-headline" id="Race_Checkpoints">Race Checkpoints</span></h6>
+            <p>The checkpoints block that are used in the "illegal street racing" mini-games.
+            </p>
+            <p><code>0xC7F158</code> - Checkpoint block start. Each block is 38 bytes, but theres always only two at a time.
+            </p>
+            <ul>
+                <li>+0 = [byte] Type of checkpoint</li>
+                <li>+2 = [byte] RGBA color value</li>
+                <li>+4 = [float] X-axis Position</li>
+                <li>+8 = [float] Y-axis Position</li>
+                <li>+12 = [float] Z-axis Position</li>
+                <li>+16 to +24 = [float] Rotation Matrix (direction from this checkpoint to the next, all floats)</li>
+                <li>+32 = [float] Checkpoint radius</li>
+            </ul>
+            <h6><span class="mw-headline" id="Garages_and_Parking">Garages and Parking</span></h6>
+            <p><b>Note, that the memory location of garages can vary depending on the scm script you use.</b>
+            </p>
+            <p>There are <a href="/wiki/Garage#San_Andreas_2" title="Garage">50 garages</a> in the game. Each garage has:-
+        </p>
+        <ul>
+            <li>Position</li>
+            <li>Details</li>
+            <li>Usage information</li>
+            <li>Location in game</li>
+            <li>Location of door</li>
+            <li>Width</li>
+            <li>Depth</li>
+            <li>Height</li>
+            <li>Direction it looks</li>
+            <li>Coordinates of lower left corner</li>
+            <li>Coordinates of upper right corner,</li>
+            <li>Usable by the player</li>
+            <li>Which property (safe house) it belongs</li>
+            <li>Number of vehicles which can be parked inside</li>
+            <li>The door state (closed, opening, open and closing)</li>
+        </ul>
+        <p>These are found in the garage object of 212 bytes. The memory locations where the garages start are:
+        </p>
+        <ul>
+            <li><code>0x96C048</code> (start of first garage)</li>
+            <li>+<code>0xD4</code> (offset for second garage - offset this much again for third garage, again for fourth, etc.)</li>
+            <li><code>0x96C120</code> (start of final garage)</li>
+        </ul>
+        <p>(Tested using non-patched original v1.0 German EXE with English language option selected, and original SCM file.)
+        </p>
+        <p>(UZI-I Tested Player Garage and Pay'n'Spray using Hoodlum Crack EXE with an Blank SCM)
+        </p>
+        <p>Here is the known garage offsets:
+        </p>
+        <ul>
+            <li>+0 = [float] X Coord of the Garage Lower Left corner</li>
+            <li>+4 = [float] Y Coord of the Garage Lower Left corner</li>
+            <li>+8 = [float] Z Coord of the Garage Lower Left corner</li>
+            <li>+12 = [float] X Value of direction vector 1</li>
+            <li>+16 = [float] Y Value of direction vector 1</li>
+            <li>+20 = [float] X Value of direction vector 2</li>
+            <li>+24 = [float] Y Value of direction vector 2</li>
+            <li>+28 = [float] Top Z Coord. of the garage</li>
+            <li>+32 = [float] Normalized Width of the garage</li>
+            <li>+36 = [float] Normalized Depth of the garage</li>
+            <li>+40 = [float] Left Border (X) corrdinate</li>
+            <li>+44 = [float] Right Border (X) corrdinate</li>
+            <li>+48 = [float] Front Border (Y) corrdinate</li>
+            <li>+52 = [float] Back Border (Y) corrdinate</li>
+            <li>+56 = [float] Garage Door Position</li>
+            <li>+60 = [dword] unknown (Timer)</li>
+            <li>+64 = [dword] unknown (not saved)</li>
+            <li>+68 = [chars] Garage Name (7 bytes + nul)</li>
+            <li>+76 = [byte] Garage Type</li>
+            <li>+77 = [byte] Garage Door State values:
+                <ul>
+                    <li>0 = closed</li>
+                    <li>1 = open</li>
+                    <li>2 = closing</li>
+                    <li>3 = opening</li>
+                </ul>
+            </li>
+            <li>+78 = [byte] Door Flags
+                <ul>
+                    <li><code>0x01</code> = used mod shop (?)</li>
+                    <li><code>0x02</code> = inactive door</li>
+                    <li><code>0x04</code> = used Pay'n'Spray (?)</li>
+                    <li><code>0x08</code> = small door (reflective?)</li>
+                    <li><code>0x10</code> = up and in door</li>
+                    <li><code>0x20</code> = camera follows player</li>
+                    <li><code>0x40</code> = door is closed flag</li>
+                    <li><code>0x80</code> = girlfriend PnS</li>
+                </ul>
+            </li>
+            <li>+79 = [byte] Original Type</li>
+        </ul>
+        <p>The direction vector 3 is completely left out, I think because the garages are always even to the ground. I think that is also why the Z values of the direction vectors are also left-out.
+        </p>
+        <p>Note: Direction Vectors marked above may be Quaternions.
+        </p>
+        <p>Here are the static Addresses of the Garage Blocks, and to which garage they belong:
+        </p>
+        <ul>
+            <li><code>0x96C048</code> - Commerce Region, Loading Bay Garage (Life's a Beach)</li>
+            <li><code>0x96C120</code> - LSPD Police Impound Garage</li>
+            <li><code>0x96C1F8</code> - Mission Garage near El Corona (Los Desperados)</li>
+            <li><code>0x96C2D0</code> - Eight Ball Autos near El Corona</li>
+            <li><code>0x96C3A8</code> - Mission Garage near El Corona (Cesar Vialpando)</li>
+            <li><code>0x96C480</code> - Player Garage: El Corona</li>
+            <li><code>0x96C558</code> - LS Burglary Garage near Playe del Seville</li>
+            <li><code>0x96C630</code> - LowRider Tuning Garage in Willowfield</li>
+            <li><code>0x96C708</code> - Pay 'n' Spray in Idlewood</li>
+            <li><code>0x96C7E0</code> - Player Garage: Johnson House</li>
+            <li><code>0x96C8B8</code> - Pay 'n' Spray in Temple</li>
+            <li><code>0x96C990</code> - Transfender in Temple</li>
+            <li><code>0x96CA68</code> - Pay 'n' Spray in Santa Maria Beach</li>
+            <li><code>0x96CB40</code> - Player Garage: Santa Maria Beach</li>
+            <li><code>0x96CC18</code> - Player Garage: Mulholland</li>
+            <li><code>0x96CCF0</code> - Wheel Archangels in Ocean Flats</li>
+            <li><code>0x96CDC8</code> - Mission Garage in Ocean Flats (T-Bone Mendez)</li>
+            <li><code>0x96CEA0</code> - Player Garage: Hashbury</li>
+            <li><code>0x96CF78</code> - Transfender near Wang Cars in Doherty</li>
+            <li><code>0x96D050</code> - Pay 'n' Spray near Wang Cars in Doherty</li>
+            <li><code>0x96D128</code> - SF Burglary Garage, Loading Bay near Doherty</li>
+            <li><code>0x96D200</code> - Player Garage: Doherty</li>
+            <li><code>0x96D2D8</code> - Mission Garage in Doherty Garage</li>
+            <li><code>0x96D3B0</code> - Woozie's Mission Garage in Chinatown (Ran Fa Li)</li>
+            <li><code>0x96D488</code> - Michelle's Pay 'n' Spray in Downtown</li>
+            <li><code>0x96D560</code> - Player Garage: Calton Heights</li>
+            <li><code>0x96D638</code> - SFPD Police Impound Garage</li>
+            <li><code>0x96D710</code> - Pay 'n' Spray in Juniper Hollow</li>
+            <li><code>0x96D7E8</code> - Player Garage: Paradiso</li>
+            <li><code>0x96D8C0</code> - LVPD Police Impound Garage</li>
+            <li><code>0x96D998</code> - Airport Plane Garage in Las Venturas</li>
+            <li><code>0x96DA70</code> - LV Burglary Garage near Camel's Toe</li>
+            <li><code>0x96DB48</code> - Pay 'n' Spray near Royal Casino</li>
+            <li><code>0x96DC20</code> - Transfender in come-a-lot</li>
+            <li><code>0x96DCF8</code> - Player Garage: Rockshore West</li>
+            <li><code>0x96DDD0</code> - Welding Wedding Bomb-workshop in Emerald Isle</li>
+            <li><code>0x96DEA8</code> - Pay 'n' Spray in Redsands East</li>
+            <li><code>0x96DF80</code> - Player Garage: Redsands West</li>
+            <li><code>0x96E058</code> - Player Garage: Prickle Pine</li>
+            <li><code>0x96E130</code> - Player Garage: Whitewood Estates</li>
+            <li><code>0x96E208</code> - Pay 'n' Spray in El Quebrados</li>
+            <li><code>0x96E2E0</code> - Pay 'n' Spray in Fort Carson</li>
+            <li><code>0x96E3B8</code> - Player Garage: Fort Carson</li>
+            <li><code>0x96E490</code> - Player Garage: Verdant Meadows</li>
+            <li><code>0x96E568</code> - Mission Garage in El Castillo del Diablo (Interdiction)</li>
+            <li><code>0x96E640</code> - Airport Garage in Verdant Meadows</li>
+            <li><code>0x96E718</code> - Mission Garage in Angel Pine (Puncture Wounds)</li>
+            <li><code>0x96E7F0</code> - Pay 'n' Spray in Dillimore</li>
+            <li><code>0x96E8C8</code> - Player Garage: Palomino Creek</li>
+            <li><code>0x96E9A0</code> - Player Garage: Dillimore</li>
+        </ul>
+        <p>Static Mem. Locations for garages:
+        </p>
+        <ul>
+            <li><code>0x96ABD8</code> - Johnson House Car 1</li>
+            <li><code>0x96AC18</code> - Johnson House Car 2</li>
+            <li><code>0x96AC58</code> - Johnson House Car 3</li>
+            <li><code>0x96AC98</code> - Johnson House Car 4</li>
+            <li><code>0x96ACD8</code> - Santa Maria Beach Car 1</li>
+            <li><code>0x96AD18</code> - Santa Maria Beach Car 2</li>
+            <li><code>0x96AD58</code> - Santa Maria Beach Car 3</li>
+            <li><code>0x96AD98</code> - Santa Maria Beach Car 4</li>
+            <li><code>0x96ADD8</code> - Rockshore West Car 1</li>
+            <li><code>0x96AE18</code> - Rockshore West Car 2</li>
+            <li><code>0x96AE58</code> - Rockshore West Car 3</li>
+            <li><code>0x96AE98</code> - Rockshore West Car 4</li>
+            <li><code>0x96AED8</code> - Fort Carson Car 1</li>
+            <li><code>0x96AF18</code> - Fort Carson Car 2</li>
+            <li><code>0x96AF58</code> - Fort Carson Car 3</li>
+            <li><code>0x96AF98</code> - Fort Carson Car 4</li>
+            <li><code>0x96AFD8</code> - Verdant Meadows Car 1</li>
+            <li><code>0x96B018</code> - Verdant Meadows Car 2</li>
+            <li><code>0x96B058</code> - Verdant Meadows Car 3</li>
+            <li><code>0x96B098</code> - Verdant Meadows Car 4</li>
+            <li><code>0x96B0D8</code> - Dillimore Car 1</li>
+            <li><code>0x96B118</code> - Dillimore Car 2</li>
+            <li><code>0x96B158</code> - Dillimore Car 3</li>
+            <li><code>0x96B198</code> - Dillimore Car 4</li>
+            <li><code>0x96B1D8</code> - Prickle Pine Car 1</li>
+            <li><code>0x96B218</code> - Prickle Pine Car 2</li>
+            <li><code>0x96B258</code> - Prickle Pine Car 3</li>
+            <li><code>0x96B298</code> - Prickle Pine Car 3</li>
+            <li><code>0x96B2D8</code> - Whitewood Estates Car 1</li>
+            <li><code>0x96B318</code> - Whitewood Estates Car 2</li>
+            <li><code>0x96B358</code> - Whitewood Estates Car 3</li>
+            <li><code>0x96B398</code> - Whitewood Estates Car 4</li>
+            <li><code>0x96B3D8</code> - Palomino Creek Car 1</li>
+            <li><code>0x96B418</code> - Palomino Creek Car 2</li>
+            <li><code>0x96B458</code> - Palomino Creek Car 3</li>
+            <li><code>0x96B498</code> - Palomino Creek Car 4</li>
+            <li><code>0x96B4D8</code> - Redlands West Car 1</li>
+            <li><code>0x96B518</code> - Redlands West Car 2</li>
+            <li><code>0x96B558</code> - Redlands West Car 3</li>
+            <li><code>0x96B598</code> - Redlands West Car 4</li>
+            <li><code>0x96B5D8</code> - El Corona Car 1</li>
+            <li><code>0x96B618</code> - El Corona Car 2</li>
+            <li><code>0x96B658</code> - El Corona Car 3</li>
+            <li><code>0x96B698</code> - El Corona Car 4</li>
+            <li><code>0x96B6D8</code> - MulHolland Car 1</li>
+            <li><code>0x96B718</code> - MulHolland Car 2</li>
+            <li><code>0x96B758</code> - MulHolland Car 3</li>
+            <li><code>0x96B798</code> - MulHolland Car 4</li>
+            <li><code>0x96B7D8</code> - LSPD Impound Car 1</li>
+            <li><code>0x96B818</code> - LSPD Impound Car 2</li>
+            <li><code>0x96B858</code> - LSPD Impound Car 3</li>
+            <li><code>0x96B898</code> - LSPD Impound unused</li>
+            <li><code>0x96B8D8</code> - SFPD Impound Car 1</li>
+            <li><code>0x96B918</code> - SFPD Impound Car 2</li>
+            <li><code>0x96B958</code> - SFPD Impound Car 3</li>
+            <li><code>0x96B998</code> - SFPD Impound unused</li>
+            <li><code>0x96B9D8</code> - LVPD Impound Car 1</li>
+            <li><code>0x96BA18</code> - LVPD Impound Car 2</li>
+            <li><code>0x96BA58</code> - LVPD Impound Car 3</li>
+            <li><code>0x96BA98</code> - LVPD Impound usued</li>
+            <li><code>0x96BAD8</code> - Calton Heights Car 1</li>
+            <li><code>0x96BB18</code> - Calton Heights Car 2</li>
+            <li><code>0x96BB58</code> - Calton Heights Car 3</li>
+            <li><code>0x96BB98</code> - Calton Heights Car 4</li>
+            <li><code>0x96BBD8</code> - Paradiso Car 1</li>
+            <li><code>0x96BC18</code> - Paradiso Car 2</li>
+            <li><code>0x96BC58</code> - Paradiso Car 3</li>
+            <li><code>0x96BC98</code> - Paradiso Car 4</li>
+            <li><code>0x96BCD8</code> - Doherty Car 1</li>
+            <li><code>0x96BD18</code> - Doherty Car 2</li>
+            <li><code>0x96BD58</code> - Doherty Car 3</li>
+            <li><code>0x96BD98</code> - Doherty Car 4</li>
+            <li><code>0x96BDD8</code> - Hashbury Car 1</li>
+            <li><code>0x96BE18</code> - Hashbury Car 2</li>
+            <li><code>0x96BE58</code> - Hashbury Car 3</li>
+            <li><code>0x96BE98</code> - Hashbury Car 4</li>
+            <li><code>0x96BED8</code> - Verdant Meadows Airport Car 1</li>
+            <li><code>0x96BF18</code> - Verdant Meadows Airport Car 2</li>
+            <li><code>0x96BF58</code> - Verdant Meadows Airport Car 3</li>
+            <li><code>0x96BF98</code> - Verdant Meadows Airport Car 4</li>
+        </ul>
+        <p>Offsets:
+        </p>
+        <ul>
+            <li>+0 = [float] X Coord</li>
+            <li>+4 = [float] Y Coord</li>
+            <li>+8 = [float] Z Coord</li>
+            <li>+14 = [word] BPDPEPFP coding</li>
+            <li>+16 = [word] Car ID</li>
+            <li>+47 = [byte] Body Color ordinal</li>
+            <li>+48 = [byte] Stripe Color ordinal</li>
+            <li>+60 = [float] Car Angle</li>
+        </ul>
+        <h6><span class="mw-headline" id="Interface">Interface</span></h6>
+        <ul>
+            <li><code>0xBAB22C</code> - [byte] Health bar/red text/enemy marker/anything red color (RGBA, 4 bytes)</li>
+            <li><code>0xBAB230</code> - [byte] Money font color/vehicle entry name/green text/anything green color (RGBA, 4 bytes)</li>
+            <li><code>0xBAB238</code> - [byte] White text color (RGBA, 4 bytes)</li>
+            <li><code>0xBAB240</code> - [byte] Main menu title border (RGBA, 4 bytes)</li>
+            <li><code>0xBAB244</code> - [byte] Wanted level color (RGBA, 4 bytes)</li>
+            <li><code>0xBAB24C</code> - [byte] Radio station text color (RGBA, 4 bytes)</li>
+            <li><code>0xBAB258</code> - [byte] Yellow blip/text color (RGBA, 4 bytes)</li>
+        </ul>
+        <h6><span class="mw-headline" id="Menu">Menu</span></h6>
+        <p>The following addresses have been found:
+        </p>
+        <p><code>0xBA6748</code> - Base address.
+        </p>
+        <ul>
+            <li>+<code>0x15D</code> = [byte] Current Menu ID</li>
+            <li>+<code>0x78D</code> = [byte] Show menu item hover</li>
+            <li>+<code>0x54</code> = [dword] Selected menu item</li>
+        </ul>
+        <ul>
+            <li>+<code>0xE9</code> = [byte] Main menu switch (startup menu/menu when playing)</li>
+            <li>+<code>0x84</code> = [dword] Language</li>
+            <li>+<code>0x15F</code> = [byte] Selected savegame</li>
+            <li>+<code>0x24</code> = [dword] Radar mode</li>
+        </ul>
+        <ul>
+            <li>+<code>0x64</code> = [float] Map zoom</li>
+            <li>+<code>0x68</code> = [float] Map x position</li>
+            <li>+<code>0x6C</code> = [float] Map y position</li>
+        </ul>
+        <ul>
+            <li>+<code>0x5C</code> = [byte] Player in menu?</li>
+        </ul>
+        <h6><span class="mw-headline" id="Menu_IDs">Menu IDs</span></h6>
+        <p>Known Menu IDs (get ID at <code>0xBA68A5</code>):
+        </p>
+        <ul>
+            <li>0 = Stats</li>
+            <li>1 = Start game</li>
+            <li>2 = Brief</li>
+            <li>3 = Audio options</li>
+            <li>4 = Display settings</li>
+            <li>5 = Map</li>
+            <li>6 = Question start new game</li>
+            <li>7 = Game selection</li>
+            <li>8 = Question load <a href="/wiki/Mission_Pack" title="Mission Pack">mission pack</a></li>
+            <li>9 = Load game</li>
+            <li>10 = Delete game</li>
+            <li>11 = Question load save game</li>
+            <li>12 = Question delete game</li>
+            <li>13 = Loads first savegame? *crash</li>
+            <li>14 = Delete successful</li>
+            <li>15 = Delete successful</li>
+            <li>16 = Save game</li>
+            <li>17 = Question save</li>
+            <li>18 = Save successful</li>
+            <li>19 = Save successful</li>
+            <li>20 = Save game ok</li>
+            <li>21 = Load game ok</li>
+            <li>22 = Game affected, do not save</li>
+            <li>23 = Display default settings</li>
+            <li>24 = Audio default settings</li>
+            <li>25 = Controller default settings</li>
+            <li>26 = User track options</li>
+            <li>28 = Language</li>
+            <li>29 = Save game ok</li>
+            <li>30 = Save unsuccessful</li>
+            <li>31 = Load game (save unsuccessful)</li>
+            <li>32 = Load unsuccessful, file corrupted</li>
+            <li>33 = Options</li>
+            <li>34 = Main menu</li>
+            <li>35 = Quit game</li>
+            <li>36 = Controller setup</li>
+            <li>37 = Redefine controls</li>
+            <li>38 = Foot/vehicle controls</li>
+            <li>39 = Mouse settings</li>
+            <li>40 = Joypad settings</li>
+            <li>41 = Game running main menu</li>
+            <li>42 = Quit game</li>
+            <li>43 = Empty</li>
+        </ul>
+        <h6><span class="mw-headline" id="SCM_related">SCM related</span></h6>
+        <ul>
+            <li><code>0xA49960</code> - Start of the SCM block (<code>0xA49960</code> + (4 * varnumber) is that particular variable)</li>
+            <li><code>0xA7A6A0</code> - Start of the mission block (69000 bytes)</li>
+            <li><code>0x464080</code> - GetOpcodeParameters()</li>
+            <li><code>0xA447F4</code> - Command count</li>
+            <li><code>0x469F00</code> - CRunningScript_ProcessOneCommand</li>
+            <li><code>0x464080</code> - CRunningScript_CollectParameters</li>
+            <li><code>0x4859D0</code> - CRunningScript_UpdateCompareFlag</li>
+            <li><code>0x469390</code> - Game_Script_Thread struct</li>
+            <li><code>0xA43C78</code> - Where the routine above stores opcode parameters values. Max 16 paramters for an opcode it seems</li>
+            <li><code>0x8A6168</code> - "Master" jumptable, each dword points to one of 27 different functions, each one handling approx 100 opcodes</li>
+            <li><code>0x466C50</code> - Opcodes 0000 - 0063. Array of dword, each pointing to the function for that opcode</li>
+            <li><code>0x468364</code> - Opcodes 0064 - 00C4. Array of dword, each pointing to the function for that opcode</li>
+            <li><code>0x469E4C</code> - Opcodes 00D6 - 0129. Array of byte, each byte is an index for the array of dword at <code>0x469DD4</code>, which points to the opcode function</li>
+            <li><code>0x47D1B4</code> - Opcodes 0137 - 018F. Array of byte, each byte is an index for the array of dword at <code>0x47D0F4</code>, which points to the opcode function</li>
+            <li><code>0x47DFE0</code> - Opcodes 0190 - 01F3. Array of byte, each byte is an index for the array of dword at <code>0x47DF58</code>, which points to the opcode function</li>
+            <li><code>0x47F304</code> - Opcodes 01F4 - 0256. Array of byte, each byte is an index for the array of dword at <code>0x47F24C</code>, which points to the opcode function</li>
+            <li><code>0x47FA04</code> - Opcodes 0292 - 02B8. Array of byte, each byte is an index for the array of dword at <code>0x47F9BC</code>, which points to the opcode function</li>
+            <li><code>0x480FD8</code> - Opcodes 02BE - 031D. Array of byte, each byte is an index for the array of dword at <code>0x480F10</code>, which points to the opcode function</li>
+            <li><code>0x4836B8</code> - Opcodes 0320 - 0382. Array of byte, each byte is an index for the array of dword at <code>0x483600</code>, which points to the opcode function</li>
+        </ul>
+        <p>(No time to finish now, will finish later)
+        </p>
+        <h4><span class="mw-headline" id="Threads">Threads</span></h4>
+        <p><code>0xA8B430</code> - Start of the threads pool. There are two queues: the active threads and inactive ones.<br />
+            <code>0xA8B42C</code> - Pointer to the first active SCM thread.<br />
+            <code>0xA8B428</code> - Pointer to the first inactive SCM thread.
+        </p>
+        <p>Each thread has size of 224 (<code>0xE0</code>) bytes.
+        </p>
+        <ul>
+            <li>+0 = [void*] Pointer to the next thread in a queue</li>
+            <li>+4 = [void*] Pointer to the previous thread in a queue</li>
+            <li>+8 = [char] Thread name given by the opcode <a href="/wiki/03A4" title="03A4">03A4</a>, char 8</li>
+            <li>+16 = [dword] Thread base IP (used in the missions and <a href="/wiki/External_Script" class="mw-redirect" title="External Script">external scripts</a> to calculate a global address of a local jump offset)</li>
+            <li>+20 = [dword] Current IP</li>
+            <li>+24 = [dword] Return stack (stores the current IP when a gosub executed, dword 8)</li>
+            <li>+56 = [word] Last item index of the return stack</li>
+            <li>+60 = [dword] Local variables array, dword 32</li>
+            <li>+188 = [dword] Automatically incrementing timers, dword 2</li>
+            <li>+196 = [boolean] Thread active flag</li>
+            <li>+197 = [boolean] IF result</li>
+            <li>+198 = [boolean] Mission flag</li>
+            <li>+199 = [boolean] External script flag</li>
+            <li>+200 = [boolean] Unknown flag (in menu?). Used in <a href="/wiki/03E5" title="03E5">03E5</a></li>
+            <li>+201 = [boolean] Unknown flag (ID of an assigned script?)</li>
+            <li>+204 = [dword] Wakeup time (set by <a href="/wiki/0001" title="0001">0001</a>)</li>
+            <li>+208 = [word] IF number (set by <a href="/wiki/00D6" title="00D6">00D6</a>)</li>
+            <li>+210 = [boolean] Not flag (if a condition to check is negative - any opcodes higher than <code>0x7FFF</code>)</li>
+            <li>+211 = [boolean] Wasted or busted check enabled flag (set by <a href="/wiki/0111" title="0111">0111</a>); <b>only for missions</b></li>
+            <li>+212 = [boolean] Player is wasted or busted flag; <b>only for missions</b></li>
+            <li>+216 = [dword] Skip scene IP (used by opcodes <a href="/mediawiki/index.php?title=0707&amp;action=edit&amp;redlink=1" class="new" title="0707 (page does not exist)">0707</a>, <a href="/mediawiki/index.php?title=0701&amp;action=edit&amp;redlink=1" class="new" title="0701 (page does not exist)">0701</a>)</li>
+            <li>+220 = [boolean] Mission flag</li>
+        </ul>
+        <h4><span class="mw-headline" id="External_Scripts_Info">External Scripts Info</span></h4>
+        <p><code>0xA47B60</code> - Start of the external scripts info pool. There are 82 elements with 32 bytes of size each
+        </p>
+        <ul>
+            <li>+0 = [dword] Script IP</li>
+            <li>+4 = [word] Status (can be obtained by <a href="/mediawiki/index.php?title=0926&amp;action=edit&amp;redlink=1" class="new" title="0926 (page does not exist)">0926</a>)</li>
+            <li>+6 = [word] Index in SCM (a number as defined in the scm header)</li>
+            <li>+8 = [char] Name, char 20</li>
+            <li>+28 = [dword] Size</li>
+        </ul>
+        <p><code>0xA485A0</code> - [dword] Size of the largest external script<br />
+            <code>0xA485A4</code> - [dword] Total scripts count
+        </p>
+        <h4><span class="mw-headline" id="Restart_Locations">Restart Locations</span></h4>
+        <p>Also see: opcodes <a href="/wiki/016C" title="016C">016C</a> and <a href="/wiki/016D" title="016D">016D</a> / <a href="/wiki/GTA_SA_Saves#Block_8:_Restart_Locations" class="mw-redirect" title="GTA SA Saves">save file block 8</a>
+        <br />
+        An unmodded game has 7 restart locations for "busted" and 8 for "wasted". The memory structure suggests a limit of 10 for both of these.
+    </p>
+    <ul>
+        <li><code>0xA43268</code>: dword -- number of busted structures</li>
+        <li><code>0xA4326C</code>: dword -- number of wasted structures</li>
+        <li><code>0xA43270</code>: float[10] -- town numbers for busted structures (1 LS / 2 Country+SF / 3 Desert+LV)</li>
+        <li><code>0xA43298</code>: float[10] -- angles for busted structures</li>
+        <li><code>0xA432C0</code>: float[10] -- town numbers for wasted structures (1 LS / 2 Country+SF / 3 Desert+LV)</li>
+        <li><code>0xA432E8</code>: float[10] -- angles for wasted structures</li>
+        <li><code>0xA43310</code>: float -- unused float, only set up to (0.005 * 0.0625 = 0.0003125), 1/0.0003125 = 3200.0</li>
+        <li><code>0xA43318</code>: float[3][10] -- x,y,z - respawn coords for wasted structures</li>
+        <li><code>0xA43390</code>: float[3][10] -- x,y,z - respawn coords for busted structures</li>
+        <li><code>0xA43408</code>: byte[12] -- unknown; matching 12 unknown bytes of <a href="/wiki/GTA_SA_Saves#Block_8:_Restart_Locations" class="mw-redirect" title="GTA SA Saves">save block 8</a>, <code>0x01</code> after Busted structures</li>
+        <li><code>0xA43414</code>: byte[12] -- unknown; matching 12 unknown bytes of <a href="/wiki/GTA_SA_Saves#Block_8:_Restart_Locations" class="mw-redirect" title="GTA SA Saves">save block 8</a>, <code>0x0F</code> after Busted structures</li>
+        <li><code>0xA43420</code>: [end]</li>
+    </ul>
+    <p>Notes:
+    </p>
+    <ul>
+        <li>Town nos. and angles have the busted structures first but coords have the wasted structures first.</li>
+        <li>I'm not sure about the end of this structure, but I couldn't recognize anything from the according save block 8 after <code>0xA43420</code>.</li>
+    </ul>
+    <h4><span class="mw-headline" id="Misc">Misc</span></h4>
+    <p><code>0xA4892C</code> - Start of the pool stored the flipped vehicles handles. There are 6 elements in there, with each of them:
+    </p>
+    <ul>
+        <li>+0 = [dword] Vehicle handle to check if it flipped. Stored by opcode <a href="/wiki/0190" title="0190">0190</a>.</li>
+        <li>+4 = [dword] Time in ms passed from the moment a vehicle flipped. Used by opcode <a href="/wiki/018F" title="018F">018F</a></li>
+    </ul>
+    <p><code>0xA90850</code> - Start of the mission cleanup list. This list keeps the handles of any entities created during a mission. When the opcode <a href="/wiki/00D8" title="00D8">00D8</a> executed (normally it happens at the end of any mission), the game reads this list and destroys everything being stored there. Maximum items on the list is 75. Each item has the following structure:
+</p>
+<ul>
+    <li>+0 = [byte] Entity type:
+        <ul>
+            <li>1 - vehicle</li>
+            <li>2 - actor</li>
+            <li>3 - object</li>
+            <li>4 - particle</li>
+            <li>5 - group (<a href="/mediawiki/index.php?title=062F&amp;action=edit&amp;redlink=1" class="new" title="062F (page does not exist)">062F</a>)</li>
+            <li>7 - AS_origin (<a href="/mediawiki/index.php?title=061D&amp;action=edit&amp;redlink=1" class="new" title="061D (page does not exist)">061D</a>)</li>
+            <li>8 - action_sequence</li>
+            <li>9 - decision maker</li>
+            <li>11 - searchlight</li>
+            <li>13 - txd_dictionary</li>
+        </ul>
+    </li>
+    <li>+4 = [dword] entity handle (an index in the proper pool)</li>
+</ul>
+<h5><span class="mw-headline" id="Weather_Codes">Weather Codes</span></h5>
+<p><code>0xC81318</code> - [word] Weather lock (by AlienX).<br />
+    <code>0xC8131C</code> - [word] Upcoming weather.<br />
+    <code>0xC81320</code> - [word] Current weather.<br />
+    <br />
+    The following values tie up with the sections in data/<a href="/wiki/Timecycp.dat" class="mw-redirect" title="Timecycp.dat">timecycp.dat</a>. There are several different kinds of weathers (including underwater), and the current weather affects viewing distance, sky colour, fog intensity, and other things like that. The appearance of each weather is time-dependent too.
+    <br />
+</p>
+<p>Weather Values:
+</p>
+<ul>
+    <li>0 = EXTRASUNNY_LA</li>
+    <li>1 = SUNNY_LA</li>
+    <li>2 = EXTRASUNNY_SMOG_LA</li>
+    <li>3 = SUNNY_SMOG_LA</li>
+    <li>4 = CLOUDY_LA</li>
+    <li>5 = SUNNY_SF</li>
+    <li>6 = EXTRASUNNY_SF</li>
+    <li>7 = CLOUDY_SF</li>
+    <li>8 = RAINY_SF</li>
+    <li>9 = FOGGY_SF</li>
+    <li>10 = SUNNY_VEGAS</li>
+    <li>11 = EXTRASUNNY_VEGAS (heat waves)</li>
+    <li>12 = CLOUDY_VEGAS</li>
+    <li>13 = EXTRASUNNY_COUNTRYSIDE</li>
+    <li>14 = SUNNY_COUNTRYSIDE</li>
+    <li>15 = CLOUDY_COUNTRYSIDE</li>
+    <li>16 = RAINY_COUNTRYSIDE</li>
+    <li>17 = EXTRASUNNY_DESERT</li>
+    <li>18 = SUNNY_DESERT</li>
+    <li>19 = SANDSTORM_DESERT</li>
+    <li>20 = UNDERWATER (greenish, foggy)</li>
+    <li>21 = EXTRACOLOURS_1 (very dark, gradiented skyline, purple) Used for interiors?</li>
+    <li>22 = EXTRACOLOURS_2 (very dark, gradiented skyline, green) Used for interiors?</li>
+</ul>
+<p><br /> The following are not mentioned in that file, but can be used anyway:
+</p>
+<ul>
+    <li>23 to 26 = variations of pale orange</li>
+    <li>27 to 29 = variations of fresh blue</li>
+    <li>30 to 32 = variations of dark, cloudy, teal</li>
+    <li>33 = dark, cloudy, brown</li>
+    <li>34 = blue/purple, regular</li>
+    <li>35 = dull brown</li>
+    <li>36 to 38 = bright, foggy, orange</li>
+    <li>39 = extremely bright</li>
+    <li>40 to 42 = blue/purple cloudy</li>
+    <li>43 = dark toxic clouds</li>
+    <li>44 = black/white sky</li>
+    <li>45 = black/purple sky</li>
+</ul>
+<p><b>Warning: Setting these values to anything higher will result in things like black screen, flickering, really red, etc.</b>
+</p>
+<h5><span class="mw-headline" id="Dependencies">Dependencies</span></h5>
+<ul>
+    <li>Car ptr = player ptr when on foot.</li>
+</ul>
+<p><b>Note:</b> This depends on which address for the pointer is being used, if the car pointer appears to be the same as the player pointer on foot, then you may be using a camera-related target pointer.
+</p>
+<ul>
+    <li>CPed block size = <code>0x7C4</code> bytes.</li>
+    <li>CVehicle block size = <code>0x0A18</code> bytes.</li>
+</ul>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Personalizar</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Asi como podemos colocar los indicadores para objetos, tambien podemos        
+ cambiar sus colores y otras propiedades extras que tienen estas.</P>
+<P>Puedes cambiar el color del indicador con: 
+<PRE class=sb3>0165: set_marker  $marker05 color_to 1</PRE>
+<P></P>
+<UL>
+  <LI>0: Rojo</LI>
+  <LI>1: Verde</LI>
+  <LI>2: Azul</LI>
+  <LI>3: Blanco</LI>
+  <LI>4: Amarillo</LI></UL>
+<P>Puedes cambiar su escala con:<BR>
+<PRE class=sb3>0168: show_on_radar $marker04 size 1</PRE>
+<P></P>
+<UL>
+  <LI>&lt; 3 : Reducidas</LI>
+  <LI>= 3 : Valor Predeterminado</LI>
+  <LI>&gt; 3 : Ampliadas<BR></LI></UL>
+<P>Puedes cambiar el color a enemigo o amistoso:<BR>
+<PRE class=sb3>07E0: set_marker $marker04 type_to 1</PRE>
+<P></P>
+<UL>
+  <LI>0 : Rojo Enemigo</LI>
+  <LI>1 : Azul Amigable<BR></LI></UL>
+<P>Y puedes ocultarlo y mostrarlo ;con: 
+<PRE class=sb3>018B: show_on_radar $marker02 in 1</PRE>
+<P></P>
+<UL>
+  <LI>0 : Esconder</LI>
+  <LI>1 : Esconder</LI>
+  <LI>2 : Mostrar</LI>
+  <LI>3 : Mostrar</LI>
+  <LI>4 : Esconder</LI>
+  <LI>5 : Esconder</LI></UL></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+ 
+<SCRIPT src="HL.js"></SCRIPT>
+  </BODY></HTML>

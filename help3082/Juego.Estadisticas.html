@@ -1,0 +1,972 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Estadisticas</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12"><p>Controlas ls estadisticas del jugador con este opcode:</p><PRE class=sb3>
+062A: change_float_stat 23 to 50.0
+062A: change_integer_stat 181 to 0
+</PRE>
+<STYLE>
+td:nth-child(2){
+ color: #F44336;
+ font-weight: bolder!important;  
+}
+td:nth-child(1){
+ color: #607d8b;
+ font-weight: bolder!important;
+}
+</STYLE>
+
+<TABLE id="myTable">
+  <THEAD>
+  <TR class="header">
+    <TH><INPUT class=w-100 id="myInput" title="Solo Escribe" onkeyup="myFunction()" 
+      type="search" placeholder="Buscar..."></TH>
+    <TH>ID</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>- Estas son flotantes <EM>(type: float)</EM></TD>
+    <TD>0-81</TD></TR>
+  <TR>
+    <TD>Progress made </TD>
+    <TD>0</TD></TR>
+  <TR>
+    <TD>Total progress </TD>
+    <TD>1</TD></TR>
+  <TR>
+    <TD>Furthest Hoop </TD>
+    <TD>2</TD></TR>
+  <TR>
+    <TD>Distance travelled on foot </TD>
+    <TD>3</TD></TR>
+  <TR>
+    <TD>Distance travelled by car  </TD>
+    <TD>4</TD></TR>
+  <TR>
+    <TD>Distance travelled by motorbike </TD>
+    <TD>5</TD></TR>
+  <TR>
+    <TD>Distance travelled by boat </TD>
+    <TD>6</TD></TR>
+  <TR>
+    <TD>Distance travelled by golf cart </TD>
+    <TD>7</TD></TR>
+  <TR>
+    <TD>Distance travelled by helicopter </TD>
+    <TD>8</TD></TR>
+  <TR>
+    <TD>Distance travelled by plane </TD>
+    <TD>9</TD></TR>
+  <TR>
+    <TD>Longest Wheelie distance  </TD>
+    <TD>10</TD></TR>
+  <TR>
+    <TD>Longest Stoppie distance  </TD>
+    <TD>11</TD></TR>
+  <TR>
+    <TD>Longest 2 wheels distance  </TD>
+    <TD>12</TD></TR>
+  <TR>
+    <TD>Weapon Budget </TD>
+    <TD>13</TD></TR>
+  <TR>
+    <TD>Fashion Budget </TD>
+    <TD>14</TD></TR>
+  <TR>
+    <TD>Property Budget </TD>
+    <TD>15</TD></TR>
+  <TR>
+    <TD>Auto Repair and Painting Budget </TD>
+    <TD>16</TD></TR>
+  <TR>
+    <TD>Longest Wheelie time          </TD>
+    <TD>17</TD></TR>
+  <TR>
+    <TD>Longest Stoppie time          </TD>
+    <TD>18</TD></TR>
+  <TR>
+    <TD>Longest 2 wheels time          </TD>
+    <TD>19</TD></TR>
+  <TR>
+    <TD>Food Budget </TD>
+    <TD>20</TD></TR>
+  <TR>
+    <TD>Fat </TD>
+    <TD>21</TD></TR>
+  <TR>
+    <TD>Stamina </TD>
+    <TD>22</TD></TR>
+  <TR>
+    <TD>Muscle </TD>
+    <TD>23</TD></TR>
+  <TR>
+    <TD>Max Health </TD>
+    <TD>24</TD></TR>
+  <TR>
+    <TD>Sex appeal </TD>
+    <TD>25</TD></TR>
+  <TR>
+    <TD>Distance travelled by swimming </TD>
+    <TD>26</TD></TR>
+  <TR>
+    <TD>Distance travelled by bicycle </TD>
+    <TD>27</TD></TR>
+  <TR>
+    <TD>Distance travelled on treadmill </TD>
+    <TD>28</TD></TR>
+  <TR>
+    <TD>Distance travelled on exercise bike             </TD>
+    <TD>29</TD></TR>
+  <TR>
+    <TD>Tattoo budget </TD>
+    <TD>30</TD></TR>
+  <TR>
+    <TD>Hairdressing budget  </TD>
+    <TD>31</TD></TR>
+  <TR>
+    <TD>Girlfriend budget </TD>
+    <TD>32</TD></TR>
+  <TR>
+    <TD>Prostitute budget </TD>
+    <TD>33</TD></TR>
+  <TR>
+    <TD>Furniture budget </TD>
+    <TD>34</TD></TR>
+  <TR>
+    <TD>Money spent gambling          </TD>
+    <TD>35</TD></TR>
+  <TR>
+    <TD>Money made from pimping  </TD>
+    <TD>36</TD></TR>
+  <TR>
+    <TD>Money won gambling </TD>
+    <TD>37</TD></TR>
+  <TR>
+    <TD>Biggest gambling win          </TD>
+    <TD>38</TD></TR>
+  <TR>
+    <TD>Biggest gambling loss          </TD>
+    <TD>39</TD></TR>
+  <TR>
+    <TD>Largest burglary swag         </TD>
+    <TD>40</TD></TR>
+  <TR>
+    <TD>Money made from burglary  </TD>
+    <TD>41</TD></TR>
+  <TR>
+    <TD>Money spent building property </TD>
+    <TD>42</TD></TR>
+  <TR>
+    <TD>Unused </TD>
+    <TD>43</TD></TR>
+  <TR>
+    <TD>Longest treadmill time          </TD>
+    <TD>44</TD></TR>
+  <TR>
+    <TD>Longest exercise bike time </TD>
+    <TD>45</TD></TR>
+  <TR>
+    <TD>Heaviest weight on bench press </TD>
+    <TD>46</TD></TR>
+  <TR>
+    <TD>Heaviest weight on dumbbells </TD>
+    <TD>47</TD></TR>
+  <TR>
+    <TD>Best time in 8-Track          </TD>
+    <TD>48</TD></TR>
+  <TR>
+    <TD>BMX best time </TD>
+    <TD>49</TD></TR>
+  <TR>
+    <TD>Lightest weight </TD>
+    <TD>50</TD></TR>
+  <TR>
+    <TD>Longest chase time with 5 or more stars           </TD>
+    <TD>51</TD></TR>
+  <TR>
+    <TD>Last chase time with 5 or more stars               </TD>
+    <TD>52</TD></TR>
+  <TR>
+    <TD>Wage bill </TD>
+    <TD>53</TD></TR>
+  <TR>
+    <TD>Strip club budget </TD>
+    <TD>54</TD></TR>
+  <TR>
+    <TD>Car modification budget  </TD>
+    <TD>55</TD></TR>
+  <TR>
+    <TD>Time spent shopping  </TD>
+    <TD>56</TD></TR>
+  <TR>
+    <TD>Time spent gambling  </TD>
+    <TD>57</TD></TR>
+  <TR>
+    <TD>Time spent on longest mission </TD>
+    <TD>58</TD></TR>
+  <TR>
+    <TD>Time spent on quickest mission </TD>
+    <TD>59</TD></TR>
+  <TR>
+    <TD>Average mission time          </TD>
+    <TD>60</TD></TR>
+  <TR>
+    <TD>Drugs budget </TD>
+    <TD>61</TD></TR>
+  <TR>
+    <TD>Total shopping budget          </TD>
+    <TD>62</TD></TR>
+  <TR>
+    <TD>Time spent underwater          </TD>
+    <TD>63</TD></TR>
+  <TR>
+    <TD>Total respect </TD>
+    <TD>64</TD></TR>
+  <TR>
+    <TD>Girlfriend respect </TD>
+    <TD>65</TD></TR>
+  <TR>
+    <TD>Clothes respect </TD>
+    <TD>66</TD></TR>
+  <TR>
+    <TD>Fitness respect </TD>
+    <TD>67</TD></TR>
+  <TR>
+    <TD>Respect </TD>
+    <TD>68</TD></TR>
+  <TR>
+    <TD>Pistol Skill </TD>
+    <TD>69</TD></TR>
+  <TR>
+    <TD>Silenced Pistol Skill          </TD>
+    <TD>70</TD></TR>
+  <TR>
+    <TD>Desert Eagle Skill </TD>
+    <TD>71</TD></TR>
+  <TR>
+    <TD>Shotgun Skill </TD>
+    <TD>72</TD></TR>
+  <TR>
+    <TD>Sawn-Off Shotgun Skill          </TD>
+    <TD>73</TD></TR>
+  <TR>
+    <TD>Combat Shotgun Skill          </TD>
+    <TD>74</TD></TR>
+  <TR>
+    <TD>Machine Pistol Skill          </TD>
+    <TD>75</TD></TR>
+  <TR>
+    <TD>SMG Skill </TD>
+    <TD>76</TD></TR>
+  <TR>
+    <TD>AK-47 Skill </TD>
+    <TD>77</TD></TR>
+  <TR>
+    <TD>M4 Skill </TD>
+    <TD>78</TD></TR>
+  <TR>
+    <TD>Rifle Skill </TD>
+    <TD>79</TD></TR>
+  <TR>
+    <TD>Appearance </TD>
+    <TD>80</TD></TR>
+  <TR>
+    <TD>Gambling </TD>
+    <TD>81</TD></TR>
+  <TR>
+    <TD>Unused </TD>
+    <TD>82-119 </TD></TR>
+  <TR>
+    <TD>&nbsp; </TD>
+    <TD>&nbsp; </TD></TR>
+  <TR>
+    <TD>- Estas son enteros <EM>(type: int)</EM></TD>
+    <TD>120-337</TD></TR>
+  <TR>
+    <TD>People wasted by others  </TD>
+    <TD>120</TD></TR>
+  <TR>
+    <TD>People you've wasted          </TD>
+    <TD>121</TD></TR>
+  <TR>
+    <TD>Road Vehicles destroyed  </TD>
+    <TD>122</TD></TR>
+  <TR>
+    <TD>Boats destroyed </TD>
+    <TD>123</TD></TR>
+  <TR>
+    <TD>Planes &amp; Helicopters destroyed                 </TD>
+    <TD>124</TD></TR>
+  <TR>
+    <TD>Cost of property damaged  </TD>
+    <TD>125</TD></TR>
+  <TR>
+    <TD>Bullets fired </TD>
+    <TD>126</TD></TR>
+  <TR>
+    <TD>Kgs of explosives used          </TD>
+    <TD>127</TD></TR>
+  <TR>
+    <TD>Bullets that hit </TD>
+    <TD>128</TD></TR>
+  <TR>
+    <TD>Tires popped with gunfire  </TD>
+    <TD>129</TD></TR>
+  <TR>
+    <TD>Number of headshots  </TD>
+    <TD>130</TD></TR>
+  <TR>
+    <TD>Total number of wanted stars attained             </TD>
+    <TD>131</TD></TR>
+  <TR>
+    <TD>Total number of wanted stars evaded           </TD>
+    <TD>132</TD></TR>
+  <TR>
+    <TD>Times busted </TD>
+    <TD>133</TD></TR>
+  <TR>
+    <TD>Days passed in game  </TD>
+    <TD>134</TD></TR>
+  <TR>
+    <TD>Number of hospital visits  </TD>
+    <TD>135</TD></TR>
+  <TR>
+    <TD>Safehouse visits </TD>
+    <TD>136</TD></TR>
+  <TR>
+    <TD>Times cheated </TD>
+    <TD>137</TD></TR>
+  <TR>
+    <TD>Vehicle Resprays </TD>
+    <TD>138</TD></TR>
+  <TR>
+    <TD>Maximum INSANE Jump distance </TD>
+    <TD>139</TD></TR>
+  <TR>
+    <TD>Maximum INSANE Jump height </TD>
+    <TD>140</TD></TR>
+  <TR>
+    <TD>Maximum INSANE Jump flips  </TD>
+    <TD>141</TD></TR>
+  <TR>
+    <TD>Maximum INSANE Jump rotation </TD>
+    <TD>142</TD></TR>
+  <TR>
+    <TD>Best INSANE stunt awarded  </TD>
+    <TD>143</TD></TR>
+  <TR>
+    <TD>Unique Jumps found </TD>
+    <TD>144</TD></TR>
+  <TR>
+    <TD>Unique Jumps done </TD>
+    <TD>145</TD></TR>
+  <TR>
+    <TD>Mission attempts </TD>
+    <TD>146</TD></TR>
+  <TR>
+    <TD>Missions passed </TD>
+    <TD>147</TD></TR>
+  <TR>
+    <TD>Total number of missions in game </TD>
+    <TD>148</TD></TR>
+  <TR>
+    <TD>Cash made in a Taxi  </TD>
+    <TD>149</TD></TR>
+  <TR>
+    <TD>Passengers dropped off          </TD>
+    <TD>150</TD></TR>
+  <TR>
+    <TD>People saved in an Ambulance </TD>
+    <TD>151</TD></TR>
+  <TR>
+    <TD>Criminals killed on Vigilante Mission             </TD>
+    <TD>152</TD></TR>
+  <TR>
+    <TD>Total fires extinguished  </TD>
+    <TD>153</TD></TR>
+  <TR>
+    <TD>Packages Delivered </TD>
+    <TD>154</TD></TR>
+  <TR>
+    <TD>Assassinations </TD>
+    <TD>155</TD></TR>
+  <TR>
+    <TD>Last dance score </TD>
+    <TD>156</TD></TR>
+  <TR>
+    <TD>Highest Vigilante Mission level </TD>
+    <TD>157</TD></TR>
+  <TR>
+    <TD>Highest Paramedic Mission level </TD>
+    <TD>158</TD></TR>
+  <TR>
+    <TD>Highest Firefighter Mission level </TD>
+    <TD>159</TD></TR>
+  <TR>
+    <TD>Driving skill </TD>
+    <TD>160</TD></TR>
+  <TR>
+    <TD>Number of Truck missions passed </TD>
+    <TD>161</TD></TR>
+  <TR>
+    <TD>Money made in Truck  </TD>
+    <TD>162</TD></TR>
+  <TR>
+    <TD>Recruited gang members killed </TD>
+    <TD>163</TD></TR>
+  <TR>
+    <TD>Armor </TD>
+    <TD>164</TD></TR>
+  <TR>
+    <TD>Energy </TD>
+    <TD>165</TD></TR>
+  <TR>
+    <TD>Photographs Taken </TD>
+    <TD>166</TD></TR>
+  <TR>
+    <TD>Rampages attempted </TD>
+    <TD>167</TD></TR>
+  <TR>
+    <TD>Rampages passed </TD>
+    <TD>168</TD></TR>
+  <TR>
+    <TD>Flight time </TD>
+    <TD>169</TD></TR>
+  <TR>
+    <TD>Times drowned </TD>
+    <TD>170</TD></TR>
+  <TR>
+    <TD>Number of girls pimped          </TD>
+    <TD>171</TD></TR>
+  <TR>
+    <TD>Best position in 8-Track </TD>
+    <TD>172</TD></TR>
+  <TR>
+    <TD>Time on jetpack </TD>
+    <TD>173</TD></TR>
+  <TR>
+    <TD>Shooting range levels passed </TD>
+    <TD>174</TD></TR>
+  <TR>
+    <TD>Most cars parked on 'Valet Parking'           </TD>
+    <TD>175</TD></TR>
+  <TR>
+    <TD>Kills since last checkpoint </TD>
+    <TD>176</TD></TR>
+  <TR>
+    <TD>Total legitimate kills          </TD>
+    <TD>177</TD></TR>
+  <TR>
+    <TD>Number of 'Bloodring' kills </TD>
+    <TD>178</TD></TR>
+  <TR>
+    <TD>Total time in bloodring  </TD>
+    <TD>179</TD></TR>
+  <TR>
+    <TD>No more hurricanes Flag </TD>
+    <TD>180</TD></TR>
+  <TR>
+    <TD>City unlocked </TD>
+    <TD>181</TD></TR>
+  <TR>
+    <TD>Number of Police bribes  </TD>
+    <TD>182</TD></TR>
+  <TR>
+    <TD>Number of cars stolen          </TD>
+    <TD>183</TD></TR>
+  <TR>
+    <TD>Current number of girlfriends </TD>
+    <TD>184</TD></TR>
+  <TR>
+    <TD>Number of disastrous dates </TD>
+    <TD>185</TD></TR>
+  <TR>
+    <TD>Number of girls dated          </TD>
+    <TD>186</TD></TR>
+  <TR>
+    <TD>Number of times scored with a girl                 </TD>
+    <TD>187</TD></TR>
+  <TR>
+    <TD>Number of successful dates </TD>
+    <TD>188</TD></TR>
+  <TR>
+    <TD>Number of girls dumped          </TD>
+    <TD>189</TD></TR>
+  <TR>
+    <TD>Number of prostitutes visited </TD>
+    <TD>190</TD></TR>
+  <TR>
+    <TD>Number of houses burgled  </TD>
+    <TD>191</TD></TR>
+  <TR>
+    <TD>Number of safes cracked  </TD>
+    <TD>192</TD></TR>
+  <TR>
+    <TD>Burgular status </TD>
+    <TD>193</TD></TR>
+  <TR>
+    <TD>Number of stolen items sold </TD>
+    <TD>194</TD></TR>
+  <TR>
+    <TD>Number of eight balls in pool </TD>
+    <TD>195</TD></TR>
+  <TR>
+    <TD>Total number of wins playing pool </TD>
+    <TD>196</TD></TR>
+  <TR>
+    <TD>Total number of losses playing pool           </TD>
+    <TD>197</TD></TR>
+  <TR>
+    <TD>Times visited the gym          </TD>
+    <TD>198</TD></TR>
+  <TR>
+    <TD>Body type </TD>
+    <TD>199</TD></TR>
+  <TR>
+    <TD>Number of meals eaten          </TD>
+    <TD>200</TD></TR>
+  <TR>
+    <TD>Money made in Quarry         </TD>
+    <TD>201</TD></TR>
+  <TR>
+    <TD>Time taken to Complete Quarry </TD>
+    <TD>202</TD></TR>
+  <TR>
+    <TD>Number of furniture purchased </TD>
+    <TD>203</TD></TR>
+  <TR>
+    <TD>Favorite console game          </TD>
+    <TD>204</TD></TR>
+  <TR>
+    <TD>Highest civilian peds killed on Rampage           </TD>
+    <TD>205</TD></TR>
+  <TR>
+    <TD>Highest police peds killed on Rampage             </TD>
+    <TD>206</TD></TR>
+  <TR>
+    <TD>Highest civilian vehicles destroyed on           Rampage      </TD>
+    <TD>207</TD></TR>
+  <TR>
+    <TD>Highest police vehicles destroyed on           Rampage    </TD>
+    <TD>208</TD></TR>
+  <TR>
+    <TD>Highest number of tanks destroyed on           Rampage    </TD>
+    <TD>209</TD></TR>
+  <TR>
+    <TD>Pimping level </TD>
+    <TD>210</TD></TR>
+  <TR>
+    <TD>Kickstart best score          </TD>
+    <TD>211</TD></TR>
+  <TR>
+    <TD>Best lap time in 8-Track  </TD>
+    <TD>212</TD></TR>
+  <TR>
+    <TD>Number of vehicles exported </TD>
+    <TD>213</TD></TR>
+  <TR>
+    <TD>Number of vehicles imported </TD>
+    <TD>214</TD></TR>
+  <TR>
+    <TD>Highest basketball score  </TD>
+    <TD>215</TD></TR>
+  <TR>
+    <TD>Fires started </TD>
+    <TD>216</TD></TR>
+  <TR>
+    <TD>Amount of drugs sold          </TD>
+    <TD>217</TD></TR>
+  <TR>
+    <TD>Amount of drugs bought          </TD>
+    <TD>218</TD></TR>
+  <TR>
+    <TD>Best lap time in dirt track </TD>
+    <TD>219</TD></TR>
+  <TR>
+    <TD>Best time in dirt track  </TD>
+    <TD>220</TD></TR>
+  <TR>
+    <TD>Best position in dirt track </TD>
+    <TD>221</TD></TR>
+  <TR>
+    <TD>NRG-500 best time </TD>
+    <TD>222</TD></TR>
+  <TR>
+    <TD>Flying skill </TD>
+    <TD>223</TD></TR>
+  <TR>
+    <TD>Respect Mission </TD>
+    <TD>224</TD></TR>
+  <TR>
+    <TD>Lung capacity </TD>
+    <TD>225</TD></TR>
+  <TR>
+    <TD>Game gore rating </TD>
+    <TD>226</TD></TR>
+  <TR>
+    <TD>Game sex rating </TD>
+    <TD>227</TD></TR>
+  <TR>
+    <TD>Respect Mission Total          </TD>
+    <TD>228</TD></TR>
+  <TR>
+    <TD>Bike skill </TD>
+    <TD>229</TD></TR>
+  <TR>
+    <TD>Cycling skill </TD>
+    <TD>230</TD></TR>
+  <TR>
+    <TD>Snapshots taken </TD>
+    <TD>231</TD></TR>
+  <TR>
+    <TD>Total snapshots </TD>
+    <TD>232</TD></TR>
+  <TR>
+    <TD>Luck </TD>
+    <TD>233</TD></TR>
+  <TR>
+    <TD>Territories taken over          </TD>
+    <TD>234</TD></TR>
+  <TR>
+    <TD>Territories lost </TD>
+    <TD>235</TD></TR>
+  <TR>
+    <TD>Territories held </TD>
+    <TD>236</TD></TR>
+  <TR>
+    <TD>Highest number of territories held                 </TD>
+    <TD>237</TD></TR>
+  <TR>
+    <TD>Gang members recruited          </TD>
+    <TD>238</TD></TR>
+  <TR>
+    <TD>Enemy gang members killed  </TD>
+    <TD>239</TD></TR>
+  <TR>
+    <TD>Friendly gang members killed </TD>
+    <TD>240</TD></TR>
+  <TR>
+    <TD>Horseshoes collected          </TD>
+    <TD>241</TD></TR>
+  <TR>
+    <TD>Total horseshoes </TD>
+    <TD>242</TD></TR>
+  <TR>
+    <TD>Oysters collected </TD>
+    <TD>243</TD></TR>
+  <TR>
+    <TD>Total oysters </TD>
+    <TD>244</TD></TR>
+  <TR>
+    <TD>Calories </TD>
+    <TD>245</TD></TR>
+  <TR>
+    <TD>2 Player Rampage best time </TD>
+    <TD>246</TD></TR>
+  <TR>
+    <TD>2 Player Car Rampage best time </TD>
+    <TD>247</TD></TR>
+  <TR>
+    <TD>2 Player On Foot Rampage best time                 </TD>
+    <TD>248</TD></TR>
+  <TR>
+    <TD>2 Player Chopper Rampage best time                 </TD>
+    <TD>249</TD></TR>
+  <TR>
+    <TD>2 Player Bike Rampage best time </TD>
+    <TD>250</TD></TR>
+  <TR>
+    <TD>'Keepie Uppy' best time  </TD>
+    <TD>251</TD></TR>
+  <TR>
+    <TD>Progress with Denise          </TD>
+    <TD>252</TD></TR>
+  <TR>
+    <TD>Progress with Michelle          </TD>
+    <TD>253</TD></TR>
+  <TR>
+    <TD>Progress with Helena          </TD>
+    <TD>254</TD></TR>
+  <TR>
+    <TD>Progress with Barbara          </TD>
+    <TD>255</TD></TR>
+  <TR>
+    <TD>Progress with Katie  </TD>
+    <TD>256</TD></TR>
+  <TR>
+    <TD>Progress with Millie          </TD>
+    <TD>257</TD></TR>
+  <TR>
+    <TD>Best position in Lowrider Race </TD>
+    <TD>258</TD></TR>
+  <TR>
+    <TD>Best time in Lowrider Race </TD>
+    <TD>259</TD></TR>
+  <TR>
+    <TD>Best position in Little Loop </TD>
+    <TD>260</TD></TR>
+  <TR>
+    <TD>Best time in Little Loop  </TD>
+    <TD>261</TD></TR>
+  <TR>
+    <TD>Best position in Backroad Wanderer                 </TD>
+    <TD>262</TD></TR>
+  <TR>
+    <TD>Best time in Backroad Wanderer </TD>
+    <TD>263</TD></TR>
+  <TR>
+    <TD>Best position in City Circuit </TD>
+    <TD>264</TD></TR>
+  <TR>
+    <TD>Best time in City Circuit  </TD>
+    <TD>265</TD></TR>
+  <TR>
+    <TD>Best position in Vinewood  </TD>
+    <TD>266</TD></TR>
+  <TR>
+    <TD>Best time in Vinewood          </TD>
+    <TD>267</TD></TR>
+  <TR>
+    <TD>Best position in Freeway </TD>
+    <TD>268</TD></TR>
+  <TR>
+    <TD>Best time in Freeway          </TD>
+    <TD>269</TD></TR>
+  <TR>
+    <TD>Best position in Into the Country </TD>
+    <TD>270</TD></TR>
+  <TR>
+    <TD>Best time in Into the Country </TD>
+    <TD>271</TD></TR>
+  <TR>
+    <TD>Best position in Badlands A </TD>
+    <TD>272</TD></TR>
+  <TR>
+    <TD>Best time in Badlands A  </TD>
+    <TD>273</TD></TR>
+  <TR>
+    <TD>Best position in Badlands B </TD>
+    <TD>274</TD></TR>
+  <TR>
+    <TD>Best time in Badlands B  </TD>
+    <TD>275</TD></TR>
+  <TR>
+    <TD>Best position in Dirtbike Danger </TD>
+    <TD>276</TD></TR>
+  <TR>
+    <TD>Best time in Dirtbike Danger </TD>
+    <TD>277</TD></TR>
+  <TR>
+    <TD>Best position in Bandito County </TD>
+    <TD>278</TD></TR>
+  <TR>
+    <TD>Best time in Bandito County </TD>
+    <TD>279</TD></TR>
+  <TR>
+    <TD>Best position in Go-Go-Kart </TD>
+    <TD>280</TD></TR>
+  <TR>
+    <TD>Best time in Go-Go-Kart  </TD>
+    <TD>281</TD></TR>
+  <TR>
+    <TD>Best position in San Fierro Fastlane             </TD>
+    <TD>282</TD></TR>
+  <TR>
+    <TD>Best time in San Fierro Fastlane </TD>
+    <TD>283</TD></TR>
+  <TR>
+    <TD>Best position in San Fierro Hills </TD>
+    <TD>284</TD></TR>
+  <TR>
+    <TD>Best time in San Fierro Hills </TD>
+    <TD>285</TD></TR>
+  <TR>
+    <TD>Best position in Country Endurance                </TD>
+    <TD>286</TD></TR>
+  <TR>
+    <TD>Best time in Country Endurance </TD>
+    <TD>287</TD></TR>
+  <TR>
+    <TD>Best position in SF to LV  </TD>
+    <TD>288</TD></TR>
+  <TR>
+    <TD>Best time in SF to LV          </TD>
+    <TD>289</TD></TR>
+  <TR>
+    <TD>Best position in Dam Rider </TD>
+    <TD>290</TD></TR>
+  <TR>
+    <TD>Best time in Dam Rider          </TD>
+    <TD>291</TD></TR>
+  <TR>
+    <TD>Best position in Desert Tricks </TD>
+    <TD>292</TD></TR>
+  <TR>
+    <TD>Best time in Desert Tricks </TD>
+    <TD>293</TD></TR>
+  <TR>
+    <TD>Best position in LV Ringroad </TD>
+    <TD>294</TD></TR>
+  <TR>
+    <TD>Best time in LV Ringroad  </TD>
+    <TD>295</TD></TR>
+  <TR>
+    <TD>Best time in World War Aces </TD>
+    <TD>296</TD></TR>
+  <TR>
+    <TD>Best time in Barnstorming  </TD>
+    <TD>297</TD></TR>
+  <TR>
+    <TD>Best time in Military Service </TD>
+    <TD>298</TD></TR>
+  <TR>
+    <TD>Best time in Chopper Checkpoint </TD>
+    <TD>299</TD></TR>
+  <TR>
+    <TD>Best time in Whirly Bird Waypoint </TD>
+    <TD>300</TD></TR>
+  <TR>
+    <TD>Best time in Heli Hell          </TD>
+    <TD>301</TD></TR>
+  <TR>
+    <TD>Drive-thru mission accomplished </TD>
+    <TD>302</TD></TR>
+  <TR>
+    <TD>Management Issues mission accomplished           </TD>
+    <TD>303</TD></TR>
+  <TR>
+    <TD>555 WE TIP mission accomplished </TD>
+    <TD>304</TD></TR>
+  <TR>
+    <TD>Yay Ka-Boom-Boom mission accomplished             </TD>
+    <TD>305</TD></TR>
+  <TR>
+    <TD>Fish in a Barrel mission accomplished             </TD>
+    <TD>306</TD></TR>
+  <TR>
+    <TD>Breaking the Bank at Caligula's mission               accomplished     
+                         </TD>
+    <TD>307</TD></TR>
+  <TR>
+    <TD>A Home In The Hills mission accomplished             </TD>
+    <TD>308</TD></TR>
+  <TR>
+    <TD>maybe set riot mode  </TD>
+    <TD>309</TD></TR>
+  <TR>
+    <TD>Ryder's mission Robbing Uncle Sam                     accomplished     
+                         </TD>
+    <TD>310</TD></TR>
+  <TR>
+    <TD>Mike Toreno mission accomplished </TD>
+    <TD>311</TD></TR>
+  <TR>
+    <TD>Architectural Espionage mission                     accomplished       
+               </TD>
+    <TD>312</TD></TR>
+  <TR>
+    <TD>Jizzy mission accomplished </TD>
+    <TD>313</TD></TR>
+  <TR>
+    <TD>Reuniting the Families mission         accomplished         </TD>
+    <TD>314</TD></TR>
+  <TR>
+    <TD>Small Town Bank mission accomplished             </TD>
+    <TD>315</TD></TR>
+  <TR>
+    <TD>Photo Opportunity mission accomplished           </TD>
+    <TD>316</TD></TR>
+  <TR>
+    <TD>Don Peyote mission accomplished </TD>
+    <TD>317</TD></TR>
+  <TR>
+    <TD>Local Liquor Store mission accomplished           </TD>
+    <TD>318</TD></TR>
+  <TR>
+    <TD>Badlands mission accomplished </TD>
+    <TD>319</TD></TR>
+  <TR>
+    <TD>Playing time </TD>
+    <TD>320</TD></TR>
+  <TR>
+    <TD>Hidden Packages found          </TD>
+    <TD>321</TD></TR>
+  <TR>
+    <TD>Tags sprayed </TD>
+    <TD>322</TD></TR>
+  <TR>
+    <TD>Least favorite gang  </TD>
+    <TD>323</TD></TR>
+  <TR>
+    <TD>Gang members wasted  </TD>
+    <TD>324</TD></TR>
+  <TR>
+    <TD>Criminals wasted </TD>
+    <TD>325</TD></TR>
+  <TR>
+    <TD>Most Favorite Radio Station </TD>
+    <TD>326</TD></TR>
+  <TR>
+    <TD>Least Favorite Radio Station </TD>
+    <TD>327</TD></TR>
+  <TR>
+    <TD>Current weapon skill          </TD>
+    <TD>328</TD></TR>
+  <TR>
+    <TD>Weapon skill levels  </TD>
+    <TD>329</TD></TR>
+  <TR>
+    <TD>Pilot ranking </TD>
+    <TD>330</TD></TR>
+  <TR>
+    <TD>Strongest Gang </TD>
+    <TD>331</TD></TR>
+  <TR>
+    <TD>2nd strongest gang </TD>
+    <TD>332</TD></TR>
+  <TR>
+    <TD>3rd strongest gang </TD>
+    <TD>333</TD></TR>
+  <TR>
+    <TD>Money lost gambling  </TD>
+    <TD>334</TD></TR>
+  <TR>
+    <TD>Gang strength </TD>
+    <TD>336</TD></TR>
+  <TR>
+    <TD>Territory under control  </TD>
+    <TD>337</TD></TR>
+  <TR>
+    <TD>Are you going to San Fierro? mission                 accomplished      
+                                 </TD>
+    <TD>338</TD></TR>
+  <TR>
+    <TD>High Noon mission accomplished </TD>
+    <TD>339</TD></TR>
+  <TR>
+    <TD>The Green Sabre mission accomplished             </TD>
+    <TD>340</TD></TR>
+  <TR>
+    <TD>maybe Catalina meeting </TD>
+    <TD>341</TD></TR>
+  <TR>
+    <TD>maybe Wu Zi meeting</TD>
+    <TD>342</TD></TR>
+  <TR>
+    <TD>&nbsp; </TD>
+    <TD>&nbsp; </TD></TR>
+  <TR>
+    <TD><EM>-&nbsp;Estas son            Desconocidas</EM></TD>
+    <TD>333-344 </TD></TR></TBODY></TABLE><BR>
+</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>  
+<SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>General</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P class=light></p>
+<IMG src="old/options/sbo/optmain.png"> 
+<P>Esta pagina contiene las opciones del (de) compilador 
+en su mayoria.</P><BR>
+<HR>
+<BR><IMG src="old/options/sbo/main_dir.png"> 
+<P>Sanny Builder necesita ciertos archivos del juego 
+mientras trabaja, por lo que debe elegir un directorio correcto 
+donde esta instalado el juego. Puede ingresar la ruta manualmente o 
+seleccionando el directorio a traves del dialogo que aparece cuando 
+presiona el boton.</P><BR>
+<HR>
+
+<P><IMG src="old/options/sbo/main_ini.png"><A 
+name=INI></A></P>
+<P>El programa tambien necesita el archivo INI que 
+contiene la lista de codigos de operacion. Puede establecer la ruta 
+a este archivo aqui (manualmente o seleccionando el cuadro de 
+dialogo de archivo que aparece cuando presiona el boton).<BR></P>
+<HR>
+<BR><A name=lang></A><BR><IMG src="old/options/sbo/main_lang.png"> 
+<P>Hay una lista de traducciones disponibles para Sanny 
+Builder. Los archivos de traduccion estan presentes en la carpeta 
+\lang. Elija el idioma deseado para la interfaz del programa en esta 
+lista. Las instrucciones de traduccion estan contenidas en el 
+archivo "Como traducir.txt" en la carpeta \lang. </P><BR>
+<HR>
+<BR><A name=association></A><IMG src="old/options/sbo/main_ass.png"> 
+<P>Puede asociar diferentes extensiones de archivos con 
+Sanny Builder. Cuando se selecciona una casilla de verificacion, se 
+cambia su registro de Windows y puede abrir los archivos con esta 
+extension simplemente haciendo clic en el. Para cancelar la 
+asociacion, desmarque una casilla de verificacion adecuada.</P><BR>
+<HR>
+
+<P><BR><IMG src="old/options/sbo/main_opt.png"> 
+</P>
+<P>Aqui puede ver las opciones comunes del (de) 
+compilador.</P>
+<P><b>Siempre sobreescribir el archivo de 
+salida</b></P>
+<P>Si este controlo, el descompilador escribe los datos 
+decompilados en el archivo de salida sin tener en cuenta si existe o 
+no. De lo contrario, y el archivo de texto con ese nombre ya existe, 
+el decompilador no lo reescribira sino que creara un nuevo archivo 
+de texto con indice (por ejemplo, main [0] .txt).</P>
+<P><b>Mostrar progreso</b></P>
+<P>Mientras el programa ejecuta el proceso de compilacion 
+(de) y si se selecciona este cuadro, hay una linea de progreso en la 
+barra de estado. De lo contrario, la barra de estado tiene palabras: 
+Espere. Mostrar progreso ralentiza levemente el tiempo de 
+ejecucion.</P>
+<P><b>Mostrar advertencia</b></P>
+<P>Esta opcion tiene el significado solo cuando se 
+compilan los scripts de San Andreas. Si el juego se ejecuta durante 
+el proceso de compilacion, el archivo script.img que contiene la 
+parte de los guiones no se puede reescribir ya que el juego usa este 
+archivo. El compilador muestra una advertencia al respecto. Puede 
+desactivar esta advertencia marcando esta casilla.</P>
+<P><b>Apertura manual de IMG</b></P>
+<P>Cuando se inicio el proceso de descompilacion, el 
+programa busca el archivo script.img que contiene algunos scripts 
+del juego. Si este archivo no se encuentra en la misma carpeta con 
+el archivo SCM o en la carpeta San Andreas \ data \ scripts \, se 
+muestra el mensaje de error. Si esta opcion se altero, puede 
+seleccionar el archivo img necesario manualmente.</P>
+<P><b>Carga rapida del juego</b></P>
+<P>Sanny Builder puede omitir las pantallas de inicio de 
+SA (F8). Si esta habilidad causa un error en la version de tu juego, 
+deshabilita esta opcion.</P>
+<P><b>Verificar condiciones</b></P>
+<P>Esta opcion tiene dos significados. En primer lugar, 
+el programa reemplaza la cantidad de condiciones en el codigo de 
+operacion IF con AND u OR. En segundo lugar, el programa puede 
+compilar el constructo IF..END y calcular el parametro IF necesario 
+en las condiciones con las palabras AND o OR.</P>
+<P><b>Rangos de verificacion</b></P>
+<P>La cantidad de variables locales accesibles es 
+limitada. Cuando esta opcion esta marcada, el compilador verifica el 
+uso correcto de ellos.</P>
+<P><b>Escribir codigos de operacion</b></P>
+<P>Esta opcion convierte la salida de descompilacion de 
+nivel alto a nivel bajo y viceversa. Si esta opcion no esta marcada, 
+el descompilador usa las clases y las palabras clave disponibles en 
+lugar de los codigos de operacion. Ademas, no hay codigos de 
+operacion para expresiones matematicas simples. Si la opcion esta 
+marcada, todos los codigos de operacion estan presentes en el 
+archivo de salida.</P>
+<P><b>Reemplazar numeros de mision</b></P>
+<P>Cuando esta opcion esta marcada, el descompilador 
+reemplaza el numero de mision en el codigo de operacion 
+start_mission con el nombre de la mision. El nombre de la mision es 
+el nombre de la etiqueta definido en el encabezado del 
+archivo.<BR>Este nombre tambien podria usarse para un movimiento 
+rapido del codigo de la mision.</P>
+<P><b>Insertar nombres de mision 
+originales</b></P>
+<P>Cuando esta opcion esta marcada, el descompilador 
+agrega nombres predefinidos de misiones originales como comentarios 
+para el codigo de operacion start_mission y para la linea DEFINE 
+MISSION en el encabezado del archivo.</P>
+<P><b>Agregue informacion adicional a 
+SCM</b></P>
+<P>Si esta opcion esta marcada, el compilador agrega 
+informacion adicional al final del archivo main.scm. Esta 
+informacion se usara mas adelante cuando se descompile este archivo 
+para ponerlo en conformidad maxima con la fuente original. Los 
+siguientes datos se agregan al final de main.scm: hex..end construye 
+offsets, nombres de variables globales, etc. Preste atencion a que 
+el archivo compilado de esa manera no se puede decompilar en 
+versiones anteriores de SB (excepto en el caso en que la opcion 
+ignore_unknown este habilitada).</P>
+</DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>   
+<SCRIPT src="HL.js"></SCRIPT></DIV></BODY></HTML>

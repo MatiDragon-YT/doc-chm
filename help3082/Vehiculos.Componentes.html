@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Componentes</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>Segun el tema Spawn de un modelo 3D, necesitamos en este caso solo 4  pasos y 
+ unos opcodes</P>
+<OL>
+  <LI>Cargar el modelo del componente de afinacion:         
+<PRE class="sb3">06E9: request_car_component #hydralics
+06E9: request_car_component #NTO_B_S
+06E9: request_car_component 1115
+</PRE></LI>
+  <LI>Comprobar si los modelos han cargado en una condicion/bucle:         
+<PRE class="sb3">:Load_Model_Check
+0001: wait  0 ms
+if and
+06EA:   car_component_available #hydralics
+06EA:   car_component_available #NTO_B_S
+06EA:   car_component_available 1115
+004D: jump_if_false @Load_Model_Check
+</PRE></LI>
+  <LI>El componente de afinacion se puede crear tan pronto como se cargue   el   
+              archivo del modelo adjuntandolo al vehiculo:        
+<PRE class="sb3">06E7: 1@ = add_car_component #NTO_B_S to_car 0@
+06E7: 2@ = add_car_component #hydralics to_car 0@
+06E7: 3@ = add_car_component 1115 to_car 0@
+</PRE></LI>
+  <LI>libere el modelo del componente de afinacion cargado si ya no es           
+      necesario <BR>
+<PRE class="sb3">06EB: release_car_component #hydralics
+06EB: release_car_component #NTO_B_S
+06EB: release_car_component 1115
+</PRE>
+  <P>Para liberar el elemento definido del guion no es necesario.</P></LI></OL>
+<P>El siguiente guion genera el <STRONG>SLAMVAN </STRONG>del&nbsp;con nitro,  
+ sistema   hidraulico y  parachoques delantero y el trabajo de pintura 1 en   
+Grovestreet   si el jugador  entra en el marcador rojo.</P>
+<P></P>
+<P>
+<P>
+<PRE class="sb3">{$CLEO .cs}
+:TuneP_1
+03A4: name_thread 'TuneP'
+:TuneP_2
+0001: wait 0 ms
+00D6: if
+0256:   player $PLAYER_CHAR defined
+004D: jump_if_false @TuneP_2
+00D6: if
+00FF:   actor $PLAYER_ACTOR  1 (in-sphere)near_point_on_foot 2491.5  -1667.5  13.35 radius  1.0  1.0  1.0
+004D: jump_if_false @TuneP_2
+0247: request_model #SLAMVAN
+06E9: request_car_component #hydralics
+06E9: request_car_component #NTO_B_S
+06E9: request_car_component 1115
+:Load_Model_Check
+0001: wait 0 ms
+if and
+0248:   model #SLAMVAN available
+06EA:   car_component_available #hydralics
+06EA:   car_component_available #NTO_B_S
+06EA:   car_component_available 1115
+004D: jump_if_false @Load_Model_Check
+00A5: 0@ = create_car #SLAMVAN at 2487.5  -1660.5  13.35
+0175: set_car 0@ z_angle_to 180.0
+06E7: 1@ = add_car_component #NTO_B_S to_car 0@
+06E7: 2@ = add_car_component #hydralics to_car 0@
+06E7: 3@ = add_car_component 1115 to_car 0@
+0229: set_car 0@ color_to  1  1
+06ED: set_car 0@ paintjob  1
+06EB: release_car_component #hydralics
+06EB: release_car_component #NTO_B_S
+06EB: release_car_component 1115
+0249: release_model #SLAMVAN
+:TuneP_4
+0001: wait 0 ms
+00D6: if
+0256:   player $PLAYER_CHAR defined
+004D: jump_if_false @TuneP_4
+00D6: if
+80FF:   NOT actor $PLAYER_ACTOR  0 ()near_point_on_foot 2491.5  -1667.5  13.35 radius  2.0  2.0  2.0
+004D: jump_if_false @TuneP_4
+01C3: remove_references_to_car 0@  // Like turning a car into any random car
+0002: jump @TuneP_2
+</PRE>
+<P>Si el jugador deja el lugar el coche sera liberado del guion y el proceso de  
+ lectura salta de nuevo a la primera <B class="text-green">etiqueta</B>.</P>
+
+<DIV class="alert alert-info border-info">
+<P>Los Painjobs requiere texturas de pinturas existentes. Estos son archivos txd 
+ adicionales que tienen el mismo nombre que el modelo <code>dff</code> y su  
+  <code>txd</code> basico con un numero  adicional.<p>Ejemplo:</p>Como archivos basico<code>slamvan.dff</code> 
+y <code>slamvan.txd</code>, y para capa de pintura <code>slamvan1.txd</code> es 
+el  <code>0</code> y <code>slamvan2.txd</code> es la capa <code>1</code>, 
+ hasta llegar al <code>3</code>... </P><P>Puedes agregar una cuarta cuarta capa, y esta  aparecera en los menus de  
+Tunings.</P>
+<HR>
+<P>
+El <B>Paintjobs</B> debe ir primero para dar a los  colores que  quieres que 
+tenga.</P></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+  
+<SCRIPT src="HL.js"></SCRIPT>
+  </DIV></DIV></DIV></BODY></HTML>
