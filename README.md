@@ -1,4 +1,8 @@
-# Puntos principales
+# :blue_book: Documentación MD
+Esta es una documentación de código libre echa para facílitarle el trabajo a los nuevos modificadores, aportandole ta la información necesaria para hacer misiones o cualquier tipo de modificación sin problemas. :smile:
+## Vista previa
+![preview-img](https://raw.githubusercontent.com/MatiDragon-YT/doc-chm/master/preview.png)
+## Puntos principales
 ### Acelera el desarrollo
 Hice la mayor parte del trabajo pensando para que usted proporcione un estilo predeterminado que incorpora mis componentes personalizados. Además, refine clases, comandos y extenciones para proporcionar una experiencia más fluida para los desarrolladores.
 ### Enfocado al usuario
