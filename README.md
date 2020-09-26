@@ -1,4 +1,4 @@
-# Bienvenido a mi documentación <img src="http://matidragon.000webhostapp.com/images/favicon/favicon_96.png" align="right" style="height: 64px"/>
+# Bienvenido a mi documentación <a href="https://www.youtube.com/channel/UCIqJ7P_fLvULqvmsDagJBjA" target="_blank" title="Visitar canal de YouTube"><img src="http://matidragon.000webhostapp.com/images/favicon/favicon_96.png" align="right" style="height: 64px"/></a>
 Esta es una documentación de código libre echa para facílitarle el trabajo a los nuevos modificadores, aportandole ta la información necesaria para hacer misiones o cualquier tipo de modificación sin problemas.
 ## Vista previa
 ![preview-img](https://raw.githubusercontent.com/MatiDragon-YT/doc-chm/master/preview.png)
