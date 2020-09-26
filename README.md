@@ -1,5 +1,5 @@
-# :blue_book: Documentación MD
-Esta es una documentación de código libre echa para facílitarle el trabajo a los nuevos modificadores, aportandole ta la información necesaria para hacer misiones o cualquier tipo de modificación sin problemas. :smile:
+# Bienvenido a mi documentación <img src="http://matidragon.000webhostapp.com/images/favicon/favicon_96.png" align="right" style="height: 64px"/>
+Esta es una documentación de código libre echa para facílitarle el trabajo a los nuevos modificadores, aportandole ta la información necesaria para hacer misiones o cualquier tipo de modificación sin problemas.
 ## Vista previa
 ![preview-img](https://raw.githubusercontent.com/MatiDragon-YT/doc-chm/master/preview.png)
 ## Puntos principales
