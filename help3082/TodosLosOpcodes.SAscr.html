@@ -10,17 +10,18 @@ rel="stylesheet" type="text/css"></HEAD>
 <P>Generado automaticaticamente&nbsp;por&nbsp;la&nbsp;base de        datos     
  de:&nbsp;<BR><BUTTON 
 class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON> 
-<PRE>Este es el significado de estas cosas:
+<PRE class="scm">Este es el significado de estas cosas:
+                                          
+%~d% = Cualquier valor
+%~p% = Salto a una <a href=Codificacion.TiposDeDatos.html#labels>etiqueta</a>
+%~o% = Cualquier tipo de modelo
+%~m% = ID de modelos de <code>.ide</code>
+%~g% = Entrada de textos GXT
+%~x% = Script Externo
+%~s% = Ubicacion de archivo/carpeta
+%~h% = Indefinido
 
-<B class="blue-text">%~d%</B> = Cualquier cosa
-<B class="teal-text">%~p%</B> = Punto de etiqueta
-<B class="green-text">%~o%</B> = Modelos de objetos de todo tipo
-<B class="yellow-text">%~g%</B> = Referencia GXT
-<B class="orange-text">%~x%</B> = Script Externo
-<B class="red-text">%~s%</B> = Ubicacion de archivo/carpeta
-<B class="pink-text">%~h%</B> = Indefinido
-
-<B class="grey-text">=n   = Cantidad de parametros</B>
+=n   = Cantidad de parametros
 </PRE>
 <H5>[OPCODES]</H5>
 <DIV class="bg-dark text-white p-2 m-1">0000=0,NOP<BR>0001=1,wait %1d%<BR>0002=1,goto %1p%<BR>0003=1,shake_cam 

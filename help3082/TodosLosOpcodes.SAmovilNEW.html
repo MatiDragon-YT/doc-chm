@@ -10,54 +10,35 @@ rel="stylesheet" type="text/css"></HEAD>
 <P>Generado automaticaticamente&nbsp;por&nbsp;la&nbsp;base de        datos     
  de:&nbsp;<BR><BUTTON 
 class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON> 
-<PRE>Este es el significado de estas cosas:
+<PRE class="scm">Este es el significado de estas cosas:
+                                          
+%~d% = Cualquier valor
+%~p% = Salto a una <a href=Codificacion.TiposDeDatos.html#labels>etiqueta</a>
+%~o% = Cualquier tipo de modelo
+%~m% = ID de modelos de <code>.ide</code>
+%~g% = Entrada de textos GXT
+%~x% = Script Externo
+%~s% = Ubicacion de archivo/carpeta
+%~h% = Indefinido
 
-<B class="blue-text">%~d%</B> = Cualquier cosa
-<B class="teal-text">%~p%</B> = Punto de etiqueta
-<B class="green-text">%~o%</B> = Modelos de objetos de todo tipo
-<B class="yellow-text">%~g%</B> = Referencia GXT
-<B class="orange-text">%~x%</B> = Script Externo
-<B class="red-text">%~s%</B> = Ubicacion de archivo/carpeta
-<B class="pink-text">%~h%</B> = Indefinido
-
-<B class="grey-text">=n   = Cantidad de parametros</B>
+=n   = Cantidad de parametros
 </PRE>
 <H5>[OPCODES]</H5>
-<DIV class="bg-dark text-white p-2 m-1">0DD0=2,%1d% =                         
-                                                
-  get_label_addr%2p%<BR>0DD1=2,%1d%   =                                          
-                                                                                 
-                                                                                 
-         
-  get_func_addr_by_cstr_name%2d%<BR>0DD2=1,context_call_func%1d%<BR>0DD3=2,context_set_reg%1d% 
-                                                                                 
-                                           value%2d%<BR>0DD4=2,%1d%   =          
-                                                                 
-  context_get_reg%2d%<BR>0DD6=1,%1d%     =                                       
-                                                                  
-  get_game_version<BR>0DD7=1,%1d%     =                                          
-   get_image_base<BR>0DD8=4,%1d%       =                                         
-                                           read_mem_addr%2d%     size%3d%        
-                                                                               
-  add_ib%4d%<BR>0DD9=5,write_mem_addr%1d%               value%2d%                
-                                         size%3d%                                
-     add_ib%4d%                                                                 
-  protect%5d%<BR>0DD9=4,write_mem_addr%1d%                 value%2d%             
-                                                        size%3d%                 
-        add_ib%4d%                                                               
-      protect<BR>0DDC=2,set_mutex_var%1d%                                        
-           to%2d%<BR>0DDD=2,%1d%                                             =   
-                              get_mutex_var%2d%<BR>0DE0=3,%1d% =                 
-                                                                    
-  get_touch_point_state%2d%                                                      
-       mintime%3d%<BR>0DE1=5,%1d% =                                              
-                                       get_touch_slide_state       from%2d%   
-  to%3d%           mintime%4d%                                                   
-                                             maxtime%5d%<BR>0DE2=1,%1d% =        
-                             get_menu_button_state;                         read 
-        opcode           info                                       before       
-                                        using<BR>0DE3=2,%1d% =                   
-                                    get_menu_button_pressed                      
-                                       mintime%2d%</LI></UL></DIV></DIV>
+<pre class=scm>0DD0=2,%1d% =get_label_addr %2p%
+0DD1=2,%1d% =get_func_addr_by_cstr_name %2d%
+0DD2=1,context_call_func %1d%
+0DD3=2,context_set_reg %1d% value %2d%
+0DD4=2,%1d% = context_get_reg %2d%
+0DD6=1,%1d% = get_game_version
+0DD7=1,%1d% = get_image_base
+0DD8=4,%1d% = read_mem_addr %2d% size %3d% add_ib %4d%
+0DD9=5,write_mem_addr %1d% value %2d% size %3d% add_ib %4d% protect %5d%
+0DD9=4,write_mem_addr %1d% value %2d% size %3d% add_ib %4d% protect
+0DDC=2,set_mutex_var %1d% to %2d%
+0DDD=2,%1d% = get_mutex_var %2d%
+0DE0=3,%1d% = get_touch_point_state %2d% mintime %3d%
+0DE1=5,%1d% = get_touch_slide_state from% 2d% to %3d% mintime %4d% maxtime %5d%
+0DE2=1,%1d% = get_menu_button_state ; readopcode info beforeusing
+0DE3=2,%1d% = get_menu_button_pressedmintime %2d%</pre></DIV>
 <SCRIPT src="jQuery.js"></SCRIPT>                                
 <SCRIPT src="HL.js"></SCRIPT>
