@@ -15,12 +15,16 @@
 <P class=light>Ciertos elementos de código deben comenzar o terminar con caracteres específicos. Ayudan al compilador a reconocer su significado. La siguiente lista contiene todos los tipos de datos conocidos por el compilador.</P><hr>
 <h4 id="variables">Variables</h4>
 <P>Una <a href="codificacion.variables.html#global">variable global</a> comienza con <code>$</code> seguido de un identificador válido (cualquier combinación de letras, dígitos y <code>_</code>).</P>
-<PRE class="sb3">0004: $MiVariable = 100</PRE>
+<PRE class="sb3">
+0004: $MiVariable = 100
+</PRE>
 <P>Una <a href="codificacion.variables.html#local">variable local</a> como nombre solo puede tener un número seguido de <code>@</code>. El número es el índice de variable local en la lista de variables locales <a href="DocumentacionSCM.LimitesDeLosGTA.html">asignadas</a> a este script o una misión. </P>
-<PRE class="sb3">0006: 100@ = 10</PRE>
+<PRE class="sb3">
+0006: 100@ = 10
+</PRE>
 <P>Una variable <code>ADMA</code> (<b>A</b>dvanced <b>D</b>irect <b>M</b>emory <b>A</b>ccess) es una referencia al desplazamiento en el archivo <code>main.scm</code>. Sirven como variables globales, es decir, se puede leer y escribir en una dirección en <code>main.scm</code>.</P>
 <PRE class="sb3">$MiVariable = &0 // leer los primeros cuatro bytes del main.scm y escribirlos en $ MiVariable
-&57 += &120(&231,4i) // se puede utilizar como elemento de un arreglo
+&57 += &120(&231, 4i) // se puede utilizar como elemento de un arreglo
 </PRE>
 <P>Las variables <code>ADMA</code> no afectan al tamaño del espacio de variables globales en el encabezado <code>main.scm</code>.</P><hr>
 <h4 id="labels">Etiquetas</h4>
@@ -29,24 +33,45 @@
 <p>Para hacer referencia a la etiqueta desde un opcode, utilice el <code>@</code> y, a continuación, escriba el nombre de la etiqueta.</p>
 <PRE class="sb3">0002: jump @MiEtiqueta</PRE>
 <p>Si el nombre de una etiqueta se escribe como una declaración independiente seguida de <code>()</code> representa una llamada a la subrutina con el comando <code>gosub</code>:</p>
-<PRE class="sb3">// Las siguientes declaraciones son equivalentes
+<PRE class="sb3">
+// Las siguientes declaraciones son equivalentes
 MiEtiqueta()
-gosub @MiEtiqueta</PRE><hr>
+gosub @MiEtiqueta
+0050: gosub @MiEtiqueta
+</PRE>
+<div class=dan>Los anidamientos estan limitados a <b>8</b> y cada uno debe contener un <code class=sb3>return</code> obligatorio.</div>
+<hr>
 <h4 id="strings">Cadenas Literarias</h4>
 <p>Un texto entre comillas simples <code>' '</code> es un literal de cadena corta (<code>15</code> caracteres máx.)</p>
 <pre class=sb3>03A4: name_thread 'MAIN'</pre>
 <p>También se permiten cadenas en blanco: <code>' '</code>.<br>Un texto entre <code>" "</code> es un literal de cadena larga (la longitud máxima viene determinada por el código de operación que utiliza)<br>Si el literal contiene <code>"</code> debe escribir <code>\</code> antes de él.</p>
-<pre class=sb3>0662: write_debug_message "Hello, \"world\"! \n 'Here we go!'"</pre>
-<p>También se permiten cadenas en blanco: <code>" "</code>.</p><hr>
+<pre>0662: write_debug_message <b class=cadena>"Hello, \"world\"! \n 'Here we go!'"</b></pre>
+<p>También se permiten cadenas en blanco: <code>" "</code>.</p>
+<hr>
 <h4 id="vstrings">Variables de Cadenas</h4>
-<p>Una variable global que contiene una cadena corta se inicia con <code>s$</code>.</p>
-<pre class=sb3>05A9: s$MyString = 'GLOBAL'</pre>
-<p>Una variable global que contiene una cadena larga se inicia con <code>v$</code>.</p>
-<pre class=sb3>06D1: v$MyString = "LONG_GLOBAL"</pre>
-<p>Una variable local que contiene una cadena corta se inicia con <code>@s</code>.</p>
-<pre class=sb3>05AA: 1@s = 'LOCAL'</pre>
-<p>Una variable local que contiene una cadena larga se inicia con <code>@v</code>.</p>
-<pre class=sb3>06D2: 1@v = "LONG_LOCAL"</pre><hr>
+<TABLE class=responsive-table>
+  <THEAD>
+  <TR>
+    <TH>Cadena</TH>
+    <TH>Local</TH>
+    <TH>Global</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH>Corta</TH>
+    <TD><p>Una variable local que contiene una cadena corta se inicia con <code>@s</code>.</p>
+<pre class=sb3>05AA: 1@s = 'LOCAL'</pre></TD>
+    <TD><p>Una variable global que contiene una cadena corta se inicia con <code>s$</code>.</p>
+<pre class=sb3>05A9: s$MyString = 'GLOBAL'</pre></TD>
+  </TR>
+  <TR>
+    <TH>Larga</TH>
+    <TD><p>Una variable local que contiene una cadena larga se inicia con <code>@v</code>.</p>
+<pre class=sb3>06D2: 1@v = "LONG_LOCAL"</pre></TD>
+    <TD><p>Una variable global que contiene una cadena larga se inicia con <code>v$</code>.</p>
+<pre class=sb3>06D1: v$MyString = "LONG_GLOBAL"</pre></TD>
+  </TR>
+</TBODY></TABLE>
+<hr>
 <h4 id="models">Nombre de Modelo</h4>
 <p>Los modelos definidos en los archivos <code>.ide</code>, pueden ser referenciados con <code>#</code> seguido de su nombre.</p>
 <pre class=sb3>0247: request_model #CELLPHONE</pre> <hr>

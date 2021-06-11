@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
- <title>Caracteres ASCII</title>
+ <title>Código de teclas virtuales</title>
  <meta charset="ISO-8859-1">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,424 +13,1198 @@
 <div class="row">
 <div class="col-12">
 <STYLE>
+table {text-shadow: 0px 0px 0px 2px black}
 td:nth-child(2){
- color: #F44336;
- font-weight: bolder!important;  
-}
-td:nth-child(3){
  color: #ff9800;
  font-weight: bolder!important;  
 }
+td:nth-child(3),td:nth-child(4),td:nth-child(2){text-align: center}
+td:nth-child(3),td:nth-child(4){
+ color: #F44336;
+ font-weight: bolder!important;
+}
+td:nth-child(4)::before {
+  content: "0x";
+}
 </STYLE>
-
-<P>Para usar el opcode:<PRE class="sb3">0AB0:   key_pressed 8</b>
+   
+<P>Para usar el opcode:  
+<PRE class="sb3">0AB0:   key_pressed 8
+Input.IsKeyPressed(VK.RButton)
 </PRE>
-<P></P>
+<img src="vk.png" class=w-100 />
 <TABLE>
-  <TBODY>
-  <TR>
-    <TH><INPUT id="myInput" class="w-100" title="Escribe el Boton" onkeyup="myFunction()" 
-      type="text" placeholder="Buscar..."></TH>
-    <TH>ASCII</TH></TR></TBODY></TABLE>
-<TABLE id="myTable" class="table">
-  <TBODY>
-  <TR class="header">
-    <TH>Caracter</TH>
-    <TH>Dec</TH>
-    <TH>Hex</TH></TR>
-  <TR>
-    <TD>Retroceso</TD>
-    <TD>8</TD>
-    <TD>8</TD></TR>
-  <TR>
-    <TD>Tabulador</TD>
-    <TD>9</TD>
-    <TD>9</TD></TR>
-  <TR>
-    <TD>Enter</TD>
-    <TD>13</TD>
-    <TD>D</TD></TR>
-  <TR>
-    <TD>Shift (Ambos Botones)</TD>
-    <TD>16</TD>
-    <TD>10</TD></TR>
-  <TR>
-    <TD>Ctrl (Ambos Botones)</TD>
-    <TD>17</TD>
-    <TD>11</TD></TR>
-  <TR>
-    <TD>Pausa</TD>
-    <TD>19</TD>
-    <TD>13</TD></TR>
-  <TR>
-    <TD>Bloq. Mayuscula</TD>
-    <TD>20</TD>
-    <TD>14</TD></TR>
-  <TR>
-    <TD>Escape</TD>
-    <TD>27</TD>
-    <TD>1B</TD></TR>
-  <TR>
-    <TD>Barra Espaciadora</TD>
-    <TD>32</TD>
-    <TD>20</TD></TR>
-  <TR>
-    <TD>Pagina Posterior (re pag)</TD>
-    <TD>33</TD>
-    <TD>21</TD></TR>
-  <TR>
-    <TD>Pagina Anterior (av pag)</TD>
-    <TD>34</TD>
-    <TD>22</TD></TR>
-  <TR>
-    <TD>Fin</TD>
-    <TD>35</TD>
-    <TD>23</TD></TR>
-  <TR>
-    <TD>Hogar</TD>
-    <TD>36</TD>
-    <TD>24</TD></TR>
-  <TR>
-    <TD>Flecha Izquierda</TD>
-    <TD>37</TD>
-    <TD>25</TD></TR>
-  <TR>
-    <TD>Flecha Arriba</TD>
-    <TD>38</TD>
-    <TD>26</TD></TR>
-  <TR>
-    <TD>Flecha Derecha</TD>
-    <TD>39</TD>
-    <TD>27</TD></TR>
-  <TR>
-    <TD>Flecha Abajo</TD>
-    <TD>40</TD>
-    <TD>28</TD></TR>
-  <TR>
-    <TD>Insertar</TD>
-    <TD>45</TD>
-    <TD>2D</TD></TR>
-  <TR>
-    <TD>Borrar</TD>
-    <TD>46</TD>
-    <TD>2E</TD></TR>
-  <TR>
-    <TD>0</TD>
-    <TD>48</TD>
-    <TD>30</TD></TR>
-  <TR>
-    <TD>1</TD>
-    <TD>49</TD>
-    <TD>31</TD></TR>
-  <TR>
-    <TD>2</TD>
-    <TD>50</TD>
-    <TD>32</TD></TR>
-  <TR>
-    <TD>3</TD>
-    <TD>51</TD>
-    <TD>33</TD></TR>
-  <TR>
-    <TD>4</TD>
-    <TD>52</TD>
-    <TD>34</TD></TR>
-  <TR>
-    <TD>5</TD>
-    <TD>53</TD>
-    <TD>35</TD></TR>
-  <TR>
-    <TD>6</TD>
-    <TD>54</TD>
-    <TD>36</TD></TR>
-  <TR>
-    <TD>7</TD>
-    <TD>55</TD>
-    <TD>37</TD></TR>
-  <TR>
-    <TD>8</TD>
-    <TD>56</TD>
-    <TD>38</TD></TR>
-  <TR>
-    <TD>9</TD>
-    <TD>57</TD>
-    <TD>39</TD></TR>
-  <TR>
-    <TD>A &amp;&nbsp;a</TD>
-    <TD>65</TD>
-    <TD>41</TD></TR>
-  <TR>
-    <TD>B&nbsp;&amp;&nbsp;b</TD>
-    <TD>66</TD>
-    <TD>42</TD></TR>
-  <TR>
-    <TD>C &amp; c</TD>
-    <TD>67</TD>
-    <TD>43</TD></TR>
-  <TR>
-    <TD>D &amp; d</TD>
-    <TD>68</TD>
-    <TD>44</TD></TR>
-  <TR>
-    <TD>E &amp; e</TD>
-    <TD>69</TD>
-    <TD>45</TD></TR>
-  <TR>
-    <TD>F &amp; f</TD>
-    <TD>70</TD>
-    <TD>46</TD></TR>
-  <TR>
-    <TD>G &amp; g</TD>
-    <TD>71</TD>
-    <TD>47</TD></TR>
-  <TR>
-    <TD>H &amp; h</TD>
-    <TD>72</TD>
-    <TD>48</TD></TR>
-  <TR>
-    <TD>I &amp; i</TD>
-    <TD>73</TD>
-    <TD>49</TD></TR>
-  <TR>
-    <TD>J &amp; j</TD>
-    <TD>74</TD>
-    <TD>4A</TD></TR>
-  <TR>
-    <TD>K &amp; k</TD>
-    <TD>75</TD>
-    <TD>4B</TD></TR>
-  <TR>
-    <TD>L &amp; l</TD>
-    <TD>76</TD>
-    <TD>4C</TD></TR>
-  <TR>
-    <TD>M &amp; m</TD>
-    <TD>77</TD>
-    <TD>4D</TD></TR>
-  <TR>
-    <TD>N &amp; n</TD>
-    <TD>78</TD>
-    <TD>4E</TD></TR>
-  <TR>
-    <TD>O &amp; o</TD>
-    <TD>79</TD>
-    <TD>4F</TD></TR>
-  <TR>
-    <TD>P &amp; p</TD>
-    <TD>80</TD>
-    <TD>50</TD></TR>
-  <TR>
-    <TD>Q &amp; q</TD>
-    <TD>81</TD>
-    <TD>51</TD></TR>
-  <TR>
-    <TD>R &amp; r</TD>
-    <TD>82</TD>
-    <TD>52</TD></TR>
-  <TR>
-    <TD>S &amp; s</TD>
-    <TD>83</TD>
-    <TD>53</TD></TR>
-  <TR>
-    <TD>T &amp; t</TD>
-    <TD>84</TD>
-    <TD>54</TD></TR>
-  <TR>
-    <TD>U &amp; u</TD>
-    <TD>85</TD>
-    <TD>55</TD></TR>
-  <TR>
-    <TD>V &amp; v</TD>
-    <TD>86</TD>
-    <TD>56</TD></TR>
-  <TR>
-    <TD>W &amp; w</TD>
-    <TD>87</TD>
-    <TD>57</TD></TR>
-  <TR>
-    <TD>X &amp; x</TD>
-    <TD>88</TD>
-    <TD>58</TD></TR>
-  <TR>
-    <TD>Y &amp; y</TD>
-    <TD>89</TD>
-    <TD>59</TD></TR>
-  <TR>
-    <TD>Z &amp; z</TD>
-    <TD>90</TD>
-    <TD>5A</TD></TR>
-  <TR>
-    <TD>Boton Izquierdo de Windows&nbsp;</TD>
-    <TD>91</TD>
-    <TD>5B</TD></TR>
-  <TR>
-    <TD>Boton Derecho de Windows</TD>
-    <TD>92</TD>
-    <TD>5C</TD></TR>
-  <TR>
-    <TD>Boton de Funcion<BR>(Entre Ctrl &amp; Windows)</TD>
-    <TD>93</TD>
-    <TD>5F</TD></TR>
-  <TR>
-    <TD>0 (Apartado Numerico)</TD>
-    <TD>96</TD>
-    <TD>60</TD></TR>
-  <TR>
-    <TD>1 (Apartado Numerico)</TD>
-    <TD>97</TD>
-    <TD>61</TD></TR>
-  <TR>
-    <TD>2 (Apartado Numerico)</TD>
-    <TD>98</TD>
-    <TD>62</TD></TR>
-  <TR>
-    <TD>3 (Apartado Numerico)</TD>
-    <TD>99</TD>
-    <TD>63</TD></TR>
-  <TR>
-    <TD>4 (Apartado Numerico)</TD>
-    <TD>100</TD>
-    <TD>64</TD></TR>
-  <TR>
-    <TD>5 (Apartado Numerico)</TD>
-    <TD>101</TD>
-    <TD>65</TD></TR>
-  <TR>
-    <TD>6 (Apartado Numerico)</TD>
-    <TD>102</TD>
-    <TD>66</TD></TR>
-  <TR>
-    <TD>7 (Apartado Numerico)</TD>
-    <TD>103</TD>
-    <TD>67</TD></TR>
-  <TR>
-    <TD>8 (Apartado Numerico)</TD>
-    <TD>104</TD>
-    <TD>68</TD></TR>
-  <TR>
-    <TD>9 (Apartado Numerico)</TD>
-    <TD>105</TD>
-    <TD>69</TD></TR>
-  <TR>
-    <TD>* (Apartado Numerico)</TD>
-    <TD>106</TD>
-    <TD>6A</TD></TR>
-  <TR>
-    <TD>+ (Apartado Numerico)</TD>
-    <TD>107</TD>
-    <TD>6B</TD></TR>
-  <TR>
-    <TD>- (Apartado Numerico)</TD>
-    <TD>109</TD>
-    <TD>6D</TD></TR>
-  <TR>
-    <TD>. (Apartado Numerico)</TD>
-    <TD>110</TD>
-    <TD>6E</TD></TR>
-  <TR>
-    <TD>/ (Apartado Numerico)</TD>
-    <TD>111</TD>
-    <TD>6F</TD></TR>
-  <TR>
-    <TD>F1</TD>
-    <TD>112</TD>
-    <TD>70</TD></TR>
-  <TR>
-    <TD>F2</TD>
-    <TD>113</TD>
-    <TD>71</TD></TR>
-  <TR>
-    <TD>F3</TD>
-    <TD>114</TD>
-    <TD>72</TD></TR>
-  <TR>
-    <TD>F4</TD>
-    <TD>115</TD>
-    <TD>73</TD></TR>
-  <TR>
-    <TD>F5</TD>
-    <TD>116</TD>
-    <TD>74</TD></TR>
-  <TR>
-    <TD>F6</TD>
-    <TD>117</TD>
-    <TD>75</TD></TR>
-  <TR>
-    <TD>F7</TD>
-    <TD>118</TD>
-    <TD>76</TD></TR>
-  <TR>
-    <TD>F8</TD>
-    <TD>119</TD>
-    <TD>77</TD></TR>
-  <TR>
-    <TD>F9</TD>
-    <TD>120</TD>
-    <TD>78</TD></TR>
-  <TR>
-    <TD>F10</TD>
-    <TD>121</TD>
-    <TD>79</TD></TR>
-  <TR>
-    <TD>F11</TD>
-    <TD>122</TD>
-    <TD>7A</TD></TR>
-  <TR>
-    <TD>F12</TD>
-    <TD>123</TD>
-    <TD>7B</TD></TR>
-  <TR>
-    <TD>Bloq. Numeral</TD>
-    <TD>144</TD>
-    <TD>90</TD></TR>
-  <TR>
-    <TD>Bloq. Desplazamiento</TD>
-    <TD>145</TD>
-    <TD>91</TD></TR>
-  <TR>
-    <TD>;</TD>
-    <TD>286</TD>
-    <TD>BA</TD></TR>
-  <TR>
-    <TD>=</TD>
-    <TD>287</TD>
-    <TD>BB</TD></TR>
-  <TR>
-    <TD>,</TD>
-    <TD>288</TD>
-    <TD>BC</TD></TR>
-  <TR>
-    <TD>-</TD>
-    <TD>289</TD>
-    <TD>BD</TD></TR>
-  <TR>
-    <TD>.</TD>
-    <TD>290</TD>
-    <TD>BE</TD></TR>
-  <TR>
-    <TD>/</TD>
-    <TD>291</TD>
-    <TD>BF</TD></TR>
-  <TR>
-    <TD>`</TD>
-    <TD>292</TD>
-    <TD>C0</TD></TR>
-  <TR>
-    <TD>[</TD>
-    <TD>219</TD>
-    <TD>DB</TD></TR>
-  <TR>
-    <TD>\</TD>
-    <TD>220</TD>
-    <TD>DC</TD></TR>
-  <TR>
-    <TD>]</TD>
-    <TD>221</TD>
-    <TD>DD</TD></TR>
-  <TR>
-    <TD>'</TD>
-    <TD>222</TD>
-    <TD>DE</TD></TR></TBODY></TABLE>
-</DIV></DIV>
+  <THEAD>
+  <TR>
+    <TH><INPUT title="Escribe el Boton" class="w-100" id="myInput" onkeyup="myFunction()" type="text" placeholder="Buscar..." value=""></TH>
+    <TH>ASCII</TH></TR></THEAD></TABLE>
+<TABLE class="table" id="myTable">
+  <THEAD>
+  <TR>
+    <TH>Descripción</TH>
+    <TH class=center>Enum</TH>
+    <TH class=center>Dec</TH>
+    <TH class=center>Hex</TH></TR></THEAD>
+<tbody>
+ <tr>
+  <td>Botón izquierdo del ratón</td>
+  <td>LButton</td>
+  <td>1</td>
+  <td>01</td>
+ </tr>
+ <tr>
+  <td>Botón derecho del ratón</td>
+  <td>RButton</td>
+  <td>2</td>
+  <td>02</td>
+ </tr>
+ <tr>
+  <td>Procesamiento de rotura de control</td>
+  <td>Cancel</td>
+  <td>3</td>
+  <td>03</td>
+ </tr>
+ <tr>
+  <td>Botón central del ratón (ratón de tres botones)</td>
+  <td>MButton</td>
+  <td>4</td>
+  <td>04</td>
+ </tr>
+ <tr>
+  <td>Botón del ratón X1</td>
+  <td>XButton1</td>
+  <td>5</td>
+  <td>05</td>
+ </tr>
+ <tr>
+  <td>Botón del ratón X2</td>
+  <td>XButton2</td>
+  <td>6</td>
+  <td>06</td>
+ </tr>
+ <tr>
+  <td>BACKSPACE<b class=d-none>retroceso</b></td>
+  <td>Back</td>
+  <td>8</td>
+  <td>08</td>
+ </tr>
+ <tr>
+  <td>TAB<b class=d-none>tabulador</b></td>
+  <td>Tab</td>
+  <td>9</td>
+  <td>09</td>
+ </tr>
+ <tr>
+  <td>CLEAR<b class=d-none>limpiar</b></td>
+  <td>Clear</td>
+  <td>12</td>
+  <td>0C</td>
+ </tr>
+ <tr>
+  <td>ENTER<b class=d-none>retorno</b></td>
+  <td>Return</td>
+  <td>13</td>
+  <td>0D</td>
+ </tr>
+ <tr>
+  <td>SHIFT</td>
+  <td>Shift</td>
+  <td>16</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>CTRL</td>
+  <td>Control</td>
+  <td>17</td>
+  <td>11</td>
+ </tr>
+ <tr>
+  <td>ALT</td>
+  <td>Menu</td>
+  <td>18</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>PAUSE<b class=d-none>pausa</b></td>
+  <td>Pause</td>
+  <td>19</td>
+  <td>13</td>
+ </tr>
+ <tr>
+  <td>CAPS LOCK<b class=d-none>bloq mayus</b></td>
+  <td>Capital</td>
+  <td>20</td>
+  <td>14</td>
+ </tr>
+ <tr>
+  <td>Modo Kana del IME</td>
+  <td>Kana</td>
+  <td>21</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Modo Junja del IME</td>
+  <td>Junja</td>
+  <td>23</td>
+  <td>17</td>
+ </tr>
+ <tr>
+  <td>Modo Final del IME</td>
+  <td>Final</td>
+  <td>24</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>Modo Hanja del IME</td>
+  <td>Hanja</td>
+  <td>25</td>
+  <td>19</td>
+ </tr>
+ <tr>
+  <td>Modo Kanji del IME</td>
+  <td>Kanji</td>
+  <td>25</td>
+  <td>19</td>
+ </tr>
+ <tr>
+  <td>ESC<b class=d-none>escape</b></td>
+  <td>Escape</td>
+  <td>27</td>
+  <td>1B</td>
+ </tr>
+ <tr>
+  <td>Convertir IME</td>
+  <td>Convert</td>
+  <td>28</td>
+  <td>1C</td>
+ </tr>
+ <tr>
+  <td>No convertir IME</td>
+  <td>Nonconvert</td>
+  <td>29</td>
+  <td>1D</td>
+ </tr>
+ <tr>
+  <td>Aceptar IME</td>
+  <td>Accept</td>
+  <td>30</td>
+  <td>1E</td>
+ </tr>
+ <tr>
+  <td>Solicitud de cambio de modo de IME</td>
+  <td>Modechange</td>
+  <td>31</td>
+  <td>1F</td>
+ </tr>
+ <tr>
+  <td>SPACEBAR<b class=d-none>barra espaciadora</b></td>
+  <td>Space</td>
+  <td>32</td>
+  <td>20</td>
+ </tr>
+ <tr>
+  <td>PAGE UP<b class=d-none>re pag</b></td>
+  <td>Prior</td>
+  <td>33</td>
+  <td>21</td>
+ </tr>
+ <tr>
+  <td>PAGE DOWN<b class=d-none>av pag</b></td>
+  <td>Next</td>
+  <td>34</td>
+  <td>22</td>
+ </tr>
+ <tr>
+  <td>END<b class=d-none>fin</b></td>
+  <td>End</td>
+  <td>35</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>HOME<b class=d-none>inicio</b></td>
+  <td>Home</td>
+  <td>36</td>
+  <td>24</td>
+ </tr>
+ <tr>
+  <td>LEFT ARROW<b class=d-none>flecha izquierda</b></td>
+  <td>Left</td>
+  <td>37</td>
+  <td>25</td>
+ </tr>
+ <tr>
+  <td>UP ARROW<b class=d-none>flecha arriba</b></td>
+  <td>Up</td>
+  <td>38</td>
+  <td>26</td>
+ </tr>
+ <tr>
+  <td>RIGHT ARROW<b class=d-none>flecha derecha</b></td>
+  <td>Right</td>
+  <td>39</td>
+  <td>27</td>
+ </tr>
+ <tr>
+  <td>DOWN ARROW<b class=d-none>flecha abajo</b></td>
+  <td>Down</td>
+  <td>40</td>
+  <td>28</td>
+ </tr>
+ <tr>
+  <td>SELECT<b class=d-none>seleccionar</b></td>
+  <td>Select</td>
+  <td>41</td>
+  <td>29</td>
+ </tr>
+ <tr>
+  <td>PRINT<b class=d-none>imprimir</b></td>
+  <td>Print</td>
+  <td>42</td>
+  <td>2A</td>
+ </tr>
+ <tr>
+  <td>EXECUTE<b class=d-none>ejecutar</b></td>
+  <td>Execute</td>
+  <td>43</td>
+  <td>2B</td>
+ </tr>
+ <tr>
+  <td>PRINT SCREEN<b class=d-none>captura pantalla</b></td>
+  <td>Snapshot</td>
+  <td>44</td>
+  <td>2C</td>
+ </tr>
+ <tr>
+  <td>INS<b class=d-none>insertar</b></td>
+  <td>Insert</td>
+  <td>45</td>
+  <td>2D</td>
+ </tr>
+ <tr>
+  <td>DEL<b class=d-none>borrar|suprimir</b></td>
+  <td>Delete</td>
+  <td>46</td>
+  <td>2E</td>
+ </tr>
+ <tr>
+  <td>HELP<b class=d-none>ayuda</b></td>
+  <td>Help</td>
+  <td>47</td>
+  <td>2F</td>
+ </tr>
+ <tr>
+  <td>0</td>
+  <td>Num0</td>
+  <td>48</td>
+  <td>30</td>
+ </tr>
+ <tr>
+  <td>1</td>
+  <td>Num1</td>
+  <td>49</td>
+  <td>31</td>
+ </tr>
+ <tr>
+  <td>2</td>
+  <td>Num2</td>
+  <td>50</td>
+  <td>32</td>
+ </tr>
+ <tr>
+  <td>3</td>
+  <td>Num3</td>
+  <td>51</td>
+  <td>33</td>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>Num4</td>
+  <td>52</td>
+  <td>34</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td>Num5</td>
+  <td>53</td>
+  <td>35</td>
+ </tr>
+ <tr>
+  <td>6</td>
+  <td>Num6</td>
+  <td>54</td>
+  <td>36</td>
+ </tr>
+ <tr>
+  <td>7</td>
+  <td>Num7</td>
+  <td>55</td>
+  <td>37</td>
+ </tr>
+ <tr>
+  <td>8</td>
+  <td>Num8</td>
+  <td>56</td>
+  <td>38</td>
+ </tr>
+ <tr>
+  <td>9</td>
+  <td>Num9</td>
+  <td>57</td>
+  <td>39</td>
+ </tr>
+ <tr>
+  <td>A</td>
+  <td>A</td>
+  <td>65</td>
+  <td>41</td>
+ </tr>
+ <tr>
+  <td>B</td>
+  <td>B</td>
+  <td>66</td>
+  <td>42</td>
+ </tr>
+ <tr>
+  <td>C</td>
+  <td>C</td>
+  <td>67</td>
+  <td>43</td>
+ </tr>
+ <tr>
+  <td>D</td>
+  <td>D</td>
+  <td>68</td>
+  <td>44</td>
+ </tr>
+ <tr>
+  <td>E</td>
+  <td>E</td>
+  <td>69</td>
+  <td>45</td>
+ </tr>
+ <tr>
+  <td>F</td>
+  <td>F</td>
+  <td>70</td>
+  <td>46</td>
+ </tr>
+ <tr>
+  <td>G</td>
+  <td>G</td>
+  <td>71</td>
+  <td>47</td>
+ </tr>
+ <tr>
+  <td>H</td>
+  <td>H</td>
+  <td>72</td>
+  <td>48</td>
+ </tr>
+ <tr>
+  <td>I</td>
+  <td>I</td>
+  <td>73</td>
+  <td>49</td>
+ </tr>
+ <tr>
+  <td>J</td>
+  <td>J</td>
+  <td>74</td>
+  <td>4A</td>
+ </tr>
+ <tr>
+  <td>K</td>
+  <td>K</td>
+  <td>75</td>
+  <td>4B</td>
+ </tr>
+ <tr>
+  <td>L</td>
+  <td>L</td>
+  <td>76</td>
+  <td>4C</td>
+ </tr>
+ <tr>
+  <td>M</td>
+  <td>M</td>
+  <td>77</td>
+  <td>4D</td>
+ </tr>
+ <tr>
+  <td>N</td>
+  <td>N</td>
+  <td>78</td>
+  <td>4E</td>
+ </tr>
+ <tr>
+  <td>O</td>
+  <td>O</td>
+  <td>79</td>
+  <td>4F</td>
+ </tr>
+ <tr>
+  <td>P</td>
+  <td>P</td>
+  <td>80</td>
+  <td>50</td>
+ </tr>
+ <tr>
+  <td>Q</td>
+  <td>Q</td>
+  <td>81</td>
+  <td>51</td>
+ </tr>
+ <tr>
+  <td>R</td>
+  <td>R</td>
+  <td>82</td>
+  <td>52</td>
+ </tr>
+ <tr>
+  <td>S</td>
+  <td>S</td>
+  <td>83</td>
+  <td>53</td>
+ </tr>
+ <tr>
+  <td>T</td>
+  <td>T</td>
+  <td>84</td>
+  <td>54</td>
+ </tr>
+ <tr>
+  <td>U</td>
+  <td>U</td>
+  <td>85</td>
+  <td>55</td>
+ </tr>
+ <tr>
+  <td>V</td>
+  <td>V</td>
+  <td>86</td>
+  <td>56</td>
+ </tr>
+ <tr>
+  <td>W</td>
+  <td>W</td>
+  <td>87</td>
+  <td>57</td>
+ </tr>
+ <tr>
+  <td>X</td>
+  <td>X</td>
+  <td>88</td>
+  <td>58</td>
+ </tr>
+ <tr>
+  <td>Y</td>
+  <td>Y</td>
+  <td>89</td>
+  <td>59</td>
+ </tr>
+ <tr>
+  <td>Z</td>
+  <td>Z</td>
+  <td>90</td>
+  <td>5A</td>
+ </tr>
+ <tr>
+  <td>Boton de Windows izquierdo</td>
+  <td>Lwin</td>
+  <td>91</td>
+  <td>5B</td>
+ </tr>
+ <tr>
+  <td>Boton de Windows derecho</td>
+  <td>Rwin</td>
+  <td>92</td>
+  <td>5C</td>
+ </tr>
+ <tr>
+  <td>Applicationes</td>
+  <td>Apps</td>
+  <td>93</td>
+  <td>5D</td>
+ </tr>
+ <tr>
+  <td>Suspensión del equipo</td>
+  <td>Sleep</td>
+  <td>95</td>
+  <td>5F</td>
+ </tr>
+ <tr>
+  <td>0 del teclado numérico</td>
+  <td>Numpad0</td>
+  <td>96</td>
+  <td>60</td>
+ </tr>
+ <tr>
+  <td>1 del teclado numérico</td>
+  <td>Numpad1</td>
+  <td>97</td>
+  <td>61</td>
+ </tr>
+ <tr>
+  <td>2 del teclado numérico</td>
+  <td>Numpad2</td>
+  <td>98</td>
+  <td>62</td>
+ </tr>
+ <tr>
+  <td>3 del teclado numérico</td>
+  <td>Numpad3</td>
+  <td>99</td>
+  <td>63</td>
+ </tr>
+ <tr>
+  <td>4 del teclado numérico</td>
+  <td>Numpad4</td>
+  <td>100</td>
+  <td>64</td>
+ </tr>
+ <tr>
+  <td>5 del teclado numérico</td>
+  <td>Numpad5</td>
+  <td>101</td>
+  <td>65</td>
+ </tr>
+ <tr>
+  <td>6 del teclado numérico</td>
+  <td>Numpad6</td>
+  <td>102</td>
+  <td>66</td>
+ </tr>
+ <tr>
+  <td>7 del teclado numérico</td>
+  <td>Numpad7</td>
+  <td>103</td>
+  <td>67</td>
+ </tr>
+ <tr>
+  <td>8 del teclado numérico</td>
+  <td>Numpad8</td>
+  <td>104</td>
+  <td>68</td>
+ </tr>
+ <tr>
+  <td>9 del teclado numérico</td>
+  <td>Numpad9</td>
+  <td>105</td>
+  <td>69</td>
+ </tr>
+ <tr>
+  <td>Multiplicar</td>
+  <td>Multiply</td>
+  <td>106</td>
+  <td>6A</td>
+ </tr>
+ <tr>
+  <td>Sumar</td>
+  <td>Add</td>
+  <td>107</td>
+  <td>6B</td>
+ </tr>
+ <tr>
+  <td>Coma</td>
+  <td>Separator</td>
+  <td>108</td>
+  <td>6C</td>
+ </tr>
+ <tr>
+  <td>Restar</td>
+  <td>Subtract</td>
+  <td>109</td>
+  <td>6D</td>
+ </tr>
+ <tr>
+  <td>Punto</td>
+  <td>Decimal</td>
+  <td>110</td>
+  <td>6E</td>
+ </tr>
+ <tr>
+  <td>Dividir</td>
+  <td>Divide</td>
+  <td>111</td>
+  <td>6F</td>
+ </tr>
+ <tr>
+  <td>F1</td>
+  <td>F1</td>
+  <td>112</td>
+  <td>70</td>
+ </tr>
+ <tr>
+  <td>F2</td>
+  <td>F2</td>
+  <td>113</td>
+  <td>71</td>
+ </tr>
+ <tr>
+  <td>F3</td>
+  <td>F3</td>
+  <td>114</td>
+  <td>72</td>
+ </tr>
+ <tr>
+  <td>F4</td>
+  <td>F4</td>
+  <td>115</td>
+  <td>73</td>
+ </tr>
+ <tr>
+  <td>F5</td>
+  <td>F5</td>
+  <td>116</td>
+  <td>74</td>
+ </tr>
+ <tr>
+  <td>F6</td>
+  <td>F6</td>
+  <td>117</td>
+  <td>75</td>
+ </tr>
+ <tr>
+  <td>F7</td>
+  <td>F7</td>
+  <td>118</td>
+  <td>76</td>
+ </tr>
+ <tr>
+  <td>F8</td>
+  <td>F8</td>
+  <td>119</td>
+  <td>77</td>
+ </tr>
+ <tr>
+  <td>F9</td>
+  <td>F9</td>
+  <td>120</td>
+  <td>78</td>
+ </tr>
+ <tr>
+  <td>F10</td>
+  <td>F10</td>
+  <td>121</td>
+  <td>79</td>
+ </tr>
+ <tr>
+  <td>F11</td>
+  <td>F11</td>
+  <td>122</td>
+  <td>7A</td>
+ </tr>
+ <tr>
+  <td>F12</td>
+  <td>F12</td>
+  <td>123</td>
+  <td>7B</td>
+ </tr>
+ <tr>
+  <td>F13</td>
+  <td>F13</td>
+  <td>124</td>
+  <td>7C</td>
+ </tr>
+ <tr>
+  <td>F14</td>
+  <td>F14</td>
+  <td>125</td>
+  <td>7D</td>
+ </tr>
+ <tr>
+  <td>F15</td>
+  <td>F15</td>
+  <td>126</td>
+  <td>7E</td>
+ </tr>
+ <tr>
+  <td>F16</td>
+  <td>F16</td>
+  <td>127</td>
+  <td>7F</td>
+ </tr>
+ <tr>
+  <td>F17</td>
+  <td>F17</td>
+  <td>128</td>
+  <td>80</td>
+ </tr>
+ <tr>
+  <td>F18</td>
+  <td>F18</td>
+  <td>129</td>
+  <td>81</td>
+ </tr>
+ <tr>
+  <td>F19</td>
+  <td>F19</td>
+  <td>130</td>
+  <td>82</td>
+ </tr>
+ <tr>
+  <td>F20</td>
+  <td>F20</td>
+  <td>131</td>
+  <td>83</td>
+ </tr>
+ <tr>
+  <td>F21</td>
+  <td>F21</td>
+  <td>132</td>
+  <td>84</td>
+ </tr>
+ <tr>
+  <td>F22</td>
+  <td>F22</td>
+  <td>133</td>
+  <td>85</td>
+ </tr>
+ <tr>
+  <td>F23</td>
+  <td>F23</td>
+  <td>134</td>
+  <td>86</td>
+ </tr>
+ <tr>
+  <td>F24</td>
+  <td>F24</td>
+  <td>135</td>
+  <td>87</td>
+ </tr>
+ <tr>
+  <td>NUM LOCK<b class=d-none>bloq num</b></td>
+  <td>NumLock</td>
+  <td>144</td>
+  <td>90</td>
+ </tr>
+ <tr>
+  <td>SCROLL LOCK<b class=d-none>bloq scrol</b></td>
+  <td>ScrollLock</td>
+  <td>145</td>
+  <td>91</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemFjJisho</td>
+  <td>146</td>
+  <td>92</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemFjMasshou</td>
+  <td>147</td>
+  <td>93</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemFjTouroku</td>
+  <td>148</td>
+  <td>94</td>
+ </tr>
+ <tr>
+  <td>OemFjLoya</td>
+  <td></td>
+  <td>149</td>
+  <td>95</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemFjRoya</td>
+  <td>150</td>
+  <td>96</td>
+ </tr>
+ <tr>
+  <td>Left SHIFT</td>
+  <td>LShift</td>
+  <td>160</td>
+  <td>A0</td>
+ </tr>
+ <tr>
+  <td>Right SHIFT</td>
+  <td>RShift</td>
+  <td>161</td>
+  <td>A1</td>
+ </tr>
+ <tr>
+  <td>Left CONTROL</td>
+  <td>LControl</td>
+  <td>162</td>
+  <td>A2</td>
+ </tr>
+ <tr>
+  <td>Right CONTROL</td>
+  <td>RControl</td>
+  <td>163</td>
+  <td>A3</td>
+ </tr>
+ <tr>
+  <td>Left MENU</td>
+  <td>LMenu</td>
+  <td>164</td>
+  <td>A4</td>
+ </tr>
+ <tr>
+  <td>Right MENU</td>
+  <td>RMenu</td>
+  <td>165</td>
+  <td>A5</td>
+ </tr>
+ <tr>
+  <td>Browser Back</td>
+  <td>Browser_back</td>
+  <td>166</td>
+  <td>A6</td>
+ </tr>
+ <tr>
+  <td>Browser Forward</td>
+  <td>Browser_forward</td>
+  <td>167</td>
+  <td>A7</td>
+ </tr>
+ <tr>
+  <td>Browser Refresh</td>
+  <td>Browser_refresh</td>
+  <td>168</td>
+  <td>A8</td>
+ </tr>
+ <tr>
+  <td>Browser Stop</td>
+  <td>Browser_stop</td>
+  <td>169</td>
+  <td>A9</td>
+ </tr>
+ <tr>
+  <td>Browser Search key</td>
+  <td>Browser_search</td>
+  <td>170</td>
+  <td>AA</td>
+ </tr>
+ <tr>
+  <td>Browser Favorites</td>
+  <td>Browser_favorites</td>
+  <td>171</td>
+  <td>AB</td>
+ </tr>
+ <tr>
+  <td>Browser Start and Home</td>
+  <td>Browser_home</td>
+  <td>172</td>
+  <td>AC</td>
+ </tr>
+ <tr>
+  <td>Volume Mute</td>
+  <td>Volume_mute</td>
+  <td>173</td>
+  <td>AD</td>
+ </tr>
+ <tr>
+  <td>Volume Down</td>
+  <td>Volume_down</td>
+  <td>174</td>
+  <td>AE</td>
+ </tr>
+ <tr>
+  <td>Volume Up</td>
+  <td>Volume_up</td>
+  <td>175</td>
+  <td>AF</td>
+ </tr>
+ <tr>
+  <td>Next Track</td>
+  <td>MEDIA_NEXT_TRACK</td>
+  <td>176</td>
+  <td>B0</td>
+ </tr>
+ <tr>
+  <td>Previous Track</td>
+  <td>Media_prev_track</td>
+  <td>177</td>
+  <td>B1</td>
+ </tr>
+ <tr>
+  <td>Stop Media</td>
+  <td>Media_stop</td>
+  <td>178</td>
+  <td>B2</td>
+ </tr>
+ <tr>
+  <td>Play/Pause Media</td>
+  <td>Media_play_pause</td>
+  <td>179</td>
+  <td>B3</td>
+ </tr>
+ <tr>
+  <td>Start Mail</td>
+  <td>Launch_mail</td>
+  <td>180</td>
+  <td>B4</td>
+ </tr>
+ <tr>
+  <td>Select Media</td>
+  <td>LAUNCH_MEDIA_SELECT</
+  <td>181</td>
+  <td>B5</td>
+ </tr>
+ <tr>
+  <td>Start Application 1</td>
+  <td>Launch_app1</td>
+  <td>182</td>
+  <td>B6</td>
+ </tr>
+ <tr>
+  <td>Start Application 2</td>
+  <td>Launch_app2</td>
+  <td>183</td>
+  <td>B7</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard.<br> For the US standard keyboard, the ';:' key</td>
+  <td>Oem1</td>
+  <td>186</td>
+  <td>BA</td>
+ </tr>
+ <tr>
+  <td>For any country/region, the '+'</td>
+  <td>OemPlus</td>
+  <td>187</td>
+  <td>BB</td>
+ </tr>
+ <tr>
+  <td>For any country/region, the ','</td>
+  <td>OemComma</td>
+  <td>188</td>
+  <td>BC</td>
+ </tr>
+ <tr>
+  <td>For any country/region, the '-'</td>
+  <td>OemMinus</td>
+  <td>189</td>
+  <td>BD</td>
+ </tr>
+ <tr>
+  <td>For any country/region, the '.'</td>
+  <td>OemPeriod</td>
+  <td>190</td>
+  <td>BE</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard.<br> For the US standard keyboard, the '/?' key</td>
+  <td>Oem2</td>
+  <td>191</td>
+  <td>BF</td>
+ </tr>
+ <tr>
+  <td>Varia de la region del teclado, puede ser <code>`~</code> del ingles o <code> Ñ </code> del español.</td>
+  <td>Oem3</td>
+  <td>192</td>
+  <td>C0</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard. <br> For the US standard keyboard, the '[{'</td>
+  <td>Oem4</td>
+  <td>219</td>
+  <td>DB</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard. <br> For the US standard keyboard, the '\|'</td>
+  <td>Oem5</td>
+  <td>220</td>
+  <td>DC</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard. <br> For the US standard keyboard, the ']}'</td>
+  <td>Oem6</td>
+  <td>221</td>
+  <td>DD</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard. <br> For the US standard keyboard, the 'single-quote/double-quote'</td>
+  <td>Oem7</td>
+  <td>222</td>
+  <td>DE</td>
+ </tr>
+ <tr>
+  <td>Used for miscellaneous characters; it can vary by keyboard.</td>
+  <td>Oem8</td>
+  <td>223</td>
+  <td>DF</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemAx</td>
+  <td>225</td>
+  <td>E1</td>
+ </tr>
+ <tr>
+  <td>Either the angle bracket key or the backslash key on the RT 102-key keyboard</td>
+  <td>Oem102</td>
+  <td>226</td>
+  <td>E2</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>IcoHelp</td>
+  <td>227</td>
+  <td>E3</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>Ico00</td>
+  <td>228</td>
+  <td>E4</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>Processkey</td>
+  <td>229</td>
+  <td>E5</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>IcoClear</td>
+  <td>230</td>
+  <td>E6</td>
+ </tr>
+ <tr>
+  <td>WM_KEYUP</td>
+  <td>Packet</td>
+  <td>231</td>
+  <td>E7</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemReset</td>
+  <td>233</td>
+  <td>E9</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemJump</td>
+  <td>234</td>
+  <td>EA</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemPa1</td>
+  <td>235</td>
+  <td>EB</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemPa2</td>
+  <td>236</td>
+  <td>EC</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemPa3</td>
+  <td>237</td>
+  <td>ED</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemWsctrl</td>
+  <td>238</td>
+  <td>EE</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemCusel</td>
+  <td>239</td>
+  <td>EF</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemAttn</td>
+  <td>240</td>
+  <td>F0</td>
+ </tr>
+  <td></td>
+  <td>OemFinish</td>
+  <td>241</td>
+  <td>F1</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemCopy</td>
+  <td>242</td>
+  <td>F2</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemAuto</td>
+  <td>243</td>
+  <td>F3</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemEnlw</td>
+  <td>244</td>
+  <td>F4</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td>OemBacktab</td>
+  <td>245</td>
+  <td>F5</td>
+ </tr>
+ <tr>
+  <td>Attn</td>
+  <td>Attn</td>
+  <td>246</td>
+  <td>F6</td>
+ </tr>
+ <tr>
+  <td>CrSel</td>
+  <td>Crsel</td>
+  <td>247</td>
+  <td>F7</td>
+ </tr>
+ <tr>
+  <td>ExSel</td>
+  <td>Exsel</td>
+  <td>248</td>
+  <td>F8</td>
+ </tr>
+ <tr>
+  <td>Erase EOF</td>
+  <td>Ereof</td>
+  <td>249</td>
+  <td>F9</td>
+ </tr>
+ <tr>
+  <td>Play</td>
+  <td>Play</td>
+  <td>250</td>
+  <td>FA</td>
+ </tr>
+ <tr>
+  <td>Zoom</td>
+  <td>Zoom</td>
+  <td>251</td>
+  <td>FB</td>
+ </tr>
+ <tr>
+  <td>Reserved</td>
+  <td>Noname</td>
+  <td>252</td>
+  <td>FC</td>
+ </tr>
+ <tr>
+  <td>PA1</td>
+  <td>Pa1</td>
+  <td>253</td>
+  <td>FD</td>
+ </tr>
+ <tr>
+  <td>Clear</td>
+  <td>OemClear</td>
+  <td>254</td>
+  <td>FE</td>
+ </tr>
+</tbody></TABLE></DIV></DIV>
 <SCRIPT src="jQuery.js"></SCRIPT>
-    <script src="HL.js"></script>
-</DIV></BODY></HTML>
+       
+<SCRIPT src="HL.js"></SCRIPT>
+   </DIV></BODY></HTML>

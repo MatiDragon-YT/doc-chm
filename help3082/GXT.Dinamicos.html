@@ -12,24 +12,40 @@
 <div class="container">
 <div class="row">
 <div class="col-12">
+<p>Los textos dinamicos, son en sierta parte cadenas, pero a diferencia de las otras que se almacenan en <a href="Codificacion.Variables.html">variables</a>, estas se almacenan en otras cadenas como dirección. Y hay 2 formas de incluir una al juego.
+<h4>Con el opcode 0ADF</h4>
 <DIV class="row">
-<DIV class="col-12 col-md-6">
-<P>Los textos dinamicos, son como variables, algo parecidas a los strings, con   
- la unica diferencia, de que en vez de modificar el texto que guardamos en       
- estas,  lo que haremos sera mostrar el texto que guardamos. <BR>Por ejemplo     
- para ver  los en titulos de misiones:</P>
+<DIV class="col-12 col-lg-6">
+<P>Solo agregas una cadena corta para usarla como una variable, despues agregas tu mensaje y ya estaria lista para usarse en tu cleo:</P>
 <pre class=sb3>
 0ADF: add_dynamic_GXT_entry 'TI7_LO' your_text "EJEMPLO"
 00BA: show_text_styled GXT 'TI7_LO' time 250 style 1 //necesita un GXT
 </pre>
+<h6>Parametros</h6>
+<ul>
+<li><code>'TI7_LO'</code> - direccion donde se guardara</li>
+<li><code>"EJEMPLO"</code> - texto o dialogo que mostraremos</li>
+</ul>
+<div class=inf>No importa que comillas uses para las cadenas. Aquí se pusieron asi, por un bug que rompre el resaltador de sintaxis al colocar más de 2 cadenas del mismo tipo.</div>
 </DIV>
-<DIV class="col-12 col-md-6">
-<IMG class="w-100" src="img/title1.png">
-</DIV></DIV>  <hr>
-<P>y  como la mayorias de las cosas que creamos asi,    
-tambien las podemos borrar para   colocar otra cosa en su lugar, con este    
-opcode:</P>
-<pre class=sb3>0AE0: remove_dynamic_GXT_entry 'TI7_LO'</pre></DIV></DIV></DIV>
+<DIV class="col-12 col-lg-6">
+<IMG class="w-100 mt-lg-5" src="img/title1.png">
+</DIV></DIV>
+<P>Tambien si queremos, podemos borrar su contenido con el opcode <code>0AE0</code>:</P>
+<pre class=sb3>0AE0: remove_dynamic_GXT_entry 'TI7_LO'</pre><br>
+<hr>
+<h4>Con un archivo .FXT</h4>
+<p>Antiguamente si alguien queria agregar textos desde un archivo externo, debia usar gxt.cleo, pero en la actualidad CLEO4 ya incorpora la funcion de cargar gxt externos, pero en vez de usar archivos encriptados, usa el formato de texto plano en un <code>.FXT</code>, lo que hace que cualquier editor de texto reconozca el formato de inmediato.<p>
+<p>Solo nos derigimos a la carpeta de nuesto juego y de allí a <code>CLEO/CLEO_TEXT</code>, donde crearemos un archivo de texto cualquiera con extención <code>fxt</code>. Lo abrimos y escribimos un grupo de caracteres para definir la dirección gxt de nuestro dialogo, y con un solo espacio insertariamos nuestro mensaje.
+<div class="dan">Si una dirección gxt contiene más de 6 caracteres, el archivo no sera cargado por completo.<p>Aquí un ejemplo de como podria tener el archivo:</p>
+<pre class="fxt">
+MDC_0A Abrir puerta
+MDCCS3 Capa de pintura
+M0_123 Agregar nitro
+</pre>
+Estos ademas son cargados una unica vez al abrir el juego, por lo que se recomienda que trabajen con esta opcion cuando ayan terminado su mod
+</div>
+</DIV></DIV></DIV>
 </BODY>
 <SCRIPT src="jQuery.js"></SCRIPT>
 <SCRIPT src="HL.js"></SCRIPT></HTML>

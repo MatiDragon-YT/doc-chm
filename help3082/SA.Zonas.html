@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <html lang="es">
 <head>
  <title>Zonas</title>
@@ -13,15 +12,62 @@
 <div class="row">
 <div class="col-12">
 <P class=light>Encuentra toda la informacion que nesecites aqui.</P>
-<hr><p>Las zonas del juego, determinan los climas y&nbsp;el tipo de    poblacion     
- (actores/vehiculos) que se deben de generar alli.<BR>Estas zonas    pueden  ser 
-  modificadas con el opcode: <PRE class="sb3">0767: set_zone 'CARSO' type 1 // Fort Carson
+<hr>
+<h4>Tipo de población</h4>
+<p>Echemos un vistazo a los opcodes por los que podemos determinar qué personas y transporte aparecerán en una zona determinada.<br>
+Se describen todos los tipos que conozco. Aquí está el comando que indica el tipo de zona o area:</p>
+<PRE class="sb3">
+0767: set_zone 'CARSO' type 1 // Fort Carson
 </PRE>
-<P>Parametros:</P>
-<OL>
-  <LI>ID de Area</LI>
-  <LI>Tipo de Zona          
-</LI></OL>
+<p>También podemos especificar qué transporte y personas existirán en una u otra zona.</p>
+<PRE class="sb3">0767: set_zone 'CARSO' popcycle_group_for_peds_and_cars_to 14</PRE>
+<p>Aquí hay un opcode que indica que en la zona de la coca solo las personas</p>
+<PRE class="sb3">0874: set_zone 'CARSO' popcycle_group_for_peds_to 14</PRE>
+<h6>Parametros</h6>
+<ul>
+  <li><code>'CARSO'</code> - nombre de la <a href=Zonas.Areas.html>area</a></li>
+  <li><code>14</code> - <a href=Zonas.Tipos.html>tipo</a> de zona</li>
+</ul>
+<h4>Sonidos ambientales</h4>
+<p>Este es un opcode que incluye audio a las zonas</p>
+<PRE class="sb3">0917: audio_zone 'LOWRIDE' enable_sound 1</PRE>
+<h6>Parametros:</h6>
+<ul>
+  <li><code>'LOWRIDE'</code> - nombre de la <a href=Zonas.Areas.html>area</a></li>
+  <li><code>1</code> - booleano para activar/desactivar la musica de la zona</li>
+</ul>
+<p>Ten en cuenta que las zonas de audio y las zonas del juego (regulares) son cosas muy diferentes.
+<br>Puede encontrar una lísta de zonas de audio <a href="Zonas.Sonidos.html">aquí</a>.
+<br>Echemos un vistazo más de cerca a lo que hay en el archivo <code>audiozon.ipl</code>:
+</p>
+<pre class="sb3">OTB, 24, 1, 817.121, -2.78276, 1001.62, 838.373, 12.6744, 1009.04</pre>
+<H6>Parametros:</H6>
+<UL>
+  <LI><CODE>OTB</CODE> - el nombre de la zona 
+  de audio (esto es lo que necesita para escribir en el opcode <code>0917</code>) </LI>
+  <LI><CODE>24</CODE> - el número de música que se reproducirá en la zona</LI>
+  <li><code>1</code> - booleano para activar/desactivar la musica de la zona</li>
+  <LI><code>817.121..</code> - El resto de los parámetros son las coordenadas de las propias zonas.</LI>
+</UL>
+<table>
+ <thead>
+ <tr colspan="2"><th class=center>Tabla de números de música en zonas de audio</th></tr>
+ <tr><th>Habitación</th><th>Música</th></tr>
+ </thead>
+ </tbody>
+<tr><td>52</td><td>Playback FM</td></tr>
+<tr><td>53</td><td>K-ROSE</td></tr>
+<tr><td>54</td><td>K-DST</td></tr>
+<tr><td>55</td><td>Bounce FM</td></tr>
+<tr><td>56</td><td>SFUR</td></tr>
+<tr><td>57</td><td>Radio Los Santos</td></tr>
+<tr><td>58</td><td>Radio X</td></tr>
+<tr><td>59</td><td>CSR</td></tr>
+<tr><td>60</td><td>K-JAH West</td></tr>
+<tr><td>61</td><td>MasterSounds</td></tr>
+<tr><td>62</td><td>WCTR</td></tr>
+ </tbody>
+</table>
 <SCRIPT src="jQuery.js"></SCRIPT>   
-<SCRIPT src="HL.js"></SCRIPT> 
-</DIV></DIV></DIV></BODY></HTML>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

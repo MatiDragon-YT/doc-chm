@@ -7,24 +7,29 @@ rel="stylesheet" type="text/css"></HEAD>
 <DIV class="container-fluid">
 <DIV class="row">
 <DIV class="col-12">
-<P>Generado automaticaticamente&nbsp;por&nbsp;la&nbsp;base de        datos     
- de:&nbsp;<BR><BUTTON 
-class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON> 
-<PRE class="scm">Este es el significado de estas cosas:
-                                          
-%~d% = Cualquier valor
-%~p% = Salto a una <a href=Codificacion.TiposDeDatos.html#labels>etiqueta</a>
+<PRE class="scm">Para más información, visita:
+https://www.gtagmodding.com/opcode-database/
+https://gtamods.com/wiki/List_of_opcodes/
+https://library.sannybuilder.com/#/sa/
+
+%~i% = Número Entero (Int)
+%~f% = Número Decimal (Float)
+%~s% = Cadena Literaria (String)
+%~p% = Salto a una Etiqueta (Label)
+%~d% = Cualquier tipo de valor
 %~o% = Cualquier tipo de modelo
-%~m% = ID de modelos de <code>.ide</code>
-%~g% = Entrada de textos GXT
-%~x% = Script Externo
-%~s% = Ubicacion de archivo/carpeta
-%~h% = Indefinido
+%~g% = Entrada de textos (GXT)
+%~x% = Guion Externo (Script)
+%~h% = Indefinido/Desconocido
+%~k% = 128-byte null-terminated string
+%~m% = Modelo Registrado en .ide
 
 =n   = Cantidad de parametros
-</PRE>
-<H5>[OPCODES]</H5>
-<pre class="scm">0000=0,NOP
+
+DATE=30-01-2001
+
+[OPCODES]
+0000=0,NOP
 0001=1,wait %1d% ms
 0002=1,jump %1p%
 0003=1,shake_camera %1d%
@@ -69,16 +74,16 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 002a=2,  %1d% >= %2d%
 002b=2,  %1d% >= %2d%
 002c=2,  %1d% >= %2d%  ; (int)
-002d=2,  %1d% > = %2d%  ; (int)
+002d=2,  %1d% >= %2d%  ; (int)
 002e=2,  %1d% >= %2d%  ; (int)
 002F=2,  %1d% >= %2d%  ; (int)
-0030=2,  %1d% > = %2d%
+0030=2,  %1d% >= %2d%
 0031=2,  %1d% >= %2d%
 0032=2,  %1d% >= %2d%
 0033=2,  %1d% >= %2d%
 0034=2,  %1d% >= %2d%  ; (float)
 0035=2,  %1d% >= %2d%  ; (float)
-0036=2,  %1d% > = %2d%  ; (float)
+0036=2,  %1d% >= %2d%  ; (float)
 0037=2,  %1d% >= %2d%  ; (float)
 0038=2,  %1d% == %2d%
 0039=2,  %1d% == %2d%
@@ -91,8 +96,8 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0045=2,  %1d% == %2d%  ; (float)
 0046=2,  %1d% == %2d%  ; (float)
 004D=1,jump_if_false %1p%
-004E=0,end_thread
-004F=-1,create_thread %1p%
+004E=0,terminate_this_script
+004F=-1,start_new_script %1p%
 0050=1,gosub %1p%
 0051=0,return
 0052=6,NOP %1d% %2d% %3d% %4d% %5d% %6d%
@@ -163,13 +168,13 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0097=1,make %1d% absolute_float
 0098=1,%1d% = random_float_in_ranges_0.0_to_1.0
 0099=1,%1d% = random_int_in_ranges_0_to_32767
-009A=6,%6d% = create_actor_pedtype %1d% model %2o% at %3d% %4d% %5d%
+009A=6,%6d% = create_actor_pedtype %1d% model %2m% at %3d% %4d% %5d%
 009b=1,destroy_actor %1d%
 00a0=4,store_actor %1d% position_to %2d% %3d% %4d%
 00a1=4,put_actor %1d% at %2d% %3d% %4d%
 00a3=6,  actor %1d% sphere %6d% in_rectangle_cornerA %2d% %3d% cornerB %4d% %5d%
 00a4=8,  actor %1d% sphere %8d% in_cube_cornerA %2d% %3d% %4d% cornerB %5d% %6d% %7d%
-00a5=5,%5d% = create_car %1o% at %2d% %3d% %4d%
+00a5=5,%5d% = create_car %1m% at %2d% %3d% %4d%
 00a6=1,destroy_car %1d%
 00a7=4,car %1d% drive_to %2d% %3d% %4d%
 00a8=1,set_car %1d% to_psycho_driver
@@ -190,11 +195,11 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 00c1=3,%3d% = get_minutes_left_to_time_hours %1d% time_minutes %2d%
 00c2=4,  sphere_onscreen %1d% %2d% %3d% radius %4d%
 00D6=1,if %1d%
-00d7=1,create_thread %1p% ; without extra params
+00d7=1,start_new_script %1p% ; without extra params
 00d8=0,mission_cleanup
 00D9=2,%2d% = actor %1d% car ; add to mission cleanup
 00DB=2,  actor %1d% in_car %2d%
-00DD=2,  actor %1d% driving_car_with_model %2o%
+00DD=2,  actor %1d% driving_car_with_model %2m%
 00DF=1,  actor %1d% driving
 00E1=2,  player %1d% pressed_key %2d%
 00e2=3,get_player %1d% key %2d% state_to %3d%
@@ -218,7 +223,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0106=6,  actor %1d% near_actor %2d% radius %3d% %4d% %5d% %6h% in_car
 0107=5,%5d% = create_object %1o% at %2d% %3d% %4d%
 0108=1,destroy_object %1d%
-0109=2,player %1d% money = %2d%
+0109=2,player %1d% money += %2d%
 010a=2,  player %1d% money > %2d%
 010B=2,%2d% = player %1d% money
 010C=0,NOP
@@ -230,12 +235,12 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0112=0,  wasted_or_busted ; mission only
 0114=3,set_actor %1d% weapon %2h% add_ammo %3d%
 0117=1,  player %1d% wasted
-0118=1,  actor %1d%  dead
+0118=1,  actor %1d% dead
 0119=1,  car %1d% wrecked
 0122=1,  player %1d% pressing_horn
-0129=4,%4d% = create_actor_pedtype %2d% model %3o% in_car %1d% driverseat
-0137=2,  car %1d% model == %2o%
-014B=13,%13d% = init_car_generator %5o% color %6d% %7d% force_spawn %8d% alarm %9d% door_lock %10d% min_delay %11d% max_delay %12d% at %1d% %2d% %3d% angle %4d%
+0129=4,%4d% = create_actor_pedtype %2d% model %3m% in_car %1d% driverseat
+0137=2,  car %1d% model == %2m%
+014B=13,%13d% = init_car_generator %5m% color %6d% %7d% force_spawn %8d% alarm %9d% door_lock %10d% min_delay %11d% max_delay %12d% at %1d% %2d% %3d% angle %4d%
 014C=2,set_parked_car_generator %1d% cars_to_generate_to %2d%
 014E=2,start_timer_at %1d% count_in_direction %2h% ; global_variable
 014f=1,stop_timer %1d%
@@ -270,8 +275,8 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0179=2,  actor %1d% colliding_with_object %2d%
 017b=3,set_actor %1d% weapon %2d% ammo_to %3d%
 0180=1,set_on_mission_flag_to %1d% ; Note: your missions have to use the variable defined here
-0184=2,  actor %1d% health >= %2d%
-0185=2,  car %1d% health >= %2d%
+0184=2,  actor %1d% health > %2d%
+0185=2,  car %1d% health > %2d%
 0186=2,%2d% = create_marker_above_car %1d%
 0187=2,%2d% = create_marker_above_actor %1d%
 0188=2,%2d% = create_marker_above_object %1d%
@@ -280,9 +285,9 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 018c=4,play_sound %4d% at %1d% %2d% %3d%
 018d=5,NOP %5d% %4d% %1d% %2d% %3d%
 018e=1,stop_sound %1d%
-018F=1,  car %1d% flipped_for_2_seconds
-0190=1,add_car %1d% to_flipped_check ; 6 max
-0191=1,remove_car %1d% from_flipped_check
+018f=1,  is_car_stuck_on_roof %1d%
+0190=1,add_car %1d% to_upsidedown_check ; 6 max
+0191=1,remove_car %1d% from_upsidedown_check
 01A1=6,  actor %1d% sphere %6d% in_rectangle_cornerA %2d% %3d% cornerB %4d% %5d% on_foot
 01a2=6,  actor %1d% sphere %6d% in_rectangle_cornerA %2d% %3d% cornerB %4d% %5d% in_car
 01a3=6,  actor %1d% sphere %6d% in_rectangle_cornerA %2d% %3d% cornerB %4d% %5d% stopped
@@ -315,7 +320,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 01c4=1,remove_references_to_object %1d%  ; This object will now disappear when the player looks away
 01C5=1,remove_actor_from_mission_cleanup_list %1d%
 01c7=1,remove_object_from_mission_cleanup_list %1d%
-01c8=5,%5d% = create_actor_pedtype %2d% model %3o% in_car %1d% passenger_seat %4d%
+01c8=5,%5d% = create_actor_pedtype %2d% model %3m% in_car %1d% passenger_seat %4d%
 01E3=4,show_text_1number_styled GXT %1g% number %2d% time %3d% style %4d%
 01e4=4,show_text_1number_lowpriority GXT %1g% number %2d% time %3d% flag %4d%
 01e5=4,show_text_1number_highpriority GXT %1g% number %2d% time %3d% flag %4d%
@@ -360,8 +365,8 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0229=3,set_car %1d% primary_color_to %2d% secondary_color_to %3d%
 022a=6,remove_forbidden_for_peds_cube_cornerA %1d% %2d% %3d% cornerB %4d% %5d% %6d%
 022b=6,create_forbidden_for_peds_cube_cornerA %1d% %2d% %3d% cornerB %4d% %5d% %6d%
-0235=3,NOP %1d% %2o% %3o%
-0236=2,NOP %1d% %2o%
+0235=3,NOP %1d% %2m% %3m%
+0236=2,NOP %1d% %2m%
 0237=4,set_gang %1h% weapons_to %2h% %3h% %4h%
 023b=2,  actor %1d% colliding_with_object %2d%
 023c=2,load_special_actor %2d% as %1d% ; models 290-299
@@ -380,7 +385,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0294=2,set_car %1d% sprayable %2d%
 0296=1,unload_special_actor %1d%
 0297=1,reset_player %1d% destroyed_model_counters
-0298=3,get_player %1d% destroyed_model %2o% quantity_to %3d%
+0298=3,get_player %1d% destroyed_model %2m% quantity_to %3d%
 0299=1,activate_garage %1d%
 029b=5,%5d% = init_object %1o% at %2d% %3d% %4d%
 02A0=1,  actor %1d% stopped
@@ -426,7 +431,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 02ec=3,NOP %1d% %2d% %3d%
 02ed=1,set_total_hidden_packages_to %1d%
 02ee=6,  projectile_in_cube_cornerA %1d% %2d% %3d% cornerB %4d% %5d% %6d%
-02F2=2,  actor %1d% model == %2o%
+02F2=2,  actor %1d% model == %2m%
 02F3=0,NOP
 02F6=2,%2d% = sine %1d% ; (float)
 02F7=2,%2d% = cosine %1d% ; (float)
@@ -515,7 +520,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 03A1=4,show_sphere_at %1d% %2d% %3d% radius %4d%
 03a2=2,set_car %1d% action %2h%
 03a3=1,  actor %1d% male
-03A4=1,name_thread %1s%
+03A4=1,script_name %1s%
 03A7=1,save_int_to_debug_file %1d%
 03A8=1,save_float_to_debug_file %1d%
 03A9=0,save_newline_to_debug_file
@@ -622,7 +627,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0454=3,store_debug_camera_position_to %1d% %2d% %3d%
 0457=2,  player %1d% aiming_at_actor %2d%
 0458=2,  player %1d% aiming_at_object %2d%
-0459=1,end_thread_named %1s%
+0459=1,terminate_all_scripts_with_this_name %1s%
 045A=4,draw_text_1number %1d% %2d% GXT %3g% number %4d%
 045B=5,draw_text_2numbers %1d% %2d% GXT %3g% numbers %4d% %5d%
 045C=0,abort_mission
@@ -637,7 +642,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0469=0,NOP
 046C=2,%2d% = car %1d% driver
 046D=2,%2d% = actor %1d% members_in_group
-046E=6,put_player %1d% in_RC_mode_at %2d% %3d% %4d% angle %5d% RC_model %6o%
+046E=6,put_player %1d% in_RC_mode_at %2d% %3d% %4d% angle %5d% RC_model %6m%
 0470=2,%2d% = actor %1d% current_weapon
 0471=5,  actor %1d% near_object_in_rectangle %2d% radius %3d% %4d% sphere %5h%
 0472=5,  actor %1d% near_object_in_rectangle %2d% radius %3d% %4d% sphere %5h% on_foot
@@ -740,8 +745,8 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 04FE=2,deflate_tire %2h% on_car %1d%
 0500=3,  player %1d% skin == %3s% on_bodypart %2h%
 0501=2,set_player %1d% driveby_mode %2h%
-0503=6,create_actor_on_rope_with_pedtype %1h% model %2o% at %3d% %4d% %5d% handle_as %6d%
-0506=3,set_car_model %1o% next_variation %2h% %3h% ; first param is useless
+0503=6,create_actor_on_rope_with_pedtype %1h% model %2m% at %3d% %4d% %5d% handle_as %6d%
+0506=3,set_car_model %1m% next_variation %2h% %3h% ; first param is useless
 0507=0,NOP
 0508=1,car %1d% close_all_doors
 0509=5,%5d% = distance_between_XY %1d% %2d% and_XY %3d% %4d%
@@ -849,7 +854,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 05B2=0,NOP
 05B3=0,NOP
 05B5=0,NOP
-05B6=0,skip_next_128_bytes
+05B6=1,save_string_to_debug_file %1k%
 05B7=0,NOP
 05B8=0,NOP
 05B9=2,AS_actor %1h% stay_idle %2h% ms
@@ -876,7 +881,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 05CE=0,NOP
 05CF=5,AS_actor %1d% exit_car %2d% in_direction %3d% %4d% %5d%
 05D0=0,NOP
-05D1=9,AS_actor %1d% drive_car %2d% to %3d% %4d% %5d% speed %6d% %7h% model %8o%  %9h%
+05D1=9,AS_actor %1d% drive_car %2d% to %3d% %4d% %5d% speed %6d% %7h% model %8m%  %9h%
 05D2=4,AS_actor %1d% run_to_and_hijack_car %2d% max_search_radius %3d% traffic_behavior %4h%
 05D3=6,AS_actor %1h% goto_point %2d% %3d% %4d% mode %5h% time %6d% ms ; versionA
 05D4=2,AS_actor %1h% rotate_angle %2d%
@@ -951,7 +956,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 061E=1,remove_references_to_AS_origin %1d%
 061F=0,NOP
 0620=0,NOP
-0621=5,create_actor_pedtype %1h% model %2o% at_AS_origin %3d% task %4d% handle_as %5d%
+0621=5,create_actor_pedtype %1h% model %2m% at_AS_origin %3d% task %4d% handle_as %5d%
 0622=2,AS_actor %1d% bail_car %2d%
 0623=2,add %2d% to_integer_stat %1d%
 0624=2,add %2d% to_float_stat %1d%
@@ -1022,7 +1027,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0671=0,NOP
 0672=2,AS_actor %1h% attack_car %2d%
 0673=4,AS_actor %1d% dive_to_offset %2d% %3d% time_on_ground %4d% ms
-0674=2,set_car_model %1o% numberplate %2h%
+0674=2,set_car_model %1m% numberplate %2h%
 0675=0,NOP
 0676=2,AS_actor %1h% in_car %2d% move_from_passengerseat_to_driverseat
 0677=4,AS_actor %1h% chat_with_actor %2d% lead_speaker_flag %3h% unknown_flag %4h%
@@ -1199,8 +1204,8 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 072F=7,enable_car %1d% stuck_check_distance %2d% time %3d% and_restore_if stuck %4h% flipped %5h% unk_place_on_road_properly %6h% to_path %7h% ; extended 03CC
 0730=2,car %1d% damage_door %2h%
 0731=2,set_car %1d% y_angle_to %2d%
-0732=1,random_car_generator_disable_model %1o%
-0733=1,random_car_generator_enable_model %1o%
+0732=1,random_car_generator_disable_model %1m%
+0733=1,random_car_generator_enable_model %1m%
 0734=0,reset_random_car_generator_models
 0735=1,  is_keyboard_key_pressed %1h%
 0736=1,  is_keyboard_key_just_pressed %1h%
@@ -1211,7 +1216,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 073B=2,unknown_car %1d% flag %2h%
 073C=2,car %1d% damage_componentB %2h%
 073D=0,NOP
-073E=6,get_car_in_sphere %1d% %2d% %3d% radius %4d% model %5o% handle_as %6d%
+073E=6,get_car_in_sphere %1d% %2d% %3d% radius %4d% model %5m% handle_as %6d%
 073F=8,get_actor_in_sphere %1d% %2d% %3d% radius %4d% with_pedtype_civilian %5h% gang %6h% criminal/prostitute %7h% handle_as %8d%
 0740=0,NOP
 0741=1,  actor %1d% busted
@@ -1257,7 +1262,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 076E=0,NOP
 076F=0,  text_priority_displayed
 0770=2,set_actor %1d% target_priority %2h%
-0771=2,set_model_numplate %1o% town_texture %2h%
+0771=2,set_model_numplate %1o% town_texture %2m%
 0772=4,AS_actor %1h% run_to_car %2d% %3d% ms stop_at_distance %4d%
 0773=0,NOP
 0774=0,NOP
@@ -1621,7 +1626,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 08E5=5,get_actor_in_sphere %1d% %2d% %3d% radius %4d% handle_as %5d%
 08E6=2,set_plane %1d% landing_gear %2h%
 08E7=1,disable_entrance_markers %1h%
-08E8=2,assign_external_script_handle %2g% to_model %1o%
+08E8=2,assign_external_script_handle %2g% to_model %1m%
 08E9=2,set_object %1d% liftable %2h%
 08EA=1,enable_gangs_spawn %1h%
 08EB=7,create_sparks_at %1d% %2d% %3d% velocity_direction %4d% %5d% %6d% density %7h%
@@ -1685,7 +1690,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0925=0,restore_camera_to_user_defined
 0926=2,%2d% = external_script_status %1x%
 0927=0,NOP
-0928=3,init_external_script_trigger %1x% with_actor_model %2o% priority %3h%
+0928=3,init_external_script_trigger %1x% with_actor_model %2m% priority %3h%
 0929=5,init_external_script_trigger %1x% with_object_model %2o% priority %3h% radius %4d% type %5h%
 092A=0,NOP
 092B=3,%3d% = group %1d% member %2d%
@@ -1834,9 +1839,9 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 09BA=1,show_entered_zone_name %1h%
 09BB=2,  car %1d% has_visible_damage_on_component %2h%
 09BC=4,put_actor %1d% at %2d% %3d% %4d% no_offset_and_dont_warp_gang
-09BD=1,allow_other_threads_to_display_text_boxes %1h%
-09BE=0,  are_text_boxes_locked_to_any_thread
-09BF=1,set_random_traffic_spawn_to_model %1o%  ; Load the vehicle model before using this
+09BD=1,allow_other_scripts_to_display_text_boxes %1h%
+09BE=0,  are_text_boxes_locked_to_any_script
+09BF=1,set_random_traffic_spawn_to_model %1m%  ; Load the vehicle model before using this
 09C0=7,%7d% = get_random_car_in_area %1d% %2d% %3d% %4d% %5d% with_actors %6h%
 09C1=1,add_next_text_to_brief_history %1h%
 09C2=0,cancel_rampage
@@ -1844,7 +1849,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 09C4=2,set_car %1d% gas_tank_explosion_enabled %2h%
 09C5=1,  unknown_actor %1d%
 09C6=0,NOP
-09C7=2,change_player %1d% model_to %2o%
+09C7=2,change_player %1d% model_to %2m%
 09C8=0,  menu_subtitles_switched_on
 09C9=2,disembark_actor %1d% from_car %2d% and_freeze_actor_position
 09CA=6,set_object %1d% immunities BP %2h% FP %3h% EP %4h% CP %5h% MP %6h%
@@ -1868,7 +1873,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 09DE=1,  actor %1d% entering_car
 09E0=5,trip_skip %1d% %2d% %3d% angle %4d% when_in_car %5d%
 09E1=2,get_car_model %1o% price_to %2d%
-09E2=14,%14d% = parked_car_generator_w_numberplate %5o% colors %6d% %7d% force_spawn %8d% alarm %9d% door_lock %10d% min_delay %11d% max_delay %12d% plate %13h% at %1d% %2d% %3d% angle %4d%
+09E2=14,%14d% = parked_car_generator_w_numberplate %5m% colors %6d% %7d% force_spawn %8d% alarm %9d% door_lock %10d% min_delay %11d% max_delay %12d% plate %13h% at %1d% %2d% %3d% angle %4d%
 09E3=1,  train %1d% traveling_clockwise
 09E4=1,enable_aircraftcarrier_sam %1h%
 09E5=7,create_flash_light_at %1d% %2d% %3d% RGB_mask %4d% %5d% %6d% radius %7d%
@@ -1881,7 +1886,7 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 09EC=1,set_garages_leave_camera_alone %1d%
 09ED=2,  actor %1d% is_within_field_of_view_actor %2d%
 09EE=1,set_status_text_stay_on_screen %1h%
-09EF=4,set_behind_camera_autoposition_mode_for_car_model %1o% distance %2d% altitude_multiplier %3d% angle_X %4d%
+09EF=4,set_behind_camera_autoposition_mode_for_car_model %1m% distance %2d% altitude_multiplier %3d% angle_X %4d%
 09F0=0,restore_behind_camera_autoposition_mode_for_all_car_models
 09F1=2,play_audio_at_actor %1d% event %2d%
 09F2=1,  decision_maker %1d% exists
@@ -1976,7 +1981,94 @@ class="blue btn">https://gtagmodding.com/opcode-database/</BUTTON>
 0A4B=0,  controls_set_to_joystick
 0A4C=0,  mouse_not_inverted_vertically
 0A4D=0,  NOP_false
-0A4E=0,increment_useless_flag</pre></DIV></DIV>
+0A4E=0,  NOP_false
+
+; Mobile opcodes
+0242=2,arm_car_with_bomb %1d% %2d%
+0A4F=0,   NOP_false
+0A50=0,increment_useless_flag
+0a51=1,  is_widget_pressed %1d%
+0a52=1,  is_widget_released %1d%
+0a53=1,  is_widget_doubletapped %1d%
+0a54=1,  is_widget_swiped %1d%
+0A55=1,  is_widget_swiped_left %1d%
+0A56=1,  is_widget_swiped_right %1d%
+0a57=2,  do_mission_skip_get_current_mission_page %1d% get_current_skip_to_mission_number %2d%
+0a58=1,  skip_to_mission_num %1d%
+0a59=1,  skip_to_mission_page %1d%
+0a5A=2,get_widget %1d% value_to %2d% ; float
+0A5B=3,get_widget %1d% value2_to %2d% %3d% ; float
+0A5C=3,display_missions_text_position %1d% %2d% GXT %3g%
+0A5D=5,get_widget %1d% position_to %2d% %3d% scale_to %4d% %5d%
+0A5E=2,set_widget %1d% value %2d% ; float
+0A5F=3,set_widget %1d% slider_range %2d% %3d% ; float
+0a60=2,widget %1d% add_flag %2d%
+0a61=2,widget %1d% remove_flag %2d%
+0a62=2,widget %1d% add_button_flag %2d%
+0a63=2,widget %1d% remove_button_flag %2d%
+0a64=0,  is_touch_enabled
+0a65=0,  skip_intro_cutscene
+0a66=1,write_log %1k% ; 128-byte null-terminated string
+0a67=4,write_log_int %1d% %2d% %3d% %4k% ; 128-byte null-terminated string
+0a68=4,write_log_float %1d% %2d% %3d% %4k% ; 128-byte null-terminated string
+0a69=1,create_shop_widget_menu %1g%
+0a6a=2,add_shop_widget_menu_item %1g% price %2d%
+0a6b=1,delete_widget %1d%
+0a6c=2,set_widget %1d% equipped_item %2d%
+0a6d=2,print_help_forever_conditional %1g% hid_type %2d%
+0a6e=2,set_widget %1d% texture %2k%  ; 128-byte null-terminated string
+0a6f=1,checkpoint_save %1d%
+0a70=4,display_text_clamped_position %1d% %2d% GXT %3g% scale %4d% ;text_draw  
+0a71=5,display_text_clamped_position %1d% %2d% GXT %3g% with_number %4d% scale %5d% ;text_draw
+0A72=0,auto_save_checkpoint
+0a73=4,set_widget %1d% value3 %2d% %3d% %4d% ; float
+0a74=1,  is_checkpoint_resuming %1d% ; IsGameResuming //bool
+0a75=2,  set_active_square_color_panel %1d% find_car_colour %2d%
+0a76=1,  hid_implements %1d%
+0a77=1,checkpoint_save_oddjob %1d%
+0A78=2,print_help_forever_conditional_touch %1g% hid_type %2d%
+0A79=2,print_help_forever_conditional_hid %1g% hid_type %2d%
+0A7A=2,print_help_forever_conditional_touch_classic %1g% hid_type %2d%
+0A7B=2,print_help_forever_conditional_touch_adapted %1g% hid_type %2d%
+0A7C=2,print_help_forever_conditional_hid_joypad %1g% hid_type %2d%
+0A7D=2,print_help_forever_conditional_hid_keyboard %1g% hid_type %2d%
+0A7E=2,print_help_forever_conditional_touch_analog %1g% hid_type %2d%
+0A7F=2,print_help_forever_conditional_touch_digital %1g% hid_type %2d%
+0A80=2,print_help_forever_conditional_touch_flick %1g% hid_type %2d%
+0A81=2,print_help_conditional %1g% hid_type %2d%
+0A82=2,print_help_conditional_touch %1g% hid_type %2d%
+0A83=2,print_help_conditional_hid %1g% hid_type %2d%
+0A84=2,print_help_conditional_touch_classic %1g% hid_type %2d%
+0A85=2,print_help_conditional_touch_adapted %1g% hid_type %2d%
+0A86=2,print_help_conditional_hid_joypad %1g% hid_type %2d%
+0A87=2,print_help_conditional_hid_keyboard %1g% hid_type %2d%
+0A88=2,print_help_conditional_touch_analog %1g% hid_type %2d%
+0a89=3,set_widget %1d% value2 %2d% %3d% ; float 
+0a8a=8,set_widget %1d% info %2d% %3d% %4d% %5d% %6d% %7d% %8g%
+0a8b=7,set_widget %1d% info2 %2d% %3d% %4d% %5d% %6g% %7g%
+0a8c=0,load_all_requested_models ; No time to pause. load faster than 038B
+0a8d=1,  is_hid_released %1d%
+0A8E=1,NOP %1d%
+0A8F=0,set_player_weapon_lock_on_target
+0A90=1,  is_hid_pressed %1d%
+
+; Android CLEO opcodes
+0DD0=2,%1d% = get_label_addr %2p% ; android
+0DD1=2,%1d% = get_func_addr_by_cstr_name %2d% ; android
+0DD2=1,context_call_func %1d% ; android
+0DD3=2,context_set_reg %1d% value %2d% ; android
+0DD4=2,%1d% = context_get_reg %2d% ; android
+0DD6=1,%1d% = get_game_version ; android
+0DD7=1,%1d% = get_image_base ; android
+0DD8=4,%1d% = read_mem_addr %2d% size %3d% add_ib %4d% ; android
+0DD9=5,write_mem_addr %1d% value %2d% size %3d% add_ib %4d% protect %5d% ; android
+0DDC=2,set_mutex_var %1d% to %2d% ; android
+0DDD=2,%1d% = get_mutex_var %2d% ; android
+0DE0=3,%1d% = get_touch_point_state %2d% mintime %3d% ; android
+0DE1=5,%1d% = get_touch_slide_state from %2d% to %3d% mintime %4d% maxtime %5d% ; android
+0DE2=1,%1d% = get_menu_button_state ; read opcode info before using ; android
+0DE3=2,%1d% = get_menu_button_pressed mintime %2d% ; read opcode info before using ; android
+</pre></DIV></DIV>
 <SCRIPT src="jQuery.js"></SCRIPT>
  
 <SCRIPT src="HL.js"></SCRIPT>

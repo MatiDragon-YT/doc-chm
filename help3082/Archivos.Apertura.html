@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Apertura</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<H4>Abrir archivos</H4>
+Con este opcode podremos crear, leer, escribir y borrar datos de archivos:
+<PRE class="sb3"><c></c>$hFILE = File.Open("CLEO\external_gxt", 0x72) {OP 0A9A}</PRE> 
+Tambien es posible usarlo como condición:
+<dd>Sí el archivo no existe o es incapaz de abrirse, devuelve <b>False</b>, de lo contrario <b>True</b>.</dd>
+<h5>Parametros</h5>
+<ul>
+ <li>1 - Variable <a href="Codificacion.Variables.html">local o global</a> para poder manipular el archivo.
+ <li>2 - <a href="Codificacion.Variables.html#literarias">Cadena literaria</a> especificando la ruta hacia el archivo.
+ <li><div class=inf>Acepta todo tipos de archivos con y sin extención. Tambien se puede configurar con el directorio principal con el OP <a href=Articulos.CLEO3opcodes.html#0A99>0A99</a></div>
+ <li>3 - Tipo del modo en el que se desea habrir el archivo:
+ <dl>
+  <dd><code class=sb3>0x6272</code> = Leer en modo binario
+  <dd><code class=sb3>0x72</code> = Leer en texto plano
+  <dd><code class=sb3>0x6277</code> = Escribir en modo binario
+  <dd><code class=sb3>0x77</code> = Escribir en texto plano
+ </dl>
+ <li>CLEO 4 simplifica la tarea de establecer el modo utilizando un método estándar entre C++, Phyton y otros lenguajes. Puede reemplazar el parámetro <b>INT</b> de <code>mode</code> por un <b>STRING</b> para especificar el modo de apertura. Si no utiliza una cadena, se utilizará el modo de apertura CLEO 3.
+ <dl>
+  <dd><code class=sb3>"rt"</code> = Abrir un archivo para lectura (el archivo debe existir)
+  <dd><code class=sb3>"rt+"</code> = Abrir un archivo para lectura y escritura (el archivo debe existir)
+  <dd><code class=sb3>"wt"</code> = Crear un archivo vacío (si existe uno, se remplaza con este)
+  <dd><code class=sb3>"wt+"</code> = Crear un archivo vacío para escritura (si existe uno, se remplaza con este)
+  <dd><code class=sb3>"at"</code> = Abrir sino crear un archivo para escritura al final del contenido
+  <dd><code class=sb3>"at+"</code> = Abrir sino crear archivo para lectura y escritura al final del contenido
+ </dl>
+ <li>Sí cambias la <code>t</code> por una <code>b</code>, el archivo se abrira en modo binario. 
+</ul>
+<div class=dan>
+ <b>IMPORTANTE</b>:<br>
+ Para usar esta ultima caracteriztica, es nesesario tener la opcion de <b>Convertir caso</b> en <b>Formal</b>.<br>
+ <div class=center><img src="caso_formal.png" class="w-75"></div>
+</div>
+</P></DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

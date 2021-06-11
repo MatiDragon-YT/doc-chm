@@ -15,18 +15,22 @@
 <P>Estas son todas las cosas que nos sirven para personalizar la apariencia de   
  nuestro jugador.<BR>Y todo eso se hace con este opcode:</P>
 <PRE class=sb3>087B: set_player $PLAYER_CHAR clothes_texture 'BANDBLUE' model 'BANDANA' body_part 16</PRE>
-<P><b>Parametros:</b></P>
-<OL>
-  <LI>Variable del actor a personalizar. (@ o $)</LI>
-  <LI>Textura del accesorio (trajes/peinados/tatuajes).</LI>
-  <LI>Modelo del accesorio.</LI>
-  <LI><A href="Actores.Prendas.html">ID de la parte del cuerpo</A> en donde se ubica el accesorio.</LI></OL>
-<P>Seguido&nbsp;de estos opcodes:</P>
-<P><pre class=sb3>070D: rebuild_player $PLAYER_CHAR
-0793: save_player_clothes </pre> 
-<P></P>
-<P>Para poder modificar los accesorios de este.<BR>Ahora si ya podras ser el     
- negrito gordito bajito gay&nbsp;karateka&nbsp;xD</P>
+<h6>Parametros</h6>
+<ul><dd>
+ <LI><code>$PLAYER_CHAR</code> - Controlador del jugador
+  <ol>(Puede ser una variable <a href="Codificacion.Variables.html#Global">global</a> o <a href="Codificacion.Variables.html#Local">local</a>)
+  </ol>
+ <LI><code>'BANDBLUE'</code> - La textura que deseamos usar
+ <LI><code>'BANDANA'</code> - El modelo del accesorio
+ <LI><code>16</code> - <A href="Huesos.Prendas.html">Parte del cuerpo</A> en donde se ubica el accesorio.
+</ul>
+<div class=dan>Es importante que luego uses el opcode <code>070D</code> para que se reconstrulla la apariencia del jugador</P>
+<pre class=sb3>070D: rebuild_player $PLAYER_CHAR</pre>
+</div>
+<div class=inf>Si quieres guardar los cambios en la partida del juego, deberas usar este opcode.
+<pre class=sb3>0793: save_player_clothes</pre>
+(De paso, te ahorras unos posibles cierres...)
+</div>
 <h5>A continuación</h5>
 <UL>
   <LI><A href="Accesorios.Collares.html">Collares</A></LI>

@@ -1,21 +1,22 @@
-<!DOCTYPE HTML><HTML><HEAD>  <TITLE>Formato de Misión</TITLE>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Formato de Misión</title>
  <meta charset="ISO-8859-1">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link href="bootstrap.css" rel="stylesheet" type="text/css">
 </head> 
-<body>
+<body> 
 <header></header>
 <div class="container">
 <div class="row">
 <div class="col-12">
-<P>Para ejecutar un script de mision de Cleo se requieren siempre 2 archivos de  
- script Cleo</P>
-<OL>
-  <LI> Un archivo <B>.cs</B> para iniciar el archivo de script de       mision   
-              Cleo</LI>
-  <LI> El archivo de script de la mision Cleo en si con la extension             
-                    <B>.cm</B></LI></OL>
+<P>Para ejecutar un cleo de misión se requieren siempre 2 cleo scripts:</P>
+<ol>
+  <li>Un cleo comun <code>.cs</code> para iniciar la misión.
+  <li>Un cleo con la extención <code>.cm</code> para definir que es una misión.
+</ol>
 <P>El hilo de inicio de la mision a continuacion se realiza con una comprobacion 
  condicional para comprobar si el jugador esta cerca de un punto especificado,   
  que debe pasar para comenzar la mision.</P>
@@ -28,26 +29,27 @@ en <B>(is-sphere)near_point</B> esta mostrando   un marcador rojo
 <B>(is-sphere)near_point</B> no muestra un  marcador  rojo.<BR>Para   mostrar un 
  marcador rojo de esta manera necesita  establecer 0ms  como maximo   en  el  
  codigo de espera de este bucle</P>
-<PRE class="sb3">{$CLEO .cs}
-:Test_M_Start_1
-03A4: name_thread 'TSTM'
-:Test_M_Start_2
-0001: wait  0 ms
-00D6: if
-0256:   player $PLAYER_CHAR defined
-004D: jump_if_false @Test_M_Start_2
-00D6: if
-0038:   $ONMISSION ==  0  // integer values
-004D: jump_if_false @Test_M_Start_2
-:Test_M_Start_6
-00D6: if
-00FE:   actor $PLAYER_ACTOR  1 (in-sphere)near_point 2480.1343 -1665.475 13.3348 radius  3.5  3.5  5.5
-004D: jump_if_false @Test_M_Start_2
-00BA: text_styled 'STAD_02'  1000 ms  2
-0004: $ONMISSION =  1  // integer values
-0A94: start_custom_mission "TestMission"  //
-0002: jump @Test_M_Start_2
-</PRE>
+<PRE class="sb3">{$CLEO}
+:start
+thread 'TSTM'
+while true
+    wait 0
+    if
+        Player.isDefined($PLAYER_CHAR)
+    then
+        if
+            int $ONMISSION == false
+        then
+            if
+                Actor.isLocated3D($PLAYER_ACTOR, 1, 2480.1343, -1665.475, 13.3348, 3.5, 3.5, 5.5)
+            then
+                Gxt.ShowTextTitle('STAD_02', 1000, 2)
+                $ONMISSION = true
+                start_custom_mission "TestMission"
+            end
+        end
+    end
+end</PRE>
 <P>El guion de inicio de la mision incluye el siguiente codigo de operacion de   
  Cleo para iniciar el script de la mision Cleo:<BR><B>0A94:   
 start_custom_mission  "TestMission"</B></P>
@@ -58,38 +60,47 @@ start_custom_mission  "TestMission"</B></P>
 directiva de La directiva de La clave se compilara en *.cm<BR>Como   
 TestMission.txt guardado y compilado como  TestMission.cm</P>
 <PRE class="sb3">{$CLEO .cm}
-:TestMiss_1
-03A4: name_thread "TESTM"
-0050: gosub @TestMiss_main_1
-00D6: if
-0112:   wasted_or_busted
-004D: jump_if_false @TestMiss_end_1
-0050: gosub @TestMiss_fail_1
-:TestMiss_end_1
-0050: gosub @TestMiss_clep_1
-004E: end_thread
-:TestMiss_main_1
-0317: increment_mission_attempts //aqui comienza el guion de la mision
-0004: $ONMISSION =  1
-054C: use_GXT_table 'MENU2P'
-00BC: text_highpriority 'MENU_18' 5000 ms  1
-:TestMiss_11
-0001: wait 0 ms
-if and
-02D8:   actor $PLAYER_ACTOR currentweapon == 0
-00E1:   key_pressed 0 17
-004D: jump_if_false @TestMiss_11
-:TestMiss_pass_1
-00BA: text_styled 'M_PASS'  5000 ms  1
-0051: return
-:TestMiss_fail_1
-00BA: text_styled 'M_FAIL'  5000 ms  1
-0051: return
-:TestMiss_clep_1
-0004: $ONMISSION =  0
-00D8: mission_cleanup
-0051: return
-</PRE>
+:start
+thread "TESTM"
+increment_mission_attempts //aqui comienza el guion de la mision
+int $ONMISSION = true
+Gxt.UseTable('MENU2P')
+Gxt.ShowTextSubtitleHighPriority('MENU_18', 5000, 1)
+
+while true
+  wait 0
+  mision()
+  if
+    wasted_or_busted
+  then
+    mision_fracasada()
+  end
+end
+
+:mision
+  if and
+    Actor.isCurrentWeapon($PLAYER_ACTOR, Weapon.Unarmed)
+    Game.isActionVK(Controller.Player1, VirtualKey.Fire)
+  then
+    mision_superada()
+  end
+return
+
+:mision_superada
+  00BA: text_styled 'M_PASS'  5000 ms  1
+  cerrar_mision()
+return
+
+:mision_fracasada
+  00BA: text_styled 'M_FAIL'  5000 ms  1
+  cerrar_mision()
+return
+
+:cerrar_mision
+  $ONMISSION = false
+  mission_cleanup
+  end_thread
+return</PRE>
 <P>Cuando el guion de la mision desde arriba se esta ejecutando se puede  
 completar presionando la tecla de fuego mientras el jugador tiene arma 0 / mano  
 desnuda.</P>
@@ -103,7 +114,8 @@ especial si se cumplen algunas condiciones importantes. Los scripts de mision
 <OL>
   <LI>
   <P>Al principio, debe establecer $ONMISSION igual a  on_mission_flag</P>
-<PRE class="sb3">0180: set_on_mission_flag_to $ONMISSION // Nota; sus misiones tienen que usar la variable definida aqui
+<PRE class="sb3">
+0180: set_on_mission_flag_to $ONMISSION // Nota; sus misiones tienen que usar la variable definida aqui
 </PRE>
   <P>Este codigo se establece de forma predeterminada en la parte principal del  
    archivo main.scm original</P></LI>

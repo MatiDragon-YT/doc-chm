@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Escritura</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h4>Actualización de datos</h4>
+<p>Para poder escribir cuarquier tipo de dato en un archivo, solo necesitas usar este opcode:</p>
+<pre class=sb3>
+0AD9: write_formatted_text "Script v2.0 by %s" in_file $hFile 'MatiDragon'
+</pre>
+<h5>Parametros</h5>
+<ul>
+<li>1 - Cadena de texto (puede incluir opcionalmente especificadores de formato)
+<li>2 - Variable <a href="Codificacion.Variables.html">local o global</a> para poder manipular el <a href=Archivos.Apertura.html>archivo</a>.
+<li>3 - Desde aquí podes meterle datos al primer parametro, sobre lo que desees.
+</ul>
+<h4>Especificadores de formato</h4>
+Sintaxis: <code>%[<a href=#bandera>bandera</a>][<a href=#ancho>ancho</a>][<a href=#precision>.precision</a>]<a href=#especificador>especificador</a></code>
+<table id=especificador>
+<thead>
+<tr>
+<th>especificador</th>
+<th>Salida</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td>Número entero corto</td>
+<td>392</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Número entero largo</td>
+<td>9862783</td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td>Número decimal corto</td>
+<td>392.65</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Número decimal largo</td>
+<td>9862.74534</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>Número octal</td>
+<td>610</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Cadena literaria</td>
+<td>"Buenos dia"</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>Caracter en decimal</td>
+<td>192</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>Punto de memoria</td>
+<td>b8000000</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Entero hexadecimal minúsculas</td>
+<td>f0ad</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Entero hexadecimal mayusculas</td>
+<td>F0AD</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>Decimal hexadecimal minúsculas</td>
+<td>-0xc.90fep-2</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>Decimal hexadecimal mayusculas</td>
+<td>-0XC.90FEP-2</td>
+</tr>
+</tbody>
+</table>
+
+<table id=bandera>
+<thead>
+<tr>
+<th>bandera</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody> 
+<tr>
+<td><code>-</code></td>
+<td>Justificar a la izquierda dentro de la anchura del campo dado. La justificación a la derecha es la predeterminada.</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Obliga a preceder el resultado con un signo más o menos (<code>+</code> o <code>-</code>) incluso para números positivos. De forma predeterminada, solo los números negativos están precedidos por un signo -. (mire el subespecificador de <a href=#ancho>ancho</a>)</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>Usado con especificadores <code>o</code>, <code>x</code> o <code>X</code>, el valor va precedido de <code>0</code>, <code>0x</code> o <code>0X</code> respectivamente para valores diferentes de cero.<br>
+Usado con <code>a</code>, <code>A</code>, <code>f</code> o <code>F</code>, obliga a la salida escrita a contener un punto decimal incluso si no siguen más dígitos. De forma predeterminada, si no sigue ningún dígito, no se escribe ningún punto decimal.</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>Rellena a la izquierda el número con ceros (0) en lugar de espacios cuando se especifica el relleno (mire el subespecificador de <a href=#ancho>ancho</a>).</td>
+</tr>
+</tbody>
+</table>
+
+<table id=ancho>
+<thead>
+<tr>
+<th>ancho</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody> 
+<tr>
+<td><code>número</code></td>
+<td>El mínimo de caracteres a imprimir. Si el valor a imprimir es más corto que este número, el resultado se rellena con espacios en blanco. El valor no se trunca incluso si el resultado es mayor. </td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>El ancho no se especifica en la cadena de formato, sino como un argumento de valor entero adicional que precede al argumento que debe formatearse.</td>
+</tr>
+</tbody>
+</table>
+
+
+<table id=precision>
+<thead>
+<tr>
+<th>precision</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody> 
+<tr>
+<td><code>.número</code></td>
+<td>Para especificadores de enteros: la precisión especifica el número mínimo de dígitos que se escribirán. Sí el valor que se va a escribir es más corto que este número, el resultado se rellena con ceros a la izquierda.
+<p>Para especificadores de decimales: este es el número de dígitos que se imprimirán después del punto decimal (por defecto, este es 6).
+</p><p>Para cadenas literarias: este es el número máximo de caracteres que se pueden imprimir. De forma predeterminada, todos los caracteres se imprimen hasta que se encuentra el carácter nulo final.
+</p>Si el período se especifica sin un valor explícito de precisión, se supone 0. </td>
+</tr>
+<tr>
+<td><code>.*</code></td>
+<td>El ancho no se especifica en la cadena de formato, sino como un argumento de valor entero adicional que precede al argumento que debe formatearse.</td>
+</tr>
+</tbody>
+</table>
+Código de ejemplo:
+<pre class=sb3>
+if
+    0A9A: $hFILE = openfile "CLEO\example" mode "wt+" // IF and SET
+then
+    while true
+        wait 0
+        if
+            0AB0: is_pressed_key 73
+        then
+            00A0: store_actor $PLAYER_ACTOR position_to 0@ 1@ 2@
+            0172: 3@ = actor $PLAYER_ACTOR Z_angle
+            0AD9: write_formatted_text "Coords: %.4f %.4f %.4f%cAngle: %.2f%c%c" in_file $hFile 0@ 1@ 2@ 0xA 3@ 0xA 0xA
+            while 0AB0: is_pressed_key 73
+                wait 0
+            end
+        end
+    end
+end
+</pre>
+Aca creamos un archivo (<code>example</code>) sin extención en el modo de escritura de texto plano y le mandamos ordenes para escribir la posición del jugador cada vez que precionamos X tecla.
+<p>Ejemplo de salida:</p>
+<pre class=sb3>
+Coords: 234.2952 264.8635 55.6378
+Angle: 98.37
+ 
+Coords: 83.9687 673.4197 3.8862
+Angle: 33.33 
+</pre>
+<hr />
+<p class=grey-text>Puede obtener más detalles en:<br>http://www.cplusplus.com/reference/cstdio/fprintf/
+</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

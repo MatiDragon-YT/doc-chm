@@ -1,0 +1,97 @@
+<!DOCTYPE HTML><HTML><HEAD>  <TITLE>.INI</TITLE>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>El uso de estos archivos son logrados por el complemento IniFiles.cleo,       
+ que&nbsp;agrega 6 codigos de operacion al juego,&nbsp;empleados para trabajar   
+  con archivos INI.<BR>&nbsp;Su sintaxis es de la siguiente forma:<BR></P>
+<PRE class=ini>
+<I class="grey-text">;comentario</I>
+<B class="red-text">[<B class="cyan-text">SectionName</B>]</B>
+intKey=-<B class="red-text">10</B>
+floatKey=<B class="red-text">12.5</B>
+stringKey=<B class="orange-text">string value</B> </PRE>
+<HR>
+
+<H4>Opcode 0AF0</H4>
+<PRE>0AF0: <B class="blue-text">0@</B> = get_int_from_ini_file <B class="orange-text">"cleo\config.ini"</B> section <B class="orange-text">"SectionName"</B> key <B class="orange-text">"intKey"</B></PRE>
+<P>El codigo de operacion lee un valor entero del archivo ini y lo escribe en    
+ una variable.</P>
+<P><U>Parametros</U></P>
+<OL>
+  <LI>[out] variable, que se escribira en el valor de lectura.</LI>
+  <LI>[in] la ruta del archivo que mantiene el directorio de trabajo             
+                                  actual.</LI>
+  <LI>[in] nombre de seccion en el archivo ini;</LI>
+  <LI>[in] nombre clave en el archivo  ini.</LI></OL>
+<HR>
+
+<H4>Opcode 0AF1</H4>
+<PRE>0AF1: write_int_from_ini_file <B class="red-text">16</B> to_ini_file <B class="orange-text">"cleo\config.ini"</B> section <B class="orange-text">"SectionName"</B> key <B class="orange-text">"intKey"</B></PRE>
+<P>El codigo de operacion escribe un valor entero en un archivo ini.</P>
+<P><U>Parametros</U></P>
+<OL>
+  <LI>[in] valor a escribir;</LI>
+  <LI>[in] la ruta al archivo relativo al directorio de trabajo actual;</LI>
+  <LI>[in] nombre de sección en el archivo ini;</LI>
+  <LI>[in] nombre clave en el archivo   ini.</LI></OL>
+<HR>
+
+<H4>Opcode 0AF2</H4>
+<PRE>0AF2: <B class="blue-text">0@</B> = get_float_from_ini_file <B class="orange-text">"cleo\config.ini"</B> section <B class="orange-text">"SectionName"</B> key <B class="orange-text">"floatKey"</B></PRE>
+<P>El codigo de operacion lee un valor fraccional del archivo ini y lo escribe   
+ en una variable.</P>
+<P><U>Parametros</U></P>
+<OL>
+  <LI>[out] variable, que se escribira en el valor de lectura.</LI>
+  <LI>[in] la ruta del archivo que mantiene el directorio de trabajo             
+                                  actual.</LI>
+  <LI>[in] nombre de sección en el archivo ini;</LI>
+  <LI>[in] nombre clave en el archivo  ini.</LI></OL>
+<HR>
+
+<H4>Opcode 0AF3</H4>
+<PRE>0AF3: write_float_from_ini_file <B class="red-text">0.0</B> to_ini_file <B class="orange-text">"cleo\config.ini"</B> section <B class="orange-text">"SectionName"</B> key <B class="orange-text">"floatey"</B></PRE>
+<P>El codigo de operacion escribe un valor fraccional en un archivo ini.</P>
+<P><U>Parametros</U></P>
+<OL>
+  <LI>[in] valor a escribir;</LI>
+  <LI>[in] la ruta al archivo relativo al directorio de trabajo actual;</LI>
+  <LI>[in] nombre de sección en el archivo ini;</LI>
+  <LI>[in] nombre clave en el archivo   ini.</LI></OL>
+<HR>
+
+<H4>Opcode 0AF4</H4>
+<PRE>0AF4: <B class="blue-text">0@</B> = get_string_from_ini_file <B class="orange-text">"cleo\config.ini"</B> section <B class="orange-text">"SectionName"</B> key <B class="orange-text">"stringKey"</B></PRE>
+<P>El codigo de operacion lee un valor encadenado del archivo ini y lo escribe   
+ en una variable.</P>
+<P><U>Parametros</U></P>
+<OL>
+  <LI>[out] variable, que se escribira en el valor de lectura.</LI>
+  <LI>[in] la ruta del archivo que mantiene el directorio de trabajo             
+                                  actual.</LI>
+  <LI>[in] nombre de sección en el archivo ini;</LI>
+  <LI>[in] nombre clave en el archivo  ini.</LI></OL>
+<HR>
+
+<H4>Opcode 0AF5</H4>
+<PRE class="sb3">0AF5: write_string_from_ini_file 'newstringsvalue' to_ini_file "cleo\config.ini" section 'SectionName' key 'stringKey'
+</PRE>
+<P>El codigo de operacion escribe un valor encadenado en un archivo ini.</P>
+<P><U>Parametros</U></P>
+<OL>
+  <LI>[in] valor a escribir;</LI>
+  <LI>[in] la ruta al archivo relativo al directorio de trabajo actual;</LI>
+  <LI>[in] nombre de sección en el archivo ini;</LI>
+  <LI>[in] nombre clave en el archivo     ini.</LI></OL>
+  </DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

@@ -48,13 +48,15 @@ end
 <h4>Limitaciones</h4>
 <p>Puede utilizar constantes en cualquier lugar excepto en el caso:</p>
 <PRE class="sb3">const
-VarName = $Var1
-IndexName = 25
+    VarName = $Var1
+    IndexName = 25
 end
 
-VarName[IndexName] = 0</PRE>
-<P>Para compilar dicha expresión, debe escribir el código de operación, por ejemplo:</P>
-<PRE class="sb3">0004: VarName[IndexName] = 0<BR></PRE>
+VarName[IndexName] = 0
+</PRE>
+<P>Para compilar dicha expresión, debe escribir el opcode correspondiente, por ejemplo:</P>
+<PRE class="sb3">0004: VarName[IndexName] = 0
+</PRE>
 <P>También hay algunas limitaciones con el uso de una expresión como valor constante.</P></DIV></DIV></DIV>
 <SCRIPT src="jQuery.js"></SCRIPT>
 <SCRIPT src="HL.js"></SCRIPT>

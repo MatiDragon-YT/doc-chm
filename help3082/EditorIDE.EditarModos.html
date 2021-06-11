@@ -11,30 +11,45 @@
 <header></header>
 <div class="container">
 <div class="row">
-<div class="col-12"><p>Un modo de edicion es un conjunto de opciones que determinan el  
- comportamiento de Sanny Builder cuando se trabaja con scripts de un juego en   
- particular. El hecho es que no hay ningun juego en la serie de GTA con el   
- formato de script igual a los demas. Por lo tanto, cada juego requiere una   
- configuracion especial al editar scripts. Esa es la razon por la que los modos  
-  de edicion se presentan en Sanny Builder.</P>
-<P>Un modo de edicion incluye (pero no se limita a) las siguientes   
- opciones:</P>
-<UL>
-  <LI>Sanny Builder desarma un archivo de script de una manera       
-  especifica</LI>
-  <LI>Sanny Builder puede compilar un script para el juego dado</LI>
-  <LI>Puedes ejecutar el juego y leer/escribir las coordenadas del  
-jugador</LI></UL>
-<P>Por defecto, hay 7 modos diferentes:</P>
+<div class="col-12">
+<p class=light>Sanny Builder es compatible con muchos juegos y plataformas, por lo que hay una configuración predefinida para cada juego compatible llamado modo de <b>edición</b>.</P>
+<hr>
+ <P>Los modos de edición proporcionan a Sanny Builder la siguiente información:</P>
+<dd>
+<li>un juego objetivo
+<li>rutas a los archivos con los datos del juego
+<li>rutas a archivos con información de soporte(<a href="EditarModos.Etiquetas.html">etiquetas</a>, <a href="#variables">variables</a>, <a href="#constantes">constantes</a>, etc.)
+</dd>
+<p>
+De forma predeterminada, Sanny Builder lee la configuración de los modos desde el archivo <code>SB/data/modes.xml</code>. Esta trayectoria se puede personalizar con la opción de la <a href="EditorIDE.Consola.html">consola</a>, con <code>-x</code> .
+</p>
+<p>
+El archivo <code>modes.xml</code> está abierto para su modificación y extensión, y los usuarios pueden crear sus propios modos cambiándolo.
+</p>
+<hr>
+<h5>Formato del archivo</h5>
+<p>
+El <code>modes.xml</code> es un archivo en formato XML y se puede manipular en cualquier editor de texto. Define los modos disponibles.
+</p>
+<p>
+El nodo raíz es <code>modes</code> y no tiene atributos. El archivo solo puede tener un nodo raíz.
+</p>
+<p>
+Cada modo de edición es un nodo secundario de <code>modes</code> que comienza con la etiqueta de apertura <code>mode</code> y termina con la etiqueta de cierre <code>/mode</code>. El elemento <code>mode</code> tiene atributos obligatorios y opcionales como se describe a continuación. El contenido de <code>mode</code> es un conjunto de etiquetas específicas (propiedades) que definen rutas de acceso a directorios o archivos.
+</p>
+<hr>
+<h5>Atributos de modo</h5>
+<table>
+<tr><th>ID</th><td><p><code>id</code> es un identificador obligatorio y único del modo. Sanny Builder utiliza el <code>id</code> para guardar algunos ajustes de usuario para este modo, por ejemplo, un directorio de <a href="Opciones.General.html#game-directory">juego</a>.</p><p>Un valor válido para este atributo es una serie única de caracteres que no se utilizan para el identificador de ningún otro modo.</td></p></tr>
+<tr><th>EXTENDS</th><td><p>Un modo puede extender otro modo (el principal) para reducir el número de propiedades duplicadas. Es útil para diferentes versiones de un juego donde la mayor parte de la configuración es la misma, excepto por algunas propiedades. El padre también puede extender otro modo.</p><p>Cuando falta una propiedad, Sanny Builder recorre recursivamente todos los modos primarios que intentan encontrar la propiedad.</p><p>Un valor válido para este atributo es el identificador de otro modo definido en el mismo archivo.</p></td></tr>
+<tr><th>TITLE</th><td><p><code>title</code> define el nombre mostrado del modo. Debido a las restricciones de interfaz evitar nombres largos y mantenerlo dentro del límite de <code>24</code> caracteres.</p></td></tr>
+<tr><th>GAME</th><td><P>El atributo <code>game</code> define un juego de destino para el modo. Hay <code>6</code> valores válidos:</P><dd><LI><code>gta3</code><LI><code>vc</code><LI><code>sa</code><LI><code>lcs</code><LI><code>vcs</code><LI><code>sa_mobile</code></dd><p>Antes de desmontar o compilar un script, asegúrese de que el modo de edición correcto esté activo. Cada juego tiene un formato de script único y los scripts compilados para un juego no son compatibles con scripts para otro juego. Incluso si el script se compila sin errores, el juego se bloquearía al intentar leer un script en un formato diferente.</p><div class=inf>Un archivo de script compilado puede almacenar <a href="Opciones.General.html#add-extra-info-to-scm">información</a> sobre qué juego está hecho para. Al abrir un script de este tipo, Sanny Builder le pide que cambie el modo por el correcto. Ignorar este mensaje puede provocar un bloqueo del desensamblador, porque el formato de script es inesperado para él.</div><p>Sanny Builder muestra un icono de juego delante del nombre del modo de edición para que conozcas el juego objetivo.</p></td></tr>
+<tr><th>TYPE</th><td><P>Un modo para cada juego de destino debe ser predeterminado. Esto significa que Sanny Builder utiliza este modo cuando se ejecuta con la <a href="EditorIDE.Consola.html">opción</a> de CLI <code>--game</code></p><p>El valor válido para este atributo es <code>default</code>. Omita este atributo para los modos no predeterminados.</p></td></tr>
+</table>
 
-<UL>
-  <LI>GTA III</LI>
-  <LI>GTA VC</LI>
-  <LI>GTA SA (para codigos de operacion personalizados)</LI>
-  <LI>GTA LCS</LI>
-  <LI>GTA VCS</LI>
-  <LI>SA Mobile (para las versiones de Android e iOS)</LI>
-  <LI>GTA SA SCR (para nombres R*  originales)</LI></UL>
+
+<hr>
+
 <P>Puede agregar un nuevo modo editando manualmente el archivo games.xml ubicado 
  en el directorio &lt;SB&gt;\data\.</P>
 <CENTER><IMG src="img/edit_modes.png"> </CENTER>

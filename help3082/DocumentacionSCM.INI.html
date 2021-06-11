@@ -53,38 +53,44 @@ cada modo de <A href="#">edición</A>.</P>
 <B>$VERSION</B>.<BR><B>PUBLISHER</B>:  la  persona publico esta  
 version.<BR><B>DATE</B>: la ultima fecha de     actualizacion.<BR>El  
 descompilador inserta estos valores en los archivos      fuente.<BR>La lista de  
-codigos de operacion va inmediatamentedespuesde esos      parametros 
+opcodes va inmediatamentedespuesde esos      parametros 
  especiales.      
-<P>Cada linea de codigo de operacion tiene la siguiente sintaxis:     
+<P>Cada linea de opcode tiene la siguiente sintaxis:     
 <PRE>xxxx=N, yyyy<BR></PRE>
 <P>where <B>XXXX</B> es el numero de codigo de operacion, <B>N</B> - la cantidad 
  de parametros,<B> YYYY</B> - la descripcion del codigo de operacion.      
 <P>Los primeros dos valores no se pueden cambiar de ninguna manera, sin embargo, 
  la descripcion puede. Tambien tome nota de la parte de la descripcion indicada  
- por el signo% - un parametro de codigo de operacion esta creado de esta      
+ por el signo% - un parametro de opcode esta creado de esta      
  manera.      
 <P>Por ejemplo,      
 <P>
 <P>
 <PRE>0001=1,wait %1d% ms</PRE>esta linea 
-realiza el descompilador cuando procesa  un codigo de operacion 0001 escribe las 
+realiza el descompilador cuando procesa  un opcode 0001 escribe las 
 palabras 'wait' y 'ms' y el unico       parametro entre ellas.      
 <P>Un parametro consta de dos partes: un numero y un tipo.      
 <P>El numero en el parametro% 1d% es su numero en si mismo. El punto es que      
-algunos codigos de operacion pueden tener sus parametros ordenados en un orden   
+algunos opcodes pueden tener sus parametros ordenados en un orden   
  no numerico. Todo consiste en hacer que un codigo fuente sea mas legible y se   
  vea como los lenguajes de programacion comunes. Por ejemplo,      
 <P>
-<PRE>0053=5,%5d% = create_player %1o% at %2d% %3d%%4d%<BR></PRE>
-<P>Preste atencion, el decompilador escribe el quinto parametro al principio. Si 
- los parametros siguen su orden numerico, el codigo de operacion 0053 se vera    
- como:  
+<PRE>
+0053=5,%5d% = create_player %1o% at %2d% %3d% %4d%
+</PRE>
+<P>Preste atencion, el decompilador escribe el quinto parametro al principio. Si los parametros siguen su orden numerico, el opcode 0053 se vera como:  
 <PRE class="sb3">0053: create_player #NULL at 2488.562 -1666.865 12.8757 $PLAYER_CHAR</PRE>
 <P>Es significativo que el orden numerico sea tipico para gtama y SASCM.INI de   
  PLPynton.<BR>Las siguientes letras indican el tipo de     
- parametro:<BR><B>D</B> = cualquier valor<BR><B>P</B> =       
-etiqueta<BR><B>O</B> = nombre del modelo<BR><B>G</B> =     entrada de  
-gxt<BR><B>X</B> = ID de script externo      
+ parametro:
+<ul><dd>
+<li><B>D</B> = cualquier valor
+<li><B>G</B> = entrada de gxt
+<li><B>M</B> = ----------------
+<li><B>O</B> = nombre del modelo
+<li><B>P</B> = etiqueta
+<li><B>X</B> = ID de script externo
+</ul>      
 <P>El tipo cambia el comportamiento del descompilador. Por ejemplo, agrega un    
  comentario con el contenido de la clave gxt para el parametro g; convierte el   
   p-one en la etiqueta, el o-parametro en el nombre del modelo (como #NULL en el 

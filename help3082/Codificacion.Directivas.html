@@ -19,30 +19,37 @@ de diferentes maneras. Se denotan con el
  {}.</P><hr>
 <P>Lista de directivas disponibles:</P>
 <ul>
- <LI><A href="#VERSION">$VERSION</A></LI>
- <LI><A href="#RESTORE_VERSION">$VERSION_RESTORE</A></LI>
- <LI><A href="#INCLUDE">$INCLUDE / 
- $I</A></LI>
- <LI><A href="#EXTERNAL">$EXTERNAL / 
- $O</A></LI>
- <LI><A href="#CLEO">$CLEO</A></LI>
- <LI><A href="#NOSOURCE">$NOSOURCE</A></LI>
- <LI><A href="#OPCODE">$OPCODE / 
- $O</A></LI></ul>
+ <LI><A href="#VERSION">$VERSION</A>
+ <LI><A href="#RESTORE_VERSION">$VERSION_RESTORE</A>
+ <LI><A href="#INCLUDE">$INCLUDE / $I</A>
+ <LI><A href="#EXTERNAL">$EXTERNAL / $E</A>
+ <LI><A href="#CLEO">$CLEO</A>
+ <LI><A href="#NOSOURCE">$NOSOURCE</A>
+ <LI><A href="#OPCODE">$OPCODE / $O</A></LI></ul>
 <h4><A name="VERSION"></A>$VERSION</h4>
-<P>Esta directiva esta en desuso desde 
- v3.1.0<BR>Esta directiva establece que 
+<div class=dan>Esta directiva esta en desuso desde v3.1.0</div>
+<P>Esta directiva establece que 
  version de codigos de operacion se debe 
  utilizar durante la compilacion. 
- 
-<PRE>Sintaxis:<BR>$VERSION x.y.zzzz<BR><BR>x - editar modo ID<BR>y - orden de parametros.<BR> 0 - original, numerico<BR> 1 - orden personalizado<BR>zzzz - version de codigos de operacion </PRE>
-<P></P>
-<P>Por defecto, el compilador usa la vercion&nbsp;del modo de edicion 
- actual.1.0000.</P>
+<P>Sintaxis:</P> 
+<code><b class=blue-text>{$VERSION x.y.zzzz}</b></code>
+<ul>
+<li>x - ID del modo de edición.
+<li>y - Orden de los parametros.
+<menu>0 - original: 0, 1, 2, etc<BR>
+1 - personalizado: 7, 1, 2, etc</menu>
+<li>zzzz - version de opcodes 
+</ul>
+<P>Por defecto, el compilador usa la vercion <code>current_edit_mode.1.0000</code></P>
+<hr>
 <h4><A name="RESTORE_VERSION"></A>$VERSION_RESTORE</h4>
-<P>Esta directiva esta en desuso desde v3.1.0<BR>Esta directiva establece la 
+<div class=dan>Esta directiva esta en desuso desde v3.1.0</div>
+<P>Esta directiva establece la 
  version a su valor anterior antes de usar 
  $VERSION.</P>
+ <P>Sintaxis:</P> 
+<code><b class=blue-text>{$VERSION_RESTORE}</b></code>
+</hr>
 <h4><A name="INCLUDE"></A>$INCLUDE</h4>
 <P>Esta directiva permite insertar el contenido de un archivo de texto externo 
  en el archivo actual. Si 
@@ -52,15 +59,16 @@ como parametro de la directiva y
 continua el proceso de compilacion desde el 
  codigo escrito en el archivo incluido. 
  Cuando llega al final del archivo, 
-vuelve al archivo anterior.</P>
-<PRE>Sintaxis:<BR><FONT class="blue-text accent-2">{$INCLUDE file path}</FONT>
-o
-<FONT class="blue-text accent-2">{$I file path}</FONT></PRE>
-<P>Ejemplo: <code>{$I loadwav.txt}</code> o <code>{$I C:\dev\getarrayindex.txt}</code></P>
+vuelve al archivo anterior.</P> 
+ <P>Sintaxis:</P> 
+<code><b class=blue-text>{$INCLUDE directorio\archivo}</b></code>
+<P>Ejemplos:</P> 
+<PRE><b class=blue-text>{$INCLUDE loadwav.txt}
+{$INCLUDE C:\dev\getarrayindex.txt}</b></PRE>
 <P>Si la ruta del archivo es relativa, el compilador busca el archivo en el 
  siguiente orden:</P>
 <OL>
- <LI>1.directorio del archivo con la directiva*</LI>
+ <LI>directorio del archivo con la directiva*</LI>
  <LI>Sanny Builder\data\&lt;juego&gt;</LI>
  <LI>Sanny Builder&nbsp;directorio raiz</LI>
  <LI>directorio del juego</LI></OL>

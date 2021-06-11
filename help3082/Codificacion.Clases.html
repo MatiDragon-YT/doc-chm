@@ -16,11 +16,12 @@ jugador.</P>
 <h5>Sintaxis</h5>
 <pre>&lt;Nombre&gt;.&lt;Miembro&gt;(&lt;parámetros&gt;)</pre>
 <UL>
-<LI><code>&lt;Nombre&gt;</code> - el nombre de un grupo de comandos definidos en el archivo <code>classes.db</code> para este modo de edición</LI>
+<LI><code>&lt;Nombre&gt;</code> - el nombre de un grupo de comandos definidos en el archivo <code>classes.db</code> para este modo de edición
 <LI><code>&lt;Miembro&gt;</code> - uno de los comandos incluidos en la clase</LI>                             
-<LI><code>&lt;parámetros&gt;</code> - 0 o más <a href="Codificacion.TiposDeDatos.html">parámetros</a> delimitados por comas</LI>
+<LI><code>&lt;parámetros&gt;</code> - 0 o más <a href="Codificacion.TiposDeDatos.html">parámetros</a> delimitados por comas
 </UL>
-<pre class=sb3>Player.setMinWantedLevel($PLAYER_CHAR, 2)</pre>
+<pre class=sb3>Player.setMinWantedLevel($PLAYER_CHAR, 2)
+</pre>
 <UL>
 <LI><code>Player</code> - nombre de la clase</LI>
 <LI><code>setMinWantedLevel</code> - miembro de la clase</LI>                             
@@ -90,9 +91,13 @@ jf @dondequiera
 </pre>
 <div class=dan>
 Si una variable sustituye al nombre de una clase, el compilador también lo convierte en el primer parámetro, por lo que no es necesario volver a usarlo en la lista de parámetros:
-<pre class=sb3>$PLAYER_CHAR.SetClothes("PLAYER_FACE", "HEAD", Head)</pre>
+<pre class=sb3>
+$PLAYER_CHAR.SetClothes("PLAYER_FACE", "HEAD", Head)
+</pre>
 <p>es equivalente a:</p>
-<pre class=sb3>Player.SetClothes($PLAYER_CHAR, "PLAYER_FACE", "HEAD", Head)</pre>
+<pre class=sb3>
+Player.SetClothes($PLAYER_CHAR, "PLAYER_FACE", "HEAD", Head)
+</pre>
 </div>
 <p>Las variables declaradas como instancias de una clase se pueden volver a declarar con otro tipo.</p>
 <h5>La clase <code>Model</code></h5>
@@ -116,10 +121,21 @@ jf @loop
 </pre>
 <hr>
 <h4>Constantes de clase</h4>
-<p>Algunos miembros de la clase tienen constantes predefinidas para algunos valores de parámetros. Hace que el código fuente sea más legible:</p>
-<pre class=sb3>Player.SetClothes($PLAYER_CHAR, "VEST", "VEST", Torso)</pre>
-<p>El último parámetro (<code>Torso</code>) es una constante de clase sustituida por 0 durante la compilación. Las constantes de clase se definen en el archivo <code>classes.db</code>.</p>
-<div class=inf>El tipo <code>Extended</code> especial está reservado para parámetros que tienen una lista de constantes. Puede ver el tipo <code>Extended</code> en la lista de miembros de la clase y en una sugerencia que aparece a medida que escribe los parámetros de los miembros de la clase.</div>
+<p>Los parámetros de clase se pueden asignar a un tipo <a nohref>enumerado</a>. Hace que el código fuente sea más legible:</p>
+<pre class=sb3>
+Player.SetClothes($PLAYER_CHAR, "VEST", 'VEST', BodyPart.Torso)
+</pre>
+<p>El último parámetro (<code>BodyPart.Torso</code>) es un miembro del enumerador (<code>BodyPart</code>) sustituida por <code>0</code> durante la compilación. Las enumeraciones con sus valores se definen en el archivo <code>enums.txt</code>.</p>
+<div class=inf>
+<b>Parámetros extendidos (obsoletos)</b>
+<p>
+Sanny Builder antes de v3.6 definió constantes especiales para los miembros de clase en el archivo <code>classes.db</code>. Estos parámetros se denominaron extendidos. Esta solución solo permitía un parámetro extendido por miembro de clase.
+</p>
+<p>
+Desde v3.6 los miembros de la clase usan nombres de enumeración como sus tipos y pueden tener cualquier número de parámetros enumerados.
+</p>
+Para la compatibilidad con versiones anteriores, Sanny Builder sigue siendo compatible con los parámetros extendidos antiguos durante la compilación. <code>classes.db</code> los mantiene bajo la sección <code>DEPRECATED_ENUMS</code>.
+</div>
 
 
 <SCRIPT src="jQuery.js"></SCRIPT><SCRIPT src="HL.js"></SCRIPT></BODY></HTML>

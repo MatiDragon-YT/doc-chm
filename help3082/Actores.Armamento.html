@@ -15,20 +15,24 @@
 <h4>Para armar a un actor</h4>
 <P>Hay 3 opcodes que realizan esa función, pero no cumplen con el mismo objetivo.</P>
 <h5>Agregar una arma</h5>
-<PRE class="sb3">01B2: give_actor $actor01 weapon 38 ammo 99</PRE>
+<PRE class="sb3">01B2: give_actor $actor01 weapon 38 ammo 99
+</PRE>
 <div class=dan>
 Como estamos añadiendo un objeto 3D en el juego, es importante cargar el modelo antes de usarlo, con el opcode o la clase <code>Model</code>
-<pre class=sb3>Model.Load(#MINIGUN)</pre>
+<pre class=sb3>0247: load_model #MINIGUN</pre>
 </div>
 <h5>Agregar más munición</h5> 
-<PRE class="sb3">0114: set_actor $actor01 weapon 38 add_ammo 99</PRE>
+<PRE class="sb3">0114: set_actor $actor01 weapon 38 add_ammo 99
+</PRE>
 <h5>Establecer la municion</h5>
-<PRE class="sb3">017B: set_actor $actor01 weapon 38 ammo_to 99</PRE>
+<PRE class="sb3">017B: set_actor $actor01 weapon 38 ammo_to 99
+</PRE>
 <h6>Parámetros:</h6>
-<ul>
-<LI><code>$actor01</code> - <a href="Codificacion.Variables.html">Variable</a> local o global del actor a manipular.</LI>
-<LI><code>38</code> - Cualquier ID de <a href="Juego.Armas.html">arma</a> valida</LI>
-<LI><code>99</code> - Cantidad de municiones.</LI></ul></DIV></DIV></DIV>
+<ul><dd>
+<LI><code>$actor01</code> - <a href="Codificacion.Variables.html">Variable</a> local o global del actor a manipular.
+<LI><code>38</code> - Cualquier ID de <a href="Juego.Armas.html">arma</a> valida
+<LI><code>99</code> - Cantidad de municiones.
+</dd></ul>
 <SCRIPT src="jQuery.js"></SCRIPT>  
 <SCRIPT src="HL.js"></SCRIPT>
 </BODY></HTML>

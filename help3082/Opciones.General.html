@@ -12,12 +12,11 @@
 <div class="container">
 <div class="row">
 <div class="col-12">
-<P class=light></p>
-<IMG src="old/options/sbo/optmain.png"> 
-<P>Esta pagina contiene las opciones del (de) compilador 
-en su mayoria.</P><BR>
+<P>Esta pestaña contiene la configuración general utilizada por Sanny Builder.</p>
+<div class=center><IMG src="old/options/sbo/optmain.png"></div> 
 <HR>
-<BR><IMG src="old/options/sbo/main_dir.png"> 
+<h4 id=game-directory>Directorio del juego</h4>
+<div class=center><IMG src="old/options/sbo/main_dir.png"></div> 
 <P>Sanny Builder necesita ciertos archivos del juego 
 mientras trabaja, por lo que debe elegir un directorio correcto 
 donde esta instalado el juego. Puede ingresar la ruta manualmente o 
@@ -113,17 +112,8 @@ originales</b></P>
 agrega nombres predefinidos de misiones originales como comentarios 
 para el codigo de operacion start_mission y para la linea DEFINE 
 MISSION en el encabezado del archivo.</P>
-<P><b>Agregue informacion adicional a 
-SCM</b></P>
-<P>Si esta opcion esta marcada, el compilador agrega 
-informacion adicional al final del archivo main.scm. Esta 
-informacion se usara mas adelante cuando se descompile este archivo 
-para ponerlo en conformidad maxima con la fuente original. Los 
-siguientes datos se agregan al final de main.scm: hex..end construye 
-offsets, nombres de variables globales, etc. Preste atencion a que 
-el archivo compilado de esa manera no se puede decompilar en 
-versiones anteriores de SB (excepto en el caso en que la opcion 
-ignore_unknown este habilitada).</P>
+<h4 id=add-extra-info-to-scm>Agregar info. adicional al SCM</h4>
+<P>Si esta opción está marcada, el compilador agrega información adicional al final del archivo resultante. Esta información se utiliza más tarde cuando este archivo se desmonta para restaurar la fuente más cerca del original. Se almacenan los siguientes datos:</P>
 </DIV></DIV>
 <SCRIPT src="jQuery.js"></SCRIPT>   
 <SCRIPT src="HL.js"></SCRIPT></DIV></BODY></HTML>

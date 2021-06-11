@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+ <title>Cerradura</title>
+ <meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h4>Liberación</h4>
+<p>Por lo general los archivos abiertos, son cerrados automaticamente cuando se cierra el juego<br>
+Sí quieres cerrarlos antes para mantener la memoria RAM más limpia, podrias usar este opcode:</p>
+<pre class=sb3>
+0A9B: closefile $hFILE
+</pre>
+<h5>Parametros</h5>
+1 - Variable contenedora del archivo.
+<h4>Destrucción</h4>
+Es posible tambien destruir los archivos, con este opcode
+<pre class=sb3>
+0B00: delete_file "CLEO\example.txt"  // IF and SET
+</pre>
+Tambien puede ser usado como condición:
+<dd>Sí el archivo se elimina correctamente, se devuelve un valor cero.
+<dd>En caso de error, se devuelve un valor distinto de cero.
+</DIV></DIV></DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</BODY></HTML>

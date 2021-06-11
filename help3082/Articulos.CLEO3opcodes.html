@@ -2,597 +2,697 @@
 <HTML>
 
 <HEAD>
-    <TITLE>CLEO 3: opcodes</TITLE>
-    <meta charset="ISO-8859-1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap.css" rel="stylesheet" type="text/css">
+<TITLE>CLEO 3: opcodes</TITLE>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <header></header>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <P>El uso de los siguientes codigos de operacion solo es posible en la
-                    biblioteca CLEO 3 instalada. Al compilar Sanny Builder comprueba si la
-                    biblioteca esta instalada y, de no ser asi, advierte que es necesario. Si
-                    escribe una secuencia de comandos utilizando estos codigos de operacion, debe
-                    incluir tambien los archivos de la biblioteca para garantizar su funcionalidad
-                    al usuario final.</P>
-                <TABLE>
-                    <TBODY>
-                        <TR>
-                            <TD><A title="0A8C: write_memory 0xC0BC15 size 1 value 1 virtual_protect 0" href="#0A8C">Opcode 0A8C</A></TD>
-                            <TD><A title="0A99: chdir 0" href="#0A99">Opcode 0A99</A></TD>
-                            <TD><A title="0AA6: call_method $Destroy struct $CarStruct params 0 pop 0" href="#0AA6">Opcode 0AA6</A></TD>
-                            <TD><A title="0AB3: var 0 = 10" href="#0AB3">Opcode 0AB3</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A8D: $result = read_memory 1@ size 4 virtual_protect 0" href="#0A8D">Opcode 0A8D</A></TD>
-                            <TD><A title="0A9A: $hFILE = openfile " href="#0A9A" settings.ini?="" mode="" 0x72?="">Opcode 0A9A</A></TD>
-                            <TD><A title="0AA7: call_function 0x569660 num_params 2 pop 2  $COORD_X $COORD_Y $GROUND" href="#0AA7">Opcode 0AA7</A></TD>
-                            <TD><A title="0AB4: 0@= var 0" href="#0AB4">Opcode 0AB4</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A8E: 4@ = 5@ + 6@" href="#0A8E">Opcode 0A8E</A></TD>
-                            <TD><A title="0A9B: closefile $hFILE" href="#0A9B">Opcode 0A9B</A></TD>
-                            <TD><A title="0AA8: call_function_method 0x4048E0 struct 0xB74494  num_params 1 pop 0 $MyCar 0@" href="#0AA8">Opcode 0AA8</A></TD>
-                            <TD><A title="0AB5:  store_actor $PLAYER_ACTOR closest_vehicle_to 0@ closest_ped_to 1@" href="#0AB5">Opcode 0AB5</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A8F: $var = 0@(1@,2i) - 1" href="#0A8F">Opcode 0A8F</A></TD>
-                            <TD><A title="0A9C: 0@ = file $hFILE size" href="#0A9C">Opcode 0A9C</A></TD>
-                            <TD><A title="0AA9: is_game_version_original" href="#0AA9">Opcode
-                                    0AA9</A></TD>
-                            <TD><A title="0AB6: store_target_marker_coords_to 0@ 1@ 2@" href="#0AB6">Opcode 0AB6</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A90: $var(0@,10i) = 100 * 1@" href="#0A90">Opcode
-                                    0A90</A></TD>
-                            <TD><A title="0A9D: readfile $hFILE size 2 to $150" href="#0A9D">Opcode
-                                    0A9D</A></TD>
-                            <TD><A title="0AAA: 0@ = thread 'OTB' pointer" href="#0AAA">Opcode
-                                    0AAA</A><A href="#0AAC"></A></TD>
-                            <TD><A title="0AB7: get_vehicle $CAR number_of_gears_to 10@" href="#0AB7">Opcode 0AB7</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A91: $pre = 1 / 5" href="#0A91">Opcode 0A91</A></TD>
-                            <TD><A title="0A9E: writefile $hFILE size 128 from 0@" href="#0A9E">Opcode
-                                    0A9E</A></TD>
-                            <TD><A title="0AAB:  file_exists " href="#0AAB" cleo\version.dll??="">Opcode 0AAB</A><A href="#0AAC"></A></TD>
-                            <TD><A title="0AB8: get_vehicle $CAR current_gear_to 11@" href="#0AB8">Opcode 0AB8</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A92: create_custom_thread " href="#0A92" showtextbox.s??="">Opcode 0A92</A></TD>
-                            <TD><A title="0A9F: 0@ = current_thread_pointer" href="#0A9F">Opcode
-                                    0A9F</A></TD>
-                            <TD><A title="0AAC: $hMP3 = load_mp3 " href="#0AAC" cleo\playlist\01.mp3??="">Opcode 0AAC</A></TD>
-                            <TD><A title="0AB9: get_mp3 $hMP3 state_to 7@" href="#0AB9">Opcode
-                                    0AB9</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A93: end_custom_thread" href="#0A93">Opcode 0A93</A></TD>
-                            <TD><A title="0AA0: gosub_if_false @CREATE_NEW_ACTOR" href="#0AA0">Opcode
-                                    0AA0</A><A href="#0AA1"></A></TD>
-                            <TD><A title="0AAD: set_mp3 $hMP3 perform_action 1" href="#0AAD">Opcode
-                                    0AAD</A><A href="#0AAE"></A></TD>
-                            <TD><A title="0ABA: end_custom_thread_named 'BENZIN'" href="#0ABA">Opcode
-                                    0ABA</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A94: start_custom_mission " href="#0A94" missions\custommission1??="">Opcode 0A94</A></TD>
-                            <TD><A title="0AA1: return_if_false" href="#0AA1">Opcode 0AA1</A></TD>
-                            <TD><A title="0AAE: release_mp3 $hMP3" href="#0AAE">Opcode 0AAE</A></TD>
-                            <TD><A title="0ABD: vehicle 0@ siren_on" href="#0ABD">Opcode
-                                    0ABD</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A95: enable_thread_saving" href="#0A95">Opcode 0A95</A></TD>
-                            <TD><A title="0AA2: $hLIB = load_library " href="#0AA2" cleo\version.dll??="">Opcode 0AA2</A></TD>
-                            <TD><A title="0AAF: 0@ = get_mp3_length $hMP3" href="#0AAF">Opcode
-                                    0AAF</A></TD>
-                            <TD><A title="0ABE: vehicle 0@ engine_on" href="#0ABE">Opcode
-                                    0ABE</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A96: $ActorStruct = actor $PLAYER_ACTOR struct" href="#0A96">Opcode
-                                    0A96</A><A href="#0A95"></A></TD>
-                            <TD><A title="0AA3: free_library $hLIB" href="#0AA3">Opcode 0AA3</A></TD>
-                            <TD><A title="0AB0:  key_pressed 0x73" href="#0AB0">Opcode 0AB0</A></TD>
-                            <TD><A title="0ABF: set_vehicle 0@ engine_state_to 0" href="#0ABF">Opcode
-                                    0ABF</A></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A97: $CarStruct = car $MyCar struct" href="#0A97">Opcode
-                                    0A97</A><BR></TD>
-                            <TD><A title="0AA4: $hPROC = get_proc_address " href="#0AA4" getversion?="" library="" $hlib?="">Opcode 0AA4</A></TD>
-                            <TD><A title="0AB1: call_scm_func @GetSQR 1  10 $result" href="#0AB1">Opcode 0AB1</A></TD>
-                            <TD></TD>
-                        </TR>
-                        <TR>
-                            <TD><A title="0A98: $ObjectStruct = object 0@ struct" href="#0A98">Opcode
-                                    0A98</A></TD>
-                            <TD><A title="0AA5: call $hPROC num_params 1 pop 1 $param" href="#0AA5">Opcode 0AA5</A></TD>
-                            <TD><A title="0AB2: ret 1 0@" href="#0AB2">Opcode 0AB2</A></TD>
-                            <TD></TD>
-                        </TR>
-                    </TBODY>
-                </TABLE>
-                <H5>Opcodes de CLEO 2</H5><A name="0A8C"></A>
-                <PRE class="sb3">0A8C: write_memory 0xC0BC15 size 1 value 1 virtual_protect 0</PRE>
-                <P>0A8C escribe un valor en la memoria del juego.
-                    <BR><BR><B>Parametros:</B><BR>1 - direccion de memoria (cualquier valor
-                    entero)<BR>2 - numero de bytes para escribir: 1, 2 o 4 bytes <BR>3 - valor
-                    para escribir (cualquier numero) <BR>4 - Proteccion virtual: use 1 para
-                    escribir en la direccion de solo lectura, 0 - si la direccion es regrabable.
-                </P>
-                <HR>
-                <BR><A name="0A8D"></A>
-                <PRE class="sb3">0A8D: $result = read_memory 1@ size 4 virtual_protect 0</PRE>
-                <P>0A8D lee la memoria del juego y almacena el resultado en una variable.
-                    <BR><BR><B>Parametros:</B><BR>1 - variable para almacenar el resultado de
-                    lectura (cualquier variable o elemento de matriz) <BR>2 - direccion de la
-                    memoria para leer (cualquier valor entero) <BR>3 - numero de bytes para leer:
-                    1, 2 o 4 bytes <BR>4 - Proteccion virtual: use 1 si la direccion es ilegible,
-                    0 - si la direccion es legible. </P>
-                <HR>
-                <BR><A name="0A8E"></A>
-                <PRE class="sb3">0A8E: 4@ = 5@ + 6@ // int </PRE>
-                <P>0A8E resume dos valores y almacena el resultado en una
-                    variable.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar suma
-                    (cualquier variable o elemento de matriz)<BR>2 - primer elemento (cualquier
-                    valor entero)<BR>3 - segundo elemento (cualquier valor entero)</P>
-                <HR>
-                <BR><A name="0A8F"></A>
-                <PRE class="sb3">0A8F: $var = 0@(1@,2i) - 1 // int </PRE>
-                <P>0A8F resta un valor entero de otro y almacena el resultado en una
-                    variable.<BR><BR><B>Parameters:</B><BR>1 - Variable para almacenar diferencia
-                    (cualquier variable o elemento de matriz)<BR>2 - minuendo (cualquier valor
-                    entero)<BR>3 - sustraendo (cualquier valor entero)</P>
-                <HR>
-                <BR><A name="0A90"></A>
-                <PRE class="sb3">0A90: $var(0@,10i) = 100 * 1@ // int </PRE>
-                <P>0A90 multiplica un numero entero por otro y almacena el resultado en una
-                    variable.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar producto
-                    (cualquier variable o elemento de matriz)<BR>2 - multiplicador (cualquier
-                    valor entero)<BR>3 - multiplicador (cualquier valor entero)</P>
-                <HR>
-                <BR><A name="0A91"></A>
-                <PRE class="sb3">0A91: $pre = 1 / 5 // int</PRE>
-                <P>0A91 preide un numero entero por otro y almacena el resultado en una variable
-                    sin el resto.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar el
-                    resultado (cualquier variable o elemento de matriz)<BR>2 - preidendo
-                    (cualquier valor entero)<BR>3 - preisor (cualquier valor entero)</P>
-                <HR>
-                <BR><A name="0A96"></A>
-                <PRE class="sb3">0A96: $ActorStruct = actor $PLAYER_ACTOR struct</PRE>
-                <P>0A96 almacena el puntero a la estructura del actor en la memoria del juego.
-                    La estructura es un conjunto de valores diferentes como salud, coordenadas,
-                    etc. Conociendo la direccion de la estructura, es posible read/rewrite estos
-                    valores usando 0A8D/0A8C.</P><B>Parametros:</B><BR>1 - variable para
-                almacenar la direccion de la estructura<BR>2 - Atributo del actor obtenido por
-                el codigo de operacion del constructor (009A y similar)
-                <HR>
-                <BR><A name="0A97"></A>
-                <PRE class="sb3">0A97: $CarStruct = car $MyCar struct</PRE>
-                <P>0A97 almacena el puntero a la estructura del vehiculo en la memoria del
-                    juego.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar la direccion
-                    de la estructura<BR>2 - identificador del vehiculo obtenido por el codigo de
-                    operacion del constructor (00A5 y similar)</P>
-                <HR>
-                <BR><A name="0A98"></A>
-                <PRE class="sb3">0A98: $ObjectStruct = object 0@ struct</PRE>
-                <P>0A98 almacena el puntero a la estructura del objeto en la memoria del
-                    juego.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar la direccion
-                    de la estructura<BR>2 - identificador de objeto obtenido por el codigo de
-                    operacion del constructor (0107 y similar)</P>
-                <HR>
-                <BR><A name="0A99"></A>
-                <PRE class="sb3">0A99: chdir 0</PRE>
-                <P>0A99 establece el directorio actual por
-                    defecto.<BR><BR><B>Parametros:</B><BR>0 - la carpeta raiz del juego se
-                    convierte en el directorio predeterminado<BR>1 - la carpeta de archivos de
-                    usuario se convierte en el directorio predeterminado</P>
-                <HR>
-                <BR><A name="0A9A"></A>
-                <PRE class="sb3">0A9A: $hFILE = openfile "settings.ini" mode 0x72  // IF and SET</PRE>
-                <P>0A9A abre el archivo para leer y escribir. Este codigo de operacion se puede
-                    usar como condicion: si el archivo no esta abierto, devuelve Falso, de lo
-                    contrario Verdadero.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar
-                    el manejador de archivo<BR>2 - nombre del archivo. Si la ruta es relativa, el
-                    archivo esta abierto de acuerdo con el directorio actual (codigo de operacion
-                    0A99).<BR>3 - modo abierto de archivo:<BR>0x6272 - abre el archivo binario
-                    para leer<BR>0x72 - abre el archivo de texto para leer<BR>0x6277 - abre el
-                    archivo binario para escribir<BR>0x77 - abre el archivo de texto para
-                    leer</P>
-                <HR>
-                <BR><A name="0A9B"></A>
-                <PRE class="sb3">0A9B: closefile $hFILE</PRE>
-                <P>0A9B cierra el archivo y libera la memoria.</P><B>Parametros</B><B>:</B> un
-                identificador para el archivo
-                <HR>
-                <BR><A name="0A9C"></A>
-                <PRE class="sb3">0A9C: 0@ = file $hFILE size </PRE>
-                <P>0A9C almacena el tamaño del archivo en bytes en una
-                    variable.<BR><BR><B>Parametros:</B><BR>1 - variable para almacenar el
-                    resultado<BR>2 - controlador de archivo</P>
-                <HR>
-                <BR><A name="0A9D"></A>
-                <PRE class="sb3">0A9D: readfile $hFILE size 2 to $150</PRE>
-                <P>0A9D lee el numero especificado de bytes del archivo abierto y los escribe
-                    en la region de memoria comenzando desde la direccion donde esta la variable.
-                    <BR><BR><B>Parametros:</B><BR>1 - manejar archivo<BR>2 - numero de bytes
-                    para leer desde el archivo<BR>3 - variable para almacenar el resultado. Si
-                    el numero de bytes entregados es mas de cuatro, el resto se escribira en la
-                    siguiente variable ($151 en este caso), y asi sucesivamente.</P>
-                <HR>
-                <BR><A name="0A9E"></A>
-                <PRE class="sb3">0A9E: writefile $hFILE size 128 from 0@</PRE>
-                <P>0A9E copia los datos comenzando desde la direccion, donde esta la variable
-                    (ultimo parametro), hasta el archivo.</P><B>Parametros:</B><BR>1 - manejar
-                archivo<BR>2 - numero de bytes para copiar<BR>3 - variable indico la posicion
-                inicial de escritura de datos. Si el tamaño de los datos es mas de 4 bytes,
-                el valor de la siguiente variable se leera y escribira en el archivo. En
-                este ejemplo, el archivo mantendra el volcado de todas las variables locales
-                de un hilo (32 variables con 4 bytes de longitud para cada uno = 128 bytes
-                para copiar).
-                <HR>
-                <BR><A name="0A9F"></A>
-                <PRE class="sb3">0A9F: 0@ = current_thread_pointer</PRE>
-                <P>0A9F almacena el puntero del hilo actual a una variable. Al conocer este
-                    puntero, es posible trabajar directamente con cualquier campo de subprocesos,
-                    como el nombre del subproceso, sus variables locales, IP base, etc...</P>
-                <HR>
-                <BR><A name="0AA0"></A>
-                <PRE class="sb3">0AA0: gosub_if_false @CREATE_NEW_ACTOR</PRE>
-                <P>0AA0 ejecuta un comando gosub si el resultado de la condicion es falso.
-                    Salvo esta diferencia, este codigo de operacion es el mismo que el 004D:
-                    jump_if_false y se puede utilizar en lugar de ella.<BR><BR><B>Parametros:</B>
-                    etiqueta donde se transfiere el hilo</P>
-                <HR>
-                <BR><A name="0AA1"></A>
-                <PRE class="sb3">0AA1: return_if_false</PRE>
-                <P>0AA1 ejecuta una devolucion si el resultado de la condicion es falso. Este
-                    es similar al 004D y se puede usar en lugar de este.</P>
-                <HR>
-                <BR><A name="0AA2"></A>
-                <PRE class="sb3">0AA2: $hLIB = load_library "CLEO\version.dll" // IF and SET</PRE>
-                <P>0AA2 carga una biblioteca DLL y almacena el control para una variable. Este
-                    codigo de operacion se puede usar como condicion: si la biblioteca no se
-                    carga, devuelve Falso, de lo contrario es
-                    Verdadero.</P><B>Parametros:</B><BR>1 – variable para almacenar el
-                identificador en una biblioteca (cualquier variable o elemento de matriz)<BR>2
-                - un nombre de biblioteca. Si la ruta es relativa (sin especificar un nombre
-                de disco), el archivo DLL se busca relativamente del directorio activo actual
-                (codigo de operacion 0A99). Si la extension del archivo no esta especificada,
-                se usara la extension predeterminada (.DLL).
-                <HR>
-                <BR><A name="0AA3"></A>
-                <PRE class="sb3">0AA3: free_library $hLIB</PRE>
-                <P>0AA3 descarga la biblioteca y libera la memoria. <BR><BR><B>Parameter:</B>
-                    manejar a la biblioteca</P>
-                <HR>
-                <BR><A name="0AA4"></A>
-                <PRE class="sb3">0AA4: $hPROC = get_proc_address "GetVersion" library $hLIB // IF and SET</PRE>
-                <P>0AA4 devuelve la direccion de la funcion DLL exportada especificada. Esta
-                    direccion se puede usar en los codigos de operacion del tipo de llamada. Este
-                    codigo de operacion se puede usar como condicion: si la funcion no se
-                    encuentra, devuelve Falso, de lo contrario es Verdadero.
-                    <BR><BR><B>Parametros:</B><BR>1 – variable para almacenar la direccion de la
-                    funcion.<BR>2 - nombre de la funcion (una cadena o una variable de cadena).
-                    Preste atencion a que get_proc_address es sensible a la letra del caso. Si la
-                    funcion se exporta con el nombre GetVersion, significa que, por ejemplo,
-                    get_proc_address "getversion" no encontrara dicha funcion. Debes especificar
-                    el nombre exacto. Tambien recuerde que Sanny Builder compila todas las
-                    cadenas en mayusculas por defecto. Significa que este ejemplo se compilara
-                    como "GETVERSION", por lo que la funcion GetVersion no se encontrara
-                    nuevamente. Para evitar eso, seleccione el caso de la carta "Como esta" en
-                    las opciones del programa.<BR>3 - identificador de biblioteca cargado
-                    (0AA2)</P>
-                <HR>
-                <BR><A name="0AA5"></A>
-                <PRE class="sb3">0AA5: call $hPROC num_params 1 pop 1 $param</PRE>
-                <P>0AA5 y codigos de operacion similares tienen un numero variable de
-                    parametros. Este codigo de operacion tiene al menos 3 parametros, y tambien
-                    otros (pasados al proceso llamado), cuyo numero y valores dependen del
-                    procedimiento llamado. El numero total de parametros adicionales debe ser
-                    igual al parametro num_params. Cada parametro pasado debe ser numerico
-                    (ajuste constante o variable), pero no cadena.<BR><BR><B>Parametros:</B><BR>1
-                    - direccion del proceso llamado Puede ser la direccion dentro de gta_sa.exe
-                    o dentro de un dll cargado.<BR>2 - numero de parametros para pasar al
-                    proceso.<BR>3 - numero de parametros que deben eliminarse de la pila despues
-                    de la ejecucion del proceso. Este valor debe estar dentro de un intervalo de
-                    cero a num_params. El valor exacto depende de la convencion de llamadas del
-                    procedimiento. Por lo general, los procedimientos exe no limpian la pila ellos
-                    mismos, por lo que el parametro pop en su mayoria es igual a num_params
-                    (todos los parametros pasados se eliminan de la pila despues de la ejecucion
-                    de proc).</P>
-                <HR>
-                <BR><A name="0AA6"></A>
-                <PRE class="sb3">0AA6: call_method $Destroy struct $CarStruct params 0 pop 0</PRE>
-                <P>0AA6 llama al proc para la clase. Cada clase tiene un conjunto de
-                    procedimientos llamados metodos para operar con los datos de la clase (como
-                    las clases SB para referencia). Llamamos al metodo Destroy de la clase
-                    CVehicle en este ejemplo. Con una condicion, es posible decir que este
-                    ejemplo es el mismo que el comando Car.Destroy
-                    ().</P><B>Parametros:</B><BR>1 - direccion del proceso llamado Puede ser la
-                direccion dentro de gta_sa.exe o dentro de un dll cargado.<BR>2 - puntero a
-                la estructura de clase (se puede obtener mediante los codigos de operacion
-                0A96 - 0A98).<BR>3 - numero de parametros para pasar<BR>4 - numero de
-                parametros que se eliminaran de la pila despues de la ejecucion del metodo.
-                Comunmente, los metodos limpian la pila ellos mismos, por lo que el
-                parametro pop debe ser igual a 0.
-                <HR>
-                <BR><A name="0AA7"></A>
-                <PRE class="sb3">0AA7: call_function 0x569660 num_params 2 pop 2  $COORD_X $COORD_Y $GROUND</PRE>
-                <P>0AA7 funcionan de manera similar al 0AA5 excepto que, ademas, hay una
-                    variable para mantener el resultado de la funcion llamada. Significa que el
-                    ultimo parametro aqui es siempre una variable. Por lo tanto, num_params no
-                    incluye este. Llamamos a la funcion en la direccion 0x569660 y le pasamos dos
-                    parametros X e Y en este ejemplo. El resultado de la funcion se almacenara en
-                    $GROUND.<BR><BR><B>Parametros:</B><BR>1 - direccion de la funcion llamada.
-                    Puede ser la direccion dentro de gta_sa.exe o dentro de un dll cargado.<BR>2
-                    - numero de parametros para pasar a la funcion<BR>3 - numero de parametros
-                    que deben eliminarse de la pila despues de la ejecucion de la funcion. Vea
-                    el 0AA5 para una explicacion.</P>
-                <HR>
-                <BR><A name="0AA8"></A>
-                <PRE class="sb3">0AA8: call_function_method 0x4048E0 struct 0xB74494  num_params 1 pop 0 $MyCar 0@</PRE>
-                <P>0AA8 llama a una funcion de la clase y almacena el resultado en una variable
-                    que siempre es el ultimo parametro. El principio de funcionamiento es similar a
-                    los codigos de operacion 0AA6 y 0AA7. Llamamos a la funcion en la direccion
-                    0x4048E0 y pasamos la palanca del vehiculo como parametro en este ejemplo.
-                    Struct 0xB74494 es una coleccion de todos los vehiculos del juego. 0x4048E0 es
-                    una funcion que convierte el identificador del vehiculo a su puntero struct
-                    (analogo del codigo de operacion 0A97). Este puntero se almacenara en la
-                    variable 0@.<BR><BR><B>Parametros:</B><BR>1 - direccion de la funcion
-                    llamada. Puede ser la direccion dentro de gta_sa.exe o dentro de un dll
-                    cargado.<BR>2 - puntero a la estructura de clase (se puede obtener mediante
-                    los codigos de operacion 0A96 - 0A98).<BR>3 - numero de parametros para
-                    pasar<BR>4 - numero de parametros que se eliminaran de la pila despues de la
-                    ejecucion del metodo. Comunmente, los metodos limpian la pila ellos mismos,
-                    por lo que el parametro pop debe ser igual a 0.</P>
-                <HR>
-                <BR><A name="0AA9"></A>
-                <PRE class="sb3">0AA9: is_game_version_original</PRE>
-                <P>Este opcode se usa como una condicion. Si trabaja con la version original de
-                    SA 1.0, devuelve True, de lo contrario es False. El opcode es util para
-                    escribir un guion multiversion.</P>
-                <HR>
-                <BR><A name="0AAB"></A>
-                <PRE class="sb3">0AAB:  file_exists "CLEO\version.dll"</PRE>
-                <P>0AAB prueba si existe un archivo especificado. Esta comprobacion forma parte
-                    de los codigos de operacion 0A9A y 0AA2, por lo que no es necesario
-                    duplicarlos.</P><B>Parametros:</B> nombre del archivo. Si la ruta es relativa
-                (sin especificar un nombre de disco), se busca relativamente del directorio
-                activo actual (codigo de operacion 0A99).
-                <HR>
-                <BR><A name="0AAC"></A>
-                <PRE class="sb3">0AAC: $hMP3 = load_mp3 "CLEO\playlist\01.mp3"</PRE>
-                <P>0AAC carga un archivo mp3 y almacena un control para una variable.
-                </P><B>Parametros:</B><BR>1 - variable para almacenar el controlador mp3<BR>2
-                - nombre de archivo mp3. Si la ruta es relativa (sin especificar un nombre de
-                disco), se busca relativamente del directorio activo actual (codigo de
-                operacion 0A99).
-                <HR>
-                <BR><A name="0AAD"></A>
-                <PRE class="sb3">0AAD: set_mp3 $hMP3 perform_action 1</PRE>
-                <P>Este codigo de operacion realiza la accion predefinida con el mp3
-                    cargado.</P><B>Parametros:</B><BR>1 - controlador de mp3 obtenido por
-                0AAC<BR>2 - un numero para especificar una accion:<BR> 0: parada<BR> 1:
-                jugar<BR> 2: pausa<BR> 3: reanudar
-                <HR>
-                <BR><A name="0AAE"></A>
-                <PRE class="sb3">0AAE: release_mp3 $hMP3</PRE>
-                <P>0AAE libera el archivo mp3 y libera la memoria.</P><B>Parametros:</B> controlador
-                mp3 obtenido por 0AAC.
-                <HR>
-                <BR><A name="0AAF"></A>
-                <PRE class="sb3">0AAF: 0@ = get_mp3_length $hMP3</PRE>
-                <P>Este codigo de operacion almacena la longitud de la pista en segundos del
-                    mp3 cargado en una variable.</P><B>Parametros:</B><BR>1 - variable para
-                almacenar el resultado<BR>2 - manejar mp3
-                <HR>
-                <BR><A name="0AB0"></A>
-                <PRE class="sb3">0AB0:  key_pressed 0x73</PRE>
-                <P>0AB0: key_pressed 0x73</P>0AB0 se usa como una condicion. Este codigo de
-                operacion prueba si la tecla esta presionada en el teclado. Si se presiona la
-                tecla con el codigo especificado, devuelve True, de lo contrario False.
-                <BR><BR><B>Parametros: </B>codigo de clave virtual.
-                <HR>
-                <BR>
-                <H5>Opcodes de CLEO 3</H5><BR><A name="0A92"></A>
-                <PRE class="sb3">0A92: create_custom_thread "ShowTextBox.s"</PRE>
-                <P>0A92 crea un nuevo hilo desde el archivo. Si el archivo tiene una extensión .cs, el hilo se crea automáticamente al inicio del juego. Al crear un hilo personalizado, puede pasarle hasta 34 parámetros, como en el código de operación 004F.</P><B>Parametros:</B> nombre del archivo. El nombre debe especificarse
-                con una extension si tiene uno. El archivo se recupera relativamente del
-                directorio 'game \ CLEO', que es la ruta predeterminada para cualquier
-                archivo CLEO.
-                <HR>
-                <BR><A name="0A93"></A>
-                <PRE class="sb3">0A93: end_custom_thread</PRE>
-                <P>0A93 finaliza el hilo CLEO personalizado. Este codigo de operacion debe
-                    usarse solo en los hilos CLEO (ni en CLEO-missions, ni en main.scm). En
-                    general, este codigo de operacion es un analogo del 004E.<BR>Para detener una
-                    mision CLEO, use el codigo de operacion
-                    004E.<BR><STRONG>Resumen</STRONG>:<BR>Para&nbsp;scripts normales, compilados en
-                    un archivo *.cs usa 0A93 y para scripts de misiones, compilados en
-                    *.cm&nbsp;004E</P>
-                <HR>
-                <BR><A name="0A94"></A>
-                <PRE class="sb3">0A94: start_custom_mission "missions\CustomMission1"</PRE>
-                <P>0A94 comienza una mision CLEO desde el archivo especificado como lo hace el
-                    0147. Mira que la extension de archivo no es necesaria para especificar. De
-                    hecho, el codigo de operacion buscara el archivo con la extension .cm (Mision
-                    personalizada). La mision comienza desde el archivo CLEO \ missions \
-                    CustomMission1.cm en este ejemplo.</P><B>Parametros:</B> nombre de archivo
-                sin una extension El archivo se recupera relativamente del directorio 'game
-                \CLEO’.
-                <HR>
-                <BR><A name="0A95" id="0A95"></A>
-                <PRE class="sb3">0A95: enable_thread_saving</PRE>
-                <P>0A95 habilita el indicador de ahorro para el hilo actual. Por defecto, el
-                    estado de los hilos CLEO no se guarda, y se ejecutan desde el principio cada
-                    vez que se inicia el juego. Para guardar el estado del hilo, sus variables
-                    locales y tal, agregue este codigo de operacion al script..</P>
-                <HR>
-                <BR><A name="0AAA" id="0AAA"></A>
-                <PRE class="sb3">0AAA: 0@ = thread 'OTB' pointer</PRE>
-                <P>This opcode tests if a thread with given name is active. If so, opcode will
-                    store the address of this thread to a variable. If a thread with given name
-                    is not found in the game memory, the variable's value will be
-                    0.<BR><BR><B>Parametros:</B><BR>1 - una variable para almacenar el resultado
-                    de la busqueda<BR>2 - un nombre de hilo para buscar</P>
-                <HR>
-                <BR><A name="0AB1"></A>
-                <PRE class="sb3">0AB1: call_scm_func @GetSQR 1 10 $result</PRE>
-                <P>Este codigo de operacion llama a una funcion SCM, le pasa los parametros y
-                    almacena el resultado en una variable (s). Los valores de parametros pasados
-                    se copian a las variables locales en serie, luego la ejecucion de la
-                    secuencia se transfiere a la etiqueta, se ejecuta el codigo alli y se
-                    devuelve despues del codigo de operacion 0AB2.<BR><B>Parametros:</B><BR>1 –
-                    label (SCM function beginning)<BR>2 – number of parameters to pass</P>Luego
-                estan los parametros pasados, un numero de 10 en nuestro caso. Despues de
-                eso, debe haber las variables para almacenar el resultado de una funcion SCM
-                (ver <A href="#0AB2">0AB2</A>).
-                <HR>
-                <BR><A name="0AB2"></A>
-                <PRE class="sb3">0AB2: ret 1 0@</PRE>
-                <P>Este codigo de operacion transfiere la ejecucion de la secuencia de comandos
-                    al codigo de operacion 0AB1 y almacena los valores devueltos en sus variables.
-                    <B>El numero total de valores devueltos debe ser igual al numero de
-                        variables que almacenan el resultado en el 0AB1. </B>En este ejemplo, el
-                    0AB2 devuelve un valor, que es el valor de la variable 0 @, este valor se
-                    copiara a la variable $result (consulte el ejemplo de 0AB1). Si el codigo de
-                    operacion 0AB2 no devuelve ningun valor, debe tener un 0 como el unico
-                    parametro, y el 0AB1 apropiado que llama a dicha funcion no debe tener
-                    variables para almacenar..</P><B>Parametros:</B><BR>1 - numero de valores a
-                devolver<BR>Despues de eso, estan los valores devueltos.
-                <HR>
-                <P>Este es un ejemplo simple de la funcion SCM calculando el numero
-                    cuadrado.</P>
-                <PRE class="sb3">0@ = 5<BR>0AB1: call_scm_func @GetSQR 1 10 $result
-end_thread
+<header></header>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<P>El uso de los siguientes opcodes solo es posible en la biblioteca CLEO 3 instalada. Al compilar Sanny Builder comprueba si la biblioteca esta instalada
+y, de no ser asi, advierte que es necesario. Si escribe una secuencia de comandos utilizando estos opcodes, debe incluir tambien los archivos
+de la biblioteca para garantizar su funcionalidad al usuario final.</P>
+<TABLE>
+<TBODY>
+  <TR>
+    <TD>
+      <A title="0A8C: write_memory 0xC0BC15 size 1 value 1 virtual_protect 0" href="#0A8C">Opcode 0A8C</A>
+    </TD>
+    <TD>
+      <A title="0A99: chdir 0" href="#0A99">Opcode 0A99</A>
+    </TD>
+    <TD>
+      <A title="0AA6: call_method $Destroy struct $CarStruct params 0 pop 0" href="#0AA6">Opcode 0AA6</A>
+    </TD>
+    <TD>
+      <A title="0AB3: var 0 = 10" href="#0AB3">Opcode 0AB3</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A8D: $result = read_memory 1@ size 4 virtual_protect 0" href="#0A8D">Opcode 0A8D</A>
+    </TD>
+    <TD>
+      <A title='0A9A: $hFILE = openfile "settings.ini" mode 0x72 // IF and SET' href="#0A9A" settings.ini?="" mode="" 0x72?="">Opcode 0A9A</A>
+    </TD>
+    <TD>
+      <A title="0AA7: call_function 0x569660 num_params 2 pop 2 $COORD_X $COORD_Y $GROUND" href="#0AA7">Opcode 0AA7</A>
+    </TD>
+    <TD>
+      <A title="0AB4: 0@= var 0" href="#0AB4">Opcode 0AB4</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A8E: 4@ = 5@ + 6@" href="#0A8E">Opcode 0A8E</A>
+    </TD>
+    <TD>
+      <A title="0A9B: closefile $hFILE" href="#0A9B">Opcode 0A9B</A>
+    </TD>
+    <TD>
+      <A title="0AA8: call_function_method 0x4048E0 struct 0xB74494 num_params 1 pop 0 $MyCar 0@" href="#0AA8">Opcode 0AA8</A>
+    </TD>
+    <TD>
+      <A title="0AB5: store_actor $PLAYER_ACTOR closest_vehicle_to 0@ closest_ped_to 1@" href="#0AB5">Opcode 0AB5</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A8F: $var = 0@(1@,2i) - 1" href="#0A8F">Opcode 0A8F</A>
+    </TD>
+    <TD>
+      <A title="0A9C: 0@ = file $hFILE size" href="#0A9C">Opcode 0A9C</A>
+    </TD>
+    <TD>
+      <A title="0AA9: is_game_version_original" href="#0AA9">Opcode 0AA9</A>
+    </TD>
+    <TD>
+      <A title="0AB6: store_target_marker_coords_to 0@ 1@ 2@" href="#0AB6">Opcode 0AB6</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A90: $var(0@,10i) = 100 * 1@" href="#0A90">Opcode 0A90</A>
+    </TD>
+    <TD>
+      <A title="0A9D: readfile $hFILE size 2 to $150" href="#0A9D">Opcode 0A9D</A>
+    </TD>
+    <TD>
+      <A title="0AAA: 0@ = thread 'OTB' pointer" href="#0AAA">Opcode 0AAA</A>
+      <A href="#0AAC"></A>
+    </TD>
+    <TD>
+      <A title="0AB7: get_vehicle $CAR number_of_gears_to 10@" href="#0AB7">Opcode 0AB7</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A91: $pre = 1 / 5" href="#0A91">Opcode 0A91</A>
+    </TD>
+    <TD>
+      <A title="0A9E: writefile $hFILE size 128 from 0@" href="#0A9E">Opcode 0A9E</A>
+    </TD>
+    <TD>
+      <A title="0AAB: file_exists " href="#0AAB" cleo\version.dll??="">Opcode 0AAB</A>
+      <A href="#0AAC"></A>
+    </TD>
+    <TD>
+      <A title="0AB8: get_vehicle $CAR current_gear_to 11@" href="#0AB8">Opcode 0AB8</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A92: create_custom_thread " href="#0A92" showtextbox.s??="">Opcode 0A92</A>
+    </TD>
+    <TD>
+      <A title="0A9F: 0@ = current_thread_pointer" href="#0A9F">Opcode 0A9F</A>
+    </TD>
+    <TD>
+      <A title="0AAC: $hMP3 = load_mp3 " href="#0AAC" cleo\playlist\01.mp3??="">Opcode 0AAC</A>
+    </TD>
+    <TD>
+      <A title="0AB9: get_mp3 $hMP3 state_to 7@" href="#0AB9">Opcode 0AB9</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A93: end_custom_thread" href="#0A93">Opcode 0A93</A>
+    </TD>
+    <TD>
+      <A title="0AA0: gosub_if_false @CREATE_NEW_ACTOR" href="#0AA0">Opcode 0AA0</A>
+      <A href="#0AA1"></A>
+    </TD>
+    <TD>
+      <A title="0AAD: set_mp3 $hMP3 perform_action 1" href="#0AAD">Opcode 0AAD</A>
+      <A href="#0AAE"></A>
+    </TD>
+    <TD>
+      <A title="0ABA: end_custom_thread_named 'BENZIN'" href="#0ABA">Opcode 0ABA</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A94: start_custom_mission " href="#0A94" missions\custommission1??="">Opcode 0A94</A>
+    </TD>
+    <TD>
+      <A title="0AA1: return_if_false" href="#0AA1">Opcode 0AA1</A>
+    </TD>
+    <TD>
+      <A title="0AAE: release_mp3 $hMP3" href="#0AAE">Opcode 0AAE</A>
+    </TD>
+    <TD>
+      <A title="0ABD: vehicle 0@ siren_on" href="#0ABD">Opcode 0ABD</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A95: enable_thread_saving" href="#0A95">Opcode 0A95</A>
+    </TD>
+    <TD>
+      <A title="0AA2: $hLIB = load_library " href="#0AA2" cleo\version.dll??="">Opcode 0AA2</A>
+    </TD>
+    <TD>
+      <A title="0AAF: 0@ = get_mp3_length $hMP3" href="#0AAF">Opcode 0AAF</A>
+    </TD>
+    <TD>
+      <A title="0ABE: vehicle 0@ engine_on" href="#0ABE">Opcode 0ABE</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A96: $ActorStruct = actor $PLAYER_ACTOR struct" href="#0A96">Opcode 0A96</A>
+      <A href="#0A95"></A>
+    </TD>
+    <TD>
+      <A title="0AA3: free_library $hLIB" href="#0AA3">Opcode 0AA3</A>
+    </TD>
+    <TD>
+      <A title="0AB0: key_pressed 0x73" href="#0AB0">Opcode 0AB0</A>
+    </TD>
+    <TD>
+      <A title="0ABF: set_vehicle 0@ engine_state_to 0" href="#0ABF">Opcode 0ABF</A>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A97: $CarStruct = car $MyCar struct" href="#0A97">Opcode 0A97</A>
+      <BR>
+    </TD>
+    <TD>
+      <A title="0AA4: $hPROC = get_proc_address " href="#0AA4" getversion?="" library="" $hlib?="">Opcode 0AA4</A>
+    </TD>
+    <TD>
+      <A title="0AB1: call_scm_func @GetSQR 1 10 $result" href="#0AB1">Opcode 0AB1</A>
+    </TD>
+    <TD></TD>
+  </TR>
+  <TR>
+    <TD>
+      <A title="0A98: $ObjectStruct = object 0@ struct" href="#0A98">Opcode 0A98</A>
+    </TD>
+    <TD>
+      <A title="0AA5: call $hPROC num_params 1 pop 1 $param" href="#0AA5">Opcode 0AA5</A>
+    </TD>
+    <TD>
+      <A title="0AB2: ret 1 0@" href="#0AB2">Opcode 0AB2</A>
+    </TD>
+    <TD></TD>
+  </TR>
+</TBODY>
+</TABLE>
+<H5>Opcodes de CLEO 2</H5>
+<A name="0A8C"></A>
+<PRE class="sb3">0A8C: write_memory 0xC0BC15 size 1 value 1 virtual_protect 0</PRE>
+<P>0A8C escribe un valor en la memoria del juego.
+<h5>Parametros</h5>1 - direccion de memoria (cualquier valor entero)
+<BR>2 - numero de bytes para escribir: 1, 2 o 4 bytes
+<BR>3 - valor para escribir (cualquier numero)
+<BR>4 - Proteccion virtual: use 1 para escribir en la direccion de solo lectura, 0 - si la direccion es regrabable. </P>
+<HR>
+<BR>
+<A name="0A8D"></A>
+<PRE class="sb3">0A8D: $result = read_memory 1@ size 4 virtual_protect 0</PRE>
+<P>0A8D lee la memoria del juego y almacena el resultado en una variable.
+<h5>Parametros</h5>1 - variable para almacenar el resultado de lectura (cualquier variable o elemento de un arreglo)
+<BR>2 - direccion de la memoria para leer (cualquier valor entero)
+<BR>3 - numero de bytes para leer: 1, 2 o 4 bytes
+<BR>4 - Proteccion virtual: use 1 si la direccion es ilegible, 0 - si la direccion es legible. </P>
+<HR>
+<BR>
+<A name="0A8E"></A>
+<PRE class="sb3">0A8E: 4@ = 5@ + 6@ // int </PRE>
+<P>0A8E resume dos valores y almacena el resultado en una variable.
+<h5>Parametros</h5>1 - variable para almacenar suma (cualquier variable o elemento de un arreglo)
+<BR>2 - primer elemento (cualquier valor entero)
+<BR>3 - segundo elemento (cualquier valor entero)</P>
+<HR>
+<BR>
+<A name="0A8F"></A>
+<PRE class="sb3">0A8F: $var = 0@(1@,2i) - 1 // int </PRE>
+<P>0A8F resta un valor entero de otro y almacena el resultado en una variable.
+<h5>Parametros</h5>
+1 - Variable para almacenar diferencia (cualquier variable o elemento de un arreglo)
+<BR>2 - minuendo (cualquier valor entero)
+<BR>3 - sustraendo (cualquier valor entero)</P>
+<HR>
+<BR>
+<A name="0A90"></A>
+<PRE class="sb3">0A90: $var(0@,10i) = 100 * 1@ // int </PRE>
+<P>0A90 multiplica un numero entero por otro y almacena el resultado en una variable.
+<h5>Parametros</h5>1 - variable para almacenar producto (cualquier variable o elemento de un arreglo)
+<BR>2 - multiplicador (cualquier valor entero)
+<BR>3 - multiplicador (cualquier valor entero)</P>
+<HR>
+<BR>
+<A name="0A91"></A>
+<PRE class="sb3">0A91: $pre = 1 / 5 // int</PRE>
+<P>0A91 preide un numero entero por otro y almacena el resultado en una variable sin el resto.
+<h5>Parametros</h5>1 - variable para almacenar el resultado (cualquier variable o elemento de un arreglo)
+<BR>2 - preidendo (cualquier valor entero)
+<BR>3 - preisor (cualquier valor entero)</P>
+<HR>
+<BR>
+<A name="0A96"></A>
+<PRE class="sb3">0A96: $ActorStruct = actor $PLAYER_ACTOR struct</PRE>
+<P>0A96 almacena las instrucciones de estructura del actor en la memoria del juego. La estructura es un conjunto de valores diferentes como salud,
+coordenadas, etc. Conociendo la direccion de la estructura, es posible read/rewrite estos valores usando 0A8D/0A8C.</P>
+<h5>Parametros</h5>1 - variable para almacenar la direccion de la estructura
+<BR>2 - Atributo del actor obtenido por el opcode del constructor (009A y similar)
+<HR>
+<BR>
+<A name="0A97"></A>
+<PRE class="sb3">0A97: $CarStruct = car $MyCar struct</PRE>
+<P>0A97 almacena las instrucciones de estructura del vehiculo en la memoria del juego.
+<h5>Parametros</h5>1 - variable para almacenar la direccion de la estructura
+<BR>2 - identificador del vehiculo obtenido por el codigo de operacion del constructor (00A5 y similar)</P>
+<HR>
+<BR>
+<A name="0A98"></A>
+<PRE class="sb3">0A98: $ObjectStruct = object 0@ struct</PRE>
+<P>0A98 almacena las instrucciones de estructura del objeto en la memoria del juego.
+<h5>Parametros</h5>1 - variable para almacenar la direccion de la estructura
+<BR>2 - identificador de objeto obtenido por el codigo de operacion del constructor (0107 y similar)</P>
+<HR>
+<BR>
+<A name="0A99"></A>
+<PRE class="sb3">0A99: chdir 0</PRE>
+<P>0A99 establece el directorio actual por defecto.
+<h5>Parametros</h5>0 - la carpeta raiz del juego se convierte en el directorio predeterminado
+<BR>1 - la carpeta de archivos de usuario se convierte en el directorio predeterminado</P>
+<HR>
+<BR>
+<A name="0A9A"></A>
+<PRE class="sb3">
+0A9A: $hFILE = openfile "settings.ini" mode 0x72 // IF and SET
+</PRE>
+<P>Crea, lee, escribe y destruye archivo.<br>
+Este opcode se puede usar como condicion: sí el archivo no esta abierto, devuelve Falso, de lo contrario
+Verdadero.
+<h5>Parametros</h5>
+<ul>
+ <li>1 - variable para almacenar y manipular el archivo
+ <li>2 - nombre del archivo. Si la ruta es relativa, el archivo esta abierto de acuerdo con el directorio actual (opcode 0A99).
+ <li>3 - modo abierto de archivo:
+ <dl>
+  <dd><code class=sb3>0x6272</code> - Leer en modo binario
+  <dd><code class=sb3>0x72</code> - Leer en texto plano
+  <dd><code class=sb3>0x6277</code> - Escribir en modo binario
+  <dd><code class=sb3>0x77</code> - Escribir en texto plano
+ </dl>
+</P>
+<HR>
+<BR>
+<A name="0A9B"></A>
+<PRE class="sb3">0A9B: closefile $hFILE</PRE>
+<P>0A9B cierra el archivo y libera la memoria.</P>
+<B>Parametros</B>
+<B>:</B> un identificador para el archivo
+<HR>
+<BR>
+<A name="0A9C"></A>
+<PRE class="sb3">0A9C: 0@ = file $hFILE size </PRE>
+<P>0A9C almacena el tamaño del archivo en bytes en una variable.
+<h5>Parametros</h5>1 - variable para almacenar el resultado
+<BR>2 - controlador de archivo</P>
+<HR>
+<BR>
+<A name="0A9D"></A>
+<PRE class="sb3">0A9D: readfile $hFILE size 2 to $150</PRE>
+<P>0A9D lee el numero especificado de bytes del archivo abierto y los escribe en la region de memoria comenzando desde la direccion donde esta la
+variable.
+<h5>Parametros</h5>1 - manejar archivo
+<BR>2 - numero de bytes para leer desde el archivo
+<BR>3 - variable para almacenar el resultado. Si el numero de bytes entregados es mas de cuatro, el resto se escribira en la siguiente variable ($151
+en este caso), y asi sucesivamente.</P>
+<HR>
+<BR>
+<A name="0A9E"></A>
+<PRE class="sb3">0A9E: writefile $hFILE size 128 from 0@</PRE>
+<P>0A9E copia los datos comenzando desde la direccion, donde esta la variable (ultimo parametro), hasta el archivo.</P>
+<h5>Parametros</h5>1 - manejar archivo
+<BR>2 - numero de bytes para copiar
+<BR>3 - variable indico la posicion inicial de escritura de datos. Si el tamaño de los datos es mas de 4 bytes, el valor de la siguiente variable se
+leera y escribira en el archivo. En este ejemplo, el archivo mantendra el volcado de todas las variables locales de un hilo (32 variables con 4
+bytes de longitud para cada uno = 128 bytes para copiar).
+<HR>
+<BR>
+<A name="0A9F"></A>
+<PRE class="sb3">0A9F: 0@ = current_thread_pointer</PRE>
+<P>0A9F almacena el puntero del hilo actual a una variable. Al conocer este puntero, es posible trabajar directamente con cualquier campo de subprocesos,
+como el nombre del subproceso, sus variables locales, IP base, etc...</P>
+<HR>
+<BR>
+<A name="0AA0"></A>
+<PRE class="sb3">0AA0: gosub_if_false @CREATE_NEW_ACTOR</PRE>
+<P>0AA0 ejecuta un comando gosub si el resultado de la condicion es falso. Salvo esta diferencia, este opcode es el mismo que el 004D: jump_if_false
+y se puede utilizar en lugar de ella.
+<h5>Parametros:</h5> etiqueta donde se transfiere el hilo</P>
+<HR>
+<BR>
+<A name="0AA1"></A>
+<PRE class="sb3">0AA1: return_if_false</PRE>
+<P>0AA1 ejecuta una devolucion si el resultado de la condicion es falso. Este es similar al 004D y se puede usar en lugar de este.</P>
+<HR>
+<BR>
+<A name="0AA2"></A>
+<PRE class="sb3">
+0AA2: $hLIB = load_library "CLEO\version.dll" // IF and SET
+</PRE>
+<P>0AA2 carga una biblioteca DLL y almacena el control para una variable. Este opcode se puede usar como condicion: si la biblioteca no se carga,
+devuelve Falso, de lo contrario es Verdadero.</P>
+<h5>Parametros</h5>1 – variable para almacenar el identificador en una biblioteca (cualquier variable o elemento de un arreglo)
+<BR>2 - un nombre de biblioteca. Si la ruta es relativa (sin especificar un nombre de disco), el archivo DLL se busca relativamente del directorio
+activo actual (opcode 0A99). Si la extension del archivo no esta especificada, se usara la extension predeterminada (.DLL).
+<HR>
+<BR>
+<A name="0AA3"></A>
+<PRE class="sb3">0AA3: free_library $hLIB</PRE>
+<P>0AA3 descarga la biblioteca y libera la memoria.
+<BR>
+<BR>
+<B>Parameter:</B> manejar a la biblioteca</P>
+<HR>
+<BR>
+<A name="0AA4"></A>
+<PRE class="sb3">
+0AA4: $hPROC = get_proc_address "GetVersion" library $hLIB // IF and SET
+</PRE>
+<P>0AA4 devuelve la direccion de la funcion DLL exportada especificada. Esta direccion se puede usar en los opcodes del tipo de llamada. Este opcode
+se puede usar como condicion: si la funcion no se encuentra, devuelve Falso, de lo contrario es Verdadero.
+<h5>Parametros</h5>1 – variable para almacenar la direccion de la funcion.
+<BR>2 - nombre de la funcion (una cadena o una variable de cadena). Preste atencion a que get_proc_address es sensible a la letra del caso. Si la
+funcion se exporta con el nombre GetVersion, significa que, por ejemplo, get_proc_address "getversion" no encontrara dicha funcion. Debes especificar
+el nombre exacto. Tambien recuerde que Sanny Builder compila todas las cadenas en mayusculas por defecto. Significa que este ejemplo se compilara
+como "GETVERSION", por lo que la funcion GetVersion no se encontrara nuevamente. Para evitar eso, seleccione el caso de la carta "Como esta"
+en las opciones del programa.
+<BR>3 - identificador de biblioteca cargado (0AA2)</P>
+<HR>
+<BR>
+<A name="0AA5"></A>
+<PRE class="sb3">0AA5: call $hPROC num_params 1 pop 1 $param</PRE>
+<P>0AA5 y opcodes similares tienen un numero variable de parametros. Este opcode tiene al menos 3 parametros, y tambien otros (pasados al proceso
+llamado), cuyo numero y valores dependen del procedimiento llamado. El numero total de parametros adicionales debe ser igual al parametro num_params.
+Cada parametro pasado debe ser numerico (ajuste constante o variable), pero no cadena.
+<h5>Parametros</h5>1 - direccion del proceso llamado Puede ser la direccion dentro de gta_sa.exe o dentro de un dll cargado.
+<BR>2 - numero de parametros para pasar al proceso.
+<BR>3 - numero de parametros que deben eliminarse de la pila despues de la ejecucion del proceso. Este valor debe estar dentro de un intervalo de
+cero a num_params. El valor exacto depende de la convencion de llamadas del procedimiento. Por lo general, los procedimientos exe no limpian
+la pila ellos mismos, por lo que el parametro pop en su mayoria es igual a num_params (todos los parametros pasados se eliminan de la pila despues
+de la ejecucion de proc).</P>
+<HR>
+<BR>
+<A name="0AA6"></A>
+<PRE class="sb3">0AA6: call_method $Destroy struct $CarStruct params 0 pop 0</PRE>
+<P>0AA6 llama al proc para la clase. Cada clase tiene un conjunto de procedimientos llamados metodos para operar con los datos de la clase (como las
+clases SB para referencia). Llamamos al metodo Destroy de la clase CVehicle en este ejemplo. Con una condicion, es posible decir que este ejemplo
+es el mismo que el comando Car.Destroy ().</P>
+<h5>Parametros</h5>1 - direccion del proceso llamado Puede ser la direccion dentro de gta_sa.exe o dentro de un dll cargado.
+<BR>2 - puntero a la estructura de clase (se puede obtener mediante los opcodes 0A96 - 0A98).
+<BR>3 - numero de parametros para pasar
+<BR>4 - numero de parametros que se eliminaran de la pila despues de la ejecucion del metodo. Comunmente, los metodos limpian la pila ellos mismos,
+por lo que el parametro pop debe ser igual a 0.
+<HR>
+<BR>
+<A name="0AA7"></A>
+<PRE class="sb3">0AA7: call_function 0x569660 num_params 2 pop 2 $COORD_X $COORD_Y $GROUND</PRE>
+<P>0AA7 funcionan de manera similar al 0AA5 excepto que, ademas, hay una variable para mantener el resultado de la funcion llamada. Significa que
+el ultimo parametro aqui es siempre una variable. Por lo tanto, num_params no incluye este. Llamamos a la funcion en la direccion 0x569660 y
+le pasamos dos parametros X e Y en este ejemplo. El resultado de la funcion se almacenara en $GROUND.
+<h5>Parametros</h5>1 - direccion de la funcion llamada. Puede ser la direccion dentro de gta_sa.exe o dentro de un dll cargado.
+<BR>2 - numero de parametros para pasar a la funcion
+<BR>3 - numero de parametros que deben eliminarse de la pila despues de la ejecucion de la funcion. Vea el 0AA5 para una explicacion.</P>
+<HR>
+<BR>
+<A name="0AA8"></A>
+<PRE class="sb3">0AA8: call_function_method 0x4048E0 struct 0xB74494 num_params 1 pop 0 $MyCar 0@</PRE>
+<P>0AA8 llama a una funcion de la clase y almacena el resultado en una variable que siempre es el ultimo parametro. El principio de funcionamiento
+es similar a los opcodes 0AA6 y 0AA7. Llamamos a la funcion en la direccion 0x4048E0 y pasamos la palanca del vehiculo como parametro en este
+ejemplo. Struct 0xB74494 es una coleccion de todos los vehiculos del juego. 0x4048E0 es una funcion que convierte el identificador del vehiculo
+a su puntero struct (analogo del opcode 0A97). Este puntero se almacenara en la variable 0@.
+<h5>Parametros</h5>1 - direccion de la funcion llamada. Puede ser la direccion dentro de gta_sa.exe o dentro de un dll cargado.
+<BR>2 - puntero a la estructura de clase (se puede obtener mediante los opcodes 0A96 - 0A98).
+<BR>3 - numero de parametros para pasar
+<BR>4 - numero de parametros que se eliminaran de la pila despues de la ejecucion del metodo. Comunmente, los metodos limpian la pila ellos mismos,
+por lo que el parametro pop debe ser igual a 0.</P>
+<HR>
+<BR>
+<A name="0AA9"></A>
+<PRE class="sb3">0AA9: is_game_version_original</PRE>
+<P>Este opcode se usa como una condicion. Si trabaja con la version original de SA 1.0, devuelve True, de lo contrario es False. El opcode es util
+para escribir un guion multiversion.</P>
+<HR>
+<BR>
+<A name="0AAB"></A>
+<PRE class="sb3">0AAB: file_exists "CLEO\version.dll"</PRE>
+<P>0AAB prueba si existe un archivo especificado. Esta comprobacion forma parte de los opcodes 0A9A y 0AA2, por lo que no es necesario duplicarlos.</P>
+<h5>Parametros:</h5> nombre del archivo. Si la ruta es relativa (sin especificar un nombre de disco), se busca relativamente del directorio activo
+actual (opcode 0A99).
+<HR>
+<BR>
+<A name="0AAC"></A>
+<PRE class="sb3">0AAC: $hMP3 = load_mp3 "CLEO\playlist\01.mp3"</PRE>
+<P>0AAC carga un archivo mp3 y almacena un control para una variable. </P>
+<h5>Parametros</h5>1 - variable para almacenar el controlador mp3
+<BR>2 - nombre de archivo mp3. Si la ruta es relativa (sin especificar un nombre de disco), se busca relativamente del directorio activo actual (codigo
+de operacion 0A99).
+<HR>
+<BR>
+<A name="0AAD"></A>
+<PRE class="sb3">0AAD: set_mp3 $hMP3 perform_action 1</PRE>
+<P>Este opcode realiza la accion predefinida con el mp3 cargado.</P>
+<h5>Parametros</h5>1 - controlador de mp3 obtenido por 0AAC
+<BR>2 - un numero para especificar una accion:
+<BR> 0: parada
+<BR> 1: jugar
+<BR> 2: pausa
+<BR> 3: reanudar
+<HR>
+<BR>
+<A name="0AAE"></A>
+<PRE class="sb3">0AAE: release_mp3 $hMP3</PRE>
+<P>0AAE libera el archivo mp3 y libera la memoria.</P>
+<h5>Parametros:</h5> controlador mp3 obtenido por 0AAC.
+<HR>
+<BR>
+<A name="0AAF"></A>
+<PRE class="sb3">0AAF: 0@ = get_mp3_length $hMP3</PRE>
+<P>Este opcode almacena la longitud de la pista en segundos del mp3 cargado en una variable.</P>
+<h5>Parametros</h5>1 - variable para almacenar el resultado
+<BR>2 - manejar mp3
+<HR>
+<BR>
+<A name="0AB0"></A>
+<PRE class="sb3">0AB0: key_pressed 0x73</PRE>
+<P>0AB0: key_pressed 0x73</P>0AB0 se usa como una condicion. Este codigo de operacion prueba si la tecla esta presionada en el teclado. Si se presiona
+la tecla con el codigo especificado, devuelve True, de lo contrario False.
+<BR>
+<BR>
+<B>Parametros: </B>codigo de clave virtual.
+<HR>
+<BR>
+<H5>Opcodes de CLEO 3</H5>
+<BR>
+<A name="0A92"></A>
+<PRE class="sb3">0A92: create_custom_thread "ShowTextBox.s"</PRE>
+<P>0A92 crea un nuevo hilo desde el archivo. Si el archivo tiene una extensión .cs, el hilo se crea automáticamente al inicio del juego. Al crear
+un hilo personalizado, puede pasarle hasta 34 parámetros, como en el código de operación 004F.</P>
+<h5>Parametros:</h5> nombre del archivo. El nombre debe especificarse con una extension si tiene uno. El archivo se recupera relativamente del directorio
+'game \ CLEO', que es la ruta predeterminada para cualquier archivo CLEO.
+<HR>
+<BR>
+<A name="0A93"></A>
+<PRE class="sb3">0A93: end_custom_thread</PRE>
+<P>0A93 finaliza el hilo CLEO personalizado. Este opcode debe usarse solo en los hilos CLEO (ni en CLEO-missions, ni en main.scm). En general, este
+opcode es un analogo del 004E.
+<BR>Para detener una mision CLEO, use el opcode 004E.
+<BR>
+<STRONG>Resumen</STRONG>:
+<BR>Para&nbsp;scripts normales, compilados en un archivo *.cs usa 0A93 y para scripts de misiones, compilados en *.cm&nbsp;004E</P>
+<HR>
+<BR>
+<A name="0A94"></A>
+<PRE class="sb3">0A94: start_custom_mission "missions\CustomMission1"</PRE>
+<P>0A94 comienza una mision CLEO desde el archivo especificado como lo hace el 0147. Mira que la extension de archivo no es necesaria para especificar.
+De hecho, el opcode buscara el archivo con la extension .cm (Mision personalizada). La mision comienza desde el archivo CLEO \ missions \ CustomMission1.cm
+en este ejemplo.</P>
+<h5>Parametros:</h5> nombre de archivo sin una extension El archivo se recupera relativamente del directorio 'game \CLEO’.
+<HR>
+<BR>
+<A name="0A95" id="0A95"></A>
+<PRE class="sb3">0A95: enable_thread_saving</PRE>
+<P>0A95 Registra y almacena el estado del script, ya que por defecto, el estado de los hilos(threads) CLEO no se guardan, esto hace que se ejecuten
+desde el principio cada vez que se inicia el juego. Entonces para guardar el estado del hilo, sus variables locales y demas, agregue este opcode
+al script..</P>
+<HR>
+<BR>
+<A name="0AAA" id="0AAA"></A>
+<PRE class="sb3">0AAA: 0@ = thread 'OTB' pointer</PRE>
+<P>Este código de operación prueba si un hilo con un nombre de pila está activo. Si es así, el código de operación almacenará la dirección de este hilo en una variable. Si no se encuentra un hilo con el nombre dado en la memoria del juego, el valor de la variable será 0.
+<h5>Parametros</h5>1 - una variable para almacenar el resultado de la busqueda
+<BR>2 - un nombre de hilo para buscar</P>
+<HR>
+<BR>
+<A name="0AB1"></A>
+<PRE class="sb3">0AB1: call_scm_func @GetSQR 1 10 $result</PRE>
+<P>Este opcode llama a una funcion SCM, le pasa los parametros y almacena el resultado en una variable (s). Los valores de parametros pasados se copian
+a las variables locales en serie, luego la ejecucion de la secuencia se transfiere a la etiqueta, se ejecuta el codigo alli y se devuelve despues
+del opcode 0AB2.
+<BR>
+<h5>Parametros</h5>1 – label (SCM function beginning)
+<BR>2 – number of parameters to pass</P>Luego estan los parametros pasados, un numero de 10 en nuestro caso. Despues de eso, debe haber las variables
+para almacenar el resultado de una funcion SCM (ver
+<A href="#0AB2">0AB2</A>).
+<HR>
+<BR>
+<A name="0AB2"></A>
+<PRE class="sb3">0AB2: ret 1 0@</PRE>
+<P>Este opcode transfiere la ejecucion de la secuencia de comandos al opcode 0AB1 y almacena los valores devueltos en sus variables.
+<B>El numero total de valores devueltos debe ser igual al numero de variables que almacenan el resultado en el 0AB1. </B>En este ejemplo, el 0AB2 devuelve un valor, que es el valor de la variable 0 @, este valor se copiara a la variable $result (consulte el ejemplo
+de 0AB1). Si el codigo de operacion 0AB2 no devuelve ningun valor, debe tener un 0 como el unico parametro, y el 0AB1 apropiado que llama a dicha
+funcion no debe tener variables para almacenar..</P>
+<h5>Parametros</h5>1 - numero de valores a devolver
+<BR>Despues de eso, estan los valores devueltos.
+<HR>
+<P>Este es un ejemplo simple de la funcion SCM calculando el numero cuadrado.</P>
+<PRE class="sb3">
+0@ = 5
+0AB1: call_scm_func @GetSQR 1 10 $resultend_thread
 ...
 :GetSQR
-006A: 0@ *= 0@ 
+    006A: 0@ *= 0@
 0AB2: ret 1 0@
 </PRE>
-                <P>Como funciona. En primer lugar, el juego llega al codigo de operacion 0AB1.
-                    El juego lee la cantidad de parametros a pasar (1) y sus valores (10). La
-                    variable 0 @ del hilo actual equivale a 10 (si hubiera mas parametros para
-                    pasar, el siguiente se copiara a 1 @, luego 2 @ y asi sucesivamente). Despues
-                    de eso, el hilo salta a la etiqueta @GetSQR. Aqui se calcula el numero
-                    cuadrado (de un valor en el 0 @). Nuevamente, si hubiera mas parametros, los
-                    valores de 1 @, 2 @ etc. pueden tomarse en cuenta, si es necesario. Despues
-                    del calculo, el juego llega al codigo de operacion 0AB2. El valor de 0 @ es
-                    igual a 10 * 10 = 100 en este momento. Luego sucede lo siguiente: los valores
-                    devueltos (0 @) se copian a la (s) variable (s) que esta escrita en el
-                    codigo de operacion 0AB1 que llamo a esta funcion. En nuestro ejemplo, dicha
-                    variable es $ result. Despues de almacenar el resultado, el hilo vuelve al
-                    0AB1 y llega al comando end_thread. El valor de $ result es igual a 100 (que
-                    es cuadrado de 10) en este momento. <BR>Finalmente diga que 0AB2 podria
-                    devolver no solo los valores de las variables, sino tambien las constantes
-                    numericas. Por ejemplo, 0AB2: ret 1 1 siempre almacenara 1 en el resultado.
-                </P>
-                <P>Tambien preste atencion a que las variables locales se mantienen sin cambios
-                    despues de la funcion de llamada. En este ejemplo, la variable 0 @ contiene un
-                    valor de 5 antes de 0AB1. A pesar de que esta variable se uso en la funcion,
-                    despues de la llamada todavia es igual a 5. Esto cubre las 32 variables
-                    locales, por lo que puede trabajar libremente con ellas dentro de una funcion
-                    sin temor a perder datos. </P>
-                <HR>
-                <BR>
-                <PRE class="sb3">0AB3: var 0 = 10</PRE>
-                <P>0AB3 establece un nuevo valor de la variable global CLEO. Estas variables se
-                    pueden usar para la comunicacion de datos entre hilos CLEO, o entre CLEO y
-                    main.scm. El numero total de tales variables es 100. Sus valores se guardan en
-                    el guardado CLEO. <BR>Estas variables se pueden usar en main.scm como
-                    alternativa a las variables globales comunes. </P>
-                <P><B>Parametros: </B><BR>1 - ID de variable global. Deberia estar en un rango
-                    de 0.999 <BR>2 - nuevo valor para la variable. (cualquier numero).
-                    <HR>
-                    <P></P>
-                    <PRE class="sb3">0AB4: 0@= var 0</PRE>
-                    <P>0AB4 almacena en una variable el valor de la variable global CLEO. En este
-                        ejemplo, el 0 @ sera igual a 10 (vea 0AB3). </P>
-                    <P><B>Parametros: </B><BR>1 - variable para almacenar el valor global de la
-                        variable CLEO <BR>2 - ID global de la variable CLEO. Debe estar en el rango
-                        de 0..999.
-                        <HR>
-                        <BR><A name="0AB5"></A>
-                        <P></P>
-                        <PRE class="sb3">0AB5: store_actor $PLAYER_ACTOR closest_vehicle_to 0@ closest_ped_to 1@</PRE>
-                        <P>Este codigo de operacion almacena las variables identificadores de un
-                            vehiculo y el objeto que esta mas cerca del actor. Si no hay ningun vehiculo o
-                            ped cerca de el, la variable adecuada contendra el valor de -1.
-                            <BR><BR><B>Parametros: </B><BR>1 - Atributo del actor <BR>2 - variable para
-                            almacenar un vehiculo mas cercano a el <BR>3 - variable para almacenar un ped
-                            que esta mas cerca de el </P>
-                        <HR>
-                        <BR><A name="0AB6"></A>
-                        <PRE class="sb3">0AB6: store_target_marker_coords_to 0@ 1@ 2@ // IF and SET</PRE>
-                        <P>Este codigo de operacion almacena las coordenadas de las variables del lugar
-                            marcado con el punto de destino rojo en el mapa (haga clic derecho en el
-                            mapa). Si el punto objetivo no existe, las variables no cambian sus valores.
-                            <BR><BR><B>Parametros: </B><BR>1,2,3 - variables para almacenar coordenadas
-                            XYZ </P>
-                        <HR>
-                        <BR><A name="0AB7"></A>
-                        <PRE class="sb3">0AB7: get_vehicle $CAR number_of_gears_to 10@</PRE>
-                        <P>El codigo de operacion 0AB7 almacena una cantidad total variable de
-                            engranajes para el vehiculo especificado. Este numero es igual al parametro
-                            TransmissionData.nNumberOfGears en el archivo handling.cfg.
-                            <BR><BR><B>Parametros: </B><BR>1 - una manija del vehiculo <BR>2 - variable
-                            para almacenar el numero de engranajes </P>
-                        <HR>
-                        <BR><A name="0AB8"></A>
-                        <PRE class="sb3">0AB8: get_vehicle $CAR current_gear_to 11@</PRE>
-                        <P>Este codigo de operacion almacena una cantidad variable de equipo actual
-                            para el vehiculo especificado. <BR><BR><B>Parametros: </B><BR>1 - una manija
-                            del vehiculo <BR>2 - variable para almacenar el engranaje actual </P>
-                        <HR>
-                        <BR><A name="0AB9"></A>
-                        <PRE class="sb3">0AB9: get_mp3 $hMP3 state_to 7@</PRE>
-                        <P>Este codigo de operacion almacena a una variable un estado de un archivo
-                            MP3. <BR><BR><B>Parametros: </B><BR>1 - manejador de un archivo mp3 cargado
-                            (opcode <A href="Cleo_OP.htm#0AAC">0AAC </A>) <BR>2 - variable para almacenar
-                            el estado del archivo mp3: <BR>1 - archivo esta jugando <BR>2 - archivo en
-                            pausa <BR>-1 - el archivo esta detenido </P>
-                        <HR>
-                        <BR><A name="0ABA"></A>
-                        <PRE class="sb3">0ABA: end_custom_thread_named 'BENZIN'</PRE>
-                        <P>0ABA termina un CLEO-hilo con el nombre dado. Un hilo recibe su nombre con
-                            el codigo de operacion 03A4. Si el hilo no fue nombrado con 03A4, el hilo
-                            recibe su nombre por las primeras 7 letras del nombre del archivo. Por
-                            ejemplo, el hilo del archivo test.cs tendra el nombre 'test.cs'; El opcode
-                            0ABA termina inmediatamente la ejecucion de un hilo con el nombre dado. Este
-                            codigo de operacion es el mismo que 0459, pero esta hecho para los scripts
-                            CLEO. <BR><BR><B>Parametros: </B><BR>1 - nombre del hilo para terminar .</P>
-                        <HR>
-                        <BR><A name="0ABD" id="0ABD"></A>
-                        <PRE class="sb3">0ABD: vehicle 0@ siren_on</PRE>
-                        <P>0ABD comprueba si la sirena del vehiculo 0@ Esta encendido. Si es asi, la
-                            condicion sera verdadera. <BR><BR><B>Parametros: </B><BR>1 - controlador del
-                            vehiculo </P>
-                        <HR>
-                        <BR><A name="0ABE" id="0ABE"></A>
-                        <PRE class="sb3">0ABE: vehicle 0@ engine_on</PRE>
-                        <P>0ABE comprueba si el motor del vehiculo 0@ Esta encendido. Si es asi, la
-                            condicion sera verdadera. <BR><BR><B>Parametros: </B><BR>1 - controlador del
-                            vehiculo </P>
-                        <HR>
-                        <BR><A name="0ABF"></A>
-                        <PRE class="sb3">0ABF: set_vehicle 0@ engine_state_to 0</PRE>
-                        <P>0ABF habilita o deshabilita el motor del vehiculo. <BR><BR><B>Parametros:
-                            </B><BR>1 - controlador del vehiculo <BR>2 - nuevo estado del motor: <BR>0 -
-                            apagado <BR>1 - encendido </P>
-                        <P></P>
-            </DIV>
-            <SCRIPT src="jQuery.js"></SCRIPT>
-            <SCRIPT src="HL.js"></SCRIPT>
-        </DIV>
-    </DIV>
+<P>Como funciona. En primer lugar, el juego llega al opcode 0AB1. El juego lee la cantidad de parametros a pasar (1) y sus valores (10). La variable
+0 @ del hilo actual equivale a 10 (si hubiera mas parametros para pasar, el siguiente se copiara a 1 @, luego 2 @ y asi sucesivamente). Despues
+de eso, el hilo salta a la etiqueta @GetSQR. Aqui se calcula el numero cuadrado (de un valor en el 0 @). Nuevamente, si hubiera mas parametros,
+los valores de 1 @, 2 @ etc. pueden tomarse en cuenta, si es necesario. Despues del calculo, el juego llega al opcode 0AB2. El valor de 0 @ es
+igual a 10 * 10 = 100 en este momento. Luego sucede lo siguiente: los valores devueltos (0 @) se copian a la (s) variable (s) que esta escrita
+en el opcode 0AB1 que llamo a esta funcion. En nuestro ejemplo, dicha variable es $ result. Despues de almacenar el resultado, el hilo vuelve
+al 0AB1 y llega al comando end_thread. El valor de $ result es igual a 100 (que es cuadrado de 10) en este momento.
+<BR>Finalmente diga que 0AB2 podria devolver no solo los valores de las variables, sino tambien las constantes numericas. Por ejemplo, 0AB2: ret
+1 1 siempre almacenara 1 en el resultado. </P>
+<P>Tambien preste atencion a que las variables locales se mantienen sin cambios despues de la funcion de llamada. En este ejemplo, la variable 0 @
+contiene un valor de 5 antes de 0AB1. A pesar de que esta variable se uso en la funcion, despues de la llamada todavia es igual a 5. Esto cubre
+las 32 variables locales, por lo que puede trabajar libremente con ellas dentro de una funcion sin temor a perder datos. </P>
+<HR>
+<BR>
+<PRE class=sb3 id=0AB3>
+0AB3: var 0 = 10
+</PRE>
+<P>Establece un nuevo valor de la variable global CLEO. Estas variables se pueden usar para la comunicacion de datos entre hilos CLEO, o entre
+CLEO y main.scm. El numero total de tales variables es 100. Sus valores se guardan en <code>cleo\cleo_saves</code>.
+<BR>Estas variables se pueden usar en main.scm como alternativa a las variables globales comunes. </P>
+<P>
+<B>Parametros: </B>
+<BR>1 - ID de variable global. Deberia estar en un rango de 0.999
+<BR>2 - nuevo valor para la variable. (cualquier numero).
+<HR>
+<P></P>
+<PRE class=sb3 id=0AB4>
+0AB4: 0@ = var 0
+</PRE>
+<P>Almacena en una variable el valor de la variable global CLEO. En este ejemplo, el 0 @ sera igual a 10 (vea 0AB3). </P>
+<P>
+  <B>Parametros: </B>
+  <BR>1 - variable para almacenar el valor global de la variable CLEO
+  <BR>2 - ID global de la variable CLEO. Debe estar en el rango de 0..999.
+  <HR>
+  <BR>
+  <A name="0AB5"></A>
+  <P></P>
+  <PRE class="sb3">
+  0AB5: store_actor $PLAYER_ACTOR closest_vehicle_to 0@ closest_ped_to 1@
+  </PRE>
+  <P>Este opcode almacena las variables identificadores de un vehiculo y el objeto que esta mas cerca del actor. Si no hay ningun vehiculo o ped
+    cerca de el, la variable adecuada contendra el valor de -1.
+    <h5>Parametros</h5>
+    1 - Atributo del actor
+    <BR>2 - variable para almacenar un vehiculo mas cercano a el
+    <BR>3 - variable para almacenar un ped que esta mas cerca de el </P>
+  <HR>
+  <BR>
+  <A name="0AB6"></A>
+<PRE class="sb3">
+0AB6: store_target_marker_coords_to 0@ 1@ 2@ // IF and SET
+</PRE>
+  <P>Este opcode almacena las coordenadas de las variables del lugar marcado con el punto de destino rojo en el mapa (haga clic derecho en el mapa).
+    Si el punto objetivo no existe, las variables no cambian sus valores.
+    <h5>Parametros</h5>
+    1,2,3 - variables para almacenar coordenadas XYZ </P>
+  <HR>
+  <BR>
+  <A name="0AB7"></A>
+  <PRE class="sb3">0AB7: get_vehicle $CAR number_of_gears_to 10@</PRE>
+  <P>El opcode 0AB7 almacena una cantidad total variable de engranajes para el vehiculo especificado. Este numero es igual al parametro TransmissionData.nNumberOfGears
+    en el archivo handling.cfg.
+    <h5>Parametros</h5>
+    1 - una manija del vehiculo
+    <BR>2 - variable para almacenar el numero de engranajes </P>
+  <HR>
+  <BR>
+  <A name="0AB8"></A>
+  <PRE class="sb3">0AB8: get_vehicle $CAR current_gear_to 11@</PRE>
+  <P>Este opcode almacena una cantidad variable de equipo actual para el vehiculo especificado.
+    <h5>Parametros</h5>
+    1 - una manija del vehiculo
+    <BR>2 - variable para almacenar el engranaje actual </P>
+  <HR>
+  <BR>
+  <A name="0AB9"></A>
+  <PRE class="sb3">0AB9: get_mp3 $hMP3 state_to 7@</PRE>
+  <P>Este opcode almacena a una variable un estado de un archivo MP3.
+    <h5>Parametros</h5>
+    1 - manejador de un archivo mp3 cargado (opcode
+    <A href="Cleo_OP.htm#0AAC">0AAC </A>)
+    <BR>2 - variable para almacenar el estado del archivo mp3:
+    <BR>1 - archivo esta jugando
+    <BR>2 - archivo en pausa
+    <BR>-1 - el archivo esta detenido </P>
+  <HR>
+  <BR>
+  <A name="0ABA"></A>
+  <PRE class="sb3">0ABA: end_custom_thread_named 'BENZIN'</PRE>
+  <P>0ABA termina un CLEO-hilo con el nombre dado. Un hilo recibe su nombre con el opcode 03A4. Si el hilo no fue nombrado con 03A4, el hilo recibe
+    su nombre por las primeras 7 letras del nombre del archivo. Por ejemplo, el hilo del archivo test.cs tendra el nombre 'test.cs'; El opcode
+    0ABA termina inmediatamente la ejecucion de un hilo con el nombre dado. Este opcode es el mismo que 0459, pero esta hecho para los scripts
+    CLEO.
+    <h5>Parametros</h5>
+    1 - nombre del hilo para terminar .</P>
+  <HR>
+  <BR>
+  <A name="0ABD" id="0ABD"></A>
+  <PRE class="sb3">0ABD: vehicle 0@ siren_on</PRE>
+  <P>0ABD comprueba si la sirena del vehiculo 0@ Esta encendido. Si es asi, la condicion sera verdadera.
+    <h5>Parametros</h5>
+    1 - controlador del vehiculo </P>
+  <HR>
+  <BR>
+  <A name="0ABE" id="0ABE"></A>
+  <PRE class="sb3">0ABE: vehicle 0@ engine_on</PRE>
+  <P>0ABE comprueba si el motor del vehiculo 0@ Esta encendido. Si es asi, la condicion sera verdadera.
+    <h5>Parametros</h5>
+    1 - controlador del vehiculo </P>
+  <HR>
+  <BR>
+  <A name="0ABF"></A>
+  <PRE class="sb3">0ABF: set_vehicle 0@ engine_state_to 0</PRE>
+  <P>0ABF habilita o deshabilita el motor del vehiculo.
+    <h5>Parametros</h5>
+    1 - controlador del vehiculo
+    <BR>2 - nuevo estado del motor:
+    <BR>0 - apagado
+    <BR>1 - encendido </P>
+  <P></P>
+</DIV>
+<SCRIPT src="jQuery.js"></SCRIPT>
+<SCRIPT src="HL.js"></SCRIPT>
+</DIV>
+</DIV>
 </BODY>
 
 </HTML>

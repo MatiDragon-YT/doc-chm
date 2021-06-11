@@ -32,8 +32,8 @@ END
 </ul>
 <PRE class="sb3">
 var
-    $valor: int = 0
-    $final: int = 100
+    $valor : int = 0
+    $final : int = 100
 end
 
 FOR $contador = 1 to $final step 2
@@ -111,11 +111,11 @@ El bucle se ejecuta mientras <code>$varB</code> esté en el rango [0...100]
 <div class=inf>Pueden sustituir un parámetro de código de operación (p.ej., <code>jf Continue</code>) o servir como una declaración independiente.
 <PRE class="sb3">while true
     if
-        not $actorActual.dead
+        not $actorActual.isDead
     jf Break // salir del bucle
 
     if
-        $actorActual.dead
+        $actorActual.isDead
     then
         Continue // ir a la siguiente interacción
     end

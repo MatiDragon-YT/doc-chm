@@ -22,7 +22,7 @@ El nombre de la variable global es cualquier combinación de letras, dígitos y <c
 <PRE class="sb3">$variable1
 $100
 $____</PRE>
-<div class="inf">Una variable global con el nombre que sólo consta de dígitos se denomina <code>DMA</code>-variable (<b>D</b>irect <b>M</b>emory <b>A</b>ddress). Revise también <a href="Codificacion.ComandosAdicionales.html#Alloc">Alloc</a>.</div>
+<div class="inf">Una variable global con el nombre que sólo consta de dígitos se denomina <code>DMA</code>-variable (<b>D</b>irect <b>M</b>emory <b>A</b>ddress).<br>Revise también <a href="Codificacion.ComandosAdicionales.html#Alloc">Alloc</a>.</div>
 <P>Sus valores están disponibles desde cualquier lugar del código.</P>
 
 <h4>Variables Guardables</h4>
@@ -49,7 +49,7 @@ Sus nombres tiene el prefijo <code>$_</code>, por ejemplo, <code>$_var</code>. E
 0019:   TIMERA > 2000
 004D: jump_if_false @WAIT_2S
 0662: printstring "Han pasado dos segundos"</PRE>
-<div class="inf">Tenga en cuenta que los nombres <code>TIMERA</code> y <code>TIMERB</code> solo están disponibles a partir de Sanny Builder v3.3.0. Los scripts más antiguos tienen estos temporizadores como variables numéricas <code>16</code>@, <code>17@</code> (GTA3, VC) o <code>32@</code>, <code>33@</code> (SA).</div> 
+<div class="inf">Tenga en cuenta que los nombres <code>TIMERA</code> y <code>TIMERB</code> solo están disponibles a partir de Sanny Builder v3.3.0. Los scripts más antiguos tienen estos temporizadores como variables numéricas <code>16@</code>, <code>17@</code> (GTA3, VC) o <code>32@</code>, <code>33@</code> (SA).</div> 
 
 <HR>
 
@@ -62,22 +62,18 @@ $arreglo($indice, 10i) &gt;= 150</PRE>
 <P>Si ambas expreciones son variables, el compilador no puede detectar el opcode, debido al tipo desconocido de las variables.     
 <P>Por ejemplo, hay dos opcodes para incrementar el valor de una variable: <code>0058</code> para los valores enteros y <code>0059</code> para los valores flotantes (decimales).</P>
 <PRE class="sb3">0058: $Var1 += $Var2 // (int) 
-0059: $Var1 += $Var2 // (float)
-</PRE>Suponiendo 
+0059: $Var1 += $Var2 // (float)</PRE> 
 Suponiendo que no haya un opcode, ¿cuál usar? 
-<PRE class="sb3">$Var1 += $Var2 // ??
-</PRE>
+<PRE class="sb3">$Var1 += $Var2 // ??</PRE>
 <P></P>
 <P>Para comunicar al compilador un tipo de variable utiliza el constructor <code>VAR..END</code> que permite declarar variables y sus tipos para su uso avanzados.</P>
 <P>Sintaxis: <code>var &lt;variable&gt;: &lt;tipo&gt; end</code></P>
 <P>Por ejemplo, si se declaran ambas variables, el compilador puede procesar la expresión sin opcodes:</P>
-<PRE class="sb3">
-var
-    $Var1 : Integer
-    $Var2 : Integer
+<PRE class="sb3">var
+    $Var1: Integer
+    $Var2: Integer
 end
-$Var1 += $Var2 // opcode 0058
-</PRE>
+$Var1 += $Var2 // opcode 0058</PRE>
 <P>Se admiten los siguientes tipos de variables::</P>
 <UL>
   <LI><code>Integer</code>, <code>Int</code>- valores enteros</LI>
@@ -91,8 +87,8 @@ Una vez declarado el tipo de la variable, se utiliza para todo el código que sig
 Puede volver a declarar variables para establecer el nuevo tipo:
 <PRE class="sb3">thread 'Food'
 var
-    10@ : Float
-    $Variable : Float
+    10@: Float
+    $Variable: Float
 end
 $variable = 1
 10@ = $Variable
@@ -100,13 +96,12 @@ end_thread
 
 thread 'Loop'
 var
-    10@ : Int
-    $Variable : Int
+    10@: Int
+    $Variable: Int
 end
 $variable = 1
 10@ = $Variable
-end_thread
-</PRE>
+end_thread</PRE>
 <P>En el script <code>'Food'</code> está la variable <code>10@</code> como flotante.<br>
 En el script <code>'Loop'</code> está la variable <code>10@</code> como entero.</P>
 <P>Puede redeclarar variables tantas veces como lo necesite.</P>
@@ -116,44 +111,74 @@ En el script <code>'Loop'</code> está la variable <code>10@</code> como entero.<
 <h4 id=var-tiny>Forma de declaración más corta</h4>
 <P>Desde v3.2.0 es posible declarar una variable de un tipo integrado (<code>Int</code>, <code>Float</code>, <code>String</code>, <code>LongString</code>) utilizando sólo el nombre de tipo.</P>
 <P>Sintaxis: <code>&lt;tipo&gt;&nbsp;&lt;nombre de variable&gt;</code></P>
-<PRE class="sb3">
-int 0@ //0@ es declarada como una variable entera.
-</PRE>
+<PRE class="sb3">int 0@</PRE>
+//0@ es declarada como una variable entera. 
 <p>A partir de v3.4.0 es posible declarar variables con nombres personalizados:</p>
-<PRE class="sb3">
-int a
+<PRE class="sb3">int a
 float distance
 string name
 
 a = 1
 distance = 15.5
-name = 'CJ'
-</PRE>
+name = 'CJ'</PRE>
 <p>Un valor inicial puede seguir el nombre de la variable para reducir el número de líneas de código:</p>
-<PRE class="sb3">
-int a = 1
+<PRE class="sb3">int a = 1
 float distance = 15.5
-string name = 'CJ'
-</PRE>
+string name = 'CJ'</PRE>
 <p>El compilador enlaza una nueva variable local a cada nombre. En el ejemplo anterior se puede esperar que un código resultante tenga el aspecto de:</p> 
-<PRE class="sb3">
-0006: 0@ = 1 
+<PRE class="sb3">0006: 0@ = 1 
 0007: 1@ = 15.5 
-05AA: 2@ = 'CJ'
-</PRE>
+05AA: 2@ = 'CJ'</PRE>
 <div class="dan">Debido a <a target="_black" href="https://github.com/sannybuilder/dev/issues/32">limitaciones de diseño</a>, esta característica solo está disponible en CLEO scripts.</div>
 <HR>
 <h4 id="var-ini">Inicialización variable</h4>
 <P>Puede especificar un valor inicial para la variable al declararla. Escribiendo <code>=</code>, a continuación del tipo de valor:</P>
 <PRE class="sb3">var
-    $fVar1 : float = 1.0
-end
-</PRE>o 
+    $fVar1: float = 1.0
+end</PRE>o 
 <PRE class="sb3">float $fVar1 = 1.0</PRE>
-<P>La variable <code>$fVar</code> declarada como <code>Float</code> y  tambien el 
- compilador agregara el opcode <code>0005</code> al script:</P>
+<P>La variable <code>$fVar</code> es declarada como <code>Float</code> y luego el compilador agregara el opcode <code>0005</code> al script:</P>
 <PRE class="sb3">0005: $fVar1 = 1.0</PRE>
-<P>La inicializacion esta permitida solo para las variables, no para los arreglos.</P></DIV></DIV></DIV>
+<P>La inicialización esta permitida solo para las variables, no para los arreglos.</P>
+<HR>
+<H5 id=literaria>Cadenas Literarias</H5>
+<p>En Cleo, para asignar o guardar un Texto en una   
+ variable, existen variables especificas. <B>NO</B> podemos guardar un texto en  
+  una variable convencional (<B class="text-blue">0@</B>, <B 
+class="text-blue">1@</B>, <B class="text-blue">2@</B>, <B 
+class="text-blue">3@</B>... <B class="text-blue">30@</B>, <B 
+class="text-blue">31@</B>). Pero, podemos modificarlas paraque <B>SI</B> puedan  
+ hacerlo, lo unico que se debe hacer es agregardespes de la arroba, una <B>S</B> 
+o una <B>V</B>, por ejemplo:</p>         
+<PRE class="sb3">0@s, 2@s, 4@s, 6@s, 8@s, etc. 
+0@v, 4@v, 8@v, 12@v, etc.</PRE>
+<TABLE class="table">
+  <THEAD>
+  <TR>
+    <TH>Tipo</TH>
+    <TH>Descripcion</TH>
+    <TH>Funcion</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH><EM>S</EM></TH>
+    <TD>String de <B class="text-red">8</B> <B>bytes</B>, almacena palabras    
+                                                   cortas <B>Max</B>. <B class="text-red">7</B> 
+                      letras*</TD>
+    <TD>Utiliza <B class="text-red">8</B> bytes, lo que significa que utiliza  
+                                                             <B>DOS</B> 
+      variables             convencionales, en       este       caso <B class="text-blue">0@</B> 
+                              y <B class="text-blue">1@</B></TD></TR>
+  <TR>
+    <TH><EM>V</EM></TH>
+    <TD>String de <B class="text-red">16</B> <B>bytes</B>, alamacena palabras  
+                                                     largas <B>Max</B>. <B 
+      class="text-red">14</B>                   letras*</TD>
+    <TD>Utiliza <B class="text-red">16</B> bytes, lo que significa que utiliza 
+                                                              <B>CUATRO</B> 
+      variables             convencionales,       en       este caso        <B 
+      class="text-blue">0@</B>,        <B class="text-blue">1@</B>,        <B 
+      class="text-blue">2@</B>                   y        <B 
+      class="text-blue">3@</B></TD></TR></TBODY></TABLE></DIV></DIV></DIV>
 <SCRIPT src="jQuery.js"></SCRIPT>
 <SCRIPT src="HL.js"></SCRIPT>
 </BODY></HTML>

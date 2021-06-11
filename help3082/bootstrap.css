@@ -14479,3 +14479,42 @@ a.text-dark:hover {
 .btn-small i {
     font-size: 1.2rem
 }
+pre.sb3 {
+  white-space: wrap;
+}
+pre.sb3::before {
+  counter-reset: listing;
+}
+pre.sb3 c {
+  counter-increment: listing; 
+  color: grey; 
+  margin-right: 20px;  /* now works */
+}
+pre.sb3 c::before { 
+  content: counter(listing, decimal-leading-zero);
+  display: inline-block;
+}
+.variable{
+	color: #2196f3;
+}
+.cadena{
+	color: #ff9100;
+}
+.numero{
+	color: #f44336;
+}
+.clase{
+	color: #eeff41;
+}
+.miembro{
+	color: #26a69a;
+}
+.etiqueta{
+	color: #4caf50;
+}
+.comentario{
+	color: #9e9e9e;
+}
+.operador{
+	color: #ff80ab;
+}
